@@ -284,9 +284,11 @@ function birthdays_dashboard_widget() {
   foreach ($terms as $person) {
     $id = $person->term_id;
     $term_meta = get_option( 'taxonomy_' . $id );
-    $birthdate = DateTime::createFromFormat('Y-m-d', $term_meta['birthdate']);
-    if ($month == $birthdate->format('m')) {
-      array_push($results, $person);
+    if ($term_meta['birthdate'] != '') {
+      $birthdate = DateTime::createFromFormat('Y-m-d', $term_meta['birthdate']);
+      if ($month == $birthdate->format('m')) {
+        array_push($results, $person);
+      }
     }
   }
 
