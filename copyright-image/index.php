@@ -133,7 +133,7 @@ function get_featured_image_copyright ($attachment_id = null) {
     if ($link == '')
       return get_featured_image_copyright_author($attachment_id);
 
-    return '<a href="' . $link . '" target="_blank">' . $author . '</a>';
+    return '<a href="' . $link . '" target="_blank" rel="nofollow">&copy; ' . $author . '</a>';
   }
 }
 
