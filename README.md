@@ -10,6 +10,10 @@ This plugin creates a complete administration for persons. I use it mostly for a
 
 You can also add persons on your uploaded pictures thanks to this plugin. It also displays on your dashboard a small widget with the birthdays of the month among your persons created.
 
+## Random Post
+
+*Random Post* provides you a url where a post is displayed randomly. The default url is /random-post.
+
 ## Remove Useless Stuff
 
 This is one useful widget! *Remove Useless Stuff* will help you to remove some of the stuff WordPress force you to have: the emojis provided since the version 4.2 for example, or jQuery migrate which is only necessary if a website have deprecated jQuery functions...
