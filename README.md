@@ -8,7 +8,7 @@
 
 This plugin creates a complete administration for persons. I use it mostly for artists on music blog posts, but you can actually use it for any kind of persons/celebrities. With *Person Custom Taxonomy*, there is the possibility to inform readers about the basic information of everybody : birthdate, deathdate, real name, social links...
 
-You can also add persons on your uploaded pictures thanks to this plugin.
+You can also add persons on your uploaded pictures thanks to this plugin. It also displays on your dashboard a small widget with the birthdays of the month among your persons created.
 
 ## Remove Useless Stuff
 
