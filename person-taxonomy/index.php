@@ -245,27 +245,132 @@ add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
 
 
 /**
- * Flush rewrites when the plugin is activated
+ * Fetching data with CURL
+ *
+ * @param object $url
+ *
+ * @return object $result
  *
  */
 
-function myplugin_flush_rewrites() {
-  flush_rewrite_rules();
+function fetch_curl_data($url){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($ch);
+
+  if (FALSE === $result)
+    throw new Exception(curl_error($ch), curl_errno($ch));
+
+  curl_close($ch);
+  return $result;
 }
 
-# Prevent 404 errors on persons' archive
 
-register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-register_activation_hook( __FILE__, 'myplugin_flush_rewrites' );
+/**
+ * Getting term specific argument
+ *
+ * @param object $arg
+ *
+ * @return string
+ *
+ */
 
-add_action( 'init', 'myplugin_flush_rewrites' );
+function get_person_arg ($arg) {
+  $term = get_queried_object();
+  return $term->$arg;
+}
+
+
+/**
+ * Getting term specific option
+ *
+ * @param object $option
+ *
+ * @return string
+ *
+ */
+
+function get_person_option ($option) {
+  $person = get_queried_object();
+  $id = $person->term_id;
+  $term_meta = get_option( 'taxonomy_' . $id );
+  return $term_meta[$option];
+}
+
+
+/**
+ * Getting Instagram username
+ *
+ * @return string
+ *
+ */
+
+function get_instagram_username () {
+  return get_person_option('instagram');
+}
+
+
+/**
+ * Getting Instagram link
+ *
+ * @return string
+ *
+ */
+
+function get_instagram_link () {
+  $instagram = get_instagram_username();
+  if ($instagram != '') {
+    $link = 'https://instagram.com/' . $instagram;
+    return $link;
+  }
+}
+
+/**
+ * Getting Instagram pictures (max = 20)
+ *
+ * @param int $max
+ *
+ * @return array $data
+ *
+ */
+
+function get_instagram_pictures ($max = 20) {
+  $username = get_instagram_username();
+  if ($username) {
+    $result = fetch_curl_data('https://www.instagram.com/' . $username . '/media/');
+    $result = json_decode($result, JSON_UNESCAPED_SLASHES);
+
+    if ($result) {
+      $data = [];
+      $i = 0;
+
+      foreach ($result['items'] as $post) {
+        $link = $post['link'];
+        $text = $post['caption']['text'];
+        $image = $post['images']['standard_resolution']['url'];
+        array_push($data, array('link' => $link, 'text' => $text, 'image' => $image));
+
+        $i += 1;
+        if ($i >= $max) {
+          break;
+        }
+      }
+
+      return $data;
+    }
+  }
+}
 
 
 /**
  * Create a dashboard widget with birthdays of the current month.
  */
 
-function birthdays_dashboard_widget() {
+function birthdays_dashboard_widget () {
   # Get all persons created
   $terms = get_terms(array(
     'taxonomy' => 'person',
@@ -360,5 +465,22 @@ function add_dashboard_widgets() {
 }
 
 add_action( 'wp_dashboard_setup', 'add_dashboard_widgets' );
+
+
+/**
+ * Flush rewrites when the plugin is activated
+ *
+ */
+
+function myplugin_flush_rewrites() {
+  flush_rewrite_rules();
+}
+
+# Prevent 404 errors on persons' archive
+
+register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
+register_activation_hook( __FILE__, 'myplugin_flush_rewrites' );
+
+add_action( 'init', 'myplugin_flush_rewrites' );
 
 ?>
