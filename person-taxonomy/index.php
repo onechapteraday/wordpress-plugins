@@ -324,10 +324,12 @@ function get_instagram_username () {
 function get_instagram_link () {
   $instagram = get_instagram_username();
   if ($instagram != '') {
-    $link = 'https://instagram.com/' . $instagram;
-    return $link;
+    $instagram = 'https://instagram.com/' . $instagram;
   }
+
+  return $instagram;
 }
+
 
 /**
  * Getting Instagram pictures (max = 20)
@@ -339,13 +341,14 @@ function get_instagram_link () {
  */
 
 function get_instagram_pictures ($max = 20) {
+  $data = [];
   $username = get_instagram_username();
+
   if ($username) {
     $result = fetch_curl_data('https://www.instagram.com/' . $username . '/media/');
     $result = json_decode($result, JSON_UNESCAPED_SLASHES);
 
     if ($result) {
-      $data = [];
       $i = 0;
 
       foreach ($result['items'] as $post) {
@@ -363,6 +366,8 @@ function get_instagram_pictures ($max = 20) {
       return $data;
     }
   }
+
+  return $data;
 }
 
 
