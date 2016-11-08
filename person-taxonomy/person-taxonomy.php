@@ -15,6 +15,9 @@
 require_once 'config/parameters.php';
 require_once 'admin/dashboard_widgets.php';
 
+require_once 'functions/getters.php';
+require_once 'functions/instagram.php';
+
 global $SOUNDCLOUD_CLIENT_ID;
 global $DASHBOARD_WIDGET_ENABLED;
 
@@ -249,131 +252,6 @@ function save_taxonomy_custom_meta ($term_id) {
 
 add_action( 'edited_person', 'save_taxonomy_custom_meta', 10, 2 );
 add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
-
-
-/**
- * Fetching data with CURL
- *
- * @param object $url
- *
- * @return object $result
- *
- */
-
-function fetch_curl_data($url){
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-  $result = curl_exec($ch);
-
-  if (FALSE === $result)
-    throw new Exception(curl_error($ch), curl_errno($ch));
-
-  curl_close($ch);
-  return $result;
-}
-
-
-/**
- * Getting term specific argument
- *
- * @param object $arg
- *
- * @return string
- *
- */
-
-function get_person_arg ($arg) {
-  $term = get_queried_object();
-  return $term->$arg;
-}
-
-
-/**
- * Getting term specific option
- *
- * @param object $option
- *
- * @return string
- *
- */
-
-function get_person_option ($option) {
-  $person = get_queried_object();
-  $id = $person->term_id;
-  $term_meta = get_option( 'taxonomy_' . $id );
-  return $term_meta[$option];
-}
-
-
-/**
- * Getting Instagram username
- *
- * @return string
- *
- */
-
-function get_instagram_username () {
-  return get_person_option('instagram');
-}
-
-
-/**
- * Getting Instagram link
- *
- * @return string
- *
- */
-
-function get_instagram_link () {
-  $instagram = get_instagram_username();
-  if ($instagram != '') {
-    $instagram = 'https://instagram.com/' . $instagram;
-  }
-
-  return $instagram;
-}
-
-
-/**
- * Getting Instagram pictures (max = 20)
- *
- * @param int $max
- *
- * @return array $data
- *
- */
-
-function get_instagram_pictures ($max = 20) {
-  $data = [];
-  $username = get_instagram_username();
-
-  if ($username) {
-    $result = fetch_curl_data('https://www.instagram.com/' . $username . '/media/');
-    $result = json_decode($result, JSON_UNESCAPED_SLASHES);
-
-    if ($result) {
-      $i = 0;
-
-      foreach ($result['items'] as $post) {
-        $link = $post['link'];
-        $text = $post['caption']['text'];
-        $image = $post['images']['standard_resolution']['url'];
-        array_push($data, array('link' => $link, 'text' => $text, 'image' => $image));
-
-        $i += 1;
-        if ($i >= $max) {
-          break;
-        }
-      }
-    }
-  }
-
-  return $data;
-}
 
 
 /**
