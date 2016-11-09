@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fetching data with CURL
  *

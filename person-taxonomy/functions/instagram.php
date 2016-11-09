@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Getting Instagram username
  *
@@ -20,11 +19,10 @@ function get_instagram_username () {
  */
 
 function get_instagram_link () {
-  $link = '';
-  $username = get_instagram_username();
+  $link = get_instagram_username();
 
-  if ($username != '') {
-    $link = '<a href="https://instagram.com/' . $username . '"> ' . $username . ' </a>';
+  if ($link != '') {
+    $link = 'https://instagram.com/' . $link;
   }
 
   return $link;
@@ -69,4 +67,3 @@ function get_instagram_pictures ($max = 20) {
 }
 
 ?>
-

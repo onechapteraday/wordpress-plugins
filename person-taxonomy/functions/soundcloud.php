@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Getting Soundcloud username
  *
@@ -74,4 +73,3 @@ function get_soundcloud_tracks ($max = 1, $width = '100%', $height = 250) {
 }
 
 ?>
-

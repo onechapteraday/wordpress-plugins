@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Create a dashboard widget with birthdays of the current month.
  *
@@ -14,7 +13,7 @@ function birthdays_dashboard_widget () {
     'limit' => -1,
   ));
 
-  #Get today's month and day
+  # Get today's month and day
   $now = new DateTime();
   $month = date('m');
   $day = date('d');
@@ -79,8 +78,7 @@ function birthdays_dashboard_widget () {
           </td>
           <td><small><?php echo $age . ' years old'; ?></small></td>
           <td>
-	      <small><em><?php echo 'born on ' . $birthdate->format('Y'); ?>
-	      <?php if ($deathdate != '') { echo ', deceased on ' . $deathdate->format('Y'); } ?></em></small>
+	      <small><em><?php echo 'born on ' . $birthdate->format('Y'); if ($deathdate != '') { echo ', deceased on ' . $deathdate->format('Y'); } ?></em></small>
 	  </td>
         </tr>
         <?php
