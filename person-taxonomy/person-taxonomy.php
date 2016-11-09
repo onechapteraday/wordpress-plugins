@@ -16,11 +16,14 @@ require_once 'config/parameters.php';
 require_once 'admin/dashboard_widgets.php';
 
 require_once 'functions/getters.php';
+require_once 'functions/twitter.php';
 require_once 'functions/instagram.php';
 require_once 'functions/soundcloud.php';
 
 global $SOUNDCLOUD_CLIENT_ID;
 global $DASHBOARD_WIDGET_ENABLED;
+global $TWITTER_API_KEY;
+global $TWITTER_API_SECRET;
 
 
 /**
