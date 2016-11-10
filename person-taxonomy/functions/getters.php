@@ -56,4 +56,32 @@ function get_person_option ($option) {
   return $term_meta[$option];
 }
 
+
+/**
+ * Getting person birthdate
+ *
+ * @return DateTime $date
+ *
+ */
+
+function get_person_birthdate () {
+  $date = get_person_option('birthdate');
+  $date = DateTime::createFromFormat('Y-m-d', $date);
+  return $date;
+}
+
+
+/**
+ * Getting person deathdate
+ *
+ * @return DateTime $date
+ *
+ */
+
+function get_person_deathdate () {
+  $date = get_person_option('deathdate');
+  $date = DateTime::createFromFormat('Y-m-d', $date);
+  return $date;
+}
+
 ?>
