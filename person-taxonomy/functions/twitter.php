@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Getting Twitter username
  *
  * @return string
  *
  */
+
 function get_twitter_username () {
   return get_person_option('twitter');
 }
@@ -55,10 +57,18 @@ function get_twitter_statuses ($max = 3) {
       )
     );
 
-    $data = json_decode(file_get_contents($data_url . '?count=' . $max . '&screen_name=' . urlencode($username), 0, $data_context), true);
+    $results = json_decode(file_get_contents($data_url . '?count=' . $max . '&screen_name=' . urlencode($username), 0, $data_context), true);
+
+    # Save tweets
+    foreach($results as $tweet) {
+      $date = $tweet['created_at'];
+      $text = $tweet['text'];
+      $user = $tweet['user']['screen_name'];
+
+      array_push($data, array('date' => $date, 'text' => $text, 'user' => $user));
+    }
   }
 
-  # TODO: Get only the things that I want to display
   return $data;
 }
 
