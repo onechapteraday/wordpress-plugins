@@ -263,15 +263,15 @@ add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
  *
  */
 
-function myplugin_flush_rewrites() {
+function person_taxonomy_flush_rewrites() {
   flush_rewrite_rules();
 }
 
 # Prevent 404 errors on persons' archive
 
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-register_activation_hook( __FILE__, 'myplugin_flush_rewrites' );
+register_activation_hook( __FILE__, 'person_taxonomy_flush_rewrites' );
 
-add_action( 'init', 'myplugin_flush_rewrites' );
+add_action( 'init', 'person_taxonomy_flush_rewrites' );
 
 ?>
