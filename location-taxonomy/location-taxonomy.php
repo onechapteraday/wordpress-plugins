@@ -54,6 +54,25 @@ add_action ('init', 'add_location_taxonomy', 0);
 
 
 /**
+ * Adding custom fields in location taxonomy
+ *
+ */
+
+function add_new_location_field() {
+  # This will add the custom meta fields to the 'Add new term' page
+  ?>
+  <div class="form-field">
+    <label for="term_meta[iso]"><?php _e( 'Code ISO' ); ?></label>
+    <input type="text" name="term_meta[iso]" id="term_meta[iso]" value="">
+    <p class="description"><?php _e( 'Enter the code ISO of the location.' ); ?></p>
+  </div>
+<?php
+}
+
+add_action( 'location_add_form_fields', 'add_new_location_field', 10, 2 );
+
+
+/**
  * Add automatically continents and countries
  *
  */
