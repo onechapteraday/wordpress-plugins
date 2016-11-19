@@ -24,6 +24,9 @@ global $SOUNDCLOUD_CLIENT_ID;
 global $DASHBOARD_WIDGET_ENABLED;
 global $TWITTER_API_KEY;
 global $TWITTER_API_SECRET;
+global $TEXT_DOMAIN;
+
+$TEXT_DOMAIN = 'person-taxonomy';
 
 
 /**
@@ -33,22 +36,22 @@ global $TWITTER_API_SECRET;
 
 function add_person_taxonomy() {
   $labels = array (
-    'name'                       => _x( 'Persons', 'taxonomy general name' ),
-    'singular_name'              => _x( 'Person', 'taxonomy singular name' ),
-    'search_items'               => __( 'Search Persons' ),
-    'popular_items'              => __( 'Popular Persons' ),
-    'all_items'                  => __( 'All Persons' ),
+    'name'                       => _x( 'Persons', 'taxonomy general name', $TEXT_DOMAIN ),
+    'singular_name'              => _x( 'Person', 'taxonomy singular name', $TEXT_DOMAIN ),
+    'search_items'               => __( 'Search Persons', $TEXT_DOMAIN ),
+    'popular_items'              => __( 'Popular Persons', $TEXT_DOMAIN ),
+    'all_items'                  => __( 'All Persons', $TEXT_DOMAIN ),
     'parent_item'                => null,
     'parent_item_colon'          => null,
-    'edit_item'                  => __( 'Edit Person' ),
-    'update_item'                => __( 'Update Person' ),
-    'add_new_item'               => __( 'Add New Person' ),
-    'new_item_name'              => __( 'New Person Name' ),
-    'separate_items_with_commas' => __( 'Separate persons with commas' ),
-    'add_or_remove_items'        => __( 'Add or remove persons' ),
-    'choose_from_most_used'      => __( 'Choose from the most used persons' ),
-    'not_found'                  => __( 'No persons found.' ),
-    'menu_name'                  => __( 'Persons' ),
+    'edit_item'                  => __( 'Edit Person', $TEXT_DOMAIN ),
+    'update_item'                => __( 'Update Person', $TEXT_DOMAIN ),
+    'add_new_item'               => __( 'Add New Person', $TEXT_DOMAIN ),
+    'new_item_name'              => __( 'New Person Name', $TEXT_DOMAIN ),
+    'separate_items_with_commas' => __( 'Separate persons with commas', $TEXT_DOMAIN ),
+    'add_or_remove_items'        => __( 'Add or remove persons', $TEXT_DOMAIN ),
+    'choose_from_most_used'      => __( 'Choose from the most used persons', $TEXT_DOMAIN ),
+    'not_found'                  => __( 'No persons found.', $TEXT_DOMAIN ),
+    'menu_name'                  => __( 'Persons', $TEXT_DOMAIN ),
   );
 
   $args = array (
@@ -64,7 +67,7 @@ function add_person_taxonomy() {
   register_taxonomy ('person', array('post', 'attachment'), $args);
 }
 
-add_action ('init', 'add_person_taxonomy', 0);
+add_action ('init', 'add_person_taxonomy', 1);
 
 
 /**
@@ -256,6 +259,23 @@ function save_taxonomy_custom_meta ($term_id) {
 
 add_action( 'edited_person', 'save_taxonomy_custom_meta', 10, 2 );
 add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
+
+
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function person_taxonomy_load_textdomain() {
+#  $domain = $TEXT_DOMAIN;
+#  $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+#  $file = plugin_dir_path( __FILE__ ) . 'languages/' . $TEXT_DOMAIN . '-' . $locale . '.mo';
+#
+  load_plugin_textdomain( $TEXT_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/languages');
+}
+
+add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
 
 
 /**
