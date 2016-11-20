@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Getting Twitter username
  *

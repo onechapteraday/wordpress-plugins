@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 18:51+0100\n"
+"POT-Creation-Date: 2016-11-20 11:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,146 +17,150 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: person-taxonomy.php:39
+#: person-taxonomy.php:64
 msgctxt "taxonomy general name"
 msgid "Persons"
 msgstr ""
 
-#: person-taxonomy.php:40
+#: person-taxonomy.php:65
 msgctxt "taxonomy singular name"
 msgid "Person"
 msgstr ""
 
-#: person-taxonomy.php:41
+#: person-taxonomy.php:66
 msgid "Search Persons"
 msgstr ""
 
-#: person-taxonomy.php:42
+#: person-taxonomy.php:67
 msgid "Popular Persons"
 msgstr ""
 
-#: person-taxonomy.php:43
+#: person-taxonomy.php:68
 msgid "All Persons"
 msgstr ""
 
-#: person-taxonomy.php:46
+#: person-taxonomy.php:71
+msgid "See Person"
+msgstr ""
+
+#: person-taxonomy.php:72
 msgid "Edit Person"
 msgstr ""
 
-#: person-taxonomy.php:47
+#: person-taxonomy.php:73
 msgid "Update Person"
 msgstr ""
 
-#: person-taxonomy.php:48
+#: person-taxonomy.php:74
 msgid "Add New Person"
 msgstr ""
 
-#: person-taxonomy.php:49
+#: person-taxonomy.php:75
 msgid "New Person Name"
 msgstr ""
 
-#: person-taxonomy.php:50
+#: person-taxonomy.php:76
 msgid "Separate persons with commas"
 msgstr ""
 
-#: person-taxonomy.php:51
+#: person-taxonomy.php:77
 msgid "Add or remove persons"
 msgstr ""
 
-#: person-taxonomy.php:52
+#: person-taxonomy.php:78
 msgid "Choose from the most used persons"
 msgstr ""
 
-#: person-taxonomy.php:53
+#: person-taxonomy.php:79
 msgid "No persons found."
 msgstr ""
 
-#: person-taxonomy.php:54
+#: person-taxonomy.php:80
 msgid "Persons"
 msgstr ""
 
-#: person-taxonomy.php:83 person-taxonomy.php:159
+#: person-taxonomy.php:110 person-taxonomy.php:188
 msgid "Real name"
 msgstr ""
 
-#: person-taxonomy.php:85
+#: person-taxonomy.php:112
 msgid "Enter the real name of the person."
 msgstr ""
 
-#: person-taxonomy.php:89 person-taxonomy.php:167
+#: person-taxonomy.php:116 person-taxonomy.php:196
 msgid "Birthdate"
 msgstr ""
 
-#: person-taxonomy.php:91 person-taxonomy.php:97
+#: person-taxonomy.php:118 person-taxonomy.php:124
 msgid "Enter a date with the format YYYY-mm-dd."
 msgstr ""
 
-#: person-taxonomy.php:95 person-taxonomy.php:175
+#: person-taxonomy.php:122 person-taxonomy.php:204
 msgid "Deathdate"
 msgstr ""
 
-#: person-taxonomy.php:101 person-taxonomy.php:183
+#: person-taxonomy.php:128 person-taxonomy.php:212
 msgid "Website"
 msgstr ""
 
-#: person-taxonomy.php:103 person-taxonomy.php:186
+#: person-taxonomy.php:130 person-taxonomy.php:215
 msgid "Enter the website of the person, if exists."
 msgstr ""
 
-#: person-taxonomy.php:107 person-taxonomy.php:191
+#: person-taxonomy.php:134 person-taxonomy.php:220
 msgid "Twitter"
 msgstr ""
 
-#: person-taxonomy.php:109 person-taxonomy.php:194
+#: person-taxonomy.php:136 person-taxonomy.php:223
 msgid ""
 "Enter the Twitter account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:113 person-taxonomy.php:199
+#: person-taxonomy.php:140 person-taxonomy.php:228
 msgid "Facebook"
 msgstr ""
 
-#: person-taxonomy.php:115 person-taxonomy.php:202 person-taxonomy.php:226
+#: person-taxonomy.php:142 person-taxonomy.php:231 person-taxonomy.php:255
 msgid ""
 "Enter the Facebook account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:119 person-taxonomy.php:207
+#: person-taxonomy.php:146 person-taxonomy.php:236
 msgid "Instagram"
 msgstr ""
 
-#: person-taxonomy.php:121 person-taxonomy.php:210
+#: person-taxonomy.php:148 person-taxonomy.php:239
 msgid ""
 "Enter the Instagram account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:125 person-taxonomy.php:215
+#: person-taxonomy.php:152 person-taxonomy.php:244
 msgid "Youtube"
 msgstr ""
 
-#: person-taxonomy.php:127 person-taxonomy.php:218
+#: person-taxonomy.php:154 person-taxonomy.php:247
 msgid ""
 "Enter the Youtube account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:131 person-taxonomy.php:223
+#: person-taxonomy.php:158 person-taxonomy.php:252
 msgid "Soundcloud"
 msgstr ""
 
-#: person-taxonomy.php:133
+#: person-taxonomy.php:160
 msgid ""
 "Enter the Soundcloud account name of the person, only the part after the "
 "base url."
 msgstr ""
 
-#: person-taxonomy.php:162
+#: person-taxonomy.php:191
 msgid "Enter the real name of the person"
 msgstr ""
 
-#: person-taxonomy.php:170 person-taxonomy.php:178
+#: person-taxonomy.php:199 person-taxonomy.php:207
 msgid "Enter a date with the format YYYY-mm-dd"
 msgstr ""

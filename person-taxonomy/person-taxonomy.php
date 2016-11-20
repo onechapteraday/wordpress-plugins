@@ -3,7 +3,7 @@
  *
  * Plugin Name: Person Custom Taxonomy
  * Plugin URI: http://onechapteraday.fr
- * Description: This plugin allows you to describe more precisely the person you are talking about.
+ * Description: This plugin allows you to describe precisely the person you are talking about.
  * Version: 0.1
  * Author: Christelle Hilaricus
  * Author URI: http://onechapteraday.fr
@@ -29,12 +29,37 @@ global $TEXT_DOMAIN;
 $TEXT_DOMAIN = 'person-taxonomy';
 
 
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function person_taxonomy_load_textdomain() {
+  global $TEXT_DOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $TEXT_DOMAIN );
+
+  # Load i18n
+  $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $loaded = load_plugin_textdomain( $TEXT_DOMAIN, false, $path );
+
+  if (!$loaded) {
+    print "File not found: $path";
+    exit;
+  }
+}
+
+add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
+
+
 /**
  * Adding person taxonomy
  *
  */
 
 function add_person_taxonomy() {
+  global $TEXT_DOMAIN;
+
   $labels = array (
     'name'                       => _x( 'Persons', 'taxonomy general name', $TEXT_DOMAIN ),
     'singular_name'              => _x( 'Person', 'taxonomy singular name', $TEXT_DOMAIN ),
@@ -43,6 +68,7 @@ function add_person_taxonomy() {
     'all_items'                  => __( 'All Persons', $TEXT_DOMAIN ),
     'parent_item'                => null,
     'parent_item_colon'          => null,
+    'view_item'                  => __( 'See Person', $TEXT_DOMAIN ),
     'edit_item'                  => __( 'Edit Person', $TEXT_DOMAIN ),
     'update_item'                => __( 'Update Person', $TEXT_DOMAIN ),
     'add_new_item'               => __( 'Add New Person', $TEXT_DOMAIN ),
@@ -76,61 +102,62 @@ add_action ('init', 'add_person_taxonomy', 1);
  */
 
 function add_new_meta_field() {
-  # This will add the custom meta fields to the 'Add new term' page
+  global $TEXT_DOMAIN;
 
+  # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
-    <label for="term_meta[realname]"><?php _e( 'Real name' ); ?></label>
+    <label for="term_meta[realname]"><?php _e( 'Real name', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[realname]" id="term_meta[realname]" value="">
-    <p class="description"><?php _e( 'Enter the real name of the person.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the real name of the person.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[birthdate]"><?php _e( 'Birthdate' ); ?></label>
+    <label for="term_meta[birthdate]"><?php _e( 'Birthdate', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="">
-    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.' ); ?></p>
+    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[deathdate]"><?php _e( 'Deathdate' ); ?></label>
+    <label for="term_meta[deathdate]"><?php _e( 'Deathdate', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="">
-    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.' ); ?></p>
+    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[website]"><?php _e( 'Website' ); ?></label>
+    <label for="term_meta[website]"><?php _e( 'Website', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[website]" id="term_meta[website]" value="">
-    <p class="description"><?php _e( 'Enter the website of the person, if exists.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the website of the person, if exists.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[twitter]"><?php _e( 'Twitter' ); ?></label>
+    <label for="term_meta[twitter]"><?php _e( 'Twitter', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="">
-    <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[facebook]"><?php _e( 'Facebook' ); ?></label>
+    <label for="term_meta[facebook]"><?php _e( 'Facebook', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="">
-    <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[instagram]"><?php _e( 'Instagram' ); ?></label>
+    <label for="term_meta[instagram]"><?php _e( 'Instagram', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="">
-    <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[youtube]"><?php _e( 'Youtube' ); ?></label>
+    <label for="term_meta[youtube]"><?php _e( 'Youtube', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="">
-    <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[soundcloud]"><?php _e( 'Soundcloud' ); ?></label>
+    <label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $TEXT_DOMAIN ); ?></label>
     <input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="">
-    <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.' ); ?></p>
+    <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
   </div>
   <?php
 
@@ -147,6 +174,8 @@ add_action( 'person_add_form_fields', 'add_new_meta_field', 10, 2 );
  */
 
 function edit_meta_field ($term) {
+  global $TEXT_DOMAIN;
+
   # Put the term ID into a variable
   $t_id = $term->term_id;
 
@@ -156,74 +185,74 @@ function edit_meta_field ($term) {
 
   ?>
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Real name' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Real name', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo esc_attr( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the real name of the person' ); ?></p>
+        <p class="description"><?php _e( 'Enter the real name of the person', $TEXT_DOMAIN); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[birthdate]"><?php _e( 'Birthdate' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[birthdate]"><?php _e( 'Birthdate', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="<?php echo esc_attr( $term_meta['birthdate'] ) ? esc_attr( $term_meta['birthdate'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd' ); ?></p>
+        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[deathdate]"><?php _e( 'Deathdate' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[deathdate]"><?php _e( 'Deathdate', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="<?php echo esc_attr( $term_meta['deathdate'] ) ? esc_attr( $term_meta['deathdate'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd' ); ?></p>
+        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[website]" id="term_meta[website]" value="<?php echo esc_attr( $term_meta['website'] ) ? esc_attr( $term_meta['website'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the website of the person, if exists.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the website of the person, if exists.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[twitter]"><?php _e( 'Twitter' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[twitter]"><?php _e( 'Twitter', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="<?php echo esc_attr( $term_meta['twitter'] ) ? esc_attr( $term_meta['twitter'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[facebook]"><?php _e( 'Facebook' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[facebook]"><?php _e( 'Facebook', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="<?php echo esc_attr( $term_meta['facebook'] ) ? esc_attr( $term_meta['facebook'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[instagram]"><?php _e( 'Instagram' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[instagram]"><?php _e( 'Instagram', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="<?php echo esc_attr( $term_meta['instagram'] ) ? esc_attr( $term_meta['instagram'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[youtube]"><?php _e( 'Youtube' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[youtube]"><?php _e( 'Youtube', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="<?php echo esc_attr( $term_meta['youtube'] ) ? esc_attr( $term_meta['youtube'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[soundcloud]"><?php _e( 'Soundcloud' ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $TEXT_DOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo esc_attr( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
-    	<p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.' ); ?></p>
+        <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
     </td>
   </tr>
   <?php
@@ -261,23 +290,6 @@ add_action( 'edited_person', 'save_taxonomy_custom_meta', 10, 2 );
 add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
 
 
-/*
- * Make plugin available for translation.
- * Translations can be filed in the /languages directory.
- *
- */
-
-function person_taxonomy_load_textdomain() {
-#  $domain = $TEXT_DOMAIN;
-#  $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-#  $file = plugin_dir_path( __FILE__ ) . 'languages/' . $TEXT_DOMAIN . '-' . $locale . '.mo';
-#
-  load_plugin_textdomain( $TEXT_DOMAIN, false, dirname(plugin_basename(__FILE__)) . '/languages');
-}
-
-add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
-
-
 /**
  * Flush rewrites when the plugin is activated
  *
@@ -292,6 +304,6 @@ function person_taxonomy_flush_rewrites() {
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 register_activation_hook( __FILE__, 'person_taxonomy_flush_rewrites' );
 
-add_action( 'init', 'person_taxonomy_flush_rewrites' );
+add_action( 'init', 'person_taxonomy_flush_rewrites', 0 );
 
 ?>
