@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LocationTaxonomy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-20 12:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: location-taxonomy.php:51
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr ""
+
+#: location-taxonomy.php:52
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr ""
+
+#: location-taxonomy.php:53
+msgid "Search Locations"
+msgstr ""
+
+#: location-taxonomy.php:54
+msgid "Popular Locations"
+msgstr ""
+
+#: location-taxonomy.php:55
+msgid "All Locations"
+msgstr ""
+
+#: location-taxonomy.php:58
+msgid "Edit Location"
+msgstr ""
+
+#: location-taxonomy.php:59
+msgid "Update Location"
+msgstr ""
+
+#: location-taxonomy.php:60
+msgid "Add New Location"
+msgstr ""
+
+#: location-taxonomy.php:61
+msgid "New Location Name"
+msgstr ""
+
+#: location-taxonomy.php:62
+msgid "Separate locations with commas"
+msgstr ""
+
+#: location-taxonomy.php:63
+msgid "Add or remove locations"
+msgstr ""
+
+#: location-taxonomy.php:64
+msgid "Choose from the most used locations"
+msgstr ""
+
+#: location-taxonomy.php:65
+msgid "No locations found."
+msgstr ""
+
+#: location-taxonomy.php:66
+msgid "Locations"
+msgstr ""
+
+#: location-taxonomy.php:94
+msgid "Code ISO"
+msgstr ""
+
+#: location-taxonomy.php:96
+msgid "Enter the code ISO of the location."
+msgstr ""
+
+#: location-taxonomy.php:113
+msgid "Africa"
+msgstr ""
+
+#: location-taxonomy.php:114
+msgid "Asia"
+msgstr ""
+
+#: location-taxonomy.php:115
+msgid "Europe"
+msgstr ""
+
+#: location-taxonomy.php:116
+msgid "North America"
+msgstr ""
+
+#: location-taxonomy.php:117
+msgid "Oceania"
+msgstr ""
+
+#: location-taxonomy.php:118
+msgid "South America"
+msgstr ""
+
+#: location-taxonomy.php:119
+msgid "Antarctica"
+msgstr ""
