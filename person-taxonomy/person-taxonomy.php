@@ -24,9 +24,9 @@ global $SOUNDCLOUD_CLIENT_ID;
 global $DASHBOARD_WIDGET_ENABLED;
 global $TWITTER_API_KEY;
 global $TWITTER_API_SECRET;
-global $TEXT_DOMAIN;
+global $PERSON_TEXTDOMAIN;
 
-$TEXT_DOMAIN = 'person-taxonomy';
+$PERSON_TEXTDOMAIN = 'person-taxonomy';
 
 
 /*
@@ -36,12 +36,12 @@ $TEXT_DOMAIN = 'person-taxonomy';
  */
 
 function person_taxonomy_load_textdomain() {
-  global $TEXT_DOMAIN;
-  $locale = apply_filters( 'plugin_locale', get_locale(), $TEXT_DOMAIN );
+  global $PERSON_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $PERSON_TEXTDOMAIN );
 
   # Load i18n
   $path = basename( dirname( __FILE__ ) ) . '/languages/';
-  $loaded = load_plugin_textdomain( $TEXT_DOMAIN, false, $path );
+  $loaded = load_plugin_textdomain( $PERSON_TEXTDOMAIN, false, $path );
 }
 
 add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
@@ -53,26 +53,26 @@ add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
  */
 
 function add_person_taxonomy() {
-  global $TEXT_DOMAIN;
+  global $PERSON_TEXTDOMAIN;
 
   $labels = array (
-    'name'                       => _x( 'Persons', 'taxonomy general name', $TEXT_DOMAIN ),
-    'singular_name'              => _x( 'Person', 'taxonomy singular name', $TEXT_DOMAIN ),
-    'search_items'               => __( 'Search Persons', $TEXT_DOMAIN ),
-    'popular_items'              => __( 'Popular Persons', $TEXT_DOMAIN ),
-    'all_items'                  => __( 'All Persons', $TEXT_DOMAIN ),
+    'name'                       => _x( 'Persons', 'taxonomy general name', $PERSON_TEXTDOMAIN ),
+    'singular_name'              => _x( 'Person', 'taxonomy singular name', $PERSON_TEXTDOMAIN ),
+    'search_items'               => __( 'Search Persons', $PERSON_TEXTDOMAIN ),
+    'popular_items'              => __( 'Popular Persons', $PERSON_TEXTDOMAIN ),
+    'all_items'                  => __( 'All Persons', $PERSON_TEXTDOMAIN ),
     'parent_item'                => null,
     'parent_item_colon'          => null,
-    'view_item'                  => __( 'See Person', $TEXT_DOMAIN ),
-    'edit_item'                  => __( 'Edit Person', $TEXT_DOMAIN ),
-    'update_item'                => __( 'Update Person', $TEXT_DOMAIN ),
-    'add_new_item'               => __( 'Add New Person', $TEXT_DOMAIN ),
-    'new_item_name'              => __( 'New Person Name', $TEXT_DOMAIN ),
-    'separate_items_with_commas' => __( 'Separate persons with commas', $TEXT_DOMAIN ),
-    'add_or_remove_items'        => __( 'Add or remove persons', $TEXT_DOMAIN ),
-    'choose_from_most_used'      => __( 'Choose from the most used persons', $TEXT_DOMAIN ),
-    'not_found'                  => __( 'No persons found.', $TEXT_DOMAIN ),
-    'menu_name'                  => __( 'Persons', $TEXT_DOMAIN ),
+    'view_item'                  => __( 'See Person', $PERSON_TEXTDOMAIN ),
+    'edit_item'                  => __( 'Edit Person', $PERSON_TEXTDOMAIN ),
+    'update_item'                => __( 'Update Person', $PERSON_TEXTDOMAIN ),
+    'add_new_item'               => __( 'Add New Person', $PERSON_TEXTDOMAIN ),
+    'new_item_name'              => __( 'New Person Name', $PERSON_TEXTDOMAIN ),
+    'separate_items_with_commas' => __( 'Separate persons with commas', $PERSON_TEXTDOMAIN ),
+    'add_or_remove_items'        => __( 'Add or remove persons', $PERSON_TEXTDOMAIN ),
+    'choose_from_most_used'      => __( 'Choose from the most used persons', $PERSON_TEXTDOMAIN ),
+    'not_found'                  => __( 'No persons found.', $PERSON_TEXTDOMAIN ),
+    'menu_name'                  => __( 'Persons', $PERSON_TEXTDOMAIN ),
   );
 
   $args = array (
@@ -97,62 +97,62 @@ add_action ('init', 'add_person_taxonomy', 1);
  */
 
 function add_new_meta_field() {
-  global $TEXT_DOMAIN;
+  global $PERSON_TEXTDOMAIN;
 
   # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
-    <label for="term_meta[realname]"><?php _e( 'Real name', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[realname]"><?php _e( 'Real name', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[realname]" id="term_meta[realname]" value="">
-    <p class="description"><?php _e( 'Enter the real name of the person.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the real name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[birthdate]"><?php _e( 'Birthdate', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[birthdate]"><?php _e( 'Birthdate', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="">
-    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[deathdate]"><?php _e( 'Deathdate', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[deathdate]"><?php _e( 'Deathdate', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="">
-    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[website]"><?php _e( 'Website', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[website]" id="term_meta[website]" value="">
-    <p class="description"><?php _e( 'Enter the website of the person, if exists.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the website of the person, if exists.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[twitter]"><?php _e( 'Twitter', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[twitter]"><?php _e( 'Twitter', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="">
-    <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[facebook]"><?php _e( 'Facebook', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[facebook]"><?php _e( 'Facebook', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="">
-    <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[instagram]"><?php _e( 'Instagram', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[instagram]"><?php _e( 'Instagram', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="">
-    <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[youtube]"><?php _e( 'Youtube', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[youtube]"><?php _e( 'Youtube', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="">
-    <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
-    <label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $TEXT_DOMAIN ); ?></label>
+    <label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="">
-    <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
   <?php
 
@@ -169,7 +169,7 @@ add_action( 'person_add_form_fields', 'add_new_meta_field', 10, 2 );
  */
 
 function edit_meta_field ($term) {
-  global $TEXT_DOMAIN;
+  global $PERSON_TEXTDOMAIN;
 
   # Put the term ID into a variable
   $t_id = $term->term_id;
@@ -180,74 +180,74 @@ function edit_meta_field ($term) {
 
   ?>
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Real name', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Real name', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo esc_attr( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the real name of the person', $TEXT_DOMAIN); ?></p>
+        <p class="description"><?php _e( 'Enter the real name of the person', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[birthdate]"><?php _e( 'Birthdate', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[birthdate]"><?php _e( 'Birthdate', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="<?php echo esc_attr( $term_meta['birthdate'] ) ? esc_attr( $term_meta['birthdate'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[deathdate]"><?php _e( 'Deathdate', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[deathdate]"><?php _e( 'Deathdate', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="<?php echo esc_attr( $term_meta['deathdate'] ) ? esc_attr( $term_meta['deathdate'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[website]" id="term_meta[website]" value="<?php echo esc_attr( $term_meta['website'] ) ? esc_attr( $term_meta['website'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the website of the person, if exists.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the website of the person, if exists.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[twitter]"><?php _e( 'Twitter', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[twitter]"><?php _e( 'Twitter', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="<?php echo esc_attr( $term_meta['twitter'] ) ? esc_attr( $term_meta['twitter'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[facebook]"><?php _e( 'Facebook', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[facebook]"><?php _e( 'Facebook', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="<?php echo esc_attr( $term_meta['facebook'] ) ? esc_attr( $term_meta['facebook'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[instagram]"><?php _e( 'Instagram', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[instagram]"><?php _e( 'Instagram', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="<?php echo esc_attr( $term_meta['instagram'] ) ? esc_attr( $term_meta['instagram'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[youtube]"><?php _e( 'Youtube', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[youtube]"><?php _e( 'Youtube', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="<?php echo esc_attr( $term_meta['youtube'] ) ? esc_attr( $term_meta['youtube'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the Youtube account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $TEXT_DOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo esc_attr( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $TEXT_DOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <?php
