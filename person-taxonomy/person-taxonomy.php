@@ -42,11 +42,6 @@ function person_taxonomy_load_textdomain() {
   # Load i18n
   $path = basename( dirname( __FILE__ ) ) . '/languages/';
   $loaded = load_plugin_textdomain( $TEXT_DOMAIN, false, $path );
-
-  if (!$loaded) {
-    print "File not found: $path";
-    exit;
-  }
 }
 
 add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
