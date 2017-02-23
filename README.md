@@ -18,7 +18,11 @@ You can also add persons on your uploaded pictures thanks to this plugin. It als
 
 *Random Post* provides you a url where a post is displayed randomly. The default url is /random-post.
 
-## Remove Useless Stuff
+## Remove Emojis
 
-This is one useful widget! *Remove Useless Stuff* will help you to remove some of the stuff WordPress force you to have: the emojis provided since the version 4.2 for example, or jQuery migrate which is only necessary if a website have deprecated jQuery functions...
+*Remove Emojis* will help you to remove the emojis provided since the version 4.2.
+
+## Remove jQuery Migrate
+
+*Remove jQuery Migrate* will help you to remove jQuery migrate which is only necessary if a website have deprecated jQuery functions.
 

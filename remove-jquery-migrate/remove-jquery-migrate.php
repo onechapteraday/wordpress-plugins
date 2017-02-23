@@ -1,21 +1,15 @@
 <?php
 /**
  *
- * Plugin Name: Remove Useless Stuff
+ * Plugin Name: Remove jQuery migrate
  * Plugin URI: http://onechapteraday.fr
- * Description: This plugin removes emojis and jQuery migrate
+ * Description: This plugin removes jQuery migrate implementation
  * Version: 0.1
  * Author: Christelle Hilaricus
  * Author URI: http://onechapteraday.fr
  * License GPL2
  *
  */
-
-
-# Remove emojis introduced in WordPress 4.2
-
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
 /**
