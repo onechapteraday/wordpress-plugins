@@ -94,7 +94,74 @@ function post_dictionary_home_page() {
 
 function post_dictionary_add_content($content) {
     if (is_single()) {
-        $content .= '<p>The new dictionary will be here!</p>';
+        global $wpdb;
+
+        $ID = get_the_ID();
+        $table_name = $wpdb->prefix . 'postdictionary_data';
+
+	$last = '';
+	$sql = "SELECT entry, information, definition
+	        FROM $table_name
+		WHERE post_id = $ID
+		ORDER BY entry ASC";
+	
+	$entries = $wpdb->get_results( $sql );
+
+	if( $entries ) {
+	    # Display all letters with anchor
+
+	    $sql = "SELECT DISTINCT LEFT(entry, 1) capitale
+	            FROM $table_name
+		    WHERE post_id = $ID
+		    ORDER BY entry ASC";
+
+            $letters = $wpdb->get_results( $sql );
+
+	    $content .= '<div class="post_dictionary_letters">';
+	    $content .= '<h3>' . __('Par ordre alphabétique', 'post_dictionary') . '</h3>';
+
+	    foreach( $letters as $letter ) {
+	        $content .= '<a href="#letter_' . $letter->capitale . '" class="post_dictionary_capitale">' . $letter->capitale . '</a>';
+	    }
+
+	    $content .= '</div>';
+
+	    # Display all terms in dictionary
+
+	    $content .= '<div class="post_dictionary_data">';
+
+	    foreach( $entries as $element ) {
+                $entry = $element->entry;
+                $info = $element->information;
+                $def = $element->definition;
+
+	        $current = $entry[0];
+
+	        # Display letter
+
+		if ($last != $current) {
+		    $content .= '<div id="letter_' . $current . '" class="post_dictionary_letter">' . $current . '</div>';
+		    $last = $current;
+		}
+
+		# Display term
+
+                $content .= '<dl>';
+                $content .= '<dt class="post_dictionary_term">' . $entry . '</dt>';
+
+		if( $info != NULL ){
+                    $content .= '<dd class="post_dictionary_info">' . $info . '</dd>';
+		}
+
+		if( $def != NULL ){
+                    $content .= '<dd class="post_dictionary_definition">' . $def . '</dd>';
+		}
+
+                $content .= '</dl>';
+            }
+
+	    $content .= '</div>';
+        }
     }
 
     return $content;
