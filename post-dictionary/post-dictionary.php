@@ -57,18 +57,23 @@ function post_dictionary_home_page() {
 
     $post_id = $_GET['post_id'];
     $entry_id = $_GET['entry_id'];
+    $action = $_GET['action'];
 
-    # Modify entry from dictionary $post_id
+    # Manipulate entry for dictionary of $post_id
 
-    if( $entry_id ) {
-	$action = $_GET['action'];
+    if( $action ) {
+	if( $entry_id ) {
+	    if( $action == 'edit' ) {
+                post_dictionary_edit_entry($entry_id);
+	    }
 
-	if( $action == 'edit' ) {
-            post_dictionary_edit_entry($entry_id);
+	    if( $action == 'delete' ) {
+                post_dictionary_delete_entry($entry_id);
+	    }
 	}
 
-	if( $action == 'delete' ) {
-            post_dictionary_delete_entry($entry_id);
+	if( $action == 'add' ) {
+            post_dictionary_add_entry();
 	}
     }
 
@@ -130,6 +135,8 @@ function post_dictionary_create_page() {
 function post_dictionary_list_page($post_id) {
     global $wpdb;
 
+    echo '<div class="wrap">';
+
     if( $post_id ) {
 	# Display post title
 	$posts_table = $wpdb->prefix . 'posts';
@@ -141,7 +148,9 @@ function post_dictionary_list_page($post_id) {
 	$post = $wpdb->get_results( $sql );
 	$post_title = $post[0]->post_title;
 
-        echo '<h1>Dictionnaire de l\'article <small>' . $post_title . '</small></h1>';
+        $add_path = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&action=add';
+
+        echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong>  <a href="' . admin_url($add_path) . '" class="page-title-action">Ajouter</a></h1>';
 	echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
 
 	# Display dictionary
@@ -182,10 +191,94 @@ function post_dictionary_list_page($post_id) {
     } else {
         echo '<p>Veuiller sélectionner un dictionnaire existant.</p>';
     }
+
+    echo '</div>';
+}
+
+function post_dictionary_add_entry() {
+    global $wpdb;
+
+    $post_id = $_GET['post_id'];
+    $return = 'admin.php?page=post-dictionaries&post_id=' . $post_id;
+    $plugin_table = $wpdb->prefix . 'postdictionary_data';
+
+    if(!isset( $action )) {
+        $action = $_GET['action'];
+    }
+
+    if ( isset( $_POST['submit_form'] )){
+        $form_entry = stripslashes_deep($_POST['dictionary']['entry']);
+        $form_information = stripslashes_deep($_POST['dictionary']['information']);
+        $form_definition = stripslashes_deep($_POST['dictionary']['definition']);
+
+        $wpdb->insert(
+          $plugin_table,
+          array(
+	      'post_id' => $post_id,
+              'entry' => $form_entry,
+              'information' => $form_information,
+              'definition' => $form_definition
+          )
+        );
+
+        # Redirect to dictionary page
+        wp_redirect(admin_url($return));
+        exit;
+    }
+
+    else {
+        echo '<div class="wrap">';
+        echo '<h1>Ajouter une nouvelle entrée dans le dictionnaire</h1>';
+
+        ?>
+        <form id="addform" action="#addform" name="edit_dictionary_entry" method="post">
+            <table class="form-table">
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[entry]"><?php _e( 'Entrée', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[entry]" id="dictionary[entry]" />
+                    </td>
+                </tr>
+
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[information]"><?php _e( 'Information', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[information]" id="dictionary[information]" />
+                    </td>
+                </tr>
+
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[definition]"><?php _e( 'Définition', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[definition]" id="dictionary[definition]" />
+                    </td>
+                </tr>
+            </table>
+
+            <p class="submit">
+                <input type="submit" name="submit_form" value="Ajouter une entrée" class="button button-primary" />
+            </p>
+        </form>
+        <?php
+
+        echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+	echo '</div>';
+    }
 }
 
 function post_dictionary_edit_entry( $entry_id ) {
     global $wpdb;
+
+    echo '<div class="wrap">';
 
     if(!isset( $entry_id )) {
         $entry_id = $_GET['entry_id'];
@@ -267,6 +360,8 @@ function post_dictionary_edit_entry( $entry_id ) {
 
         echo '<a href="' . $return . '">Retour au dictionnaire</a>';
     }
+
+    echo '</div>';
 }
 
 function post_dictionary_delete_entry( $entry_id ) {
@@ -294,6 +389,7 @@ function post_dictionary_delete_entry( $entry_id ) {
         }
 
 	else {
+            echo '<div class="wrap">';
             echo '<h1>Supprimer entrée du dictionnaire</h1>';
             ?>
 
@@ -306,6 +402,7 @@ function post_dictionary_delete_entry( $entry_id ) {
 
             <?php
             echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+            echo '</div>';
 	}
     }
 }
