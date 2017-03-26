@@ -116,7 +116,7 @@ function post_dictionary_home_page() {
                 echo '<td>' . $result->post_title;
                 echo '<div class="row-actions visible">';
                     echo '<span class="activate"><a href="' . admin_url($path) . '" aria-label="Voir ' . $result->title . '">Voir dictionnaire</a> | </span>';
-                    echo '<span class="activate"><a href="' . admin_url($path . '&action=add') . '" aria-label="Ajouter élément ' . $result->title . '">Ajouter un élément</a> | </span>';
+                    echo '<span class="activate"><a href="' . admin_url($path . '&action=add') . '" aria-label="Ajouter élément ' . $result->title . '">Ajouter un élément</a></span>';
                 echo '</div>';
                 echo '</td>';
                 echo '<td>' . $result->count . '</td>';
@@ -136,8 +136,47 @@ function post_dictionary_home_page() {
 
 function post_dictionary_create_page() {
     global $wpdb;
+    $posts_table = $wpdb->prefix . 'posts';
+    $plugin_table = $wpdb->prefix . 'postdictionary_data';
 
-    echo '<h1>Création d\'un nouveau dictionnaire</h1>';
+    if ( isset( $_POST['submit_form'] )){
+        $post_id = $_POST['post_id'];
+        $return = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&action=add&from=new';
+
+        # Redirect to dictionary page
+        wp_redirect(admin_url($return));
+        exit;
+    }
+    else {
+        $sql = "SELECT ID, post_title
+                FROM $posts_table
+                WHERE post_status = 'publish'
+                AND ID NOT IN(
+                    SELECT post_id
+                    FROM $plugin_table
+                )
+                ORDER BY post_title";
+
+        $posts = $wpdb->get_results( $sql );
+
+        echo '<div class="wrap">';
+        echo '<h1>Création d\'un nouveau dictionnaire</h1>';
+        echo '<p>Choississez l\'article pour lequel vous souhaitez créer un dictionnaire.</p>';
+        echo '<form id="dictionaryform" action="#dictionaryform" name="create_dictionary" method="post">';
+        echo '<select name="post_id" id="post_id">';
+
+        if( $posts ) {
+            foreach( $posts as $element ) {
+	        echo '<option value="' . $element->ID . '">' . $element->post_title . '</option>';
+            }
+        }
+
+        echo '<p class="submit"><input type="submit" name="submit_form" value="Ajouter une entrée" class="button button-primary" /></p>';
+
+        echo '</select>';
+        echo '</form>';
+        echo '</div>';
+    }
 }
 
 function post_dictionary_list_page($post_id) {
@@ -152,7 +191,7 @@ function post_dictionary_list_page($post_id) {
 	$sql = "SELECT post_title
 	        FROM $posts_table
 		WHERE ID = $post_id;";
-	
+
 	$post = $wpdb->get_results( $sql );
 	$post_title = $post[0]->post_title;
 
@@ -236,8 +275,17 @@ function post_dictionary_add_entry() {
     }
 
     else {
+	$posts_table = $wpdb->prefix . 'posts';
+
+	$sql = "SELECT post_title
+	        FROM $posts_table
+		WHERE ID = $post_id;";
+
+	$post = $wpdb->get_results( $sql );
+	$post_title = $post[0]->post_title;
+
         echo '<div class="wrap">';
-        echo '<h1>Ajouter une nouvelle entrée dans le dictionnaire</h1>';
+        echo '<h1>Ajouter une entrée dans le dictionnaire de l\'article <strong>' . $post_title . '</strong></h1>';
 
         ?>
         <form id="addform" action="#addform" name="edit_dictionary_entry" method="post">
@@ -279,7 +327,10 @@ function post_dictionary_add_entry() {
         </form>
         <?php
 
-        echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+        $from = $_GET['from'];
+	if( $from != 'new' ){
+            echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+	}
 	echo '</div>';
     }
 }
@@ -445,7 +496,7 @@ function post_dictionary_add_content($content) {
 	        FROM $table_name
 		WHERE post_id = $ID
 		ORDER BY entry ASC";
-	
+
 	$entries = $wpdb->get_results( $sql );
 
 	if( $entries ) {
@@ -461,9 +512,13 @@ function post_dictionary_add_content($content) {
 	    $content .= '<div class="post_dictionary_letters">';
 	    $content .= '<h3>' . __('Par ordre alphabétique', 'post_dictionary') . '</h3>';
 
+	    $content .= '<ul>';
+
 	    foreach( $letters as $letter ) {
-	        $content .= '<a href="#letter_' . $letter->capitale . '" class="post_dictionary_capitale">' . $letter->capitale . '</a>';
+	        $content .= '<li><a href="#letter_' . $letter->capitale . '" class="post_dictionary_capitale">' . $letter->capitale . '</a></li>';
 	    }
+
+	    $content .= '</ul>';
 
 	    $content .= '</div>';
 
