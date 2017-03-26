@@ -96,6 +96,7 @@ function post_dictionary_home_page() {
 
         $dictionaries = $wpdb->get_results( $sql );
 
+        echo '<div class="wrap">';
         echo '<h1>Gestion des dictionnaires</h1>';
         echo '<p>Ci-dessous, vous trouverez la liste de tous les dictionnaires existants sur votre blog.</p>';
 
@@ -114,7 +115,8 @@ function post_dictionary_home_page() {
                 echo '<tr>';
                 echo '<td>' . $result->post_title;
                 echo '<div class="row-actions visible">';
-                    echo '<span class="activate"><a href="' . admin_url($path) . '" class="edit" aria-label="Voir ' . $result->title . '">Voir dictionnaire</a> | </span>';
+                    echo '<span class="activate"><a href="' . admin_url($path) . '" aria-label="Voir ' . $result->title . '">Voir dictionnaire</a> | </span>';
+                    echo '<span class="activate"><a href="' . admin_url($path . '&action=add') . '" aria-label="Ajouter élément ' . $result->title . '">Ajouter un élément</a> | </span>';
                 echo '</div>';
                 echo '</td>';
                 echo '<td>' . $result->count . '</td>';
@@ -123,6 +125,12 @@ function post_dictionary_home_page() {
 
             echo '</table>';
         }
+
+	else {
+	    '<p>Vous n\'avez encore aucun dictionnaire sur votre blog.</p>';
+	}
+
+        echo '</div>';
     }
 }
 
@@ -150,7 +158,7 @@ function post_dictionary_list_page($post_id) {
 
         $add_path = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&action=add';
 
-        echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong>  <a href="' . admin_url($add_path) . '" class="page-title-action">Ajouter</a></h1>';
+        echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong>  <a href="' . admin_url($add_path) . '" class="page-title-action">Ajouter une nouvelle entrée</a></h1>';
 	echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
 
 	# Display dictionary
@@ -192,6 +200,7 @@ function post_dictionary_list_page($post_id) {
         echo '<p>Veuiller sélectionner un dictionnaire existant.</p>';
     }
 
+    echo '<p class="submit"><a href="' . admin_url('admin.php?page=post-dictionaries') . '">Retour à la liste des dictionnaires</a></p>';
     echo '</div>';
 }
 
