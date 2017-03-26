@@ -42,6 +42,52 @@ register_activation_hook( __FILE__, 'post_dictionary_install_table' );
 
 
 /**
+ * Create plugin menu
+ *
+ */
+add_action('admin_menu', 'post_dictionary_setup_menu');
+
+function post_dictionary_setup_menu() {
+    add_menu_page( 'Gestion des dictionnaires', 'Dictionaries', 'manage_options', 'post-dictionaries', 'post_dictionary_home_page', 'dashicons-book', 21 );
+}
+
+function post_dictionary_home_page() {
+    global $wpdb;
+
+    # Retrieve all dictionaries
+    $sql = "SELECT DISTINCT post_id, post_title, COUNT(d.id) as count
+            FROM `wp_postdictionary_data` d, `wp_posts` p
+            WHERE d.post_id = p.ID
+	    GROUP BY (post_id);";
+
+    $dictionaries = $wpdb->get_results( $sql );
+
+    echo '<h1>Gestion des dictionnaires</h1>';
+
+    echo '<h2>Créer un nouveau dictionnaire</h2>';
+
+    echo '<h2>Liste des dictionnaires existants</h2>';
+
+    if( $dictionaries ) {
+        echo '<table class="wp-list-table widefat fixed striped posts">';
+        echo '<thead><tr>';
+        echo '<th class="column-primary">Article</th>';
+        echo '<th>Entrées dans le dictionnaire</th>';
+        echo '</tr></thead>';
+
+	foreach( $dictionaries as $result ) {
+	    echo '<tr>';
+	    echo '<td>' . $result->post_title . '</td>';
+	    echo '<td>' . $result->count . '</td>';
+	    echo '</tr>';
+	}
+
+        echo '</table>';
+    }
+}
+
+
+/**
  * Add dictionary content at the end of posts
  *
  */
