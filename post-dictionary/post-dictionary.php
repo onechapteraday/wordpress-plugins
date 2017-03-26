@@ -48,42 +48,148 @@ register_activation_hook( __FILE__, 'post_dictionary_install_table' );
 add_action('admin_menu', 'post_dictionary_setup_menu');
 
 function post_dictionary_setup_menu() {
-    add_menu_page( 'Gestion des dictionnaires', 'Dictionaries', 'manage_options', 'post-dictionaries', 'post_dictionary_home_page', 'dashicons-book', 21 );
+    add_menu_page( 'Gestion des dictionnaires', 'Dictionnaires', 'manage_options', 'post-dictionaries', 'post_dictionary_home_page', 'dashicons-book', 21 );
+    add_submenu_page('post-dictionaries', 'Création d\'un nouveau dictionnaire', 'Créer un dictionnaire', 'administrator', 'post-dictionaries-create', 'post_dictionary_create_page');
 }
 
 function post_dictionary_home_page() {
     global $wpdb;
 
-    # Retrieve all dictionaries
-    $sql = "SELECT DISTINCT post_id, post_title, COUNT(d.id) as count
-            FROM `wp_postdictionary_data` d, `wp_posts` p
-            WHERE d.post_id = p.ID
-	    GROUP BY (post_id);";
+    $post_id = $_GET['post_id'];
+    $entry_id = $_GET['entry_id'];
 
-    $dictionaries = $wpdb->get_results( $sql );
+    # Modify entry from dictionary $post_id
 
-    echo '<h1>Gestion des dictionnaires</h1>';
+    if( $entry_id ) {
+	$action = $_GET['action'];
 
-    echo '<h2>Créer un nouveau dictionnaire</h2>';
-
-    echo '<h2>Liste des dictionnaires existants</h2>';
-
-    if( $dictionaries ) {
-        echo '<table class="wp-list-table widefat fixed striped posts">';
-        echo '<thead><tr>';
-        echo '<th class="column-primary">Article</th>';
-        echo '<th>Entrées dans le dictionnaire</th>';
-        echo '</tr></thead>';
-
-	foreach( $dictionaries as $result ) {
-	    echo '<tr>';
-	    echo '<td>' . $result->post_title . '</td>';
-	    echo '<td>' . $result->count . '</td>';
-	    echo '</tr>';
+	if( $action == 'edit' ) {
+            post_dictionary_edit_entry($entry_id);
 	}
 
-        echo '</table>';
+	if( $action == 'delete' ) {
+            post_dictionary_delete_entry($entry_id);
+	}
     }
+
+    # Display dictionary for post_id
+
+    elseif( $post_id ) {
+        post_dictionary_list_page($post_id);
+    }
+
+    # If no dictionary has to be displayed
+    else {
+	$posts_table = $wpdb->prefix . 'posts';
+	$plugin_table = $wpdb->prefix . 'postdictionary_data';
+
+        # Retrieve all dictionaries
+        $sql = "SELECT DISTINCT post_id, post_title, COUNT(d.id) as count
+                FROM $plugin_table d, $posts_table p
+                WHERE d.post_id = p.ID
+                GROUP BY (post_id);";
+
+        $dictionaries = $wpdb->get_results( $sql );
+
+        echo '<h1>Gestion des dictionnaires</h1>';
+        echo '<p>Ci-dessous, vous trouverez la liste de tous les dictionnaires existants sur votre blog.</p>';
+
+        echo '<h2>Liste des dictionnaires existants</h2>';
+
+        if( $dictionaries ) {
+            echo '<table class="wp-list-table widefat fixed striped posts">';
+            echo '<thead><tr>';
+            echo '<th class="column-primary">Articles</th>';
+            echo '<th>Entrées dans le dictionnaire</th>';
+            echo '</tr></thead>';
+
+            foreach( $dictionaries as $result ) {
+                $path = 'admin.php?page=post-dictionaries&post_id=' . $result->post_id;
+
+                echo '<tr>';
+                echo '<td>' . $result->post_title;
+                echo '<div class="row-actions visible">';
+                    echo '<span class="activate"><a href="' . admin_url($path) . '" class="edit" aria-label="Voir ' . $result->title . '">Voir dictionnaire</a> | </span>';
+                echo '</div>';
+                echo '</td>';
+                echo '<td>' . $result->count . '</td>';
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        }
+    }
+}
+
+function post_dictionary_create_page() {
+    global $wpdb;
+
+    echo '<h1>Création d\'un nouveau dictionnaire</h1>';
+}
+
+function post_dictionary_list_page($post_id) {
+    global $wpdb;
+
+    if( $post_id ) {
+	# Display post title
+	$posts_table = $wpdb->prefix . 'posts';
+
+	$sql = "SELECT post_title
+	        FROM $posts_table
+		WHERE ID = $post_id;";
+	
+	$post = $wpdb->get_results( $sql );
+	$post_title = $post[0]->post_title;
+
+        echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong></h1>';
+	echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
+
+	# Display dictionary
+
+        $table_name = $wpdb->prefix . 'postdictionary_data';
+
+        $sql = "SELECT id, entry, information, definition
+                FROM $table_name
+                WHERE post_id = $post_id
+                ORDER BY entry ASC";
+
+        $entries = $wpdb->get_results( $sql );
+
+        if( $entries ) {
+            echo '<table class="wp-list-table widefat fixed striped posts">';
+            echo '<thead><tr>';
+            echo '<th class="column-primary">Entrée</th>';
+            echo '<th>Information</th>';
+            echo '<th>Définition</th>';
+            echo '<th>Actions</th>';
+            echo '</tr></thead>';
+
+            foreach( $entries as $element ) {
+                $path = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&entry_id=' . $element->id;
+
+                echo '<tr>';
+                echo '<td>' . $element->entry . '</td>';
+                echo '<td>' . $element->information . '</td>';
+                echo '<td>' . $element->definition . '</td>';
+                echo '<td>';
+		    echo '<a href="' . admin_url($path . '&action=edit'). '"><span class="dashicons dashicons-edit"></span> Éditer</a>';
+		    echo ' | <a href="' . admin_url($path . '&action=delete'). '"><span class="dashicons dashicons-trash"></span> Supprimer</a></td>';
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        }
+    } else {
+        echo '<p>Veuiller sélectionner un dictionnaire existant.</p>';
+    }
+}
+
+function post_dictionary_edit_entry( $entry_id ) {
+  echo '<h1>Éditer entrée du dictionnaire</h1>';
+}
+
+function post_dictionary_delete_entry( $entry_id ) {
+  echo '<h1>Supprimer entrée du dictionnaire</h1>';
 }
 
 
