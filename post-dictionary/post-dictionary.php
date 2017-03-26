@@ -141,7 +141,7 @@ function post_dictionary_list_page($post_id) {
 	$post = $wpdb->get_results( $sql );
 	$post_title = $post[0]->post_title;
 
-        echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong></h1>';
+        echo '<h1>Dictionnaire de l\'article <small>' . $post_title . '</small></h1>';
 	echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
 
 	# Display dictionary
@@ -185,12 +185,141 @@ function post_dictionary_list_page($post_id) {
 }
 
 function post_dictionary_edit_entry( $entry_id ) {
-  echo '<h1>Éditer entrée du dictionnaire</h1>';
+    global $wpdb;
+
+    if(!isset( $entry_id )) {
+        $entry_id = $_GET['entry_id'];
+    }
+
+    if( $entry_id ) {
+	$post_id = $_GET['post_id'];
+	$return = 'admin.php?page=post-dictionaries&post_id=' . $post_id;
+
+	$plugin_table = $wpdb->prefix . 'postdictionary_data';
+
+        echo '<h1>Éditer entrée du dictionnaire</h1>';
+
+        if ( isset( $_POST['submit_form'] )){
+            $form_entry = stripslashes_deep($_POST['dictionary']['entry']);
+            $form_information = stripslashes_deep($_POST['dictionary']['information']);
+            $form_definition = stripslashes_deep($_POST['dictionary']['definition']);
+
+            $wpdb->update(
+              $plugin_table,
+              array(
+                  'entry' => $form_entry,
+                  'information' => $form_information,
+                  'definition' => $form_definition
+              ),
+              array ( 'id' => $entry_id )
+            );
+        }
+
+        $sql = "SELECT entry, information, definition
+                FROM $plugin_table
+                WHERE id = $entry_id";
+
+        $entry = $wpdb->get_results( $sql )[0];
+
+	?>
+        <form id="editform" action="#editform" name="edit_dictionary_entry" method="post">
+            <table class="form-table">
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[entry]"><?php _e( 'Entrée', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[entry]" id="dictionary[entry]" value="<?php echo $entry->entry; ?>">
+                    </td>
+                </tr>
+
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[information]"><?php _e( 'Information', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[information]" id="dictionary[information]" value="<?php echo $entry->information; ?>">
+                    </td>
+                </tr>
+
+                <tr class="form-field">
+                    <th>
+                        <label for="dictionary[definition]"><?php _e( 'Définition', 'post_dictionary' ); ?></label>
+                    </th>
+
+                    <td>
+                        <input type="text" name="dictionary[definition]" id="dictionary[definition]" value="<?php echo $entry->definition; ?>">
+                    </td>
+                </tr>
+            </table>
+
+            <p class="submit">
+                <input type="submit" name="submit_form" value="Mettre à jour" class="button button-primary" />
+            </p>
+        </form>
+	<?php
+
+        if ( isset( $_POST['submit_form'] )){
+            echo '<p>Cette entrée du dictionnaire a bien été modifiée !</p>';
+        }
+
+        echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+    }
 }
 
 function post_dictionary_delete_entry( $entry_id ) {
-  echo '<h1>Supprimer entrée du dictionnaire</h1>';
+    global $wpdb;
+
+    if(!isset( $entry_id )) {
+        $entry_id = $_GET['entry_id'];
+
+    }
+
+    if( $entry_id ) {
+	$post_id = $_GET['post_id'];
+	$plugin_table = $wpdb->prefix . 'postdictionary_data';
+	$return = 'admin.php?page=post-dictionaries&post_id=' . $post_id;
+
+        if ( isset( $_POST['submit_form'] )){
+            $wpdb->delete(
+              $plugin_table,
+              array ( 'id' => $entry_id )
+            );
+
+	    # Redirect to dictionary page
+	    wp_redirect(admin_url($return));
+	    exit;
+        }
+
+	else {
+            echo '<h1>Supprimer entrée du dictionnaire</h1>';
+            ?>
+
+            <form id="deleteform" action="#deleteform" name="delete_dictionary_entry" method="post">
+	        <p>Êtes-vous sûr de vouloir supprimer cette entrée ?</p>
+                <p class="submit">
+                    <input type="submit" name="submit_form" value="Supprimer l'entrée" class="button button-primary" />
+                </p>
+	    </form>
+
+            <?php
+            echo '<a href="' . $return . '">Retour au dictionnaire</a>';
+	}
+    }
 }
+
+/**
+ * Buffer output using ob_start to fix redirect
+ *
+ */
+
+function app_output_buffer() {
+    ob_start();
+}
+
+add_action('init', 'app_output_buffer');
 
 
 /**
