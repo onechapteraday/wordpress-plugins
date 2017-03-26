@@ -14,6 +14,10 @@ This plugin creates a complete administration for persons. I use it mostly for a
 
 You can also add persons on your uploaded pictures thanks to this plugin. It also displays on your dashboard a small widget with the birthdays of the month among your persons created.
 
+## Post Dictionary
+
+The main purpose of this plugin is to give you the possibility to add a dictionary on all your WordPress posts. It's like having a glossary on one specific post. You can add, edit and delete every entries of this glossary. And you have the possibility to style your data by using the classes providing on the_content.
+
 ## Random Post
 
 *Random Post* provides you a url where a post is displayed randomly. The default url is /random-post.
