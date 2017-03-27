@@ -198,7 +198,6 @@ function post_dictionary_list_page($post_id) {
         $add_path = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&action=add';
 
         echo '<h1>Dictionnaire de l\'article <strong>' . $post_title . '</strong>  <a href="' . admin_url($add_path) . '" class="page-title-action">Ajouter une nouvelle entrée</a></h1>';
-	echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
 
 	# Display dictionary
 
@@ -212,6 +211,7 @@ function post_dictionary_list_page($post_id) {
         $entries = $wpdb->get_results( $sql );
 
         if( $entries ) {
+	    echo '<p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>';
             echo '<table class="wp-list-table widefat fixed striped posts">';
             echo '<thead><tr>';
             echo '<th class="column-primary">Entrée</th>';
@@ -234,7 +234,9 @@ function post_dictionary_list_page($post_id) {
             }
 
             echo '</table>';
-        }
+        } else {
+            echo '<p>Cet article ne possède pas de dictionnaire.</p>';
+	}
     } else {
         echo '<p>Veuiller sélectionner un dictionnaire existant.</p>';
     }
