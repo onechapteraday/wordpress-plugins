@@ -151,6 +151,7 @@ function post_dictionary_create_page() {
         $sql = "SELECT ID, post_title
                 FROM $posts_table
                 WHERE post_status = 'publish'
+                AND post_type = 'post'
                 AND ID NOT IN(
                     SELECT post_id
                     FROM $plugin_table
