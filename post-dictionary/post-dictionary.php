@@ -517,7 +517,7 @@ function post_dictionary_add_content($content) {
 	    $content .= '<ul>';
 
 	    foreach( $letters as $letter ) {
-	        $content .= '<li><a href="#letter_' . $letter->capitale . '" class="post_dictionary_capitale">' . $letter->capitale . '</a></li>';
+	        $content .= '<li><a href="#letter_' . strtolower($letter->capitale) . '" class="post_dictionary_capitale">' . $letter->capitale . '</a></li>';
 	    }
 
 	    $content .= '</ul>';
@@ -533,7 +533,7 @@ function post_dictionary_add_content($content) {
                 $info = $element->information;
                 $def = $element->definition;
 
-	        $current = $entry[0];
+	        $current = strtolower($entry[0]);
 
 	        # Display letter
 
