@@ -48,7 +48,7 @@ register_activation_hook( __FILE__, 'post_dictionary_install_table' );
 add_action('admin_menu', 'post_dictionary_setup_menu');
 
 function post_dictionary_setup_menu() {
-    add_menu_page( 'Gestion des dictionnaires', 'Dictionnaires', 'manage_options', 'post-dictionaries', 'post_dictionary_home_page', 'dashicons-book', 21 );
+    add_menu_page( 'Gestion des dictionnaires', 'Dictionnaires', 'manage_options', 'post-dictionaries', 'post_dictionary_home_page', 'dashicons-text', 20 );
     add_submenu_page('post-dictionaries', 'Création d\'un nouveau dictionnaire', 'Créer un dictionnaire', 'administrator', 'post-dictionaries-create', 'post_dictionary_create_page');
 }
 
