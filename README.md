@@ -30,3 +30,6 @@ The main purpose of this plugin is to give you the possibility to add a dictiona
 
 *Remove jQuery Migrate* will help you to remove jQuery migrate which is only necessary if a website have deprecated jQuery functions.
 
+## Remove WordPress Admin Bar
+
+*Remove WP Admin Bar* helps you get rid of the styles (files and inline styles) provided by the admin bar of WordPress.
