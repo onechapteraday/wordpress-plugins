@@ -142,20 +142,39 @@ function get_featured_image_copyright ($attachment_id = null) {
  * Display copyright in featured image meta box
  *
  * @param string $content
+ * @param string $post_ID
+ * @param string $thumbnail_id
  *
  * @return array
  *
  */
 
-function add_copyright_in_featured_image_metabox ($content) {
-  $copyright = get_featured_image_copyright();
+function add_copyright_in_featured_image_metabox ($content, $post_ID, $thumbnail_id) {
+  if ($thumbnail_id) {
+    $mention = 'Copyright: ';
+    $copy = ' <small>&copy; </small>';
 
-  if ($copyright)
-    return $content = 'Image copyright : ' . get_featured_image_copyright() . $content;
+    $author_id = '_custom_copyright';
+    $link_id   = '_custom_copyright_link';
+
+    $author_value = esc_attr(get_post_meta($thumbnail_id, $author_id, true));
+    $link_value   = esc_attr(get_post_meta($thumbnail_id, $link_id, true));
+
+    if (!$link_value && !$author_value)
+      return $content;
+
+    if (!$link_value)
+      return $content .= $mention . $author_value . $copy . '<br />';
+
+    if (!$author_value)
+      return $content .= $mention . '<a href="' . $link_value . '" target="_blank" rel="nofollow">' . $link_value . '</a>' . $copy . '<br />';
+
+    return $content .= $mention . '<a href="' . $link_value . '" target="_blank" rel="nofollow">' . $author_value . '</a>' . $copy . '<br />';
+  }
 
   return $content;
 }
 
-add_filter ('admin_post_thumbnail_html', 'add_copyright_in_featured_image_metabox', null, 2);
+add_filter ('admin_post_thumbnail_html', 'add_copyright_in_featured_image_metabox', null, 3);
 
 ?>
