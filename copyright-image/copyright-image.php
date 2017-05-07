@@ -31,13 +31,12 @@ function add_copyright_fields ($form_fields, $post) {
   $form_fields['copyright_field'] = array (
     'label' => __('Author'),
     'value' => get_post_meta($post->ID, '_custom_copyright', true),
-    'helps' => 'Set a copyright credit for the attachment'
   );
 
   $form_fields['copyright_link_field'] = array (
-    'label' => __('Author URL'),
+    'label' => __('URL'),
     'value' => get_post_meta($post->ID, '_custom_copyright_link', true),
-    'helps' => 'Set a copyright link for the attachment'
+    'helps' => 'Set the copyright of the picture'
   );
 
   return $form_fields;
