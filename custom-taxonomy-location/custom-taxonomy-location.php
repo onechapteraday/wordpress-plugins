@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Plugin Name: Location Custom Taxonomy
+ * Plugin Name: Custom Taxonomy Location
  * Plugin URI: http://onechapteraday.fr
  * Description: This plugin allows you to describe your posts with locations.
  * Version: 0.1

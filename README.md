@@ -6,11 +6,11 @@ This plugin gives you the possibility to add a copyright for each image uploaded
 
 You can actually see the copyright, once you add it, in the metabox of your featured image.
 
-## Location Custom Taxonomy
+## Custom Taxonomy Location
 
 This plugin create a location taxonomy in your WordPress administration. It automatically adds all continents and countries of the world in your new location taxonomy with the proper hierarchy (continent > country).
 
-## Person Custom Taxonomy
+## Custom Taxonomy Person
 
 This plugin creates a complete administration for persons. I use it mostly for artists on music blog posts, but you can actually use it for any kind of persons/celebrities. With *Person Custom Taxonomy*, you can inform your readers about the basic information of every person term : birthdate, deathdate, real name, social links...
 

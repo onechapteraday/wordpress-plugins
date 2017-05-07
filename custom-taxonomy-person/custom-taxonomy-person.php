@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Plugin Name: Person Custom Taxonomy
+ * Plugin Name: Custom Taxonomy Person
  * Plugin URI: http://onechapteraday.fr
  * Description: This plugin allows you to describe precisely the person you are talking about.
  * Version: 0.1
