@@ -57,14 +57,14 @@ add_filter ('attachment_fields_to_edit', 'add_copyright_fields', null, 2);
 
 function add_copyright_fields_save ($post, $attachment) {
   if (!empty($attachment['copyright_field']))
-    update_post_meta($post['ID'], '_custom_copyright', $attachment['copyright_field'] );
+    update_post_meta($post['ID'], '_custom_copyright', esc_attr($attachment['copyright_field']));
   else
-    delete_post_meta($post['ID'], '_custom_copyright' );
+    delete_post_meta($post['ID'], '_custom_copyright');
 
   if (!empty($attachment['copyright_link_field']))
-    update_post_meta($post['ID'], '_custom_copyright_link', $attachment['copyright_link_field'] );
+    update_post_meta($post['ID'], '_custom_copyright_link', esc_attr($attachment['copyright_link_field']));
   else
-    delete_post_meta($post['ID'], '_custom_copyright_link' );
+    delete_post_meta($post['ID'], '_custom_copyright_link');
 
   return $post;
 }
