@@ -17,96 +17,496 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: location-taxonomy.php:51
+#: location-taxonomy.php:46
 msgctxt "taxonomy general name"
 msgid "Locations"
 msgstr ""
 
-#: location-taxonomy.php:52
+#: location-taxonomy.php:47
 msgctxt "taxonomy singular name"
 msgid "Location"
 msgstr ""
 
-#: location-taxonomy.php:53
+#: location-taxonomy.php:48
 msgid "Search Locations"
 msgstr ""
 
-#: location-taxonomy.php:54
+#: location-taxonomy.php:49
 msgid "Popular Locations"
 msgstr ""
 
-#: location-taxonomy.php:55
+#: location-taxonomy.php:50
 msgid "All Locations"
 msgstr ""
 
-#: location-taxonomy.php:58
+#: location-taxonomy.php:53
 msgid "Edit Location"
 msgstr ""
 
-#: location-taxonomy.php:59
+#: location-taxonomy.php:54
 msgid "Update Location"
 msgstr ""
 
-#: location-taxonomy.php:60
+#: location-taxonomy.php:55
 msgid "Add New Location"
 msgstr ""
 
-#: location-taxonomy.php:61
+#: location-taxonomy.php:56
 msgid "New Location Name"
 msgstr ""
 
-#: location-taxonomy.php:62
+#: location-taxonomy.php:57
 msgid "Separate locations with commas"
 msgstr ""
 
-#: location-taxonomy.php:63
+#: location-taxonomy.php:58
 msgid "Add or remove locations"
 msgstr ""
 
-#: location-taxonomy.php:64
+#: location-taxonomy.php:59
 msgid "Choose from the most used locations"
 msgstr ""
 
-#: location-taxonomy.php:65
+#: location-taxonomy.php:60
 msgid "No locations found."
 msgstr ""
 
-#: location-taxonomy.php:66
+#: location-taxonomy.php:61
 msgid "Locations"
 msgstr ""
 
-#: location-taxonomy.php:94
+#: location-taxonomy.php:91
 msgid "Code ISO"
 msgstr ""
 
-#: location-taxonomy.php:96
+#: location-taxonomy.php:93
 msgid "Enter the code ISO of the location."
 msgstr ""
 
-#: location-taxonomy.php:113
+#: location-taxonomy.php:110
 msgid "Africa"
 msgstr ""
 
-#: location-taxonomy.php:114
+#: location-taxonomy.php:111
 msgid "Asia"
 msgstr ""
 
-#: location-taxonomy.php:115
+#: location-taxonomy.php:112
 msgid "Europe"
 msgstr ""
 
-#: location-taxonomy.php:116
+#: location-taxonomy.php:113
 msgid "North America"
 msgstr ""
 
-#: location-taxonomy.php:117
+#: location-taxonomy.php:114
 msgid "Oceania"
 msgstr ""
 
-#: location-taxonomy.php:118
+#: location-taxonomy.php:115
 msgid "South America"
 msgstr ""
 
-#: location-taxonomy.php:119
+#: location-taxonomy.php:116
 msgid "Antarctica"
+msgstr ""
+
+#: location-taxonomy.php:120
+msgid "Afghanistan"
+msgstr ""
+
+#: location-taxonomy.php:121
+msgid "Albania"
+msgstr ""
+
+#: location-taxonomy.php:122
+msgid "Algeria"
+msgstr ""
+
+#: location-taxonomy.php:123
+msgid "American Samoa"
+msgstr ""
+
+#: location-taxonomy.php:124
+msgid "Andorra"
+msgstr ""
+
+#: location-taxonomy.php:125
+msgid "Angola"
+msgstr ""
+
+#: location-taxonomy.php:126
+msgid "Anguilla"
+msgstr ""
+
+#: location-taxonomy.php:128
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: location-taxonomy.php:129
+msgid "Argentina"
+msgstr ""
+
+#: location-taxonomy.php:130
+msgid "Armenia"
+msgstr ""
+
+#: location-taxonomy.php:131
+msgid "Aruba"
+msgstr ""
+
+#: location-taxonomy.php:132
+msgid "Australia"
+msgstr ""
+
+#: location-taxonomy.php:133
+msgid "Austria"
+msgstr ""
+
+#: location-taxonomy.php:134
+msgid "Azerbaijan"
+msgstr ""
+
+#: location-taxonomy.php:135
+msgid "Bahamas"
+msgstr ""
+
+#: location-taxonomy.php:136
+msgid "Bahrain"
+msgstr ""
+
+#: location-taxonomy.php:137
+msgid "Bangladesh"
+msgstr ""
+
+#: location-taxonomy.php:138
+msgid "Barbados"
+msgstr ""
+
+#: location-taxonomy.php:139
+msgid "Belarus"
+msgstr ""
+
+#: location-taxonomy.php:140
+msgid "Belgium"
+msgstr ""
+
+#: location-taxonomy.php:141
+msgid "Belize"
+msgstr ""
+
+#: location-taxonomy.php:142
+msgid "Benin"
+msgstr ""
+
+#: location-taxonomy.php:143
+msgid "Bermuda"
+msgstr ""
+
+#: location-taxonomy.php:144
+msgid "Bhutan"
+msgstr ""
+
+#: location-taxonomy.php:145
+msgid "Bolivia"
+msgstr ""
+
+#: location-taxonomy.php:146
+msgid "Bonaire"
+msgstr ""
+
+#: location-taxonomy.php:147
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: location-taxonomy.php:148
+msgid "Botswana"
+msgstr ""
+
+#: location-taxonomy.php:149
+msgid "Bouvet Island"
+msgstr ""
+
+#: location-taxonomy.php:150
+msgid "Brazil"
+msgstr ""
+
+#: location-taxonomy.php:151
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: location-taxonomy.php:152
+msgid "British Virgin Islands"
+msgstr ""
+
+#: location-taxonomy.php:153
+msgid "Brunei"
+msgstr ""
+
+#: location-taxonomy.php:154
+msgid "Bulgaria"
+msgstr ""
+
+#: location-taxonomy.php:155
+msgid "Burkina Faso"
+msgstr ""
+
+#: location-taxonomy.php:156
+msgid "Burundi"
+msgstr ""
+
+#: location-taxonomy.php:157
+msgid "Cambodia"
+msgstr ""
+
+#: location-taxonomy.php:158
+msgid "Cameroon"
+msgstr ""
+
+#: location-taxonomy.php:159
+msgid "Canada"
+msgstr ""
+
+#: location-taxonomy.php:160
+msgid "Cape Verde"
+msgstr ""
+
+#: location-taxonomy.php:161
+msgid "Cayman Islands"
+msgstr ""
+
+#: location-taxonomy.php:162
+msgid "Central African Republic"
+msgstr ""
+
+#: location-taxonomy.php:163
+msgid "Chad"
+msgstr ""
+
+#: location-taxonomy.php:164
+msgid "Chile"
+msgstr ""
+
+#: location-taxonomy.php:165
+msgid "China"
+msgstr ""
+
+#: location-taxonomy.php:166
+msgid "Christmas Island"
+msgstr ""
+
+#: location-taxonomy.php:167
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: location-taxonomy.php:168
+msgid "Colombia"
+msgstr ""
+
+#: location-taxonomy.php:169
+msgid "Comoros"
+msgstr ""
+
+#: location-taxonomy.php:170
+msgid "Cook Islands"
+msgstr ""
+
+#: location-taxonomy.php:171
+msgid "Costa Rica"
+msgstr ""
+
+#: location-taxonomy.php:172
+msgid "Croatia"
+msgstr ""
+
+#: location-taxonomy.php:173
+msgid "Cuba"
+msgstr ""
+
+#: location-taxonomy.php:174
+msgid "Curaçao"
+msgstr ""
+
+#: location-taxonomy.php:175
+msgid "Cyprus"
+msgstr ""
+
+#: location-taxonomy.php:176
+msgid "Czechia"
+msgstr ""
+
+#: location-taxonomy.php:177
+msgid "Democratic Republic of the Congo"
+msgstr ""
+
+#: location-taxonomy.php:178
+msgid "Denmark"
+msgstr ""
+
+#: location-taxonomy.php:179
+msgid "Djibouti"
+msgstr ""
+
+#: location-taxonomy.php:180
+msgid "Dominica"
+msgstr ""
+
+#: location-taxonomy.php:181
+msgid "Dominican Republic"
+msgstr ""
+
+#: location-taxonomy.php:182
+msgid "East Timor"
+msgstr ""
+
+#: location-taxonomy.php:183
+msgid "Ecuador"
+msgstr ""
+
+#: location-taxonomy.php:184
+msgid "Egypt"
+msgstr ""
+
+#: location-taxonomy.php:185
+msgid "El Salvador"
+msgstr ""
+
+#: location-taxonomy.php:186
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: location-taxonomy.php:187
+msgid "Eritrea"
+msgstr ""
+
+#: location-taxonomy.php:188
+msgid "Estonia"
+msgstr ""
+
+#: location-taxonomy.php:189
+msgid "Ethiopia"
+msgstr ""
+
+#: location-taxonomy.php:190
+msgid "Falkland Islands"
+msgstr ""
+
+#: location-taxonomy.php:191
+msgid "Faroe Islands"
+msgstr ""
+
+#: location-taxonomy.php:192
+msgid "Fiji"
+msgstr ""
+
+#: location-taxonomy.php:193
+msgid "Finland"
+msgstr ""
+
+#: location-taxonomy.php:194
+msgid "France"
+msgstr ""
+
+#: location-taxonomy.php:195
+msgid "French Guiana"
+msgstr ""
+
+#: location-taxonomy.php:196
+msgid "French Polynesia"
+msgstr ""
+
+#: location-taxonomy.php:197
+msgid "French Southern Territories"
+msgstr ""
+
+#: location-taxonomy.php:198
+msgid "Gabon"
+msgstr ""
+
+#: location-taxonomy.php:199
+msgid "Gambia"
+msgstr ""
+
+#: location-taxonomy.php:200
+msgid "Georgia"
+msgstr ""
+
+#: location-taxonomy.php:201
+msgid "Germany"
+msgstr ""
+
+#: location-taxonomy.php:202
+msgid "Ghana"
+msgstr ""
+
+#: location-taxonomy.php:203
+msgid "Gibraltar"
+msgstr ""
+
+#: location-taxonomy.php:204
+msgid "Greece"
+msgstr ""
+
+#: location-taxonomy.php:205
+msgid "Greenland"
+msgstr ""
+
+#: location-taxonomy.php:206
+msgid "Grenada"
+msgstr ""
+
+#: location-taxonomy.php:207
+msgid "Guadeloupe"
+msgstr ""
+
+#: location-taxonomy.php:208
+msgid "Guam"
+msgstr ""
+
+#: location-taxonomy.php:209
+msgid "Guatemala"
+msgstr ""
+
+#: location-taxonomy.php:210
+msgid "Guernsey"
+msgstr ""
+
+#: location-taxonomy.php:211
+msgid "Guinea"
+msgstr ""
+
+#: location-taxonomy.php:212
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: location-taxonomy.php:213
+msgid "Guyana"
+msgstr ""
+
+#: location-taxonomy.php:214
+msgid "Haiti"
+msgstr ""
+
+#: location-taxonomy.php:215
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: location-taxonomy.php:216
+msgid "Honduras"
+msgstr ""
+
+#: location-taxonomy.php:217
+msgid "Hong Kong"
+msgstr ""
+
+#: location-taxonomy.php:218
+msgid "Hungary"
+msgstr ""
+
+#: location-taxonomy.php:219
+msgid "Iceland"
+msgstr ""
+
+#: location-taxonomy.php:220
+msgid "India"
 msgstr ""

@@ -171,7 +171,7 @@ function add_locations() {
     array('iso' => 'CR', 'name' => 'Costa Rica', 'continent' => 'NA'),
     array('iso' => 'HR', 'name' => 'Croatia', 'continent' => 'EU'),
     array('iso' => 'CU', 'name' => 'Cuba', 'continent' => 'NA'),
-    array('iso' => 'CY', 'name' => 'Curacao', 'continent' => 'NA'),
+    array('iso' => 'CY', 'name' => 'Curaçao', 'continent' => 'NA'),
     array('iso' => 'CY', 'name' => 'Cyprus', 'continent' => 'EU'),
     array('iso' => 'CZ', 'name' => 'Czechia', 'continent' => 'EU'),
     array('iso' => 'CD', 'name' => 'Democratic Republic of the Congo', 'continent' => 'AF'),
@@ -369,7 +369,7 @@ function add_locations() {
   );
 
   foreach($continents as $continent) {
-    $continent_name = ucwords(mb_strtolower($continent['name']));
+    $continent_name = $continent['name'];
     if(!get_term_by('name', $continent_name, 'location')) {
       wp_insert_term($continent_name, 'location');
     }

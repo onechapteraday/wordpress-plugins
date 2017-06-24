@@ -7,107 +7,513 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationTaxonomy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-20 12:30+0100\n"
-"PO-Revision-Date: 2016-11-20 12:33+0100\n"
+"POT-Creation-Date: 2017-06-24 23:27+0200\n"
+"PO-Revision-Date: 2017-06-24 23:43+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.11\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
-#: location-taxonomy.php:51
+#: location-taxonomy.php:46
 msgctxt "taxonomy general name"
 msgid "Locations"
 msgstr "Localisations"
 
-#: location-taxonomy.php:52
+#: location-taxonomy.php:47
 msgctxt "taxonomy singular name"
 msgid "Location"
 msgstr "Localisation"
 
-#: location-taxonomy.php:53
+#: location-taxonomy.php:48
 msgid "Search Locations"
 msgstr "Rechercher dans les localisations"
 
-#: location-taxonomy.php:54
+#: location-taxonomy.php:49
 msgid "Popular Locations"
 msgstr "Localisations populaires"
 
-#: location-taxonomy.php:55
+#: location-taxonomy.php:50
 msgid "All Locations"
 msgstr "Toutes les localisations"
 
-#: location-taxonomy.php:58
+#: location-taxonomy.php:53
 msgid "Edit Location"
 msgstr "Modifier la localisation"
 
-#: location-taxonomy.php:59
+#: location-taxonomy.php:54
 msgid "Update Location"
 msgstr "Mettre à jour la localisation"
 
-#: location-taxonomy.php:60
+#: location-taxonomy.php:55
 msgid "Add New Location"
 msgstr "Ajouter une nouvelle localisation"
 
-#: location-taxonomy.php:61
+#: location-taxonomy.php:56
 msgid "New Location Name"
 msgstr "Nom de la nouvelle localisation"
 
-#: location-taxonomy.php:62
+#: location-taxonomy.php:57
 msgid "Separate locations with commas"
 msgstr "Séparer les localisations avec des virgules"
 
-#: location-taxonomy.php:63
+#: location-taxonomy.php:58
 msgid "Add or remove locations"
 msgstr "Ajouter ou supprimer des localisations"
 
-#: location-taxonomy.php:64
+#: location-taxonomy.php:59
 msgid "Choose from the most used locations"
 msgstr "Choisir parmi les localisations les plus utilisées"
 
-#: location-taxonomy.php:65
+#: location-taxonomy.php:60
 msgid "No locations found."
 msgstr "Aucune localization trouvée."
 
-#: location-taxonomy.php:66
+#: location-taxonomy.php:61
 msgid "Locations"
 msgstr "Localisations"
 
-#: location-taxonomy.php:94
+#: location-taxonomy.php:91
 msgid "Code ISO"
 msgstr "Code ISO"
 
-#: location-taxonomy.php:96
+#: location-taxonomy.php:93
 msgid "Enter the code ISO of the location."
 msgstr "Entrer le code ISO de la localisation"
 
-#: location-taxonomy.php:113
+#: location-taxonomy.php:110
 msgid "Africa"
 msgstr "Afrique"
 
-#: location-taxonomy.php:114
+#: location-taxonomy.php:111
 msgid "Asia"
 msgstr "Asie"
 
-#: location-taxonomy.php:115
+#: location-taxonomy.php:112
 msgid "Europe"
 msgstr "Europe"
 
-#: location-taxonomy.php:116
+#: location-taxonomy.php:113
 msgid "North America"
 msgstr "Amérique du Nord"
 
-#: location-taxonomy.php:117
+#: location-taxonomy.php:114
 msgid "Oceania"
 msgstr "Océanie"
 
-#: location-taxonomy.php:118
+#: location-taxonomy.php:115
 msgid "South America"
 msgstr "Amérique du Sud"
 
-#: location-taxonomy.php:119
+#: location-taxonomy.php:116
 msgid "Antarctica"
 msgstr "Antarctique"
+
+#: location-taxonomy.php:120
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: location-taxonomy.php:121
+msgid "Albania"
+msgstr "Albanie"
+
+#: location-taxonomy.php:122
+msgid "Algeria"
+msgstr "Algérie"
+
+#: location-taxonomy.php:123
+msgid "American Samoa"
+msgstr "Samoa américaines"
+
+#: location-taxonomy.php:124
+msgid "Andorra"
+msgstr "Andorre"
+
+#: location-taxonomy.php:125
+msgid "Angola"
+msgstr "Angola"
+
+#: location-taxonomy.php:126
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: location-taxonomy.php:128
+msgid "Antigua and Barbuda"
+msgstr "Antigua-et-Barbuda"
+
+#: location-taxonomy.php:129
+msgid "Argentina"
+msgstr "Argentine"
+
+#: location-taxonomy.php:130
+msgid "Armenia"
+msgstr "Arménie"
+
+#: location-taxonomy.php:131
+msgid "Aruba"
+msgstr "Aruba"
+
+#: location-taxonomy.php:132
+msgid "Australia"
+msgstr "Australie"
+
+#: location-taxonomy.php:133
+msgid "Austria"
+msgstr "Autriche"
+
+#: location-taxonomy.php:134
+msgid "Azerbaijan"
+msgstr "Azerbaïdjan"
+
+#: location-taxonomy.php:135
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: location-taxonomy.php:136
+msgid "Bahrain"
+msgstr "Bahreïn"
+
+#: location-taxonomy.php:137
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: location-taxonomy.php:138
+msgid "Barbados"
+msgstr "Barbade"
+
+#: location-taxonomy.php:139
+msgid "Belarus"
+msgstr "Biélorussie"
+
+#: location-taxonomy.php:140
+msgid "Belgium"
+msgstr "Belgique"
+
+#: location-taxonomy.php:141
+msgid "Belize"
+msgstr "Belize"
+
+#: location-taxonomy.php:142
+msgid "Benin"
+msgstr "Bénin"
+
+#: location-taxonomy.php:143
+msgid "Bermuda"
+msgstr "Bermudes"
+
+#: location-taxonomy.php:144
+msgid "Bhutan"
+msgstr "Bhoutan"
+
+#: location-taxonomy.php:145
+msgid "Bolivia"
+msgstr "Bolivie"
+
+#: location-taxonomy.php:146
+msgid "Bonaire"
+msgstr "Bonaire"
+
+#: location-taxonomy.php:147
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnie-Herzégovine"
+
+#: location-taxonomy.php:148
+msgid "Botswana"
+msgstr "Botswana"
+
+#: location-taxonomy.php:149
+msgid "Bouvet Island"
+msgstr "Île Bouvet"
+
+#: location-taxonomy.php:150
+msgid "Brazil"
+msgstr "Brésil"
+
+#: location-taxonomy.php:151
+msgid "British Indian Ocean Territory"
+msgstr "Territoire britannique de l'Océan Indien"
+
+#: location-taxonomy.php:152
+msgid "British Virgin Islands"
+msgstr "Îles Vierges britanniques"
+
+#: location-taxonomy.php:153
+msgid "Brunei"
+msgstr "Brunei"
+
+#: location-taxonomy.php:154
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+#: location-taxonomy.php:155
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: location-taxonomy.php:156
+msgid "Burundi"
+msgstr "Burundi"
+
+#: location-taxonomy.php:157
+msgid "Cambodia"
+msgstr "Cambodge"
+
+#: location-taxonomy.php:158
+msgid "Cameroon"
+msgstr "Cameroun"
+
+#: location-taxonomy.php:159
+msgid "Canada"
+msgstr "Canada"
+
+#: location-taxonomy.php:160
+msgid "Cape Verde"
+msgstr "Cap-Vert"
+
+#: location-taxonomy.php:161
+msgid "Cayman Islands"
+msgstr "Îles Caïmans"
+
+#: location-taxonomy.php:162
+msgid "Central African Republic"
+msgstr "République Centrafricaine"
+
+#: location-taxonomy.php:163
+msgid "Chad"
+msgstr "Tchad"
+
+#: location-taxonomy.php:164
+msgid "Chile"
+msgstr "Chili"
+
+#: location-taxonomy.php:165
+msgid "China"
+msgstr "Chine"
+
+#: location-taxonomy.php:166
+msgid "Christmas Island"
+msgstr "Île Christmas"
+
+#: location-taxonomy.php:167
+msgid "Cocos (Keeling) Islands"
+msgstr "Îles Cocos"
+
+#: location-taxonomy.php:168
+msgid "Colombia"
+msgstr "Colombie"
+
+#: location-taxonomy.php:169
+msgid "Comoros"
+msgstr "Comores"
+
+#: location-taxonomy.php:170
+msgid "Cook Islands"
+msgstr "Îles Cook"
+
+#: location-taxonomy.php:171
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: location-taxonomy.php:172
+msgid "Croatia"
+msgstr "Croatie"
+
+#: location-taxonomy.php:173
+msgid "Cuba"
+msgstr "Cuba"
+
+#: location-taxonomy.php:174
+msgid "CuraÃ§ao"
+msgstr "Curaçao"
+
+#: location-taxonomy.php:175
+msgid "Cyprus"
+msgstr "Chypre"
+
+#: location-taxonomy.php:176
+msgid "Czechia"
+msgstr "République Tchèque"
+
+#: location-taxonomy.php:177
+msgid "Democratic Republic of the Congo"
+msgstr "République démocratique du Congo"
+
+#: location-taxonomy.php:178
+msgid "Denmark"
+msgstr "Danemark"
+
+#: location-taxonomy.php:179
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: location-taxonomy.php:180
+msgid "Dominica"
+msgstr "Dominique"
+
+#: location-taxonomy.php:181
+msgid "Dominican Republic"
+msgstr "République Dominicaine"
+
+#: location-taxonomy.php:182
+msgid "East Timor"
+msgstr "Timor oriental"
+
+#: location-taxonomy.php:183
+msgid "Ecuador"
+msgstr "Équateur"
+
+#: location-taxonomy.php:184
+msgid "Egypt"
+msgstr "Égypte"
+
+#: location-taxonomy.php:185
+msgid "El Salvador"
+msgstr "Salvador"
+
+#: location-taxonomy.php:186
+msgid "Equatorial Guinea"
+msgstr "Guinée Équatoriale"
+
+#: location-taxonomy.php:187
+msgid "Eritrea"
+msgstr "Érythrée"
+
+#: location-taxonomy.php:188
+msgid "Estonia"
+msgstr "Estonie"
+
+#: location-taxonomy.php:189
+msgid "Ethiopia"
+msgstr "Éthiopie"
+
+#: location-taxonomy.php:190
+msgid "Falkland Islands"
+msgstr "Îles Malouines"
+
+#: location-taxonomy.php:191
+msgid "Faroe Islands"
+msgstr "Îles Féroé"
+
+#: location-taxonomy.php:192
+msgid "Fiji"
+msgstr "Îles Fidji"
+
+#: location-taxonomy.php:193
+msgid "Finland"
+msgstr "Finlande"
+
+#: location-taxonomy.php:194
+msgid "France"
+msgstr "France"
+
+#: location-taxonomy.php:195
+msgid "French Guiana"
+msgstr "Guyane française"
+
+#: location-taxonomy.php:196
+msgid "French Polynesia"
+msgstr "Polynésie française"
+
+#: location-taxonomy.php:197
+msgid "French Southern Territories"
+msgstr "Terres Australes et Antarctiques Françaises"
+
+#: location-taxonomy.php:198
+msgid "Gabon"
+msgstr "Gabon"
+
+#: location-taxonomy.php:199
+msgid "Gambia"
+msgstr "Gambie"
+
+#: location-taxonomy.php:200
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: location-taxonomy.php:201
+msgid "Germany"
+msgstr "Allemagne"
+
+#: location-taxonomy.php:202
+msgid "Ghana"
+msgstr "Ghana"
+
+#: location-taxonomy.php:203
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: location-taxonomy.php:204
+msgid "Greece"
+msgstr "Grèce"
+
+#: location-taxonomy.php:205
+msgid "Greenland"
+msgstr "Groenland"
+
+#: location-taxonomy.php:206
+msgid "Grenada"
+msgstr "Grenade"
+
+#: location-taxonomy.php:207
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: location-taxonomy.php:208
+msgid "Guam"
+msgstr "Guam"
+
+#: location-taxonomy.php:209
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: location-taxonomy.php:210
+msgid "Guernsey"
+msgstr "Guernesey"
+
+#: location-taxonomy.php:211
+msgid "Guinea"
+msgstr "Guinée"
+
+#: location-taxonomy.php:212
+msgid "Guinea-Bissau"
+msgstr "Guinée-Bissau"
+
+#: location-taxonomy.php:213
+msgid "Guyana"
+msgstr "Guyana"
+
+#: location-taxonomy.php:214
+msgid "Haiti"
+msgstr "Haïti"
+
+#: location-taxonomy.php:215
+msgid "Heard Island and McDonald Islands"
+msgstr "Îles Heard-et-MacDonald"
+
+#: location-taxonomy.php:216
+msgid "Honduras"
+msgstr "Honduras"
+
+#: location-taxonomy.php:217
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: location-taxonomy.php:218
+msgid "Hungary"
+msgstr "Hongrie"
+
+#: location-taxonomy.php:219
+msgid "Iceland"
+msgstr "Islande"
+
+#: location-taxonomy.php:220
+msgid "India"
+msgstr "Inde"
+
+#~ msgid "Bosnia and Herzagovina"
+#~ msgstr "Bosnie-Herzégovine"
+
+#~ msgid "Curacao"
+#~ msgstr "Curaçao"
