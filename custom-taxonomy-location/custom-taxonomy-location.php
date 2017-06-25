@@ -455,13 +455,19 @@ function add_locations() {
 
   foreach($continents as $continent) {
     $continent_name = $continent['name'];
+    $continent_iso = $continent['iso'];
+
     if(!get_term_by('name', $continent_name, 'location')) {
-      wp_insert_term($continent_name, 'location');
+      $continent_term = wp_insert_term($continent_name, 'location');
+      $continent_id = $continent_term['term_id'];
+
+      add_term_meta ($continent_id, 'iso', $continent_iso);
     }
   }
 
   foreach($countries as $country) {
     $country_name = $country['name'];
+    $country_iso = $country['iso'];
     $country_continent_iso = $country['continent'];
 
     foreach ($continents as $continent) {
@@ -475,8 +481,11 @@ function add_locations() {
     $continent_term_id = $continent_term->term_id;
 
     if(!get_term_by('name', $country_name, 'location')) {
-      wp_insert_term($country_name, 'location', array('parent' => $continent_term_id));
-      delete_option('location_children');
+      $country_term = wp_insert_term($country_name, 'location', array('parent' => $continent_term_id));
+      #delete_option('location_children');
+
+      $country_id = $country_term['term_id'];
+      add_term_meta ($country_id, 'iso', $country_iso);
     }
   }
 }
