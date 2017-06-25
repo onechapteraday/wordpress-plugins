@@ -99,6 +99,65 @@ add_action( 'location_add_form_fields', 'add_new_location_field', 10, 2 );
 
 
 /**
+ * Editing custom fields in location taxonomy
+ *
+ * @param object $term
+ *
+ */
+
+function edit_location_field ($term) {
+  global $LOCATION_TEXTDOMAIN;
+
+  # Put the term ID into a variable
+  $t_id = $term->term_id;
+
+  # Retrieve the existing values for this meta field
+  # This will return an array
+  $term_meta = get_option( "taxonomy_$t_id" );
+
+  ?>
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[iso]"><?php _e( 'Code ISO', $LOCATION_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[iso]" id="term_meta[iso]" value="<?php echo esc_attr( $term_meta['iso'] ) ? esc_attr( $term_meta['iso'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the code ISO of the location.', $LOCATION_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+  <?php
+}
+
+add_action( 'location_edit_form_fields', 'edit_location_field', 10, 2 );
+
+
+/**
+ * Saving custom fields in location taxonomy
+ *
+ * @param int $term_id
+ *
+ */
+
+function save_location_custom_meta ($term_id) {
+  if (isset($_POST['term_meta'])) {
+    $t_id = $term_id;
+    $term_meta = get_option("taxonomy_$t_id");
+    $cat_keys = array_keys($_POST['term_meta']);
+
+    foreach ($cat_keys as $key) {
+      if (isset($_POST['term_meta'][$key])) {
+        $term_meta[$key] = $_POST['term_meta'][$key];
+      }
+    }
+
+    # Save the option array
+    update_option( "taxonomy_$t_id", $term_meta );
+  }
+}
+
+add_action( 'edited_location', 'save_location_custom_meta', 10, 2 );
+add_action( 'create_location', 'save_location_custom_meta', 10, 2 );
+
+
+/**
  * Add automatically continents and countries
  *
  */
