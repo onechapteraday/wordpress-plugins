@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: LocationTaxonomy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-25 00:56+0200\n"
-"PO-Revision-Date: 2017-06-25 01:59+0200\n"
+"PO-Revision-Date: 2017-06-25 02:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -325,7 +325,7 @@ msgid "Cuba"
 msgstr "Cuba"
 
 #: location-taxonomy.php:174
-msgid "CuraÃ§ao"
+msgid "Curaçao"
 msgstr "Curaçao"
 
 #: location-taxonomy.php:175
@@ -829,7 +829,7 @@ msgid "Republic of the Congo"
 msgstr "Congo"
 
 #: location-taxonomy.php:300
-msgid "RÃ©union"
+msgid "Réunion"
 msgstr "Réunion"
 
 #: location-taxonomy.php:301
@@ -845,7 +845,7 @@ msgid "Rwanda"
 msgstr "Rwanda"
 
 #: location-taxonomy.php:304
-msgid "Saint BarthÃ©lemy"
+msgid "Saint Barthélemy"
 msgstr "Saint-Barthélemy"
 
 #: location-taxonomy.php:305
@@ -881,7 +881,7 @@ msgid "San Marino"
 msgstr "Saint-Marin"
 
 #: location-taxonomy.php:313
-msgid "SÃ£o TomÃ© and PrÃ­ncipe"
+msgid "São Tomé and Príncipe"
 msgstr "São Tomé-et-Príncipe"
 
 #: location-taxonomy.php:314
@@ -1090,7 +1090,7 @@ msgstr "Wallis-et-Futuna"
 
 #: location-taxonomy.php:365
 msgid "Western Sahara"
-msgstr "Sahara occidental"
+msgstr "Sahara Occidental"
 
 #: location-taxonomy.php:366
 msgid "Yemen"
@@ -1103,9 +1103,3 @@ msgstr "Zambie"
 #: location-taxonomy.php:368
 msgid "Zimbabwe"
 msgstr "Zimbabwe"
-
-#~ msgid "Bosnia and Herzagovina"
-#~ msgstr "Bosnie-Herzégovine"
-
-#~ msgid "Curacao"
-#~ msgstr "Curaçao"
