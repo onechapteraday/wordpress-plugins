@@ -157,6 +157,32 @@ add_action( 'edited_location', 'save_location_custom_meta', 10, 2 );
 add_action( 'create_location', 'save_location_custom_meta', 10, 2 );
 
 
+/**/
+
+function location_add_field_columns( $columns ) {
+  global $LOCATION_TEXTDOMAIN;
+  $columns['iso'] = __( 'Code ISO', $LOCATION_TEXTDOMAIN );
+
+  return $columns;
+}
+
+add_filter( 'manage_edit-location_columns', 'location_add_field_columns' );
+
+
+/**/
+
+function location_add_field_column_contents( $content, $column_name, $term_id ) {
+    switch( $column_name ) {
+        case 'iso' :
+            $content = get_term_meta( $term_id, 'iso', true );
+            break;
+    }
+
+    return $content;
+}
+add_filter( 'manage_location_custom_column', 'location_add_field_column_contents', 10, 3 );
+
+
 /**
  * Add automatically continents and countries
  *
