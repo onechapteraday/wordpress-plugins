@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationTaxonomy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-24 23:27+0200\n"
-"PO-Revision-Date: 2017-06-24 23:43+0200\n"
+"POT-Creation-Date: 2017-06-25 00:56+0200\n"
+"PO-Revision-Date: 2017-06-25 01:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -511,6 +511,598 @@ msgstr "Islande"
 #: location-taxonomy.php:220
 msgid "India"
 msgstr "Inde"
+
+#: location-taxonomy.php:221
+msgid "Indonesia"
+msgstr "Indonésie"
+
+#: location-taxonomy.php:222
+msgid "Iran"
+msgstr "Iran"
+
+#: location-taxonomy.php:223
+msgid "Iraq"
+msgstr "Irak"
+
+#: location-taxonomy.php:224
+msgid "Ireland"
+msgstr "Irlande"
+
+#: location-taxonomy.php:225
+msgid "Isle of Man"
+msgstr "Île de Man"
+
+#: location-taxonomy.php:226
+msgid "Israel"
+msgstr "Israël"
+
+#: location-taxonomy.php:227
+msgid "Italy"
+msgstr "Italie"
+
+#: location-taxonomy.php:228
+msgid "Ivory Coast"
+msgstr "Côte d'Ivoire"
+
+#: location-taxonomy.php:229
+msgid "Jamaica"
+msgstr "Jamaïque"
+
+#: location-taxonomy.php:230
+msgid "Japan"
+msgstr "Japon"
+
+#: location-taxonomy.php:231
+msgid "Jersey"
+msgstr "Jersey"
+
+#: location-taxonomy.php:232
+msgid "Jordan"
+msgstr "Jordanie"
+
+#: location-taxonomy.php:233
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: location-taxonomy.php:234
+msgid "Kenya"
+msgstr "Kenya"
+
+#: location-taxonomy.php:235
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: location-taxonomy.php:236
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: location-taxonomy.php:237
+msgid "Kuwait"
+msgstr "Koweït"
+
+#: location-taxonomy.php:238
+msgid "Kyrgyzstan"
+msgstr "Kirghizistan"
+
+#: location-taxonomy.php:239
+msgid "Laos"
+msgstr "Laos"
+
+#: location-taxonomy.php:240
+msgid "Latvia"
+msgstr "Lettonie"
+
+#: location-taxonomy.php:241
+msgid "Lebanon"
+msgstr "Liban"
+
+#: location-taxonomy.php:242
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: location-taxonomy.php:243
+msgid "Liberia"
+msgstr "Liberia"
+
+#: location-taxonomy.php:244
+msgid "Libya"
+msgstr "Libye"
+
+#: location-taxonomy.php:245
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: location-taxonomy.php:246
+msgid "Lithuania"
+msgstr "Lituanie"
+
+#: location-taxonomy.php:247
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: location-taxonomy.php:248
+msgid "Macao"
+msgstr "Macao"
+
+#: location-taxonomy.php:249
+msgid "Macedonia"
+msgstr "Macédoine"
+
+#: location-taxonomy.php:250
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: location-taxonomy.php:251
+msgid "Malawi"
+msgstr "Malawi"
+
+#: location-taxonomy.php:252
+msgid "Malaysia"
+msgstr "Malaisie"
+
+#: location-taxonomy.php:253
+msgid "Maldives"
+msgstr "Maldives"
+
+#: location-taxonomy.php:254
+msgid "Mali"
+msgstr "Mali"
+
+#: location-taxonomy.php:255
+msgid "Malta"
+msgstr "Malte"
+
+#: location-taxonomy.php:256
+msgid "Marshall Islands"
+msgstr "Îles Marshall"
+
+#: location-taxonomy.php:257
+msgid "Martinique"
+msgstr "Martinique"
+
+#: location-taxonomy.php:258
+msgid "Mauritania"
+msgstr "Mauritanie"
+
+#: location-taxonomy.php:259
+msgid "Mauritius"
+msgstr "Maurice"
+
+#: location-taxonomy.php:260
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: location-taxonomy.php:261
+msgid "Mexico"
+msgstr "Mexique"
+
+#: location-taxonomy.php:262
+msgid "Micronesia"
+msgstr "Micronésie"
+
+#: location-taxonomy.php:263
+msgid "Moldova"
+msgstr "Moldavie"
+
+#: location-taxonomy.php:264
+msgid "Monaco"
+msgstr "Monaco"
+
+#: location-taxonomy.php:265
+msgid "Mongolia"
+msgstr "Mongolie"
+
+#: location-taxonomy.php:266
+msgid "Montenegro"
+msgstr "Monténégro"
+
+#: location-taxonomy.php:267
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: location-taxonomy.php:268
+msgid "Morocco"
+msgstr "Maroc"
+
+#: location-taxonomy.php:269
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: location-taxonomy.php:270
+msgid "Myanmar"
+msgstr "Birmanie"
+
+#: location-taxonomy.php:271
+msgid "Namibia"
+msgstr "Namibie"
+
+#: location-taxonomy.php:272
+msgid "Nauru"
+msgstr "Nauru"
+
+#: location-taxonomy.php:273
+msgid "Nepal"
+msgstr "Népal"
+
+#: location-taxonomy.php:274
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#: location-taxonomy.php:275
+msgid "New Caledonia"
+msgstr "Nouvelle-Calédonie"
+
+#: location-taxonomy.php:276
+msgid "New Zealand"
+msgstr "Nouvelle-Zélande"
+
+#: location-taxonomy.php:277
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: location-taxonomy.php:278
+msgid "Niger"
+msgstr "Niger"
+
+#: location-taxonomy.php:279
+msgid "Nigeria"
+msgstr "Nigéria"
+
+#: location-taxonomy.php:280
+msgid "Niue"
+msgstr "Niue"
+
+#: location-taxonomy.php:281
+msgid "Norfolk Island"
+msgstr "Île Norfolk"
+
+#: location-taxonomy.php:282
+msgid "North Korea"
+msgstr "Corée du Nord"
+
+#: location-taxonomy.php:283
+msgid "Northern Mariana Islands"
+msgstr "Îles Mariannes du Nord"
+
+#: location-taxonomy.php:284
+msgid "Norway"
+msgstr "Norvège"
+
+#: location-taxonomy.php:285
+msgid "Oman"
+msgstr "Oman"
+
+#: location-taxonomy.php:286
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: location-taxonomy.php:287
+msgid "Palau"
+msgstr "Palaos"
+
+#: location-taxonomy.php:288
+msgid "Palestine"
+msgstr "Palestine"
+
+#: location-taxonomy.php:289
+msgid "Panama"
+msgstr "Panama"
+
+#: location-taxonomy.php:290
+msgid "Papua New Guinea"
+msgstr "Papouasie-Nouvelle-Guinée"
+
+#: location-taxonomy.php:291
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: location-taxonomy.php:292
+msgid "Peru"
+msgstr "Pérou"
+
+#: location-taxonomy.php:293
+msgid "Philippines"
+msgstr "Philippines"
+
+#: location-taxonomy.php:294
+msgid "Pitcairn Islands"
+msgstr "Îles Pitcairn"
+
+#: location-taxonomy.php:295
+msgid "Poland"
+msgstr "Pologne"
+
+#: location-taxonomy.php:296
+msgid "Portugal"
+msgstr "Portugal"
+
+#: location-taxonomy.php:297
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+#: location-taxonomy.php:298
+msgid "Qatar"
+msgstr "Qatar"
+
+#: location-taxonomy.php:299
+msgid "Republic of the Congo"
+msgstr "Congo"
+
+#: location-taxonomy.php:300
+msgid "RÃ©union"
+msgstr "Réunion"
+
+#: location-taxonomy.php:301
+msgid "Romania"
+msgstr "Roumanie"
+
+#: location-taxonomy.php:302
+msgid "Russia"
+msgstr "Russie"
+
+#: location-taxonomy.php:303
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: location-taxonomy.php:304
+msgid "Saint BarthÃ©lemy"
+msgstr "Saint-Barthélemy"
+
+#: location-taxonomy.php:305
+msgid "Saint Helena"
+msgstr "Sainte-Hélène"
+
+#: location-taxonomy.php:306
+msgid "Saint Kitts and Nevis"
+msgstr "Saint-Kitts-et-Nevis"
+
+#: location-taxonomy.php:307
+msgid "Saint Lucia"
+msgstr "Sainte-Lucie"
+
+#: location-taxonomy.php:308
+msgid "Saint Martin"
+msgstr "Saint-Martin"
+
+#: location-taxonomy.php:309
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint-Pierre-et-Miquelon"
+
+#: location-taxonomy.php:310
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint-Vincent-et-les-Grenadines"
+
+#: location-taxonomy.php:311
+msgid "Samoa"
+msgstr "Samoa"
+
+#: location-taxonomy.php:312
+msgid "San Marino"
+msgstr "Saint-Marin"
+
+#: location-taxonomy.php:313
+msgid "SÃ£o TomÃ© and PrÃ­ncipe"
+msgstr "São Tomé-et-Príncipe"
+
+#: location-taxonomy.php:314
+msgid "Saudi Arabia"
+msgstr "Arabie Saoudite"
+
+#: location-taxonomy.php:315
+msgid "Senegal"
+msgstr "Sénégal"
+
+#: location-taxonomy.php:316
+msgid "Serbia"
+msgstr "Serbie"
+
+#: location-taxonomy.php:317
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: location-taxonomy.php:318
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: location-taxonomy.php:319
+msgid "Singapore"
+msgstr "Singapour"
+
+#: location-taxonomy.php:320
+msgid "Sint Marteen"
+msgstr "Sint Maarten"
+
+#: location-taxonomy.php:321
+msgid "Slovakia"
+msgstr "Slovaquie"
+
+#: location-taxonomy.php:322
+msgid "Slovenia"
+msgstr "Slovénie"
+
+#: location-taxonomy.php:323
+msgid "Solomon Islands"
+msgstr "Îles Salomon"
+
+#: location-taxonomy.php:324
+msgid "Somalia"
+msgstr "Somalie"
+
+#: location-taxonomy.php:325
+msgid "South Africa"
+msgstr "Afrique du Sud"
+
+#: location-taxonomy.php:326
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
+
+#: location-taxonomy.php:327
+msgid "South Korea"
+msgstr "Corée du Sud"
+
+#: location-taxonomy.php:328
+msgid "South Sudan"
+msgstr "Soudan du Sud"
+
+#: location-taxonomy.php:329
+msgid "Spain"
+msgstr "Espagne"
+
+#: location-taxonomy.php:330
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: location-taxonomy.php:331
+msgid "Sudan"
+msgstr "Soudan"
+
+#: location-taxonomy.php:332
+msgid "Suriname"
+msgstr "Suriname"
+
+#: location-taxonomy.php:333
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard et Jan Mayen"
+
+#: location-taxonomy.php:334
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: location-taxonomy.php:335
+msgid "Sweden"
+msgstr "Suède"
+
+#: location-taxonomy.php:336
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: location-taxonomy.php:337
+msgid "Syria"
+msgstr "Syrie"
+
+#: location-taxonomy.php:338
+msgid "Taiwan"
+msgstr "Taïwan"
+
+#: location-taxonomy.php:339
+msgid "Tajikistan"
+msgstr "Tadjikistan"
+
+#: location-taxonomy.php:340
+msgid "Tanzania"
+msgstr "Tanzanie"
+
+#: location-taxonomy.php:341
+msgid "Thailand"
+msgstr "Thaïlande"
+
+#: location-taxonomy.php:342
+msgid "Togo"
+msgstr "Togo"
+
+#: location-taxonomy.php:343
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: location-taxonomy.php:344
+msgid "Tonga"
+msgstr "Tonga"
+
+#: location-taxonomy.php:345
+msgid "Trinidad and Tobago"
+msgstr "Trinité-et-Tobago"
+
+#: location-taxonomy.php:346
+msgid "Tunisia"
+msgstr "Tunisie"
+
+#: location-taxonomy.php:347
+msgid "Turkey"
+msgstr "Turquie"
+
+#: location-taxonomy.php:348
+msgid "Turkmenistan"
+msgstr "Turkménistan"
+
+#: location-taxonomy.php:349
+msgid "Turks and Caicos Islands"
+msgstr "Îles Turks-et-Caïcos"
+
+#: location-taxonomy.php:350
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: location-taxonomy.php:351
+msgid "Uganda"
+msgstr "Ouganda"
+
+#: location-taxonomy.php:352
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: location-taxonomy.php:353
+msgid "United Arab Emirates"
+msgstr "Émirats Arabes Unis"
+
+#: location-taxonomy.php:354
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+#: location-taxonomy.php:355
+msgid "United States"
+msgstr "États-Unis"
+
+#: location-taxonomy.php:356
+msgid "United States Minor Outlying Islands"
+msgstr "Îles Mineures éloignées des États-Unis"
+
+#: location-taxonomy.php:357
+msgid "United States Virgin Islands"
+msgstr "Îles Vierges des États-Unis"
+
+#: location-taxonomy.php:358
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: location-taxonomy.php:359
+msgid "Uzbekistan"
+msgstr "Ouzbékistan"
+
+#: location-taxonomy.php:360
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: location-taxonomy.php:361
+msgid "Vatican City"
+msgstr "Vatican"
+
+#: location-taxonomy.php:362
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: location-taxonomy.php:363
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: location-taxonomy.php:364
+msgid "Wallis and Futuna"
+msgstr "Wallis-et-Futuna"
+
+#: location-taxonomy.php:365
+msgid "Western Sahara"
+msgstr "Sahara occidental"
+
+#: location-taxonomy.php:366
+msgid "Yemen"
+msgstr "Yémen"
+
+#: location-taxonomy.php:367
+msgid "Zambia"
+msgstr "Zambie"
+
+#: location-taxonomy.php:368
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
 
 #~ msgid "Bosnia and Herzagovina"
 #~ msgstr "Bosnie-Herzégovine"

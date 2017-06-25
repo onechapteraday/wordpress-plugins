@@ -230,7 +230,7 @@ function add_locations() {
     array('iso' => 'JP', 'name' => 'Japan', 'continent' => 'AS'),
     array('iso' => 'JE', 'name' => 'Jersey', 'continent' => 'EU'),
     array('iso' => 'JO', 'name' => 'Jordan', 'continent' => 'AS'),
-    array('iso' => 'KZ', 'name' => 'Kazakstan', 'continent' => 'AS'),
+    array('iso' => 'KZ', 'name' => 'Kazakhstan', 'continent' => 'AS'),
     array('iso' => 'KE', 'name' => 'Kenya', 'continent' => 'AF'),
     array('iso' => 'KI', 'name' => 'Kiribati', 'continent' => 'OC'),
     array('iso' => 'XK', 'name' => 'Kosovo', 'continent' => 'EU'),
