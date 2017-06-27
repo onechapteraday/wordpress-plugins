@@ -209,7 +209,7 @@ function add_locations() {
     array('iso' => 'AD', 'name' => 'Andorra', 'continent' => 'EU'),
     array('iso' => 'AO', 'name' => 'Angola', 'continent' => 'AF'),
     array('iso' => 'AI', 'name' => 'Anguilla', 'continent' => 'NA'),
-    array('iso' => 'AQ', 'name' => 'Antarctica', 'continent' => 'AN'),
+    array('iso' => 'AQ', 'name' => 'Antarctique', 'continent' => 'AN'),
     array('iso' => 'AG', 'name' => 'Antigua and Barbuda', 'continent' => 'NA'),
     array('iso' => 'AR', 'name' => 'Argentina', 'continent' => 'SA'),
     array('iso' => 'AM', 'name' => 'Armenia', 'continent' => 'AS'),
