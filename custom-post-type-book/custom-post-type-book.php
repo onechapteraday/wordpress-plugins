@@ -35,12 +35,14 @@ function create_post_type_book() {
       'taxonomies' => array(
         'category',
         'person',
+        'post_tag',
       ),
       'supports' => array(
         'title',
         'editor',
         'excerpt',
         'custom-fields',
+        'comments',
         'thumbnail',
       ),
     )
