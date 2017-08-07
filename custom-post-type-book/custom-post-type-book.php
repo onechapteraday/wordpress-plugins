@@ -16,12 +16,32 @@ global $BOOK_TEXTDOMAIN;
 $BOOK_TEXTDOMAIN = 'book-taxonomy';
 
 
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function book_taxonomy_load_textdomain() {
+  global $BOOK_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $BOOK_TEXTDOMAIN );
+
+  # Load i18n
+  $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $loaded = load_plugin_textdomain( $BOOK_TEXTDOMAIN, false, $path );
+}
+
+add_action( 'init', 'book_taxonomy_load_textdomain', 0 );
+
+
 /**
  * Add new custom post type
  *
  */
 
 function create_post_type_book() {
+  global $BOOK_TEXTDOMAIN;
+
   register_post_type( 'book',
     array(
       'labels' => array(
@@ -74,6 +94,8 @@ add_action( 'pre_get_posts', 'include_book_filter' );
  */
 
 function add_genre_taxonomy() {
+  global $BOOK_TEXTDOMAIN;
+
   $labels = array (
     'name'                       => _x( 'Genres', 'taxonomy general name', $BOOK_TEXTDOMAIN ),
     'singular_name'              => _x( 'Genre', 'taxonomy singular name', $BOOK_TEXTDOMAIN ),

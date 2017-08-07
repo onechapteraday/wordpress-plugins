@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-07 21:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-post-type-book.php:28
+msgid "Books"
+msgstr ""
+
+#: custom-post-type-book.php:29
+msgid "Book"
+msgstr ""
+
+#: custom-post-type-book.php:78
+msgctxt "taxonomy general name"
+msgid "Genres"
+msgstr ""
+
+#: custom-post-type-book.php:79
+msgctxt "taxonomy singular name"
+msgid "Genre"
+msgstr ""
+
+#: custom-post-type-book.php:80
+msgid "Search Genres"
+msgstr ""
+
+#: custom-post-type-book.php:81
+msgid "Popular Genres"
+msgstr ""
+
+#: custom-post-type-book.php:82
+msgid "All Genres"
+msgstr ""
+
+#: custom-post-type-book.php:85
+msgid "See Genre"
+msgstr ""
+
+#: custom-post-type-book.php:86
+msgid "Edit Genre"
+msgstr ""
+
+#: custom-post-type-book.php:87
+msgid "Update Genre"
+msgstr ""
+
+#: custom-post-type-book.php:88
+msgid "Add New Genre"
+msgstr ""
+
+#: custom-post-type-book.php:89
+msgid "New Genre Name"
+msgstr ""
+
+#: custom-post-type-book.php:90
+msgid "Separate genres with commas"
+msgstr ""
+
+#: custom-post-type-book.php:91
+msgid "Add or remove genres"
+msgstr ""
+
+#: custom-post-type-book.php:92
+msgid "Choose from the most used genres"
+msgstr ""
+
+#: custom-post-type-book.php:93
+msgid "No genres found."
+msgstr ""
+
+#: custom-post-type-book.php:94
+msgid "Genres"
+msgstr ""
+
+#: custom-post-type-book.php:115
+msgctxt "taxonomy general name"
+msgid "Publishers"
+msgstr ""
+
+#: custom-post-type-book.php:116
+msgctxt "taxonomy singular name"
+msgid "Publisher"
+msgstr ""
+
+#: custom-post-type-book.php:117
+msgid "Search Publishers"
+msgstr ""
+
+#: custom-post-type-book.php:118
+msgid "Popular Publishers"
+msgstr ""
+
+#: custom-post-type-book.php:119
+msgid "All Publishers"
+msgstr ""
+
+#: custom-post-type-book.php:122
+msgid "See Publisher"
+msgstr ""
+
+#: custom-post-type-book.php:123
+msgid "Edit Publisher"
+msgstr ""
+
+#: custom-post-type-book.php:124
+msgid "Update Publisher"
+msgstr ""
+
+#: custom-post-type-book.php:125
+msgid "Add New Publisher"
+msgstr ""
+
+#: custom-post-type-book.php:126
+msgid "New Publisher Name"
+msgstr ""
+
+#: custom-post-type-book.php:127
+msgid "Separate publishers with commas"
+msgstr ""
+
+#: custom-post-type-book.php:128
+msgid "Add or remove publishers"
+msgstr ""
+
+#: custom-post-type-book.php:129
+msgid "Choose from the most used publishers"
+msgstr ""
+
+#: custom-post-type-book.php:130
+msgid "No publishers found."
+msgstr ""
+
+#: custom-post-type-book.php:131
+msgid "Publishers"
+msgstr ""
