@@ -180,6 +180,7 @@ function location_add_field_column_contents( $content, $column_name, $term_id ) 
 
     return $content;
 }
+
 add_filter( 'manage_location_custom_column', 'location_add_field_column_contents', 10, 3 );
 
 
@@ -490,8 +491,6 @@ function add_locations() {
   }
 }
 
-add_action('init', 'add_locations', 100);
-
 
 /**
  * Retrieving all children from current location
@@ -524,6 +523,8 @@ function get_location_children() {
 
 function location_flush_rewrites() {
   flush_rewrite_rules();
+
+  add_action('init', 'add_locations', 100);
 }
 
 # Prevent 404 errors on locations' archive
