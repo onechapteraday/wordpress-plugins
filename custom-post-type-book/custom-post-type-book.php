@@ -64,6 +64,7 @@ function create_post_type_book() {
         'custom-fields',
         'comments',
         'thumbnail',
+        'publicize',
       ),
     )
   );
