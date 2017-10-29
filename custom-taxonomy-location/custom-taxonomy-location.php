@@ -69,6 +69,7 @@ function add_location_taxonomy() {
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => true,
     'rewrite'               => array( 'slug' => 'location', 'with_front' => 'true' ),
+    'show_tagcloud'         => true,
   );
 
   register_taxonomy ('location', array('post', 'attachment'), $args);
