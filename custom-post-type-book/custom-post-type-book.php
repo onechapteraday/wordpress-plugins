@@ -171,4 +171,48 @@ function add_publisher_taxonomy() {
 
 add_action ('init', 'add_publisher_taxonomy', 1);
 
+
+/*
+ * Add book metadata functions
+ *
+ */
+
+function get_book_cover ( $post_id ) {
+  return get_post_meta($post_id, 'cover', true);
+}
+
+function get_book_excerpt ( $post_id ) {
+  return get_post_meta($post_id, 'excerpt', true);
+}
+
+function get_book_title_original ( $post_id ) {
+  return get_post_meta($post_id, 'title_original', true);
+}
+
+function get_book_pages_number ( $post_id ) {
+  return get_post_meta($post_id, 'pages_number', true);
+}
+
+function get_book_isbn ( $post_id ) {
+  return get_post_meta($post_id, 'isbn13', true);
+}
+
+function get_book_price ( $post_id ) {
+  return get_post_meta($post_id, 'price', true);
+}
+
+function get_book_amazon ( $post_id ) {
+  return get_post_meta($post_id, 'amazon', true);
+}
+
+function get_book_author ( $post_id ) {
+  $author = get_post_meta($post_id, 'author', true);
+  return get_term_by( 'slug', $author, 'person' );
+}
+
+function get_book_publisher ( $post_id ) {
+  $publisher = get_the_terms($post_id, 'publisher');
+  return $publisher;
+}
+
 ?>
