@@ -204,6 +204,10 @@ function get_book_excerpt ( $post_id ) {
   return get_post_meta($post_id, 'excerpt', true);
 }
 
+function get_book_title_french ( $post_id ) {
+  return get_post_meta($post_id, 'title_french', true);
+}
+
 function get_book_title_original ( $post_id ) {
   return get_post_meta($post_id, 'title_original', true);
 }
