@@ -225,7 +225,21 @@ function get_book_price ( $post_id ) {
 }
 
 function get_book_amazon ( $post_id ) {
-  return get_post_meta($post_id, 'amazon', true);
+  $arr = array(
+    'link' => get_post_meta( $post_id, 'amazon', true ),
+    'img' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png'
+  );
+
+  return $arr;
+}
+
+function get_book_fnac ( $post_id ) {
+  $arr = array(
+    'link' => get_post_meta( $post_id, 'fnac', true ),
+    'img' => plugin_dir_url( __FILE__ ) . 'images/logo_fnac.png'
+  );
+
+  return $arr;
 }
 
 function get_book_author ( $post_id ) {
