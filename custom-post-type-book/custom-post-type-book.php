@@ -247,6 +247,11 @@ function get_book_author ( $post_id ) {
   return get_term_by( 'slug', $author, 'person' );
 }
 
+function get_book_translator ( $post_id ) {
+  $translator = get_post_meta($post_id, 'translator', true);
+  return get_term_by( 'slug', $translator, 'person' );
+}
+
 function get_book_publisher ( $post_id ) {
   $publisher = get_the_terms($post_id, 'publisher');
   return $publisher;
