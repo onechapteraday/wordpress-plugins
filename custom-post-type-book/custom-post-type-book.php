@@ -173,6 +173,25 @@ add_action ('init', 'add_publisher_taxonomy', 1);
 
 
 /*
+ * Add custom post type book to dashboard widget activity
+ *
+ */
+
+function add_custom_post_type_book_to_dashboard_activity( $query_args ) {
+	if ( is_array( $query_args[ 'post_type' ] ) ) {
+		//Set yout post type
+		$query_args[ 'post_type' ][] = 'book';
+	} else {
+		$temp = array( $query_args[ 'post_type' ], 'book' );
+		$query_args[ 'post_type' ] = $temp;
+	}
+	return $query_args;
+}
+
+add_filter( 'dashboard_recent_posts_query_args', 'add_custom_post_type_book_to_dashboard_activity' );
+
+
+/*
  * Add book metadata functions
  *
  */
