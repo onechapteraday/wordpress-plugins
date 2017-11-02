@@ -224,6 +224,18 @@ function get_book_price ( $post_id ) {
   return get_post_meta($post_id, 'price', true);
 }
 
+function get_book_date_read ( $post_id ) {
+  return get_post_meta($post_id, 'date_release', true);
+}
+
+function get_book_date_release ( $post_id ) {
+  return get_post_meta($post_id, 'date_release', true);
+}
+
+function get_book_date_first_publication ( $post_id ) {
+  return get_post_meta($post_id, 'date_first_publication', true);
+}
+
 function get_book_amazon ( $post_id ) {
   $arr = array(
     'link' => get_post_meta( $post_id, 'amazon', true ),
