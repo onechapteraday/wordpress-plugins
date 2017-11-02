@@ -274,4 +274,9 @@ function get_book_publisher ( $post_id ) {
   return $publisher;
 }
 
+function get_book_collection ( $post_id ) {
+  $collection = get_post_meta($post_id, 'collection', true);
+  return get_term_by( 'slug', $collection, 'collection' );
+}
+
 ?>
