@@ -255,13 +255,18 @@ function get_book_fnac ( $post_id ) {
 }
 
 function get_book_author ( $post_id ) {
-  $author = get_post_meta($post_id, 'author', true);
-  return get_term_by( 'slug', $author, 'person' );
+  $person = get_post_meta($post_id, 'author', true);
+  return get_term_by( 'slug', $person, 'person' );
 }
 
 function get_book_translator ( $post_id ) {
-  $translator = get_post_meta($post_id, 'translator', true);
-  return get_term_by( 'slug', $translator, 'person' );
+  $person = get_post_meta($post_id, 'translator', true);
+  return get_term_by( 'slug', $person, 'person' );
+}
+
+function get_book_illustrator ( $post_id ) {
+  $person = get_post_meta($post_id, 'illustrator', true);
+  return get_term_by( 'slug', $person, 'person' );
 }
 
 function get_book_publisher ( $post_id ) {
