@@ -236,6 +236,10 @@ function get_book_date_first_publication ( $post_id ) {
   return get_post_meta($post_id, 'date_first_publication', true);
 }
 
+function get_book_rating ( $post_id ) {
+  return get_post_meta($post_id, 'rating', true);
+}
+
 function get_book_amazon ( $post_id ) {
   $arr = array(
     'link' => get_post_meta( $post_id, 'amazon', true ),
