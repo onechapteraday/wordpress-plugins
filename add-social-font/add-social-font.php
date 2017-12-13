@@ -20,4 +20,3 @@ function hook_social_font_css () {
 add_action('wp_head', 'hook_social_font_css');
 
 ?>
-
