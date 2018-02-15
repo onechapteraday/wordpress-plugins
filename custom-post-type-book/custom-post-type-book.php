@@ -194,13 +194,25 @@ function get_book_illustrator ( $post_id ) {
 }
 
 function get_book_publisher ( $post_id ) {
-  $publisher = get_the_terms($post_id, 'publisher');
+  $publisher = get_the_terms($post_id, 'publisher')[0];
+
+  # If parent
+  if ( $publisher->parent ) {
+      return get_term_by( 'id', $publisher->parent, 'publisher' );
+  }
+
   return $publisher;
 }
 
 function get_book_collection ( $post_id ) {
-  $collection = get_post_meta($post_id, 'collection', true);
-  return get_term_by( 'slug', $collection, 'collection' );
+  $publisher = get_the_terms($post_id, 'publisher')[0];
+
+  # If parent
+  if ( $publisher->parent ) {
+      return $publisher;
+  }
+
+  return null;
 }
 
 ?>
