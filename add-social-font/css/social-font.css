@@ -10,7 +10,13 @@
   font-style: normal;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"],
+[class*=" icon-"] {
+  box-shadow: none !important;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: "social-font";
   font-style: normal;
   font-weight: normal;
