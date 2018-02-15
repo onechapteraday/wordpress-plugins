@@ -322,9 +322,10 @@ class popular_persons_in_category_widget extends WP_Widget {
 
         if ( $catID ) {
             $posts_with_category = get_posts( array(
-                         'category'     => $catID,
-                         'post_type'    => array('post', 'book'),
-                         'number_posts' => -1,
+                         'category'       => $catID,
+                         'post_type'      => array('post', 'book'),
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
                      ));
 
             $array_of_terms_in_category = array();
