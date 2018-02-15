@@ -286,6 +286,114 @@ add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
 
 
 /**
+ * Create widget to retrieve popular persons in specific category
+ *
+ */
+
+class popular_persons_in_category_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            # Base ID of your widget
+            'popular_persons_in_category_widget',
+
+            # Widget name will appear in UI
+            __('Popular Persons in Category Widget', 'popular_persons_in_category_widget_domain'),
+
+            # Widget description
+            array( 'description' => __( 'This widget will show all the persons in the specific category you choose', 'popular_persons_in_category_widget_domain' ), )
+        );
+    }
+
+    # Creating widget front-end
+    public function widget( $args, $instance ) {
+        $title = apply_filters( 'widget_title', $instance['title'] );
+
+        # Before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        # This is where you run the code and display the output
+
+        # Find the category where is displayed the widget
+        $categories = get_the_category();
+        $catID = $categories[0]->cat_ID;
+
+        if ( $catID ) {
+            $posts_with_category = get_posts( array(
+                         'category'     => $catID,
+                         'post_type'    => array('post', 'book'),
+                         'number_posts' => -1,
+                     ));
+
+            $array_of_terms_in_category = array();
+
+            foreach( $posts_with_category as $post ) {
+                $terms = wp_get_post_terms( $post->ID, 'person' );
+
+                foreach( $terms as $value ){
+                    if( !in_array( $value, $array_of_terms_in_category, true ) ){
+                        array_push( $array_of_terms_in_category, $value->term_id );
+                    }
+                }
+            }
+
+            $tag_args = array(
+                        'smallest' => 1,
+                        'largest'  => 1,
+                        'unit'     => 'em',
+                        'format'   => 'list',
+                        'number'   => 50,
+                        'taxonomy' => 'person',
+                        'include'  => $array_of_terms_in_category,
+                    );
+
+            echo '<div class="tagcloud">';
+            wp_tag_cloud ( $tag_args );
+            echo '</div>';
+        }
+        else {
+            echo __( 'We\'re not inside a category.', 'popular_persons_in_category_widget_domain' );
+        }
+
+        echo $args['after_widget'];
+    }
+
+    # Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        } else {
+            $title = __( 'New title', 'popular_persons_in_category_widget_domain' );
+        }
+
+        # Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <?php
+    }
+
+    # Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        return $instance;
+    }
+}
+
+# Register and load the widget
+function wpb_load_widget() {
+    register_widget( 'popular_persons_in_category_widget' );
+}
+
+add_action( 'widgets_init', 'wpb_load_widget' );
+
+
+/**
  * Flush rewrites when the plugin is activated
  *
  */
