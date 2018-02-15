@@ -154,4 +154,21 @@ register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 register_activation_hook( __FILE__, 'publisher_taxonomy_flush_rewrites' );
 add_action( 'init', 'publisher_taxonomy_flush_rewrites', 0 );
 
+
+/**
+ * Getting term specific option
+ *
+ * @param object $option
+ *
+ * @return string
+ *
+ */
+
+function get_publisher_option ($option) {
+  $publisher = get_queried_object();
+  $id = $publisher->term_id;
+  $term_meta = get_option( 'taxonomy_' . $id );
+  return $term_meta[$option];
+}
+
 ?>
