@@ -179,22 +179,22 @@ function get_book_fnac ( $post_id ) {
 }
 
 function get_book_author ( $post_id ) {
-  $person = get_post_meta($post_id, 'author', true);
+  $person = get_post_meta( $post_id, 'author', true );
   return get_term_by( 'slug', $person, 'person' );
 }
 
 function get_book_translator ( $post_id ) {
-  $person = get_post_meta($post_id, 'translator', true);
+  $person = get_post_meta( $post_id, 'translator', true );
   return get_term_by( 'slug', $person, 'person' );
 }
 
 function get_book_illustrator ( $post_id ) {
-  $person = get_post_meta($post_id, 'illustrator', true);
+  $person = get_post_meta( $post_id, 'illustrator', true );
   return get_term_by( 'slug', $person, 'person' );
 }
 
 function get_book_publisher ( $post_id ) {
-  $publisher = get_the_terms($post_id, 'publisher')[0];
+  $publisher = get_the_terms( $post_id, 'publisher' )[0];
 
   # If parent
   if ( $publisher->parent ) {
@@ -205,7 +205,7 @@ function get_book_publisher ( $post_id ) {
 }
 
 function get_book_collection ( $post_id ) {
-  $publisher = get_the_terms($post_id, 'publisher')[0];
+  $publisher = get_the_terms( $post_id, 'publisher' )[0];
 
   # If parent
   if ( $publisher->parent ) {
