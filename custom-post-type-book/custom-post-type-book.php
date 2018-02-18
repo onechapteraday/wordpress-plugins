@@ -183,6 +183,11 @@ function get_book_author ( $post_id ) {
   return get_term_by( 'slug', $person, 'person' );
 }
 
+function get_book_author_second ( $post_id ) {
+  $person = get_post_meta( $post_id, 'author_second', true );
+  return get_term_by( 'slug', $person, 'person' );
+}
+
 function get_book_translator ( $post_id ) {
   $person = get_post_meta( $post_id, 'translator', true );
   return get_term_by( 'slug', $person, 'person' );
