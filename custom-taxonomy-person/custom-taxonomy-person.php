@@ -318,7 +318,11 @@ class popular_persons_in_category_widget extends WP_Widget {
 
         # Find the category where is displayed the widget
         $categories = get_the_category();
-        $catID = $categories[0]->cat_ID;
+
+	$catID = null;
+	if ( isset ( $categories[0] ) ) {
+            $catID = $categories[0]->cat_ID;
+	}
 
         if ( $catID ) {
             $posts_with_category = get_posts( array(
