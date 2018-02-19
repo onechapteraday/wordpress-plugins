@@ -599,15 +599,26 @@ class popular_locations_in_category_widget extends WP_Widget {
         echo '<div class="tagcloud">';
 
         $locations_array = get_terms ( 'location', $tag_args );
-        sort( $locations_array );
 
         if ( sizeof ( $locations_array ) ) {
+            $locations_array_translation = [];
+
+            foreach( $locations_array as $mylocation ) {
+                array_push( $locations_array_translation, __( $mylocation->name, $LOCATION_TEXTDOMAIN ) );
+            }
+
+            sort ( $locations_array_translation );
+
             echo '<ul class="wp-tag-cloud">';
 
-	    foreach ( $locations_array as $mylocation ) {
-                echo '<li><a href="' . get_term_link( $mylocation->term_id ) . '" class="tag-cloud-link tag-link-' . $mylocation->term_id . '">';
-                echo __( $mylocation->name, $LOCATION_TEXTDOMAIN );
-                echo '</a></li>';
+            foreach ( $locations_array_translation as $trans ) {
+	        foreach ( $locations_array as $mylocation ) {
+                    if ( $trans ===  __( $mylocation->name, $LOCATION_TEXTDOMAIN ) ) {
+                        echo '<li><a href="' . get_term_link( $mylocation->term_id ) . '" class="tag-cloud-link tag-link-' . $mylocation->term_id . '">';
+                        echo __( $mylocation->name, $LOCATION_TEXTDOMAIN );
+                        echo '</a></li>';
+                    }
+	        }
 	    }
 
             echo '</ul>';
