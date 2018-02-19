@@ -306,7 +306,7 @@ class popular_persons_in_category_widget extends WP_Widget {
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        $title = apply_filters( 'widget_title', $instance['title'] );
+        $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 
         # Before and after widget arguments are defined by themes
         echo $args['before_widget'];
