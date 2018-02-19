@@ -518,6 +518,142 @@ function get_location_children() {
 
 
 /**
+ * Create widget to retrieve popular locations in specific category
+ *
+ */
+
+
+class popular_locations_in_category_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            # Base ID of your widget
+            'popular_locations_in_category_widget',
+
+            # Widget name will appear in UI
+            __('Popular Locations in Category Widget', 'popular_locations_in_category_widget_domain'),
+
+            # Widget description
+            array( 'description' => __( 'This widget will show all the locations in the specific category you choose', 'popular_locations_in_category_widget_domain' ), )
+        );
+    }
+
+    # Creating widget front-end
+    public function widget( $args, $instance ) {
+        global $LOCATION_TEXTDOMAIN;
+        $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+
+        # Before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        # This is where you run the code and display the output
+
+        # Find the category where is displayed the widget
+        $categories = get_the_category();
+
+	$catID = null;
+	if ( isset ( $categories[0] ) ) {
+            $catID = $categories[0]->cat_ID;
+	}
+
+        if ( $catID ) {
+            $posts_with_category = get_posts( array(
+                         'category'       => $catID,
+                         'post_type'      => array('post', 'book'),
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+        else {
+            $posts_with_category = get_posts( array(
+                         'post_type'      => array('post', 'book'),
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+
+        $array_of_terms_in_category = array();
+
+        foreach( $posts_with_category as $post ) {
+            $terms = wp_get_post_terms( $post->ID, 'location' );
+
+            foreach( $terms as $value ){
+                if( !in_array( $value, $array_of_terms_in_category, true ) ){
+                    array_push( $array_of_terms_in_category, $value->term_id );
+                }
+            }
+        }
+
+        $tag_args = array(
+                    'format'   => 'array',
+                    'number'   => 50,
+                    'taxonomy' => 'location',
+                    'orderby'  => 'count',
+                    'order'    => 'DESC',
+                    'include'  => $array_of_terms_in_category,
+                    'echo'     => false,
+                );
+
+        echo '<div class="tagcloud">';
+
+        $locations_array = get_terms ( 'location', $tag_args );
+        sort( $locations_array );
+
+        if ( sizeof ( $locations_array ) ) {
+            echo '<ul class="wp-tag-cloud">';
+
+	    foreach ( $locations_array as $mylocation ) {
+                echo '<li><a href="' . get_term_link( $mylocation->term_id ) . '" class="tag-cloud-link tag-link-' . $mylocation->term_id . '">';
+                echo __( $mylocation->name, $LOCATION_TEXTDOMAIN );
+                echo '</a></li>';
+	    }
+
+            echo '</ul>';
+	}
+
+        echo '</div>';
+
+        echo $args['after_widget'];
+    }
+
+    # Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        } else {
+            $title = __( 'New title', 'popular_locations_in_category_widget_domain' );
+        }
+
+        # Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <?php
+    }
+
+    # Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        return $instance;
+    }
+}
+
+# Register and load the widget
+function popular_location_wpb_load_widget() {
+    register_widget( 'popular_locations_in_category_widget' );
+}
+
+add_action( 'widgets_init', 'popular_location_wpb_load_widget' );
+
+
+
+
+/**
  * Flush rewrites when the plugin is activated
  *
  */
