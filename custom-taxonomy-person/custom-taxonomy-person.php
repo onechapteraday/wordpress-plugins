@@ -327,36 +327,40 @@ class popular_persons_in_category_widget extends WP_Widget {
                          'number_posts'   => -1,
                          'posts_per_page' => -1,
                      ));
-
-            $array_of_terms_in_category = array();
-
-            foreach( $posts_with_category as $post ) {
-                $terms = wp_get_post_terms( $post->ID, 'person' );
-
-                foreach( $terms as $value ){
-                    if( !in_array( $value, $array_of_terms_in_category, true ) ){
-                        array_push( $array_of_terms_in_category, $value->term_id );
-                    }
-                }
-            }
-
-            $tag_args = array(
-                        'smallest' => 1,
-                        'largest'  => 1,
-                        'unit'     => 'em',
-                        'format'   => 'list',
-                        'number'   => 50,
-                        'taxonomy' => 'person',
-                        'include'  => $array_of_terms_in_category,
-                    );
-
-            echo '<div class="tagcloud">';
-            wp_tag_cloud ( $tag_args );
-            echo '</div>';
         }
         else {
-            echo __( 'We\'re not inside a category.', 'popular_persons_in_category_widget_domain' );
+            $posts_with_category = get_posts( array(
+                         'post_type'      => array('post', 'book'),
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
         }
+
+        $array_of_terms_in_category = array();
+
+        foreach( $posts_with_category as $post ) {
+            $terms = wp_get_post_terms( $post->ID, 'person' );
+
+            foreach( $terms as $value ){
+                if( !in_array( $value, $array_of_terms_in_category, true ) ){
+                    array_push( $array_of_terms_in_category, $value->term_id );
+                }
+            }
+        }
+
+        $tag_args = array(
+                    'smallest' => 1,
+                    'largest'  => 1,
+                    'unit'     => 'em',
+                    'format'   => 'list',
+                    'number'   => 50,
+                    'taxonomy' => 'person',
+                    'include'  => $array_of_terms_in_category,
+                );
+
+        echo '<div class="tagcloud">';
+        wp_tag_cloud ( $tag_args );
+        echo '</div>';
 
         echo $args['after_widget'];
     }
