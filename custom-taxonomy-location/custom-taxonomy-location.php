@@ -601,7 +601,7 @@ class popular_locations_in_category_widget extends WP_Widget {
         $locations_array = get_terms ( 'location', $tag_args );
 
         if( sizeof( $locations_array ) ){
-            function sortByTranslation( $a, $b ){
+            function widget_sort_location_by_translation( $a, $b ){
                 $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
                 $at = strtr( $a->translation, $translit );
                 $bt = strtr( $b->translation, $translit );
@@ -613,7 +613,7 @@ class popular_locations_in_category_widget extends WP_Widget {
                 $mylocation->translation = __( $mylocation->name, $LOCATION_TEXTDOMAIN );
             }
 
-            usort( $locations_array, 'sortByTranslation' );
+            usort( $locations_array, 'widget_sort_location_by_translation' );
 
             echo '<ul class="wp-tag-cloud">';
 
