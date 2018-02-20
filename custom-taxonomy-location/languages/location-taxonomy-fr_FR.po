@@ -1,1105 +1,1632 @@
-# SOME DESCRIPTIVE TITLE.
+# Translation of messages.txt
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: LocationTaxonomy\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-25 00:56+0200\n"
-"PO-Revision-Date: 2017-06-25 02:15+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: fr\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2018-02-20 19:27+0100\n"
+"PO-Revision-Date: 2018-02-20 19:36+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=1;  plural=EXPRESSION;\n"
+"X-Generator: Eazy Po 0.9.5.3\n"
 
-#: location-taxonomy.php:46
-msgctxt "taxonomy general name"
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:1
 msgid "Locations"
 msgstr "Localisations"
 
-#: location-taxonomy.php:47
-msgctxt "taxonomy singular name"
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:2
 msgid "Location"
 msgstr "Localisation"
 
-#: location-taxonomy.php:48
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:3
 msgid "Search Locations"
 msgstr "Rechercher dans les localisations"
 
-#: location-taxonomy.php:49
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:4
 msgid "Popular Locations"
 msgstr "Localisations populaires"
 
-#: location-taxonomy.php:50
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:5
 msgid "All Locations"
 msgstr "Toutes les localisations"
 
-#: location-taxonomy.php:53
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:6
 msgid "Edit Location"
 msgstr "Modifier la localisation"
 
-#: location-taxonomy.php:54
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:7
 msgid "Update Location"
 msgstr "Mettre à jour la localisation"
 
-#: location-taxonomy.php:55
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:8
 msgid "Add New Location"
 msgstr "Ajouter une nouvelle localisation"
 
-#: location-taxonomy.php:56
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:9
 msgid "New Location Name"
 msgstr "Nom de la nouvelle localisation"
 
-#: location-taxonomy.php:57
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:10
 msgid "Separate locations with commas"
 msgstr "Séparer les localisations avec des virgules"
 
-#: location-taxonomy.php:58
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:11
 msgid "Add or remove locations"
 msgstr "Ajouter ou supprimer des localisations"
 
-#: location-taxonomy.php:59
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:12
 msgid "Choose from the most used locations"
 msgstr "Choisir parmi les localisations les plus utilisées"
 
-#: location-taxonomy.php:60
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:13
 msgid "No locations found."
 msgstr "Aucune localization trouvée."
 
-#: location-taxonomy.php:61
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:14
+msgctxt "duplicate :14:2:14"
 msgid "Locations"
 msgstr "Localisations"
 
-#: location-taxonomy.php:91
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:15
 msgid "Code ISO"
 msgstr "Code ISO"
 
-#: location-taxonomy.php:93
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:16
 msgid "Enter the code ISO of the location."
 msgstr "Entrer le code ISO de la localisation"
 
-#: location-taxonomy.php:110
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:17
 msgid "Africa"
 msgstr "Afrique"
 
-#: location-taxonomy.php:111
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:18
 msgid "Asia"
 msgstr "Asie"
 
-#: location-taxonomy.php:112
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:19
 msgid "Europe"
 msgstr "Europe"
 
-#: location-taxonomy.php:113
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:20
 msgid "North America"
 msgstr "Amérique du Nord"
 
-#: location-taxonomy.php:114
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:21
 msgid "Oceania"
 msgstr "Océanie"
 
-#: location-taxonomy.php:115
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:22
 msgid "South America"
 msgstr "Amérique du Sud"
 
-#: location-taxonomy.php:116
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:23
 msgid "Antarctica"
 msgstr "Antarctique"
 
-#: location-taxonomy.php:120
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:24
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
-#: location-taxonomy.php:121
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:25
 msgid "Albania"
 msgstr "Albanie"
 
-#: location-taxonomy.php:122
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:26
 msgid "Algeria"
 msgstr "Algérie"
 
-#: location-taxonomy.php:123
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:27
 msgid "American Samoa"
 msgstr "Samoa américaines"
 
-#: location-taxonomy.php:124
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:28
 msgid "Andorra"
 msgstr "Andorre"
 
-#: location-taxonomy.php:125
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:29
 msgid "Angola"
 msgstr "Angola"
 
-#: location-taxonomy.php:126
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:30
 msgid "Anguilla"
 msgstr "Anguilla"
 
-#: location-taxonomy.php:128
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:31
 msgid "Antigua and Barbuda"
 msgstr "Antigua-et-Barbuda"
 
-#: location-taxonomy.php:129
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:32
 msgid "Argentina"
 msgstr "Argentine"
 
-#: location-taxonomy.php:130
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:33
 msgid "Armenia"
 msgstr "Arménie"
 
-#: location-taxonomy.php:131
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:34
 msgid "Aruba"
 msgstr "Aruba"
 
-#: location-taxonomy.php:132
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:35
 msgid "Australia"
 msgstr "Australie"
 
-#: location-taxonomy.php:133
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:36
 msgid "Austria"
 msgstr "Autriche"
 
-#: location-taxonomy.php:134
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:37
 msgid "Azerbaijan"
 msgstr "Azerbaïdjan"
 
-#: location-taxonomy.php:135
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:38
 msgid "Bahamas"
 msgstr "Bahamas"
 
-#: location-taxonomy.php:136
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:39
 msgid "Bahrain"
 msgstr "Bahreïn"
 
-#: location-taxonomy.php:137
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:40
 msgid "Bangladesh"
 msgstr "Bangladesh"
 
-#: location-taxonomy.php:138
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:41
 msgid "Barbados"
 msgstr "Barbade"
 
-#: location-taxonomy.php:139
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:42
 msgid "Belarus"
 msgstr "Biélorussie"
 
-#: location-taxonomy.php:140
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:43
 msgid "Belgium"
 msgstr "Belgique"
 
-#: location-taxonomy.php:141
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:44
 msgid "Belize"
 msgstr "Belize"
 
-#: location-taxonomy.php:142
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:45
 msgid "Benin"
 msgstr "Bénin"
 
-#: location-taxonomy.php:143
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:46
 msgid "Bermuda"
 msgstr "Bermudes"
 
-#: location-taxonomy.php:144
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:47
 msgid "Bhutan"
 msgstr "Bhoutan"
 
-#: location-taxonomy.php:145
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:48
 msgid "Bolivia"
 msgstr "Bolivie"
 
-#: location-taxonomy.php:146
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:49
 msgid "Bonaire"
 msgstr "Bonaire"
 
-#: location-taxonomy.php:147
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:50
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnie-Herzégovine"
 
-#: location-taxonomy.php:148
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:51
 msgid "Botswana"
 msgstr "Botswana"
 
-#: location-taxonomy.php:149
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:52
 msgid "Bouvet Island"
 msgstr "Île Bouvet"
 
-#: location-taxonomy.php:150
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:53
 msgid "Brazil"
 msgstr "Brésil"
 
-#: location-taxonomy.php:151
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:54
 msgid "British Indian Ocean Territory"
 msgstr "Territoire britannique de l'Océan Indien"
 
-#: location-taxonomy.php:152
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:55
 msgid "British Virgin Islands"
 msgstr "Îles Vierges britanniques"
 
-#: location-taxonomy.php:153
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:56
 msgid "Brunei"
 msgstr "Brunei"
 
-#: location-taxonomy.php:154
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:57
 msgid "Bulgaria"
 msgstr "Bulgarie"
 
-#: location-taxonomy.php:155
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:58
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
-#: location-taxonomy.php:156
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:59
 msgid "Burundi"
 msgstr "Burundi"
 
-#: location-taxonomy.php:157
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:60
 msgid "Cambodia"
 msgstr "Cambodge"
 
-#: location-taxonomy.php:158
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:61
 msgid "Cameroon"
 msgstr "Cameroun"
 
-#: location-taxonomy.php:159
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:62
 msgid "Canada"
 msgstr "Canada"
 
-#: location-taxonomy.php:160
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:63
 msgid "Cape Verde"
 msgstr "Cap-Vert"
 
-#: location-taxonomy.php:161
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:64
 msgid "Cayman Islands"
 msgstr "Îles Caïmans"
 
-#: location-taxonomy.php:162
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:65
 msgid "Central African Republic"
 msgstr "République Centrafricaine"
 
-#: location-taxonomy.php:163
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:66
 msgid "Chad"
 msgstr "Tchad"
 
-#: location-taxonomy.php:164
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:67
 msgid "Chile"
 msgstr "Chili"
 
-#: location-taxonomy.php:165
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:68
 msgid "China"
 msgstr "Chine"
 
-#: location-taxonomy.php:166
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:69
 msgid "Christmas Island"
 msgstr "Île Christmas"
 
-#: location-taxonomy.php:167
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:70
 msgid "Cocos (Keeling) Islands"
 msgstr "Îles Cocos"
 
-#: location-taxonomy.php:168
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:71
 msgid "Colombia"
 msgstr "Colombie"
 
-#: location-taxonomy.php:169
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:72
 msgid "Comoros"
 msgstr "Comores"
 
-#: location-taxonomy.php:170
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:73
 msgid "Cook Islands"
 msgstr "Îles Cook"
 
-#: location-taxonomy.php:171
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:74
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
-#: location-taxonomy.php:172
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:75
 msgid "Croatia"
 msgstr "Croatie"
 
-#: location-taxonomy.php:173
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:76
 msgid "Cuba"
 msgstr "Cuba"
 
-#: location-taxonomy.php:174
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:77
 msgid "Curaçao"
 msgstr "Curaçao"
 
-#: location-taxonomy.php:175
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:78
 msgid "Cyprus"
 msgstr "Chypre"
 
-#: location-taxonomy.php:176
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:79
 msgid "Czechia"
 msgstr "République Tchèque"
 
-#: location-taxonomy.php:177
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:80
 msgid "Democratic Republic of the Congo"
 msgstr "République démocratique du Congo"
 
-#: location-taxonomy.php:178
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:81
 msgid "Denmark"
 msgstr "Danemark"
 
-#: location-taxonomy.php:179
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:82
 msgid "Djibouti"
 msgstr "Djibouti"
 
-#: location-taxonomy.php:180
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:83
 msgid "Dominica"
 msgstr "Dominique"
 
-#: location-taxonomy.php:181
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:84
 msgid "Dominican Republic"
 msgstr "République Dominicaine"
 
-#: location-taxonomy.php:182
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:85
 msgid "East Timor"
 msgstr "Timor oriental"
 
-#: location-taxonomy.php:183
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:86
 msgid "Ecuador"
 msgstr "Équateur"
 
-#: location-taxonomy.php:184
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:87
 msgid "Egypt"
 msgstr "Égypte"
 
-#: location-taxonomy.php:185
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:88
 msgid "El Salvador"
 msgstr "Salvador"
 
-#: location-taxonomy.php:186
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:89
 msgid "Equatorial Guinea"
 msgstr "Guinée Équatoriale"
 
-#: location-taxonomy.php:187
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:90
 msgid "Eritrea"
 msgstr "Érythrée"
 
-#: location-taxonomy.php:188
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:91
 msgid "Estonia"
 msgstr "Estonie"
 
-#: location-taxonomy.php:189
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:92
 msgid "Ethiopia"
 msgstr "Éthiopie"
 
-#: location-taxonomy.php:190
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:93
 msgid "Falkland Islands"
 msgstr "Îles Malouines"
 
-#: location-taxonomy.php:191
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:94
 msgid "Faroe Islands"
 msgstr "Îles Féroé"
 
-#: location-taxonomy.php:192
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:95
 msgid "Fiji"
 msgstr "Îles Fidji"
 
-#: location-taxonomy.php:193
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:96
 msgid "Finland"
 msgstr "Finlande"
 
-#: location-taxonomy.php:194
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:97
 msgid "France"
 msgstr "France"
 
-#: location-taxonomy.php:195
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:98
 msgid "French Guiana"
 msgstr "Guyane française"
 
-#: location-taxonomy.php:196
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:99
 msgid "French Polynesia"
 msgstr "Polynésie française"
 
-#: location-taxonomy.php:197
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:100
 msgid "French Southern Territories"
 msgstr "Terres Australes et Antarctiques Françaises"
 
-#: location-taxonomy.php:198
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:101
 msgid "Gabon"
 msgstr "Gabon"
 
-#: location-taxonomy.php:199
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:102
 msgid "Gambia"
 msgstr "Gambie"
 
-#: location-taxonomy.php:200
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:103
 msgid "Georgia"
 msgstr "Géorgie"
 
-#: location-taxonomy.php:201
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:104
 msgid "Germany"
 msgstr "Allemagne"
 
-#: location-taxonomy.php:202
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:105
 msgid "Ghana"
 msgstr "Ghana"
 
-#: location-taxonomy.php:203
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:106
 msgid "Gibraltar"
 msgstr "Gibraltar"
 
-#: location-taxonomy.php:204
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:107
 msgid "Greece"
 msgstr "Grèce"
 
-#: location-taxonomy.php:205
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:108
 msgid "Greenland"
 msgstr "Groenland"
 
-#: location-taxonomy.php:206
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:109
 msgid "Grenada"
 msgstr "Grenade"
 
-#: location-taxonomy.php:207
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:110
 msgid "Guadeloupe"
 msgstr "Guadeloupe"
 
-#: location-taxonomy.php:208
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:111
 msgid "Guam"
 msgstr "Guam"
 
-#: location-taxonomy.php:209
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:112
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: location-taxonomy.php:210
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:113
 msgid "Guernsey"
 msgstr "Guernesey"
 
-#: location-taxonomy.php:211
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:114
 msgid "Guinea"
 msgstr "Guinée"
 
-#: location-taxonomy.php:212
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:115
 msgid "Guinea-Bissau"
 msgstr "Guinée-Bissau"
 
-#: location-taxonomy.php:213
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:116
 msgid "Guyana"
 msgstr "Guyana"
 
-#: location-taxonomy.php:214
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:117
 msgid "Haiti"
 msgstr "Haïti"
 
-#: location-taxonomy.php:215
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:118
 msgid "Heard Island and McDonald Islands"
 msgstr "Îles Heard-et-MacDonald"
 
-#: location-taxonomy.php:216
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:119
 msgid "Honduras"
 msgstr "Honduras"
 
-#: location-taxonomy.php:217
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:120
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
-#: location-taxonomy.php:218
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:121
 msgid "Hungary"
 msgstr "Hongrie"
 
-#: location-taxonomy.php:219
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:122
 msgid "Iceland"
 msgstr "Islande"
 
-#: location-taxonomy.php:220
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:123
 msgid "India"
 msgstr "Inde"
 
-#: location-taxonomy.php:221
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:124
 msgid "Indonesia"
 msgstr "Indonésie"
 
-#: location-taxonomy.php:222
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:125
 msgid "Iran"
 msgstr "Iran"
 
-#: location-taxonomy.php:223
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:126
 msgid "Iraq"
 msgstr "Irak"
 
-#: location-taxonomy.php:224
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:127
 msgid "Ireland"
 msgstr "Irlande"
 
-#: location-taxonomy.php:225
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:128
 msgid "Isle of Man"
 msgstr "Île de Man"
 
-#: location-taxonomy.php:226
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:129
 msgid "Israel"
 msgstr "Israël"
 
-#: location-taxonomy.php:227
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:130
 msgid "Italy"
 msgstr "Italie"
 
-#: location-taxonomy.php:228
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:131
 msgid "Ivory Coast"
 msgstr "Côte d'Ivoire"
 
-#: location-taxonomy.php:229
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:132
 msgid "Jamaica"
 msgstr "Jamaïque"
 
-#: location-taxonomy.php:230
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:133
 msgid "Japan"
 msgstr "Japon"
 
-#: location-taxonomy.php:231
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:134
 msgid "Jersey"
 msgstr "Jersey"
 
-#: location-taxonomy.php:232
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:135
 msgid "Jordan"
 msgstr "Jordanie"
 
-#: location-taxonomy.php:233
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:136
 msgid "Kazakhstan"
 msgstr "Kazakhstan"
 
-#: location-taxonomy.php:234
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:137
 msgid "Kenya"
 msgstr "Kenya"
 
-#: location-taxonomy.php:235
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:138
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: location-taxonomy.php:236
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:139
 msgid "Kosovo"
 msgstr "Kosovo"
 
-#: location-taxonomy.php:237
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:140
 msgid "Kuwait"
 msgstr "Koweït"
 
-#: location-taxonomy.php:238
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:141
 msgid "Kyrgyzstan"
 msgstr "Kirghizistan"
 
-#: location-taxonomy.php:239
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:142
 msgid "Laos"
 msgstr "Laos"
 
-#: location-taxonomy.php:240
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:143
 msgid "Latvia"
 msgstr "Lettonie"
 
-#: location-taxonomy.php:241
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:144
 msgid "Lebanon"
 msgstr "Liban"
 
-#: location-taxonomy.php:242
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:145
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: location-taxonomy.php:243
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:146
 msgid "Liberia"
 msgstr "Liberia"
 
-#: location-taxonomy.php:244
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:147
 msgid "Libya"
 msgstr "Libye"
 
-#: location-taxonomy.php:245
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:148
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
-#: location-taxonomy.php:246
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:149
 msgid "Lithuania"
 msgstr "Lituanie"
 
-#: location-taxonomy.php:247
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:150
 msgid "Luxembourg"
 msgstr "Luxembourg"
 
-#: location-taxonomy.php:248
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:151
 msgid "Macao"
 msgstr "Macao"
 
-#: location-taxonomy.php:249
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:152
 msgid "Macedonia"
 msgstr "Macédoine"
 
-#: location-taxonomy.php:250
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:153
 msgid "Madagascar"
 msgstr "Madagascar"
 
-#: location-taxonomy.php:251
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:154
 msgid "Malawi"
 msgstr "Malawi"
 
-#: location-taxonomy.php:252
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:155
 msgid "Malaysia"
 msgstr "Malaisie"
 
-#: location-taxonomy.php:253
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:156
 msgid "Maldives"
 msgstr "Maldives"
 
-#: location-taxonomy.php:254
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:157
 msgid "Mali"
 msgstr "Mali"
 
-#: location-taxonomy.php:255
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:158
 msgid "Malta"
 msgstr "Malte"
 
-#: location-taxonomy.php:256
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:159
 msgid "Marshall Islands"
 msgstr "Îles Marshall"
 
-#: location-taxonomy.php:257
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:160
 msgid "Martinique"
 msgstr "Martinique"
 
-#: location-taxonomy.php:258
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:161
 msgid "Mauritania"
 msgstr "Mauritanie"
 
-#: location-taxonomy.php:259
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:162
 msgid "Mauritius"
 msgstr "Maurice"
 
-#: location-taxonomy.php:260
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:163
 msgid "Mayotte"
 msgstr "Mayotte"
 
-#: location-taxonomy.php:261
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:164
 msgid "Mexico"
 msgstr "Mexique"
 
-#: location-taxonomy.php:262
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:165
 msgid "Micronesia"
 msgstr "Micronésie"
 
-#: location-taxonomy.php:263
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:166
 msgid "Moldova"
 msgstr "Moldavie"
 
-#: location-taxonomy.php:264
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:167
 msgid "Monaco"
 msgstr "Monaco"
 
-#: location-taxonomy.php:265
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:168
 msgid "Mongolia"
 msgstr "Mongolie"
 
-#: location-taxonomy.php:266
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:169
 msgid "Montenegro"
 msgstr "Monténégro"
 
-#: location-taxonomy.php:267
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:170
 msgid "Montserrat"
 msgstr "Montserrat"
 
-#: location-taxonomy.php:268
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:171
 msgid "Morocco"
 msgstr "Maroc"
 
-#: location-taxonomy.php:269
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:172
 msgid "Mozambique"
 msgstr "Mozambique"
 
-#: location-taxonomy.php:270
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:173
 msgid "Myanmar"
 msgstr "Birmanie"
 
-#: location-taxonomy.php:271
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:174
 msgid "Namibia"
 msgstr "Namibie"
 
-#: location-taxonomy.php:272
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:175
 msgid "Nauru"
 msgstr "Nauru"
 
-#: location-taxonomy.php:273
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:176
 msgid "Nepal"
 msgstr "Népal"
 
-#: location-taxonomy.php:274
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:177
 msgid "Netherlands"
 msgstr "Pays-Bas"
 
-#: location-taxonomy.php:275
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:178
 msgid "New Caledonia"
 msgstr "Nouvelle-Calédonie"
 
-#: location-taxonomy.php:276
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:179
 msgid "New Zealand"
 msgstr "Nouvelle-Zélande"
 
-#: location-taxonomy.php:277
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:180
 msgid "Nicaragua"
 msgstr "Nicaragua"
 
-#: location-taxonomy.php:278
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:181
 msgid "Niger"
 msgstr "Niger"
 
-#: location-taxonomy.php:279
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:182
 msgid "Nigeria"
 msgstr "Nigéria"
 
-#: location-taxonomy.php:280
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:183
 msgid "Niue"
 msgstr "Niue"
 
-#: location-taxonomy.php:281
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:184
 msgid "Norfolk Island"
 msgstr "Île Norfolk"
 
-#: location-taxonomy.php:282
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:185
 msgid "North Korea"
 msgstr "Corée du Nord"
 
-#: location-taxonomy.php:283
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:186
 msgid "Northern Mariana Islands"
 msgstr "Îles Mariannes du Nord"
 
-#: location-taxonomy.php:284
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:187
 msgid "Norway"
 msgstr "Norvège"
 
-#: location-taxonomy.php:285
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:188
 msgid "Oman"
 msgstr "Oman"
 
-#: location-taxonomy.php:286
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:189
 msgid "Pakistan"
 msgstr "Pakistan"
 
-#: location-taxonomy.php:287
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:190
 msgid "Palau"
 msgstr "Palaos"
 
-#: location-taxonomy.php:288
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:191
 msgid "Palestine"
 msgstr "Palestine"
 
-#: location-taxonomy.php:289
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:192
 msgid "Panama"
 msgstr "Panama"
 
-#: location-taxonomy.php:290
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:193
 msgid "Papua New Guinea"
 msgstr "Papouasie-Nouvelle-Guinée"
 
-#: location-taxonomy.php:291
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:194
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: location-taxonomy.php:292
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:195
 msgid "Peru"
 msgstr "Pérou"
 
-#: location-taxonomy.php:293
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:196
 msgid "Philippines"
 msgstr "Philippines"
 
-#: location-taxonomy.php:294
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:197
 msgid "Pitcairn Islands"
 msgstr "Îles Pitcairn"
 
-#: location-taxonomy.php:295
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:198
 msgid "Poland"
 msgstr "Pologne"
 
-#: location-taxonomy.php:296
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:199
 msgid "Portugal"
 msgstr "Portugal"
 
-#: location-taxonomy.php:297
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:200
 msgid "Puerto Rico"
 msgstr "Porto Rico"
 
-#: location-taxonomy.php:298
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:201
 msgid "Qatar"
 msgstr "Qatar"
 
-#: location-taxonomy.php:299
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:202
 msgid "Republic of the Congo"
 msgstr "Congo"
 
-#: location-taxonomy.php:300
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:203
 msgid "Réunion"
 msgstr "Réunion"
 
-#: location-taxonomy.php:301
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:204
 msgid "Romania"
 msgstr "Roumanie"
 
-#: location-taxonomy.php:302
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:205
 msgid "Russia"
 msgstr "Russie"
 
-#: location-taxonomy.php:303
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:206
 msgid "Rwanda"
 msgstr "Rwanda"
 
-#: location-taxonomy.php:304
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:207
 msgid "Saint Barthélemy"
 msgstr "Saint-Barthélemy"
 
-#: location-taxonomy.php:305
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:208
 msgid "Saint Helena"
 msgstr "Sainte-Hélène"
 
-#: location-taxonomy.php:306
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:209
 msgid "Saint Kitts and Nevis"
 msgstr "Saint-Kitts-et-Nevis"
 
-#: location-taxonomy.php:307
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:210
 msgid "Saint Lucia"
 msgstr "Sainte-Lucie"
 
-#: location-taxonomy.php:308
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:211
 msgid "Saint Martin"
 msgstr "Saint-Martin"
 
-#: location-taxonomy.php:309
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:212
 msgid "Saint Pierre and Miquelon"
 msgstr "Saint-Pierre-et-Miquelon"
 
-#: location-taxonomy.php:310
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:213
 msgid "Saint Vincent and the Grenadines"
 msgstr "Saint-Vincent-et-les-Grenadines"
 
-#: location-taxonomy.php:311
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:214
 msgid "Samoa"
 msgstr "Samoa"
 
-#: location-taxonomy.php:312
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:215
 msgid "San Marino"
 msgstr "Saint-Marin"
 
-#: location-taxonomy.php:313
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:216
 msgid "São Tomé and Príncipe"
 msgstr "São Tomé-et-Príncipe"
 
-#: location-taxonomy.php:314
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:217
 msgid "Saudi Arabia"
 msgstr "Arabie Saoudite"
 
-#: location-taxonomy.php:315
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:218
 msgid "Senegal"
 msgstr "Sénégal"
 
-#: location-taxonomy.php:316
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:219
 msgid "Serbia"
 msgstr "Serbie"
 
-#: location-taxonomy.php:317
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:220
 msgid "Seychelles"
 msgstr "Seychelles"
 
-#: location-taxonomy.php:318
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:221
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: location-taxonomy.php:319
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:222
 msgid "Singapore"
 msgstr "Singapour"
 
-#: location-taxonomy.php:320
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:223
 msgid "Sint Marteen"
 msgstr "Sint Maarten"
 
-#: location-taxonomy.php:321
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:224
 msgid "Slovakia"
 msgstr "Slovaquie"
 
-#: location-taxonomy.php:322
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:225
 msgid "Slovenia"
 msgstr "Slovénie"
 
-#: location-taxonomy.php:323
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:226
 msgid "Solomon Islands"
 msgstr "Îles Salomon"
 
-#: location-taxonomy.php:324
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:227
 msgid "Somalia"
 msgstr "Somalie"
 
-#: location-taxonomy.php:325
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:228
 msgid "South Africa"
 msgstr "Afrique du Sud"
 
-#: location-taxonomy.php:326
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:229
 msgid "South Georgia and the South Sandwich Islands"
 msgstr "Géorgie du Sud-et-les Îles Sandwich du Sud"
 
-#: location-taxonomy.php:327
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:230
 msgid "South Korea"
 msgstr "Corée du Sud"
 
-#: location-taxonomy.php:328
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:231
 msgid "South Sudan"
 msgstr "Soudan du Sud"
 
-#: location-taxonomy.php:329
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:232
 msgid "Spain"
 msgstr "Espagne"
 
-#: location-taxonomy.php:330
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:233
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: location-taxonomy.php:331
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:234
 msgid "Sudan"
 msgstr "Soudan"
 
-#: location-taxonomy.php:332
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:235
 msgid "Suriname"
 msgstr "Suriname"
 
-#: location-taxonomy.php:333
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:236
 msgid "Svalbard and Jan Mayen"
 msgstr "Svalbard et Jan Mayen"
 
-#: location-taxonomy.php:334
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:237
 msgid "Swaziland"
 msgstr "Swaziland"
 
-#: location-taxonomy.php:335
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:238
 msgid "Sweden"
 msgstr "Suède"
 
-#: location-taxonomy.php:336
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:239
 msgid "Switzerland"
 msgstr "Suisse"
 
-#: location-taxonomy.php:337
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:240
 msgid "Syria"
 msgstr "Syrie"
 
-#: location-taxonomy.php:338
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:241
 msgid "Taiwan"
 msgstr "Taïwan"
 
-#: location-taxonomy.php:339
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:242
 msgid "Tajikistan"
 msgstr "Tadjikistan"
 
-#: location-taxonomy.php:340
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:243
 msgid "Tanzania"
 msgstr "Tanzanie"
 
-#: location-taxonomy.php:341
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:244
 msgid "Thailand"
 msgstr "Thaïlande"
 
-#: location-taxonomy.php:342
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:245
 msgid "Togo"
 msgstr "Togo"
 
-#: location-taxonomy.php:343
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:246
 msgid "Tokelau"
 msgstr "Tokelau"
 
-#: location-taxonomy.php:344
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:247
 msgid "Tonga"
 msgstr "Tonga"
 
-#: location-taxonomy.php:345
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:248
 msgid "Trinidad and Tobago"
 msgstr "Trinité-et-Tobago"
 
-#: location-taxonomy.php:346
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:249
 msgid "Tunisia"
 msgstr "Tunisie"
 
-#: location-taxonomy.php:347
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:250
 msgid "Turkey"
 msgstr "Turquie"
 
-#: location-taxonomy.php:348
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:251
 msgid "Turkmenistan"
 msgstr "Turkménistan"
 
-#: location-taxonomy.php:349
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:252
 msgid "Turks and Caicos Islands"
 msgstr "Îles Turks-et-Caïcos"
 
-#: location-taxonomy.php:350
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:253
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: location-taxonomy.php:351
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:254
 msgid "Uganda"
 msgstr "Ouganda"
 
-#: location-taxonomy.php:352
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:255
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: location-taxonomy.php:353
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:256
 msgid "United Arab Emirates"
 msgstr "Émirats Arabes Unis"
 
-#: location-taxonomy.php:354
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:257
 msgid "United Kingdom"
 msgstr "Royaume-Uni"
 
-#: location-taxonomy.php:355
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:258
 msgid "United States"
 msgstr "États-Unis"
 
-#: location-taxonomy.php:356
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:259
 msgid "United States Minor Outlying Islands"
 msgstr "Îles Mineures éloignées des États-Unis"
 
-#: location-taxonomy.php:357
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:260
 msgid "United States Virgin Islands"
 msgstr "Îles Vierges des États-Unis"
 
-#: location-taxonomy.php:358
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:261
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: location-taxonomy.php:359
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:262
 msgid "Uzbekistan"
 msgstr "Ouzbékistan"
 
-#: location-taxonomy.php:360
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:263
 msgid "Vanuatu"
 msgstr "Vanuatu"
 
-#: location-taxonomy.php:361
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:264
 msgid "Vatican City"
 msgstr "Vatican"
 
-#: location-taxonomy.php:362
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:265
 msgid "Venezuela"
 msgstr "Venezuela"
 
-#: location-taxonomy.php:363
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:266
 msgid "Vietnam"
 msgstr "Vietnam"
 
-#: location-taxonomy.php:364
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:267
 msgid "Wallis and Futuna"
 msgstr "Wallis-et-Futuna"
 
-#: location-taxonomy.php:365
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:268
 msgid "Western Sahara"
 msgstr "Sahara Occidental"
 
-#: location-taxonomy.php:366
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:269
 msgid "Yemen"
 msgstr "Yémen"
 
-#: location-taxonomy.php:367
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:270
 msgid "Zambia"
 msgstr "Zambie"
 
-#: location-taxonomy.php:368
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:271
 msgid "Zimbabwe"
 msgstr "Zimbabwe"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:272
+msgid "Alabama"
+msgstr "Alabama"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:273
+msgid "Alaska"
+msgstr "Alaska"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:274
+msgid "Arizona"
+msgstr "Arizona"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:275
+msgid "Arkansas"
+msgstr "Arkansas"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:276
+msgid "California"
+msgstr "Californie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:277
+msgid "Colorado"
+msgstr "Colorado"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:278
+msgid "Connecticut"
+msgstr "Connecticut"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:279
+msgid "Delaware"
+msgstr "Delaware"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:280
+msgid "District of Columbia"
+msgstr "District de Colombia"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:281
+msgid "Florida"
+msgstr "Floride"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:282
+msgctxt "duplicate :282:104:282"
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:283
+msgid "Hawaii"
+msgstr "Hawaii"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:284
+msgid "Idaho"
+msgstr "Idaho"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:285
+msgid "Illinois"
+msgstr "Illinois"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:286
+msgid "Indiana"
+msgstr "Indiana"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:287
+msgid "Iowa"
+msgstr "Iowa"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:288
+msgid "Kansas"
+msgstr "Kansas"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:289
+msgid "Kentucky"
+msgstr "Kentucky"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:290
+msgid "Louisiana"
+msgstr "Louisiane"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:291
+msgid "Maine"
+msgstr "Maine"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:292
+msgid "Maryland"
+msgstr "Maryland"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:293
+msgid "Massachusetts"
+msgstr "Massachussetts"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:294
+msgid "Michigan"
+msgstr "Michigan"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:295
+msgid "Minnesota"
+msgstr "Minnesota"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:296
+msgid "Mississippi"
+msgstr "Mississippi"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:297
+msgid "Missouri"
+msgstr "Missouri"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:298
+msgid "Montana"
+msgstr "Montana"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:299
+msgid "Nebraska"
+msgstr "Nebraska"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:300
+msgid "Nevada"
+msgstr "Nevada"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:301
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:302
+msgid "New Jersey"
+msgstr "New Jersey"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:303
+msgid "New Mexico"
+msgstr "Nouveau-Mexique"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:304
+msgid "New York"
+msgstr "New York"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:305
+msgid "North Carolina"
+msgstr "Caroline du Nord"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:306
+msgid "North Dakota"
+msgstr "Dakota du Nord"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:307
+msgid "Ohio"
+msgstr "Ohio"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:308
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:309
+msgid "Oregon"
+msgstr "Oregon"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:310
+msgid "Pennsylvania"
+msgstr "Pennsylvanie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:311
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:312
+msgid "South Carolina"
+msgstr "Caroline du Sud"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:313
+msgid "South Dakota"
+msgstr "Dakota du Sud"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:314
+msgid "Tennessee"
+msgstr "Tennessee"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:315
+msgid "Texas"
+msgstr "Texas"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:316
+msgid "Utah"
+msgstr "Utah"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:317
+msgid "Vermont"
+msgstr "Vermont"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:318
+msgid "Virginia"
+msgstr "Virginie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:319
+msgid "Washington"
+msgstr "Washington"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:320
+msgid "West Virginia"
+msgstr "Virginie-Occidentale"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:321
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:322
+msgid "Wyoming"
+msgstr "Wyoming"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:323
+msgid "New York City"
+msgstr "New York"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:324
+msgid "Los Angeles"
+msgstr "Los Angeles"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:325
+msgid "Chicago"
+msgstr "Chicago"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:326
+msgid "Brooklyn"
+msgstr "Brooklyn"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:327
+msgid "Houston"
+msgstr "Houston"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:328
+msgid "Philadelphia"
+msgstr "Philadelphie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:329
+msgid "Manhattan"
+msgstr "Manhattan"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:330
+msgid "Phoenix"
+msgstr "Phoenix"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:331
+msgid "Borough of Bronx"
+msgstr "Bronx"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:332
+msgid "San Antonio"
+msgstr "San Antonio"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:333
+msgid "San Diego"
+msgstr "San Diego"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:334
+msgid "Dallas"
+msgstr "Dallas"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:335
+msgid "San Jose"
+msgstr "San José"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:336
+msgid "Indianapolis"
+msgstr "Indianapolis"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:337
+msgid "Jacksonville"
+msgstr "Jacksonville"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:338
+msgid "Austin"
+msgstr "Austin"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:339
+msgid "Columbus"
+msgstr "Columbus"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:340
+msgid "Fort Worth"
+msgstr "Fort Worth"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:341
+msgid "Charlotte"
+msgstr "Charlotte"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:342
+msgid "Detroit"
+msgstr "Détroit"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:343
+msgid "El Paso"
+msgstr "El Paso"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:344
+msgid "Memphis"
+msgstr "Memphis"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:345
+msgid "New South Memphis"
+msgstr "New South Memphis"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:346
+msgid "Baltimore"
+msgstr "Baltimore"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:347
+msgid "Boston"
+msgstr "Boston"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:348
+msgid "Seattle"
+msgstr "Seattle"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:349
+msgid "Washington D.C."
+msgstr "Washington D.C."
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:350
+msgid "Denver"
+msgstr "Denver"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:351
+msgid "Oklahoma City"
+msgstr "Oklahoma City"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:352
+msgid "Atlanta"
+msgstr "Atlanta"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:353
+msgid "Miami"
+msgstr "Miami"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:354
+msgid "Cleveland"
+msgstr "Cleveland"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:355
+msgid "Honolulu"
+msgstr "Honolulu"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:356
+msgid "New Orleans"
+msgstr "Nouvelle-Orléans"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:357
+msgid "Ajoupa-Bouillon"
+msgstr "Ajoupa-Bouillon"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:358
+msgid "Les Anses-d'Arlet"
+msgstr "Les Anses-d'Arlet"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:359
+msgid "Anses-d'Arlet"
+msgstr "Anses-d'Arlet"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:360
+msgid "Basse-Pointe"
+msgstr "Basse-Pointe"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:361
+msgid "Bellefontaine"
+msgstr "Bellefontaine"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:362
+msgid "Le Carbet"
+msgstr "Le Carbet"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:363
+msgid "Carbet"
+msgstr "Carbet"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:364
+msgid "Case-Pilote"
+msgstr "Case-Pilote"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:365
+msgid "Diamant"
+msgstr "Diamant"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:366
+msgid "Ducos"
+msgstr "Ducos"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:367
+msgid "Fonds-Saint-Denis"
+msgstr "Fonds-Saint-Denis"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:368
+msgid "Fort-de-France"
+msgstr "Fort-de-France"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:369
+msgid "François"
+msgstr "François"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:370
+msgid "Grand'Rivière"
+msgstr "Grand'Rivière"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:371
+msgid "Gros-Morne"
+msgstr "Gros-Morne"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:372
+msgid "Lamentin"
+msgstr "Lamentin"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:373
+msgid "Lorrain"
+msgstr "Lorrain"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:374
+msgid "Macouba"
+msgstr "Macouba"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:375
+msgid "Marigot"
+msgstr "Marigot"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:376
+msgid "Marin"
+msgstr "Marin"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:377
+msgid "Morne-Rouge"
+msgstr "Morne-Rouge"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:378
+msgid "Morne-Vert"
+msgstr "Morne-Vert"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:379
+msgid "Prêcheur"
+msgstr "Prêcheur"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:380
+msgid "Rivière-Pilote"
+msgstr "Rivière-Pilote"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:381
+msgid "Rivière-Salée"
+msgstr "Rivière-Salée"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:382
+msgid "Robert"
+msgstr "Robert"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:383
+msgid "Sainte-Anne"
+msgstr "Sainte-Anne"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:384
+msgid "Sainte-Luce"
+msgstr "Sainte-Luce"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:385
+msgid "Sainte-Marie"
+msgstr "Sainte-Marie"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:386
+msgid "Saint-Esprit"
+msgstr "Saint-Esprit"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:387
+msgid "Saint-Joseph"
+msgstr "Saint-Joseph"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:388
+msgid "Saint-Pierre"
+msgstr "Saint-Pierre"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:389
+msgid "Schoelcher"
+msgstr "Schoelcher"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:390
+msgid "Trinité"
+msgstr "Trinité"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:391
+msgid "Trois-Îlets"
+msgstr "Trois-Îlets"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:392
+msgid "Vauclin"
+msgstr "Vauclin"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:393
+msgid "Montagne Pelée"
+msgstr "Montagne Pelée"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:394
+msgid "Mount Pelée"
+msgstr "Montagne Pelée"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:395
+msgid "Paris"
+msgstr "Paris"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:396
+msgid "Barcelona"
+msgstr "Barcelone"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:397
+msgid "Girona"
+msgstr "Gérone"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:398
+msgid "Amsterdam"
+msgstr "Amsterdam"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:399
+msgid "Lisbon"
+msgstr "Lisbonne"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:400
+msgid "London"
+msgstr "Londres"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:401
+msgid "Sicily"
+msgstr "Sicile"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:402
+msgid "Palermo"
+msgstr "Palerme"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:403
+msgid "Prague"
+msgstr "Prague"
