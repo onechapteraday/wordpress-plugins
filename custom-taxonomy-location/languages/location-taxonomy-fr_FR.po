@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2018-02-20 19:27+0100\n"
-"PO-Revision-Date: 2018-02-20 19:36+0100\n"
+"POT-Creation-Date: 2018-02-20 21:33+0100\n"
+"PO-Revision-Date: 2018-02-20 21:35+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1189,7 +1189,7 @@ msgstr "Maryland"
 
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:293
 msgid "Massachusetts"
-msgstr "Massachussetts"
+msgstr "Massachusetts"
 
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:294
 msgid "Michigan"
@@ -1630,3 +1630,19 @@ msgstr "Palerme"
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:403
 msgid "Prague"
 msgstr "Prague"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:404
+msgid "England"
+msgstr "Angleterre"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:405
+msgid "Northern Ireland"
+msgstr "Irlande du Nord"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:406
+msgid "Scotland"
+msgstr "Écosse"
+
+#: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:407
+msgid "Wales"
+msgstr "Pays de Galles"
