@@ -68,7 +68,7 @@ function add_location_taxonomy() {
     'show_admin_column'     => true,
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'location', 'with_front' => 'true' ),
+    'rewrite'               => array( 'slug' => 'location', 'with_front' => 'true', 'hierarchical' => true ),
     'show_tagcloud'         => true,
   );
 
