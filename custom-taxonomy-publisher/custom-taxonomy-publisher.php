@@ -230,25 +230,21 @@ class popular_publishers_in_category_widget extends WP_Widget {
         $publishers_array = get_terms ( 'publisher', $tag_args );
 
         if( sizeof( $publishers_array ) ){
-            function widget_sort_publisher_by_translation( $a, $b ){
+            function widget_sort_publisher_by_name( $a, $b ){
                 $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
-                $at = strtr( $a->translation, $translit );
-                $bt = strtr( $b->translation, $translit );
+                $at = strtr( $a->name, $translit );
+                $bt = strtr( $b->name, $translit );
 
                 return strcoll( $at, $bt );
             }
 
-            foreach( $publishers_array as $mypublisher ) {
-                $mypublisher->translation = __( $mypublisher->name, $LOCATION_TEXTDOMAIN );
-            }
-
-            usort( $publishers_array, 'widget_sort_publisher_by_translation' );
+            usort( $publishers_array, 'widget_sort_publisher_by_name' );
 
             echo '<ul class="wp-tag-cloud">';
 
 	    foreach ( $publishers_array as $mypublisher ) {
                 echo '<li><a href="' . get_term_link( $mypublisher->term_id ) . '" class="tag-cloud-link tag-link-' . $mypublisher->term_id . '">';
-                echo $mypublisher->translation;
+                echo $mypublisher->name;
                 echo '</a></li>';
 	    }
 
