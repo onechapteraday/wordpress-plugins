@@ -202,8 +202,15 @@ class popular_publishers_in_category_widget extends WP_Widget {
             $terms = wp_get_post_terms( $post->ID, 'publisher' );
 
             foreach( $terms as $value ){
+		$parent = $value->parent;
+
                 if( !in_array( $value, $array_of_terms_in_category, true ) ){
                     array_push( $array_of_terms_in_category, $value->term_id );
+                }
+                if( $parent > 0 ){
+                    if( !in_array( $parent, $array_of_terms_in_category, true ) ){
+                        array_push( $array_of_terms_in_category, $parent );
+                    }
                 }
             }
         }
