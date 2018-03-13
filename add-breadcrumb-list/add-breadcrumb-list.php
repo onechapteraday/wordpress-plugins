@@ -157,4 +157,39 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_publisher', 'create_breadcrumb_publisher' );
 
+
+# Create breadcrumb for persons
+
+function create_breadcrumb_person( $atts, $content=null ) {
+    $person_id = $atts['id'];
+
+    $person      = get_term( $person_id, 'person' );
+    $person_link = get_term_link( $person, 'person' );
+
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Personnes</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $person_link; ?>">
+          <span itemprop="name"><?php echo $person->name; ?></span>
+        </a>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_person', 'create_breadcrumb_person' );
+
 ?>
