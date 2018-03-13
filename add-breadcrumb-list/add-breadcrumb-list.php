@@ -95,7 +95,7 @@ function create_breadcrumb_tag( $atts, $content=null ) {
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_tag_link( $tag_id ); ?>">
-              <span itemprop="name"><?php echo ucwords( get_tag( $tag_id )->name ); ?></span>
+              <span itemprop="name"><?php echo ucfirst( get_tag( $tag_id )->name ); ?></span>
             </a>
             <meta itemprop="position" content="3" />
           </li>
