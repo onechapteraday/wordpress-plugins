@@ -192,4 +192,67 @@ function create_breadcrumb_person( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_person', 'create_breadcrumb_person' );
 
+
+# Create breadcrumb for locations
+
+function create_breadcrumb_location( $atts, $content=null ) {
+    $location_id = $atts['id'];
+
+    $location      = get_term( $location_id, 'location' );
+    $location_link = get_term_link( $location, 'location' );
+
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Localisations</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <?php
+	$i = 3;
+	$parent_id = $location->parent;
+        $locations_array = array();
+
+	# While location still has a parent, search for it
+	while( $parent_id > 0 ){
+	  array_unshift( $locations_array, $parent_id );
+
+          $parent      = get_term( $parent_id, 'location' );
+	  $parent_id = $parent->parent;
+	}
+
+	# When all locations are retrieved, display them in the correct order
+        foreach( $locations_array as $parent_id ){
+          $parent      = get_term( $parent_id, 'location' );
+          $parent_link = get_term_link( $parent, 'location' );
+          ?>
+          <li>
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
+              <span itemprop="name"><?php echo __( $parent->name, 'location-taxonomy' ); ?></span>
+            </a>
+            <meta itemprop="position" content="<?php echo $i; ?>" />
+          </li>
+          <?php
+	  $i = $i + 1;
+	}
+      ?>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $location_link; ?>">
+          <span itemprop="name"><?php echo __( $location->name, 'location-taxonomy' ); ?></span>
+        </a>
+        <meta itemprop="position" content="<?php echo $i; ?>" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_location', 'create_breadcrumb_location' );
+
 ?>
