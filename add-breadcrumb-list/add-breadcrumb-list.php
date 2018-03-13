@@ -73,6 +73,40 @@ function create_breadcrumb_category( $atts, $content=null ) {
 add_shortcode( 'wp_breadcrumb_category', 'create_breadcrumb_category' );
 
 
+# Create breadcrumb for tag
+
+function create_breadcrumb_tag( $atts, $content=null ) {
+    $tag_id = $atts['id'];
+
+    if( isset( $tag_id ) ){
+        ?>
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+                <span itemprop="name">Accueil</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name">Étiquettes</span>
+            </span>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_tag_link( $tag_id ); ?>">
+              <span itemprop="name"><?php echo ucwords( get_tag( $tag_id )->name ); ?></span>
+            </a>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+        <?php
+    }
+}
+
+add_shortcode( 'wp_breadcrumb_tag', 'create_breadcrumb_tag' );
+
+
 # Create breadcrumb for publishers
 
 function create_breadcrumb_publisher( $atts, $content=null ) {
