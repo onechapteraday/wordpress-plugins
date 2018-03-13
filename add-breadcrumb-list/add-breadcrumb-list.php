@@ -45,6 +45,34 @@ function create_breadcrumb_single( $atts, $content=null ) {
 add_shortcode( 'wp_breadcrumb_single', 'create_breadcrumb_single' );
 
 
+# Create breadcrumb for category
+
+function create_breadcrumb_category( $atts, $content=null ) {
+    $cat_id = $atts['id'];
+
+    if( isset( $cat_id ) ){
+        ?>
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+                <span itemprop="name">Accueil</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
+              <span itemprop="name"><?php echo get_category( $cat_id )->name; ?></span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+        <?php
+    }
+}
+
+add_shortcode( 'wp_breadcrumb_category', 'create_breadcrumb_category' );
+
+
 # Create breadcrumb for publishers
 
 function create_breadcrumb_publisher( $atts, $content=null ) {
