@@ -112,6 +112,35 @@ add_filter( 'dashboard_recent_posts_query_args', 'add_custom_post_type_book_to_d
 
 
 /*
+ * Add custom post type on dashboard 'At a glance'
+ *
+ */
+
+function custom_post_type_book_at_a_glance() {
+    $args = array(
+        'name'     => 'book',
+        '_builtin' => false,
+    );
+
+    $object = get_post_types( $args, 'objects' );
+
+    foreach ( $object as $post_type ) {
+        $num_posts = wp_count_posts( $post_type->name );
+        $num = number_format_i18n( $num_posts->publish );
+        $text = _n( strtolower( $post_type->labels->singular_name ), strtolower( $post_type->labels->name ), $num_posts->publish );
+
+        if ( current_user_can( 'edit_posts' ) ) {
+            $num = '<li class="post-count"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . '</a></li>';
+        }
+
+        echo $num;
+    }
+}
+
+add_action( 'dashboard_glance_items', 'custom_post_type_book_at_a_glance' );
+
+
+/*
  * Add book metadata functions
  *
  */
