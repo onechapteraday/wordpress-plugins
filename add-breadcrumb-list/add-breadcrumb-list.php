@@ -317,4 +317,28 @@ function create_breadcrumb_search( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_search', 'create_breadcrumb_search' );
 
+
+# Create breadcrumb for 404
+
+function create_breadcrumb_error_page( $atts, $content=null ) {
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Erreur 404</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_404', 'create_breadcrumb_error_page' );
+
 ?>
