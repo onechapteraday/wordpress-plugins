@@ -287,4 +287,34 @@ function create_breadcrumb_author( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_author', 'create_breadcrumb_author' );
 
+
+# Create breadcrumb for search page
+
+function create_breadcrumb_search( $atts, $content=null ) {
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Recherche</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name"><?php echo ucfirst( get_search_query() ); ?></span>
+        </span>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_search', 'create_breadcrumb_search' );
+
 ?>
