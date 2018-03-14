@@ -255,4 +255,36 @@ function create_breadcrumb_location( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_location', 'create_breadcrumb_location' );
 
+
+# Create breadcrumb for authors
+
+function create_breadcrumb_author( $atts, $content=null ) {
+    $author_id = $atts['id'];
+
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Auteurs</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_the_author_meta( 'user_url' ); ?>">
+          <span itemprop="name"><?php echo ucfirst( get_the_author_meta( 'display_name', $author_id ) ); ?></span>
+        </a>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_author', 'create_breadcrumb_author' );
+
 ?>
