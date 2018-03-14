@@ -341,4 +341,64 @@ function create_breadcrumb_error_page( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_404', 'create_breadcrumb_error_page' );
 
+
+# Create breadcrumb for archives
+
+function create_breadcrumb_archive( $atts, $content=null ) {
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span itemprop="name">Accueil</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Archives</span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+      <?php
+      if( is_year() ){
+          ?>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name"><?php echo get_the_date( _x( 'Y', 'yearly archives date format' ) ); ?></span>
+            </span>
+            <meta itemprop="position" content="3" />
+          </li>
+	  <?php
+      }
+      ?>
+      <?php
+      if( is_month() ){
+          ?>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name"><?php echo ucfirst( get_the_date( _x( 'F Y', 'monthly archives date format' ) ) ); ?></span>
+            </span>
+            <meta itemprop="position" content="3" />
+          </li>
+	  <?php
+      }
+      ?>
+      <?php
+      if( is_day() ){
+          ?>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name"><?php echo get_the_date( _x( 'j F Y', 'daily archives date format' ) ); ?></span>
+            </span>
+            <meta itemprop="position" content="3" />
+          </li>
+	  <?php
+      }
+      ?>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_archive', 'create_breadcrumb_archive' );
+
 ?>
