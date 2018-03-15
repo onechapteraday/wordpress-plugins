@@ -136,7 +136,7 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
           $parent      = get_term( $parent_id, 'publisher' );
           $parent_link = get_term_link( $parent, 'publisher' );
           ?>
-          <li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
               <span itemprop="name"><?php echo $parent->name; ?></span>
             </a>
@@ -233,7 +233,7 @@ function create_breadcrumb_location( $atts, $content=null ) {
           $parent      = get_term( $parent_id, 'location' );
           $parent_link = get_term_link( $parent, 'location' );
           ?>
-          <li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
               <span itemprop="name"><?php echo __( $parent->name, 'location-taxonomy' ); ?></span>
             </a>
