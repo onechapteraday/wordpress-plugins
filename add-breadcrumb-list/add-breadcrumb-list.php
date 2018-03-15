@@ -22,20 +22,19 @@ function create_breadcrumb_single( $atts, $content=null ) {
         $cat_id = $cats[0];
         ?>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-                <span itemprop="name">Accueil</span>
+          <li>
+            <a href="<?php echo get_bloginfo( 'url' ); ?>">
+                <span>Accueil</span>
             </a>
-            <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
               <span itemprop="name"><?php echo $cat_id->cat_name; ?></span>
             </a>
-            <meta itemprop="position" content="2" />
+            <meta itemprop="position" content="1" />
           </li>
           <li>
-              <span itemprop="name"><?php the_title(); ?></span>
+              <span><?php the_title(); ?></span>
           </li>
         </ol>
         <?php
@@ -53,17 +52,16 @@ function create_breadcrumb_category( $atts, $content=null ) {
     if( isset( $cat_id ) ){
         ?>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-                <span itemprop="name">Accueil</span>
+          <li>
+            <a href="<?php echo get_bloginfo( 'url' ); ?>">
+                <span>Accueil</span>
             </a>
-            <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
               <span itemprop="name"><?php echo get_category( $cat_id )->name; ?></span>
             </a>
-            <meta itemprop="position" content="2" />
+            <meta itemprop="position" content="1" />
           </li>
         </ol>
         <?php
@@ -81,23 +79,22 @@ function create_breadcrumb_tag( $atts, $content=null ) {
     if( isset( $tag_id ) ){
         ?>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-                <span itemprop="name">Accueil</span>
+          <li>
+            <a href="<?php echo get_bloginfo( 'url' ); ?>">
+                <span>Accueil</span>
             </a>
-            <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
               <span itemprop="name">Étiquettes</span>
             </span>
-            <meta itemprop="position" content="2" />
+            <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_tag_link( $tag_id ); ?>">
               <span itemprop="name"><?php echo ucfirst( get_tag( $tag_id )->name ); ?></span>
             </a>
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="2" />
           </li>
         </ol>
         <?php
@@ -117,17 +114,16 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
 
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Maisons d'édition</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <?php
 	if( $publisher->parent > 0 ){
@@ -140,7 +136,7 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
               <span itemprop="name"><?php echo $parent->name; ?></span>
             </a>
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="2" />
           </li>
           <?php
 	}
@@ -149,7 +145,7 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
         <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $publisher_link; ?>">
           <span itemprop="name"><?php echo $publisher->name; ?></span>
         </a>
-        <meta itemprop="position" content="<?php if( $publisher->parent > 0 ){ echo '4'; }else{ echo '3'; } ?>" />
+        <meta itemprop="position" content="<?php if( $publisher->parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
       </li>
     </ol>
     <?php
@@ -168,23 +164,22 @@ function create_breadcrumb_person( $atts, $content=null ) {
 
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Personnes</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $person_link; ?>">
           <span itemprop="name"><?php echo $person->name; ?></span>
         </a>
-        <meta itemprop="position" content="3" />
+        <meta itemprop="position" content="2" />
       </li>
     </ol>
     <?php
@@ -203,20 +198,19 @@ function create_breadcrumb_location( $atts, $content=null ) {
 
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Localisations</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <?php
-	$i = 3;
+	$i = 2;
 	$parent_id = $location->parent;
         $locations_array = array();
 
@@ -263,23 +257,22 @@ function create_breadcrumb_author( $atts, $content=null ) {
 
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Auteurs</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_the_author_meta( 'user_url' ); ?>">
           <span itemprop="name"><?php echo ucfirst( get_the_author_meta( 'display_name', $author_id ) ); ?></span>
         </a>
-        <meta itemprop="position" content="3" />
+        <meta itemprop="position" content="2" />
       </li>
     </ol>
     <?php
@@ -293,23 +286,22 @@ add_shortcode( 'wp_breadcrumb_author', 'create_breadcrumb_author' );
 function create_breadcrumb_search( $atts, $content=null ) {
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Recherche</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name"><?php echo ucfirst( get_search_query() ); ?></span>
         </span>
-        <meta itemprop="position" content="3" />
+        <meta itemprop="position" content="2" />
       </li>
     </ol>
     <?php
@@ -323,17 +315,16 @@ add_shortcode( 'wp_breadcrumb_search', 'create_breadcrumb_search' );
 function create_breadcrumb_error_page( $atts, $content=null ) {
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Erreur 404</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
     </ol>
     <?php
@@ -347,17 +338,16 @@ add_shortcode( 'wp_breadcrumb_404', 'create_breadcrumb_error_page' );
 function create_breadcrumb_archive( $atts, $content=null ) {
     ?>
     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>">
-            <span itemprop="name">Accueil</span>
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
         </a>
-        <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
           <span itemprop="name">Archives</span>
         </span>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="1" />
       </li>
       <?php
       if( is_year() ){
@@ -366,7 +356,7 @@ function create_breadcrumb_archive( $atts, $content=null ) {
             <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
               <span itemprop="name"><?php echo get_the_date( _x( 'Y', 'yearly archives date format' ) ); ?></span>
             </span>
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="2" />
           </li>
 	  <?php
       }
@@ -378,7 +368,7 @@ function create_breadcrumb_archive( $atts, $content=null ) {
             <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
               <span itemprop="name"><?php echo ucfirst( get_the_date( _x( 'F Y', 'monthly archives date format' ) ) ); ?></span>
             </span>
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="2" />
           </li>
 	  <?php
       }
@@ -390,7 +380,7 @@ function create_breadcrumb_archive( $atts, $content=null ) {
             <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
               <span itemprop="name"><?php echo get_the_date( _x( 'j F Y', 'daily archives date format' ) ); ?></span>
             </span>
-            <meta itemprop="position" content="3" />
+            <meta itemprop="position" content="2" />
           </li>
 	  <?php
       }
