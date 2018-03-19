@@ -12,15 +12,64 @@
  */
 
 
+/*
+ * Add SEO title meta box
+ */
+
+function seo_title_add_custom_box(){
+    $screens = ['post', 'book'];
+
+    foreach( $screens as $screen ){
+        add_meta_box(
+            'seo_title_box_id',           # Unique ID
+            'SEO Title',                  # Box title
+            'seo_title_custom_box_html',  # Content callback, must be of type callable
+            $screen                       # Post type
+        );
+    }
+}
+
+add_action( 'add_meta_boxes', 'seo_title_add_custom_box' );
+
+function seo_title_custom_box_html( $post ){
+    ?>
+    <label for="seo_title_field"><em>Enter here title for SEO</em></label>
+    <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="30" />
+    <?php
+}
+
+function seo_title_save_postdata( $post_id ){
+    if( array_key_exists( 'seo_title_field', $_POST ) ){
+        update_post_meta(
+            $post_id,
+            '_seo_title_meta_key',
+            $_POST['seo_title_field']
+        );
+    }
+}
+
+add_action( 'save_post', 'seo_title_save_postdata' );
+
+
 /**
  * Rewrite title tag for SEO
  */
 
-function twentysixteen_child_custom_title( $title ){
+function seo_title_custom_title( $title ){
     $title = 'One chapter a day, un chapitre... presque tous les jours';
 
     # Single post and page
     if( ( is_single() || is_page() ) && !is_page( 'Front page' ) ){
+        # If new SEO title defined
+        if( get_the_ID() ){
+            $id = get_the_ID();
+            $meta_title = get_post_meta( $id, '_seo_title_meta_key', true );
+
+            if( $meta_title != '' ){
+                return $meta_title;
+            }
+        }
+
         return get_the_title();
     }
 
@@ -116,6 +165,6 @@ function twentysixteen_child_custom_title( $title ){
     return $title;
 }
 
-add_filter('pre_get_document_title', 'twentysixteen_child_custom_title');
+add_filter('pre_get_document_title', 'seo_title_custom_title');
 
 ?>
