@@ -82,7 +82,7 @@ function seo_title_custom_title( $title ){
     # Tag
     if( is_tag() ){
         $tag = get_queried_object();
-        return 'Articles concernant l\'étiquette "' . ucfirst( $tag->name ) . '" - ' . get_bloginfo( 'name' );
+        return 'Articles concernant l\'étiquette ' . ucfirst( $tag->name ) . ' - ' . get_bloginfo( 'name' );
     }
 
     # Archive year
@@ -140,10 +140,10 @@ function seo_title_custom_title( $title ){
         # If parent_id then it's a collection
         if( $parent_id > 0 ){
             $parent = get_term( $parent_id, 'publisher' );
-            return 'Articles concernant la collection ' . $publisher->name . ' de la maison d\'édition ' . $parent->name . ' - ' . get_bloginfo( 'name' );
+            return 'Articles sur la collection ' . $publisher->name . ' de la maison d\'édition ' . $parent->name . ' - ' . get_bloginfo( 'name' );
         }
 
-        return 'Articles concernant la maison d\'édition ' . $publisher->name . ' - ' . get_bloginfo( 'name' );
+        return 'Articles sur la maison d\'édition ' . $publisher->name . ' - ' . get_bloginfo( 'name' );
     }
 
     # Search
