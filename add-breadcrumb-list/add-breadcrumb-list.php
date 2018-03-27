@@ -15,9 +15,36 @@
 # Create breadcrumb for single posts
 
 function create_breadcrumb_single( $atts, $content=null ) {
+    global $wpdb;
+
+    # Retrieve post_id and post_category
     $post_id = $atts['id'];
     $cats = get_the_category( $post_id );
 
+    # Check if single post has a dictionary (cf. post-dictionary plugin)
+    $charset_collate = $wpdb->get_charset_collate();
+    $table_name      = $wpdb->prefix . 'postdictionary_data';
+    $has_dictionary  = 0;
+
+    $sql = "SELECT EXISTS( SELECT *
+            FROM information_schema.tables
+            WHERE table_name = 'wp_postdictionary_data'
+            LIMIT 1) as `has_table`;";
+
+    $result = $wpdb->get_results( $sql );
+    $has_table = $result[0]->has_table;
+
+    if( $has_table ){
+        $sql = "SELECT EXISTS( SELECT *
+                FROM $table_name
+                WHERE post_id = $post_id
+                ) as `has_dictionary`;";
+
+        $result = $wpdb->get_results( $sql );
+        $has_dictionary = $result[0]->has_dictionary;
+    }
+
+    # Display breadcrumb
     if( isset( $cats, $cats[0] ) ){
         $cat_id = $cats[0];
         ?>
@@ -39,6 +66,9 @@ function create_breadcrumb_single( $atts, $content=null ) {
 	      <?php
 	      if( is_singular('book') ){
 		  echo 'Livres';
+	      }
+	      else if( $has_dictionary == 1){
+		  echo 'Dictionnaires';
 	      }
 	      else{
 		  echo 'Articles';
