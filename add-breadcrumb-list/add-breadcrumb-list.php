@@ -33,6 +33,21 @@ function create_breadcrumb_single( $atts, $content=null ) {
             </a>
             <meta itemprop="position" content="1" />
           </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name">
+	      <?php
+	      if( is_singular('book') ){
+		  echo 'Livres';
+	      }
+	      else{
+		  echo 'Articles';
+	      }
+	      ?>
+	      </span>
+            </span>
+            <meta itemprop="position" content="2" />
+          </li>
           <li>
               <span><?php the_title(); ?></span>
           </li>
@@ -58,10 +73,16 @@ function create_breadcrumb_category( $atts, $content=null ) {
             </a>
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+              <span itemprop="name">Catégories</span>
+            </span>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
               <span itemprop="name"><?php echo get_category( $cat_id )->name; ?></span>
             </a>
-            <meta itemprop="position" content="1" />
+            <meta itemprop="position" content="2" />
           </li>
         </ol>
         <?php
