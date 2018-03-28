@@ -64,10 +64,13 @@ function create_breadcrumb_single( $atts, $content=null ) {
             <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
               <span itemprop="name">
 	      <?php
-	      if( is_singular('book') ){
+	      if( is_singular( 'book' ) ){
 		  echo 'Livres';
 	      }
-	      else if( $has_dictionary == 1){
+	      else if( is_singular( 'album' ) ){
+		  echo 'Albums';
+	      }
+	      else if( $has_dictionary == 1 ){
 		  echo 'Dictionnaires';
 	      }
 	      else{
