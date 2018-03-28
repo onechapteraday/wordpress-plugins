@@ -77,22 +77,6 @@ add_action( 'init', 'create_post_type_book' );
 
 
 /*
- * Add book post in archives
- *
- **/
-
-function include_book_filter( $query ) {
-    if ( ($query->is_home() && $query->is_main_query()) || $query->is_feed() ) {
-        $query->set( 'post_type', array( 'post', 'book' ) );
-    }
-
-    return $query;
-}
-
-add_action( 'pre_get_posts', 'include_book_filter' );
-
-
-/*
  * Add custom post type book to dashboard widget activity
  *
  */
