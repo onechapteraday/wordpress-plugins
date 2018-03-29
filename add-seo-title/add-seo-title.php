@@ -17,7 +17,19 @@
  */
 
 function seo_title_add_custom_box(){
-    $screens = ['post', 'book'];
+    $screens = array( 'post' );
+
+    if( post_type_exists( 'book' ) ){
+        array_push( $screens, 'book' );
+    }
+
+    if( post_type_exists( 'album' ) ){
+        array_push( $screens, 'album' );
+    }
+
+    if( post_type_exists( 'interview' ) ){
+        array_push( $screens, 'interview' );
+    }
 
     foreach( $screens as $screen ){
         add_meta_box(
