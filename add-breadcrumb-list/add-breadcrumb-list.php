@@ -70,6 +70,9 @@ function create_breadcrumb_single( $atts, $content=null ) {
 	      else if( is_singular( 'album' ) ){
 		  echo 'Albums';
 	      }
+	      else if( is_singular( 'interview' ) ){
+		  echo 'Interviews';
+	      }
 	      else if( $has_dictionary == 1 ){
 		  echo 'Dictionnaires';
 	      }
