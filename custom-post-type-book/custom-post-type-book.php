@@ -114,7 +114,7 @@ function custom_post_type_book_at_a_glance() {
         $text = _n( strtolower( $post_type->labels->singular_name ), strtolower( $post_type->labels->name ), $num_posts->publish );
 
         if ( current_user_can( 'edit_posts' ) ) {
-            $num = '<li class="post-count"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . '</a></li>';
+            $num = '<li class="post-count custom-post-type-book"><a href="edit.php?post_type=' . $post_type->name . '">' . $num . ' ' . $text . '</a></li>';
         }
 
         echo $num;
