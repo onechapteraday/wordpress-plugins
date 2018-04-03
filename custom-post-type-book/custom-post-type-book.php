@@ -211,6 +211,11 @@ function get_book_illustrator ( $post_id ) {
   return get_term_by( 'slug', $person, 'person' );
 }
 
+function get_book_colourist ( $post_id ) {
+  $person = get_post_meta( $post_id, 'colourist', true );
+  return get_term_by( 'slug', $person, 'person' );
+}
+
 function get_book_publisher ( $post_id ) {
   $publisher = get_the_terms( $post_id, 'publisher' )[0];
 
