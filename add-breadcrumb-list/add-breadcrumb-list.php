@@ -95,6 +95,41 @@ function create_breadcrumb_single( $atts, $content=null ) {
 add_shortcode( 'wp_breadcrumb_single', 'create_breadcrumb_single' );
 
 
+# Create breadcrumb for images
+
+function create_breadcrumb_image( $atts, $content=null ) {
+    global $wpdb;
+
+    # Retrieve post_id and post_category
+    $post_id = $atts['id'];
+
+    # Display breadcrumb
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
+        </a>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Images</span>
+        </span>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name"><?php the_title(); ?></span>
+        </span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_image', 'create_breadcrumb_image' );
+
+
 # Create breadcrumb for category
 
 function create_breadcrumb_category( $atts, $content=null ) {
