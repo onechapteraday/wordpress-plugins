@@ -354,7 +354,7 @@ class popular_persons_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 50,
+                    'number'   => 75,
                     'taxonomy' => 'person',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
