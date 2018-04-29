@@ -46,7 +46,7 @@ add_action( 'add_meta_boxes', 'seo_title_add_custom_box' );
 function seo_title_custom_box_html( $post ){
     ?>
     <label for="seo_title_field"><em>Enter here title for SEO</em></label>
-    <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="30" />
+    <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="20" />
     <?php
 }
 
