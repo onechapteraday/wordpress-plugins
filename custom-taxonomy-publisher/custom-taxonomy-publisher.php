@@ -231,7 +231,7 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 50,
+                    'number'   => 75,
                     'taxonomy' => 'publisher',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
