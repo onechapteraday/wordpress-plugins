@@ -180,17 +180,31 @@ class popular_publishers_in_category_widget extends WP_Widget {
             $catID = $categories[0]->cat_ID;
 	}
 
+        $post_types = array( 'post' );
+
+        if( post_type_exists( 'book' ) ){
+            array_push( $post_types, 'book' );
+        }
+
+        if( post_type_exists( 'album' ) ){
+            array_push( $post_types, 'album' );
+        }
+
+        if( post_type_exists( 'interview' ) ){
+            array_push( $post_types, 'interview' );
+        }
+
         if ( $catID ) {
             $posts_with_category = get_posts( array(
                          'category'       => $catID,
-                         'post_type'      => array('post', 'book'),
+                         'post_type'      => $post_types,
                          'number_posts'   => -1,
                          'posts_per_page' => -1,
                      ));
         }
         else {
             $posts_with_category = get_posts( array(
-                         'post_type'      => array('post', 'book'),
+                         'post_type'      => $post_types,
                          'number_posts'   => -1,
                          'posts_per_page' => -1,
                      ));
