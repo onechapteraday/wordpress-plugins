@@ -169,6 +169,7 @@ function create_breadcrumb_tag( $atts, $content=null ) {
     $tag_id = $atts['id'];
 
     if( isset( $tag_id ) ){
+        $tag_name = get_tag( $tag_id )->name;
         ?>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
           <li>
@@ -184,7 +185,7 @@ function create_breadcrumb_tag( $atts, $content=null ) {
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_tag_link( $tag_id ); ?>">
-              <span itemprop="name"><?php echo ucfirst( get_tag( $tag_id )->name ); ?></span>
+              <span itemprop="name"><?php echo mb_strtoupper( mb_substr( $tag_name, 0, 1 )) . mb_substr( $tag_name, 1 ); ?></span>
             </a>
             <meta itemprop="position" content="2" />
           </li>
