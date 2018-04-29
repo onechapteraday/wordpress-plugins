@@ -94,7 +94,7 @@ function seo_title_custom_title( $title ){
     # Tag
     if( is_tag() ){
         $tag = get_queried_object();
-        return 'Articles concernant l\'étiquette ' . ucfirst( $tag->name ) . ' - ' . get_bloginfo( 'name' );
+        return 'Articles concernant l\'étiquette ' . mb_strtoupper( mb_substr( $tag->name, 0, 1 )) . mb_substr( $tag->name, 1 ) . ' - ' . get_bloginfo( 'name' );
     }
 
     # Archive year
