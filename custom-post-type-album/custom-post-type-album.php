@@ -121,4 +121,45 @@ function custom_post_type_album_at_a_glance() {
 add_action( 'dashboard_glance_items', 'custom_post_type_album_at_a_glance' );
 
 
+/*
+ * Add album metadata functions
+ *
+ */
+
+function get_album_title_original ( $post_id ) {
+  return get_post_meta($post_id, 'title_original', true);
+}
+
+function get_album_price ( $post_id ) {
+  return get_post_meta($post_id, 'price', true);
+}
+
+function get_album_date_release ( $post_id ) {
+  return get_post_meta($post_id, 'date_release', true);
+}
+
+function get_album_rating ( $post_id ) {
+  return get_post_meta($post_id, 'rating', true);
+}
+
+function get_album_amazon ( $post_id ) {
+  $arr = array(
+    'link' => get_post_meta( $post_id, 'amazon', true ),
+    'img' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png'
+  );
+
+  return $arr;
+}
+
+function get_album_author ( $post_id ) {
+  $person = get_post_meta( $post_id, 'author', true );
+  return get_term_by( 'slug', $person, 'person' );
+}
+
+function get_album_author_second ( $post_id ) {
+  $person = get_post_meta( $post_id, 'author_second', true );
+  return get_term_by( 'slug', $person, 'person' );
+}
+
+
 ?>
