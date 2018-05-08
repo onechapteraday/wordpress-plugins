@@ -153,13 +153,17 @@ function get_album_amazon ( $post_id ) {
 }
 
 function get_album_author ( $post_id ) {
-  $person = get_post_meta( $post_id, 'author', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'author', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_album_author_second ( $post_id ) {
-  $person = get_post_meta( $post_id, 'author_second', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'author_second', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 

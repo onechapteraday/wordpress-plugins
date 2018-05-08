@@ -192,54 +192,68 @@ function get_book_fnac ( $post_id ) {
 }
 
 function get_book_author ( $post_id ) {
-  $person = get_post_meta( $post_id, 'author', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'author', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_book_author_second ( $post_id ) {
-  $person = get_post_meta( $post_id, 'author_second', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'author_second', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_book_translator ( $post_id ) {
-  $person = get_post_meta( $post_id, 'translator', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'translator', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_book_illustrator ( $post_id ) {
-  $person = get_post_meta( $post_id, 'illustrator', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'illustrator', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_book_colourist ( $post_id ) {
-  $person = get_post_meta( $post_id, 'colourist', true );
-  return get_term_by( 'slug', $person, 'person' );
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'colourist', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
 }
 
 function get_book_publisher ( $post_id ) {
-  $publisher = get_the_terms( $post_id, 'publisher' )[0];
+  if( taxonomy_exists( 'publisher' ) ){
+    $publisher = get_the_terms( $post_id, 'publisher' )[0];
 
-  # If parent
-  if ( isset ( $publisher->parent ) ) {
-      if ( $publisher->parent ) {
-          return get_term_by( 'id', $publisher->parent, 'publisher' );
-      }
+    # If parent
+    if ( isset ( $publisher->parent ) ) {
+        if ( $publisher->parent ) {
+            return get_term_by( 'id', $publisher->parent, 'publisher' );
+        }
+    }
+
+    return $publisher;
   }
-
-  return $publisher;
 }
 
 function get_book_collection ( $post_id ) {
-  $publisher = get_the_terms( $post_id, 'publisher' )[0];
+  if( taxonomy_exists( 'publisher' ) ){
+    $publisher = get_the_terms( $post_id, 'publisher' )[0];
 
-  # If parent
-  if ( isset( $publisher->parent ) ) {
-      if ( $publisher->parent ) {
-          return $publisher;
-      }
+    # If parent
+    if ( isset( $publisher->parent ) ) {
+        if ( $publisher->parent ) {
+            return $publisher;
+        }
+    }
+
+    return null;
   }
-
-  return null;
 }
 
 ?>
