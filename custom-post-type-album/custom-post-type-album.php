@@ -55,6 +55,7 @@ function create_post_type_album() {
       'taxonomies' => array(
         'category',
         'person',
+        'location',
         'post_tag',
       ),
       'supports' => array(
