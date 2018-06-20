@@ -205,6 +205,13 @@ function get_book_author_second ( $post_id ) {
   }
 }
 
+function get_book_author_preface ( $post_id ) {
+  if( taxonomy_exists( 'person' ) ){
+    $person = get_post_meta( $post_id, 'author_preface', true );
+    return get_term_by( 'slug', $person, 'person' );
+  }
+}
+
 function get_book_translator ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
     $person = get_post_meta( $post_id, 'translator', true );
