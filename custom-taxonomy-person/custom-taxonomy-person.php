@@ -154,6 +154,12 @@ function add_new_meta_field() {
     <input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="">
     <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
+
+  <div class="form-field">
+    <label for="term_meta[sidebar]"><?php _e( 'Sidebar', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="">
+    <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
   <?php
 
 }
@@ -248,6 +254,14 @@ function edit_meta_field ($term) {
     <td>
     	<input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo esc_attr( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[sidebar]"><?php _e( 'Sidebar', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+      <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="<?php echo esc_attr( $term_meta['sidebar'] ) ? esc_attr( $term_meta['sidebar'] ) : ''; ?>">
+      <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <?php
