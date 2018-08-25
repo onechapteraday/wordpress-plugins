@@ -68,7 +68,12 @@ function create_breadcrumb_single( $atts, $content=null ) {
 		  echo 'Livres';
 	      }
 	      else if( is_singular( 'album' ) ){
-		  echo 'Albums';
+                  if( has_tag( 'single' ) ){
+		      echo 'Singles';
+                  }
+                  else {
+		      echo 'Albums';
+                  }
 	      }
 	      else if( is_singular( 'interview' ) ){
 		  echo 'Interviews';
