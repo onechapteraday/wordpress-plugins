@@ -252,6 +252,56 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
 add_shortcode( 'wp_breadcrumb_publisher', 'create_breadcrumb_publisher' );
 
 
+# Create breadcrumb for prizes
+
+function create_breadcrumb_prize( $atts, $content=null ) {
+    $prize_id = $atts['id'];
+
+    $prize      = get_term( $prize_id, 'prize' );
+    $prize_link = get_term_link( $prize, 'prize' );
+
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
+        </a>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+          <span itemprop="name">Prix littéraires</span>
+        </span>
+        <meta itemprop="position" content="1" />
+      </li>
+      <?php
+	if( $prize->parent > 0 ){
+	  $parent_id = $prize->parent;
+
+          $parent      = get_term( $parent_id, 'prize' );
+          $parent_link = get_term_link( $parent, 'prize' );
+          ?>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
+              <span itemprop="name"><?php echo $parent->name; ?></span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <?php
+	}
+      ?>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $prize_link; ?>">
+          <span itemprop="name"><?php echo $prize->name; ?></span>
+        </a>
+        <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_prize', 'create_breadcrumb_prize' );
+
+
 # Create breadcrumb for persons
 
 function create_breadcrumb_person( $atts, $content=null ) {
