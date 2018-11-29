@@ -337,7 +337,7 @@ class MCI_Footnotes_Task {
 		// search footnotes short codes in the content
 		do {
 			// get first occurrence of the footnote short code [start]
-			$l_int_PosStart = strpos($p_str_Content, $l_str_StartingTag, $l_int_PosStart);
+			$l_int_PosStart = strpos($p_str_Content, $l_str_StartingTag);
 			// no short code found, stop here
 			if ($l_int_PosStart === false) {
 				break;
