@@ -158,6 +158,13 @@ function seo_title_custom_title( $title ){
         return 'Livres de la maison d\'édition ' . $publisher->name . ' - ' . get_bloginfo( 'name' );
     }
 
+    # Custom taxonomy literary prize
+    if( is_tax( 'prize' ) ){
+        $prize = get_queried_object();
+
+        return 'Livres ayant reçu le ' . $prize->name . ' - ' . get_bloginfo( 'name' );
+    }
+
     # Search
     if( is_search() ){
         $keyword = get_search_query();
