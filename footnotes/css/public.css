@@ -30,13 +30,13 @@
 /* reference container */
 .footnote-reference-container {
     list-style-position: inside;
-    font-size: 85%;
+    font-size: 87.5%;
     border: none;
 }
 
 .footnote-reference-container li {
     line-height: 1.72;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 /* arrow */
