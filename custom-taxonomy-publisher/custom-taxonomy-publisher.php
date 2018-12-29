@@ -219,8 +219,13 @@ class popular_publishers_in_category_widget extends WP_Widget {
 		$parent = $value->parent;
 
                 if( !in_array( $value, $array_of_terms_in_category, true ) ){
-                    array_push( $array_of_terms_in_category, $value->term_id );
+                    # Add publisher only if parent
+                    if( $parent == 0 ){
+                        array_push( $array_of_terms_in_category, $value->term_id );
+                    }
                 }
+
+                # Add parent publisher if not in array
                 if( $parent > 0 ){
                     if( !in_array( $parent, $array_of_terms_in_category, true ) ){
                         array_push( $array_of_terms_in_category, $parent );
