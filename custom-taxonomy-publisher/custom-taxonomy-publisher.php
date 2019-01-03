@@ -280,7 +280,7 @@ class popular_publishers_in_category_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         } else {
-            $title = __( 'New title', 'popular_publishers_in_category_widget_domain' );
+            $title = __( 'Publishers', 'popular_publishers_in_category_widget_domain' );
         }
 
         # Widget admin form
@@ -306,6 +306,193 @@ function popular_publisher_wpb_load_widget() {
 }
 
 add_action( 'widgets_init', 'popular_publisher_wpb_load_widget' );
+
+
+/**
+ * Create widget to retrieve popular collections in specific category
+ *
+ */
+
+class popular_collections_in_category_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            # Base ID of your widget
+            'popular_collections_in_category_widget',
+
+            # Widget name will appear in UI
+            __('Popular Collections in Category Widget', 'popular_collections_in_category_widget_domain'),
+
+            # Widget description
+            array( 'description' => __( 'This widget will show all the collections in the specific category you choose', 'popular_collections_in_category_widget_domain' ), )
+        );
+    }
+
+    # Creating widget front-end
+    public function widget( $args, $instance ) {
+        global $LOCATION_TEXTDOMAIN;
+        $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+
+        # Before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        # This is where you run the code and display the output
+
+        # Find the category where is displayed the widget
+        $categories = get_the_category();
+
+	$catID = null;
+	if ( isset ( $categories[0] ) ) {
+            $catID = $categories[0]->cat_ID;
+	}
+
+        $post_types = array( 'post' );
+
+        if( post_type_exists( 'book' ) ){
+            array_push( $post_types, 'book' );
+        }
+
+        if( post_type_exists( 'album' ) ){
+            array_push( $post_types, 'album' );
+        }
+
+        if( post_type_exists( 'interview' ) ){
+            array_push( $post_types, 'interview' );
+        }
+
+        if ( $catID ) {
+            $posts_with_category = get_posts( array(
+                         'category'       => $catID,
+                         'post_type'      => $post_types,
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+        else {
+            $posts_with_category = get_posts( array(
+                         'post_type'      => $post_types,
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+
+        $array_of_terms_in_category = array();
+
+        foreach( $posts_with_category as $post ) {
+            $terms = wp_get_post_terms( $post->ID, 'publisher' );
+
+            foreach( $terms as $value ){
+		$parent = $value->parent;
+
+                if( !in_array( $value, $array_of_terms_in_category, true ) ){
+                    # Add "publisher" only if collection
+                    if( $parent > 0 ){
+                        array_push( $array_of_terms_in_category, $value->term_id );
+                    }
+                }
+            }
+        }
+
+        $tag_args = array(
+                    'format'   => 'array',
+                    'number'   => 75,
+                    'taxonomy' => 'publisher',
+                    'orderby'  => 'count',
+                    'order'    => 'DESC',
+                    'include'  => $array_of_terms_in_category,
+                    'echo'     => false,
+                );
+
+        echo '<div class="tagcloud">';
+
+        $publishers_array = get_terms ( 'publisher', $tag_args );
+
+        if( sizeof( $publishers_array ) ){
+            function widget_sort_collection_by_name( $a, $b ){
+                $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
+                $at = strtr( $a->name, $translit );
+                $bt = strtr( $b->name, $translit );
+
+                return strcoll( $at, $bt );
+            }
+
+            usort( $publishers_array, 'widget_sort_collection_by_name' );
+
+            echo '<ul class="wp-tag-cloud">';
+
+	    foreach ( $publishers_array as $coll ) {
+                $unid = false;
+
+                # Define which collection has an unidentifiable name
+                $coll_patterns = array(
+                    '/litterature/',
+                    '/roman/',
+                    '/domaine/',
+                );
+
+                # Check if $coll->name has an unidentifiable name
+                foreach( $coll_patterns as $pattern ){
+                    if( preg_match( $pattern, strtolower( $coll->slug ) ) ){
+                        $unid = true;
+                        break;
+                    }
+                }
+
+                if( $unid ){
+                    $parent = get_term( $coll->parent, 'publisher' );
+                }
+
+                echo '<li><a href="' . get_term_link( $coll->term_id ) . '" class="tag-cloud-link tag-link-' . $coll->term_id . '">';
+                echo $coll->name;
+
+                if( $unid ){
+                    echo ' ('. $parent->name . ')';
+                }
+
+                echo '</a></li>';
+	    }
+
+            echo '</ul>';
+	}
+
+        echo '</div>';
+
+        echo $args['after_widget'];
+    }
+
+    # Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        } else {
+            $title = __( 'Collections', 'popular_collections_in_category_widget_domain' );
+        }
+
+        # Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <?php
+    }
+
+    # Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        return $instance;
+    }
+}
+
+# Register and load the widget
+function popular_collection_wpb_load_widget() {
+    register_widget( 'popular_collections_in_category_widget' );
+}
+
+add_action( 'widgets_init', 'popular_collection_wpb_load_widget' );
 
 
 /**
