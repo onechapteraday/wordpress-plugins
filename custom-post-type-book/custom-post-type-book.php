@@ -175,8 +175,9 @@ function get_book_rating ( $post_id ) {
 
 function get_book_amazon ( $post_id ) {
   $arr = array(
-    'link' => get_post_meta( $post_id, 'amazon', true ),
-    'img' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png'
+    'link'    => get_post_meta( $post_id, 'amazon', true ),
+    'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
+    'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
   );
 
   return $arr;
