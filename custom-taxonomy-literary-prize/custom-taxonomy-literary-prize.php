@@ -236,6 +236,7 @@ class popular_prizes_in_category_widget extends WP_Widget {
                     'orderby'  => 'count',
                     'order'    => 'DESC',
                     'include'  => $array_of_terms_in_category,
+                    'parent'   => 0,
                     'echo'     => false,
                 );
 
