@@ -173,12 +173,8 @@ class popular_publishers_in_category_widget extends WP_Widget {
         # This is where you run the code and display the output
 
         # Find the category where is displayed the widget
-        $categories = get_the_category();
-
-	$catID = null;
-	if ( isset ( $categories[0] ) ) {
-            $catID = $categories[0]->cat_ID;
-	}
+        $category = 'reads';
+	$catID = get_cat_ID( $category );
 
         $post_types = array( 'post' );
 
@@ -194,21 +190,12 @@ class popular_publishers_in_category_widget extends WP_Widget {
             array_push( $post_types, 'interview' );
         }
 
-        if ( $catID ) {
-            $posts_with_category = get_posts( array(
-                         'category'       => $catID,
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
-        else {
-            $posts_with_category = get_posts( array(
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
+        $posts_with_category = get_posts( array(
+                     'category'       => $catID,
+                     'post_type'      => $post_types,
+                     'number_posts'   => -1,
+                     'posts_per_page' => -1,
+                 ));
 
         $array_of_terms_in_category = array();
 
@@ -341,12 +328,8 @@ class popular_collections_in_category_widget extends WP_Widget {
         # This is where you run the code and display the output
 
         # Find the category where is displayed the widget
-        $categories = get_the_category();
-
-	$catID = null;
-	if ( isset ( $categories[0] ) ) {
-            $catID = $categories[0]->cat_ID;
-	}
+        $category = 'reads';
+	$catID = get_cat_ID( $category );
 
         $post_types = array( 'post' );
 
@@ -362,21 +345,12 @@ class popular_collections_in_category_widget extends WP_Widget {
             array_push( $post_types, 'interview' );
         }
 
-        if ( $catID ) {
-            $posts_with_category = get_posts( array(
-                         'category'       => $catID,
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
-        else {
-            $posts_with_category = get_posts( array(
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
+        $posts_with_category = get_posts( array(
+                     'category'       => $catID,
+                     'post_type'      => $post_types,
+                     'number_posts'   => -1,
+                     'posts_per_page' => -1,
+                 ));
 
         $array_of_terms_in_category = array();
 
