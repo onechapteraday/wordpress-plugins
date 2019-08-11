@@ -141,7 +141,7 @@ add_action( 'create_publisher', 'save_publisher_taxonomy_custom_meta', 10, 2 );
 
 
 /**
- * Create widget to retrieve popular publishers in specific category
+ * Create widget to retrieve popular publishers
  *
  */
 
@@ -161,8 +161,9 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        global $LOCATION_TEXTDOMAIN;
+        global $BOOK_TEXTDOMAIN;
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+        $p_count = isset( $instance['p_count'] ) ? $instance['p_count'] : '';
 
         # Before and after widget arguments are defined by themes
         echo $args['before_widget'];
@@ -223,7 +224,7 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 75,
+                    'number'   => $p_count,
                     'taxonomy' => 'publisher',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
@@ -266,8 +267,10 @@ class popular_publishers_in_category_widget extends WP_Widget {
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
+            $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
         } else {
             $title = __( 'Publishers', 'popular_publishers_in_category_widget_domain' );
+            $p_count = 75;
         }
 
         # Widget admin form
@@ -276,13 +279,21 @@ class popular_publishers_in_category_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of publishers to show:', 'twentysixteen-child' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
+	</p>
         <?php
     }
 
     # Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
+
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['p_count'] = $new_instance['p_count'];
+
         return $instance;
     }
 }
@@ -296,7 +307,7 @@ add_action( 'widgets_init', 'popular_publisher_wpb_load_widget' );
 
 
 /**
- * Create widget to retrieve popular collections in specific category
+ * Create widget to retrieve popular collections
  *
  */
 
@@ -316,8 +327,9 @@ class popular_collections_in_category_widget extends WP_Widget {
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        global $LOCATION_TEXTDOMAIN;
+        global $BOOK_TEXTDOMAIN;
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+        $c_count = isset( $instance['c_count'] ) ? $instance['c_count'] : '';
 
         # Before and after widget arguments are defined by themes
         echo $args['before_widget'];
@@ -371,7 +383,7 @@ class popular_collections_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 75,
+                    'number'   => $c_count,
                     'taxonomy' => 'publisher',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
@@ -440,8 +452,10 @@ class popular_collections_in_category_widget extends WP_Widget {
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
+            $c_count = isset( $instance['c_count'] ) ? esc_attr( $instance['c_count'] ) : '';
         } else {
             $title = __( 'Collections', 'popular_collections_in_category_widget_domain' );
+            $c_count = 75;
         }
 
         # Widget admin form
@@ -450,13 +464,21 @@ class popular_collections_in_category_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'c_count' ); ?>"><?php _e( 'Number of collections to show:', 'twentysixteen-child' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'c_count' ); ?>" value="<?php echo esc_attr( $c_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'c_count' ); ?>" />
+	</p>
         <?php
     }
 
     # Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
+
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['c_count'] = $new_instance['c_count'];
+
         return $instance;
     }
 }
