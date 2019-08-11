@@ -321,6 +321,7 @@ class popular_persons_in_category_widget extends WP_Widget {
     # Creating widget front-end
     public function widget( $args, $instance ) {
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+        $p_count = isset( $instance['p_count'] ) ? $instance['p_count'] : '';
 
         # Before and after widget arguments are defined by themes
         echo $args['before_widget'];
@@ -382,7 +383,7 @@ class popular_persons_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 75,
+                    'number'   => $p_count,
                     'taxonomy' => 'person',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
@@ -425,8 +426,10 @@ class popular_persons_in_category_widget extends WP_Widget {
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
+            $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
         } else {
-            $title = __( 'New title', 'popular_persons_in_category_widget_domain' );
+            $title = __( 'Persons', 'popular_persons_in_category_widget_domain' );
+            $p_count = 75;
         }
 
         # Widget admin form
@@ -435,13 +438,21 @@ class popular_persons_in_category_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of persons to show:', 'twentysixteen-child' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
+	</p>
         <?php
     }
 
     # Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
+
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['p_count'] = $new_instance['p_count'];
+
         return $instance;
     }
 }
