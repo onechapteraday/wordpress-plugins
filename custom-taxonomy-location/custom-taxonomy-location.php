@@ -541,6 +541,7 @@ class popular_locations_in_category_widget extends WP_Widget {
     public function widget( $args, $instance ) {
         global $LOCATION_TEXTDOMAIN;
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+        $l_count = isset( $instance['l_count'] ) ? $instance['l_count'] : '';
 
         # Before and after widget arguments are defined by themes
         echo $args['before_widget'];
@@ -588,7 +589,7 @@ class popular_locations_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => 75,
+                    'number'   => $l_count,
                     'taxonomy' => 'location',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
@@ -635,8 +636,10 @@ class popular_locations_in_category_widget extends WP_Widget {
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
+            $l_count = isset( $instance['l_count'] ) ? esc_attr( $instance['l_count'] ) : '';
         } else {
-            $title = __( 'New title', 'popular_locations_in_category_widget_domain' );
+            $title = __( 'Locations', 'popular_locations_in_category_widget_domain' );
+            $l_count = 75;
         }
 
         # Widget admin form
@@ -645,13 +648,21 @@ class popular_locations_in_category_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'l_count' ); ?>"><?php _e( 'Number of locations to show:', 'twentysixteen-child' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'l_count' ); ?>" value="<?php echo esc_attr( $l_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'l_count' ); ?>" />
+	</p>
         <?php
     }
 
     # Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
+
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['l_count'] = $new_instance['l_count'];
+
         return $instance;
     }
 }
