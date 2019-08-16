@@ -7,171 +7,271 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-20 11:52+0100\n"
-"PO-Revision-Date: 2016-11-20 12:08+0100\n"
+"POT-Creation-Date: 2019-08-16 19:19-0400\n"
+"PO-Revision-Date: 2019-08-16 19:46-0400\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"Last-Translator: \n"
+"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
-#: person-taxonomy.php:64
+#: custom-taxonomy-person.php:59
 msgctxt "taxonomy general name"
 msgid "Persons"
 msgstr "Personnes"
 
-#: person-taxonomy.php:65
+#: custom-taxonomy-person.php:60
 msgctxt "taxonomy singular name"
 msgid "Person"
 msgstr "Personne"
 
-#: person-taxonomy.php:66
+#: custom-taxonomy-person.php:61
 msgid "Search Persons"
 msgstr "Rechercher dans les personnes"
 
-#: person-taxonomy.php:67
+#: custom-taxonomy-person.php:62
 msgid "Popular Persons"
 msgstr "Personnes populaires"
 
-#: person-taxonomy.php:68
+#: custom-taxonomy-person.php:63
 msgid "All Persons"
 msgstr "Toutes les personnes"
 
-#: person-taxonomy.php:71
+#: custom-taxonomy-person.php:66
 msgid "See Person"
 msgstr "Voir la personne"
 
-#: person-taxonomy.php:72
+#: custom-taxonomy-person.php:67
 msgid "Edit Person"
 msgstr "Modifier la personne"
 
-#: person-taxonomy.php:73
+#: custom-taxonomy-person.php:68
 msgid "Update Person"
 msgstr "Mettre à jour la personne"
 
-#: person-taxonomy.php:74
+#: custom-taxonomy-person.php:69
 msgid "Add New Person"
 msgstr "Ajouter une nouvelle personne"
 
-#: person-taxonomy.php:75
+#: custom-taxonomy-person.php:70
 msgid "New Person Name"
 msgstr "Nom de la nouvelle personne"
 
-#: person-taxonomy.php:76
+#: custom-taxonomy-person.php:71
 msgid "Separate persons with commas"
 msgstr "Séparer les personnes avec des vrigules"
 
-#: person-taxonomy.php:77
+#: custom-taxonomy-person.php:72
 msgid "Add or remove persons"
 msgstr "Ajouter ou supprimer des personnes"
 
-#: person-taxonomy.php:78
+#: custom-taxonomy-person.php:73
 msgid "Choose from the most used persons"
 msgstr "Choisir parmi les personnes les plus utilisées"
 
-#: person-taxonomy.php:79
+#: custom-taxonomy-person.php:74
 msgid "No persons found."
 msgstr "Aucune personne trouvée."
 
-#: person-taxonomy.php:80
+#: custom-taxonomy-person.php:75
+msgid "← Back to persons"
+msgstr "← Retour aux personnes"
+
+#: custom-taxonomy-person.php:76 custom-taxonomy-person.php:502
 msgid "Persons"
 msgstr "Personnes"
 
-#: person-taxonomy.php:110 person-taxonomy.php:188
+#: custom-taxonomy-person.php:106 custom-taxonomy-person.php:220
 msgid "Real name"
 msgstr "Vrai nom"
 
-#: person-taxonomy.php:112
+#: custom-taxonomy-person.php:108
 msgid "Enter the real name of the person."
-msgstr "Entrer le vrai nom de la personne"
+msgstr "Entrer le vrai nom de la personne."
 
-#: person-taxonomy.php:116 person-taxonomy.php:196
+#: custom-taxonomy-person.php:112 custom-taxonomy-person.php:228
+msgid "Given name"
+msgstr "Prénom"
+
+#: custom-taxonomy-person.php:114
+msgid "Enter the given name of the person."
+msgstr "Entrer le prénom de la personne."
+
+#: custom-taxonomy-person.php:118 custom-taxonomy-person.php:236
+msgid "Family name"
+msgstr "Nom de famille"
+
+#: custom-taxonomy-person.php:120
+msgid "Enter the family name of the person."
+msgstr "Entrer le nom de famille de la personne."
+
+#: custom-taxonomy-person.php:124 custom-taxonomy-person.php:244
+msgid "Name order"
+msgstr "Ordre du nom"
+
+#: custom-taxonomy-person.php:126
+msgid ""
+"Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; Given "
+"name\"."
+msgstr ""
+"Entrer l'ordre du nom complet : 0 pour \"Prénom ; Nom de famille\", 1 pour "
+"\"Nom de famille ; Prénom\"."
+
+#: custom-taxonomy-person.php:130 custom-taxonomy-person.php:252
+msgid "Gender"
+msgstr "Genre"
+
+#: custom-taxonomy-person.php:132
+msgid "Enter the gender of the person, 0 for male and 1 for female."
+msgstr "Entrer le genre de la personne, 0 pour masculin et 1 pour féminin."
+
+#: custom-taxonomy-person.php:136 custom-taxonomy-person.php:260
 msgid "Birthdate"
 msgstr "Date de naissance"
 
-#: person-taxonomy.php:118 person-taxonomy.php:124
+#: custom-taxonomy-person.php:138 custom-taxonomy-person.php:144
 msgid "Enter a date with the format YYYY-mm-dd."
 msgstr "Entrer une date au format YYYY-mm-dd."
 
-#: person-taxonomy.php:122 person-taxonomy.php:204
+#: custom-taxonomy-person.php:142 custom-taxonomy-person.php:268
 msgid "Deathdate"
 msgstr "Date de décès"
 
-#: person-taxonomy.php:128 person-taxonomy.php:212
+#: custom-taxonomy-person.php:148 custom-taxonomy-person.php:276
 msgid "Website"
 msgstr "Site web"
 
-#: person-taxonomy.php:130 person-taxonomy.php:215
+#: custom-taxonomy-person.php:150 custom-taxonomy-person.php:279
 msgid "Enter the website of the person, if exists."
 msgstr "Entrer le site web de la personne, si celui-ci existe."
 
-#: person-taxonomy.php:134 person-taxonomy.php:220
+#: custom-taxonomy-person.php:154 custom-taxonomy-person.php:284
 msgid "Twitter"
 msgstr "Twitter"
 
-#: person-taxonomy.php:136 person-taxonomy.php:223
+#: custom-taxonomy-person.php:156 custom-taxonomy-person.php:287
 msgid ""
 "Enter the Twitter account name of the person, only the part after the base "
 "url."
 msgstr ""
 "Entrer le compte Twitter de la personne, seulement la partie après l'url de "
-"base de Twitter."
+"base."
 
-#: person-taxonomy.php:140 person-taxonomy.php:228
+#: custom-taxonomy-person.php:160 custom-taxonomy-person.php:292
 msgid "Facebook"
 msgstr "Facebook"
 
-#: person-taxonomy.php:142 person-taxonomy.php:231 person-taxonomy.php:255
+#: custom-taxonomy-person.php:162 custom-taxonomy-person.php:295
 msgid ""
 "Enter the Facebook account name of the person, only the part after the base "
 "url."
 msgstr ""
 "Entrer le compte Facebook de la personne, seulement la partie après l'url de "
-"base de Facebook."
+"base."
 
-#: person-taxonomy.php:146 person-taxonomy.php:236
+#: custom-taxonomy-person.php:166 custom-taxonomy-person.php:300
 msgid "Instagram"
 msgstr "Instagram"
 
-#: person-taxonomy.php:148 person-taxonomy.php:239
+#: custom-taxonomy-person.php:168 custom-taxonomy-person.php:303
 msgid ""
 "Enter the Instagram account name of the person, only the part after the base "
 "url."
 msgstr ""
 "Entrer le compte Instagram de la personne, seulement la partie après l'url "
-"de base de Instagram."
+"de base."
 
-#: person-taxonomy.php:152 person-taxonomy.php:244
+#: custom-taxonomy-person.php:172 custom-taxonomy-person.php:308
 msgid "Youtube"
 msgstr "Youtube"
 
-#: person-taxonomy.php:154 person-taxonomy.php:247
+#: custom-taxonomy-person.php:174 custom-taxonomy-person.php:311
 msgid ""
 "Enter the Youtube account name of the person, only the part after the base "
 "url."
 msgstr ""
-"Entrer le compte Youtube de la personne, seulement la partie après l'url de "
-"base de Youtube."
+"Entrer le compte YouTube de la personne, seulement la partie après l'url de "
+"base."
 
-#: person-taxonomy.php:158 person-taxonomy.php:252
+#: custom-taxonomy-person.php:178 custom-taxonomy-person.php:316
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: person-taxonomy.php:160
+#: custom-taxonomy-person.php:180 custom-taxonomy-person.php:319
 msgid ""
 "Enter the Soundcloud account name of the person, only the part after the "
 "base url."
 msgstr ""
 "Entrer le compte Soundcloud de la personne, seulement la partie après l'url "
-"de base de Soundcloud."
+"de base."
 
-#: person-taxonomy.php:191
+#: custom-taxonomy-person.php:184 custom-taxonomy-person.php:324
+msgid "Goodreads"
+msgstr "Goodreads"
+
+#: custom-taxonomy-person.php:186 custom-taxonomy-person.php:327
+msgid "Enter the Goodreads ID of the person, only the part after the base url."
+msgstr ""
+"Entrer l'identifiant Goodreads de la personne, seulement la partie après "
+"l'url de base."
+
+#: custom-taxonomy-person.php:190 custom-taxonomy-person.php:332
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: custom-taxonomy-person.php:192 custom-taxonomy-person.php:335
+msgid ""
+"Enter the name of the sidebar you want to display, leave empty if default."
+msgstr ""
+"Entrer le nom de la barre latérale que vous souhaitez afficher, laisser vide "
+"si défaut."
+
+#: custom-taxonomy-person.php:223
 msgid "Enter the real name of the person"
 msgstr "Entrer le vrai nom de la personne"
 
-#: person-taxonomy.php:199 person-taxonomy.php:207
+#: custom-taxonomy-person.php:231
+msgid "Enter the given name of the person"
+msgstr "Entrer le prénom de la personne"
+
+#: custom-taxonomy-person.php:239
+msgid "Enter the family name of the person"
+msgstr "Entrer le nom de famille de la personne"
+
+#: custom-taxonomy-person.php:247
+msgid ""
+"Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; Given "
+"name\""
+msgstr ""
+"Entrer l'ordre du nom complet : 0 pour \"Prénom ; Nom de famille\", 1 pour "
+"\"Nom de famille ; Prénom\""
+
+#: custom-taxonomy-person.php:255
+msgid "Enter the gender of the person, 0 for male 1 for female"
+msgstr "Entrer le genre de la personne, 0 pour masculin et 1 pour féminin"
+
+#: custom-taxonomy-person.php:263 custom-taxonomy-person.php:271
 msgid "Enter a date with the format YYYY-mm-dd"
 msgstr "Entrer une date au format YYYY-mm-dd"
+
+#: custom-taxonomy-person.php:385
+msgid "Popular Persons in Category Widget"
+msgstr "Nuage de personnes populaires dans la catégorie"
+
+#: custom-taxonomy-person.php:388
+msgid ""
+"This widget will show all the persons in the specific category you choose"
+msgstr ""
+"Ce widget vous affichera les personnes les plus populaires de la catégorie "
+"que vous choisissez"
+
+#: custom-taxonomy-person.php:509
+msgid "Title:"
+msgstr "Titre :"
+
+#: custom-taxonomy-person.php:514
+msgid "Number of persons to show:"
+msgstr "Nombre de personnes à afficher :"

@@ -4,7 +4,7 @@
  * Plugin Name: Custom Taxonomy Person
  * Plugin URI: http://onechapteraday.fr
  * Description: This plugin allows you to describe precisely the person you are talking about.
- * Version: 0.1
+ * Version: 0.2
  * Author: Christelle Hilaricus
  * Author URI: http://onechapteraday.fr
  * License GPL2
@@ -72,6 +72,7 @@ function add_person_taxonomy() {
     'add_or_remove_items'        => __( 'Add or remove persons', $PERSON_TEXTDOMAIN ),
     'choose_from_most_used'      => __( 'Choose from the most used persons', $PERSON_TEXTDOMAIN ),
     'not_found'                  => __( 'No persons found.', $PERSON_TEXTDOMAIN ),
+    'back_to_items'              => __( '← Back to persons', $PERSON_TEXTDOMAIN ),
     'menu_name'                  => __( 'Persons', $PERSON_TEXTDOMAIN ),
   );
 
@@ -105,6 +106,30 @@ function add_new_meta_field() {
     <label for="term_meta[realname]"><?php _e( 'Real name', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[realname]" id="term_meta[realname]" value="">
     <p class="description"><?php _e( 'Enter the real name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[givenname]"><?php _e( 'Given name', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[givenname]" id="term_meta[givenname]" value="">
+    <p class="description"><?php _e( 'Enter the given name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[familyname]"><?php _e( 'Family name', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[familyname]" id="term_meta[familyname]" value="">
+    <p class="description"><?php _e( 'Enter the family name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[nameorder]"><?php _e( 'Name order', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[nameorder]" id="term_meta[nameorder]" value="0">
+    <p class="description"><?php _e( 'Enter name order: 0 for "Given name; Last name", 1 for "Last name; Given name".', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[gender]"><?php _e( 'Gender', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[gender]" id="term_meta[gender]" value="0">
+    <p class="description"><?php _e( 'Enter the gender of the person, 0 for male and 1 for female.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
@@ -156,6 +181,12 @@ function add_new_meta_field() {
   </div>
 
   <div class="form-field">
+    <label for="term_meta[goodreads]"><?php _e( 'Goodreads', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[goodreads]" id="term_meta[goodreads]" value="">
+    <p class="description"><?php _e( 'Enter the Goodreads ID of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[sidebar]"><?php _e( 'Sidebar', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="">
     <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
@@ -190,6 +221,38 @@ function edit_meta_field ($term) {
     <td>
     	<input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo esc_attr( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the real name of the person', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[givenname]"><?php _e( 'Given name', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[givenname]" id="term_meta[givenname]" value="<?php echo isset( $term_meta['givenname'] ) ? esc_attr( $term_meta['givenname'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the given name of the person', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[familyname]"><?php _e( 'Family name', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[familyname]" id="term_meta[familyname]" value="<?php echo isset( $term_meta['familyname'] ) ? esc_attr( $term_meta['familyname'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the family name of the person', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[nameorder]"><?php _e( 'Name order', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[nameorder]" id="term_meta[nameorder]" value="<?php echo isset( $term_meta['nameorder'] ) ? esc_attr( $term_meta['nameorder'] ) : '0'; ?>">
+        <p class="description"><?php _e( 'Enter name order: 0 for "Given name; Last name", 1 for "Last name; Given name"', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[gender]"><?php _e( 'Gender', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[gender]" id="term_meta[gender]" value="<?php echo isset( $term_meta['gender'] ) ? esc_attr( $term_meta['gender'] ) : '0'; ?>">
+        <p class="description"><?php _e( 'Enter the gender of the person, 0 for male 1 for female', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
@@ -254,6 +317,14 @@ function edit_meta_field ($term) {
     <td>
     	<input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo esc_attr( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[goodreads]"><?php _e( 'Goodreads', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[goodreads]" id="term_meta[goodreads]" value="<?php echo isset( $term_meta['goodreads'] ) ? esc_attr( $term_meta['goodreads'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the Goodreads ID of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 
