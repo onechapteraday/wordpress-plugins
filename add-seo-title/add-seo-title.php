@@ -82,7 +82,7 @@ function seo_title_custom_title( $title ){
             }
         }
 
-        return get_the_title();
+        return strip_tags( get_the_title() );
     }
 
     # Category
