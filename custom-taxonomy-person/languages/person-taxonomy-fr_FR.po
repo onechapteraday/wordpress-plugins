@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-16 19:19-0400\n"
-"PO-Revision-Date: 2019-08-16 19:46-0400\n"
+"POT-Creation-Date: 2019-08-17 11:00-0400\n"
+"PO-Revision-Date: 2019-08-17 11:01-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -88,7 +88,7 @@ msgstr "Personnes"
 msgid "Real name"
 msgstr "Vrai nom"
 
-#: custom-taxonomy-person.php:108
+#: custom-taxonomy-person.php:108 custom-taxonomy-person.php:223
 msgid "Enter the real name of the person."
 msgstr "Entrer le vrai nom de la personne."
 
@@ -96,7 +96,7 @@ msgstr "Entrer le vrai nom de la personne."
 msgid "Given name"
 msgstr "Prénom"
 
-#: custom-taxonomy-person.php:114
+#: custom-taxonomy-person.php:114 custom-taxonomy-person.php:231
 msgid "Enter the given name of the person."
 msgstr "Entrer le prénom de la personne."
 
@@ -104,7 +104,7 @@ msgstr "Entrer le prénom de la personne."
 msgid "Family name"
 msgstr "Nom de famille"
 
-#: custom-taxonomy-person.php:120
+#: custom-taxonomy-person.php:120 custom-taxonomy-person.php:239
 msgid "Enter the family name of the person."
 msgstr "Entrer le nom de famille de la personne."
 
@@ -112,7 +112,7 @@ msgstr "Entrer le nom de famille de la personne."
 msgid "Name order"
 msgstr "Ordre du nom"
 
-#: custom-taxonomy-person.php:126
+#: custom-taxonomy-person.php:126 custom-taxonomy-person.php:247
 msgid ""
 "Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; Given "
 "name\"."
@@ -133,6 +133,7 @@ msgid "Birthdate"
 msgstr "Date de naissance"
 
 #: custom-taxonomy-person.php:138 custom-taxonomy-person.php:144
+#: custom-taxonomy-person.php:263 custom-taxonomy-person.php:271
 msgid "Enter a date with the format YYYY-mm-dd."
 msgstr "Entrer une date au format YYYY-mm-dd."
 
@@ -185,12 +186,12 @@ msgstr ""
 "de base."
 
 #: custom-taxonomy-person.php:172 custom-taxonomy-person.php:308
-msgid "Youtube"
-msgstr "Youtube"
+msgid "YouTube"
+msgstr "YouTube"
 
 #: custom-taxonomy-person.php:174 custom-taxonomy-person.php:311
 msgid ""
-"Enter the Youtube account name of the person, only the part after the base "
+"Enter the YouTube account name of the person, only the part after the base "
 "url."
 msgstr ""
 "Entrer le compte YouTube de la personne, seulement la partie après l'url de "
@@ -229,33 +230,9 @@ msgstr ""
 "Entrer le nom de la barre latérale que vous souhaitez afficher, laisser vide "
 "si défaut."
 
-#: custom-taxonomy-person.php:223
-msgid "Enter the real name of the person"
-msgstr "Entrer le vrai nom de la personne"
-
-#: custom-taxonomy-person.php:231
-msgid "Enter the given name of the person"
-msgstr "Entrer le prénom de la personne"
-
-#: custom-taxonomy-person.php:239
-msgid "Enter the family name of the person"
-msgstr "Entrer le nom de famille de la personne"
-
-#: custom-taxonomy-person.php:247
-msgid ""
-"Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; Given "
-"name\""
-msgstr ""
-"Entrer l'ordre du nom complet : 0 pour \"Prénom ; Nom de famille\", 1 pour "
-"\"Nom de famille ; Prénom\""
-
 #: custom-taxonomy-person.php:255
-msgid "Enter the gender of the person, 0 for male 1 for female"
-msgstr "Entrer le genre de la personne, 0 pour masculin et 1 pour féminin"
-
-#: custom-taxonomy-person.php:263 custom-taxonomy-person.php:271
-msgid "Enter a date with the format YYYY-mm-dd"
-msgstr "Entrer une date au format YYYY-mm-dd"
+msgid "Enter the gender of the person, 0 for male 1 for female."
+msgstr "Entrer le genre de la personne, 0 pour masculin et 1 pour féminin."
 
 #: custom-taxonomy-person.php:385
 msgid "Popular Persons in Category Widget"
@@ -275,3 +252,25 @@ msgstr "Titre :"
 #: custom-taxonomy-person.php:514
 msgid "Number of persons to show:"
 msgstr "Nombre de personnes à afficher :"
+
+#~ msgid "Youtube"
+#~ msgstr "YouTube"
+
+#~ msgid "Enter the real name of the person"
+#~ msgstr "Entrer le vrai nom de la personne"
+
+#~ msgid "Enter the given name of the person"
+#~ msgstr "Entrer le prénom de la personne"
+
+#~ msgid "Enter the family name of the person"
+#~ msgstr "Entrer le nom de famille de la personne"
+
+#~ msgid ""
+#~ "Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; "
+#~ "Given name\""
+#~ msgstr ""
+#~ "Entrer l'ordre du nom complet : 0 pour \"Prénom ; Nom de famille\", 1 "
+#~ "pour \"Nom de famille ; Prénom\""
+
+#~ msgid "Enter a date with the format YYYY-mm-dd"
+#~ msgstr "Entrer une date au format YYYY-mm-dd"
