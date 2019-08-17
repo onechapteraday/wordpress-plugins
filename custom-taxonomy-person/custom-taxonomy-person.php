@@ -115,6 +115,12 @@ function add_new_meta_field() {
   </div>
 
   <div class="form-field">
+    <label for="term_meta[middlename]"><?php _e( 'Middle name', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[middlename]" id="term_meta[middlename]" value="">
+    <p class="description"><?php _e( 'Enter the middle name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[familyname]"><?php _e( 'Family name', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[familyname]" id="term_meta[familyname]" value="">
     <p class="description"><?php _e( 'Enter the family name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
@@ -229,6 +235,14 @@ function edit_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[givenname]" id="term_meta[givenname]" value="<?php echo isset( $term_meta['givenname'] ) ? esc_attr( $term_meta['givenname'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the given name of the person.', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[middlename]"><?php _e( 'Middle name', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[middlename]" id="term_meta[middlename]" value="<?php echo isset( $term_meta['middlename'] ) ? esc_attr( $term_meta['middlename'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the middle name of the person.', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
