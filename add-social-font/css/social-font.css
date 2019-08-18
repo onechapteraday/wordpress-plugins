@@ -12,6 +12,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
+  text-decoration: none;
   box-shadow: none !important;
 }
 
@@ -23,38 +24,47 @@
   speak: none;
 
   display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+
   text-decoration: inherit;
   width: 1em;
-  margin-right: .2em;
+  margin: 0 .2em;
   text-align: center;
-  /* opacity: .8; */
 
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
+  /* Fix buttons height */
   line-height: 1em;
 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
+  /* Increased icons size */
+  font-size: 120%;
 
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-
-  /* Font smoothing. That was taken from TWBS */
+  /* Font smoothing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-
-.icon-mouse:before { content: '\e800'; }
-.icon-twitter:before { content: '\f099'; }
-.icon-facebook:before { content: '\f09a'; }
-.icon-youtube:before { content: '\f167'; }
-.icon-soundcloud:before { content: '\f1be'; }
-.icon-instagram:before { content: '\f32d'; }
+.icon-link:before       { content: '\e800'; }
+.icon-twitter:before    { content: '\f309'; }
+.icon-facebook:before   { content: '\f30c'; margin-top: -1px; }
+.icon-youtube:before    { content: '\f313'; }
+.icon-instagram:before  { content: '\f32d'; }
+.icon-soundcloud:before { content: '\e801'; }
+.icon-goodreads:before  { content: '\e802'; }
+.icon-amazon:before     { content: '\f270'; }
+.icon-wikipedia:before  { content: '\e808'; }
+.icon-wordpress:before  { content: '\f19a'; }
+.icon-arobase:before    { content: '\e803'; }
+.icon-rss:before        { content: '\e80b'; }
+.icon-globe:before      { content: '\e80c'; }
+.icon-github:before     { content: '\f300'; }
+.icon-cc:before         { content: '\e804'; }
+.icon-cc-by:before      { content: '\e805'; }
+.icon-cc-nc:before      { content: '\e806'; }
+.icon-cc-nc-eu:before   { content: '\e807'; }
+.icon-cc-sa:before      { content: '\e809'; }
+.icon-cc-nd:before      { content: '\e80a'; }

@@ -1,0 +1,138 @@
+{
+  "name": "social-font",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "815503841e980c848f55e0271deacead",
+      "css": "link",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "code": 62217,
+      "src": "entypo"
+    },
+    {
+      "uid": "bc50457410acf467b8b5721240768742",
+      "css": "facebook",
+      "code": 62220,
+      "src": "entypo"
+    },
+    {
+      "uid": "2d3ce9463ed5525c6faa01f84c957843",
+      "css": "youtube",
+      "code": 62227,
+      "src": "websymbols"
+    },
+    {
+      "uid": "1e123339045e48ddd01031936b9fc2d9",
+      "css": "soundcloud",
+      "code": 59393,
+      "src": "zocial"
+    },
+    {
+      "uid": "0fbfb1cd7a847c88ea4c141d0e1bbdb5",
+      "css": "instagram",
+      "code": 62253,
+      "src": "entypo"
+    },
+    {
+      "uid": "b4c9540a956f40449e4cfc40e3e77dba",
+      "css": "goodreads",
+      "code": 59394,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M500 40C409.2 40 331.7 78.2 279.6 138.9 227.6 199.6 200 281.6 200 370 200 458.4 227.6 540.4 279.6 601.1 331.7 661.8 409.2 700 500 700 590.6 700 667.9 662 720 601.4L720 700C720 752 703.6 795.3 671 826.8 638.3 858.3 587.3 880 510 880 355.7 880 300 798.7 300 720L220 720C220 841.3 324.3 960 510 960 602.7 960 676.7 932.5 726.5 884.3 776.4 836.2 800 769.5 800 700L800 60 720 60 720 138.6C667.9 78 590.6 40 500 40ZM500 120C569.2 120 621.7 146.8 659.6 191 697.6 235.2 720 298.2 720 370 720 441.8 697.6 504.8 659.6 549 621.7 593.2 569.2 620 500 620 430.8 620 378.3 593.2 340.4 549 302.4 504.8 280 441.8 280 370 280 298.2 302.4 235.2 340.4 191 378.3 146.8 430.8 120 500 120ZM500 120",
+        "width": 1000
+      },
+      "search": [
+        "icons8-goodreads"
+      ]
+    },
+    {
+      "uid": "39f52f80e1864df5e5022d7f0f5ff86f",
+      "css": "wordpress",
+      "code": 61850,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "efb5a384af4a5450b7c9acff76a85b8b",
+      "css": "amazon",
+      "code": 62064,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "d94334f23acba022bfd68e49d76b31bb",
+      "css": "github",
+      "code": 62208,
+      "src": "entypo"
+    },
+    {
+      "uid": "64c2f859fa518d38db7ec7532855ae34",
+      "css": "wikipedia",
+      "code": 59400,
+      "src": "zocial"
+    },
+    {
+      "uid": "197375a3cea8cb90b02d06e4ddf1433d",
+      "css": "globe",
+      "code": 59404,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4a413ef43c364dafa42766e74c31bbca",
+      "css": "cc",
+      "code": 59396,
+      "src": "entypo"
+    },
+    {
+      "uid": "72681d2825fef7fd83711278f845547b",
+      "css": "cc-by",
+      "code": 59397,
+      "src": "entypo"
+    },
+    {
+      "uid": "7540520e12e941839cdb7d76b12e82a8",
+      "css": "cc-nc",
+      "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "2d741e29010c6afbfc3784251fbf4e8b",
+      "css": "cc-nc-eu",
+      "code": 59399,
+      "src": "entypo"
+    },
+    {
+      "uid": "900851106d63af1bc6076ae118dc543d",
+      "css": "cc-sa",
+      "code": 59401,
+      "src": "entypo"
+    },
+    {
+      "uid": "b92e2a918daa2f9a042df1ce942b686f",
+      "css": "cc-nd",
+      "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "874694a9126e8193bca844356d1b6328",
+      "css": "at",
+      "code": 59395,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "3e617d8049807e128c80d0344ba09e37",
+      "css": "rss",
+      "code": 59403,
+      "src": "entypo"
+    }
+  ]
+}
