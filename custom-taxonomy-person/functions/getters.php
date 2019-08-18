@@ -34,8 +34,9 @@ function fetch_curl_data($url){
  *
  */
 
-function get_person_arg ($arg) {
+function get_person_arg ( $arg ) {
   $term = get_queried_object();
+
   return $term->$arg;
 }
 
@@ -49,11 +50,12 @@ function get_person_arg ($arg) {
  *
  */
 
-function get_person_option ($option) {
+function get_person_option ( $option ) {
   $person = get_queried_object();
   $id = $person->term_id;
   $term_meta = get_option( 'taxonomy_' . $id );
-  return $term_meta[$option];
+
+  return isset( $term_meta[ $option ] ) ? $term_meta[ $option ] : false;
 }
 
 
@@ -65,8 +67,9 @@ function get_person_option ($option) {
  */
 
 function get_person_birthdate () {
-  $date = get_person_option('birthdate');
-  $date = DateTime::createFromFormat('Y-m-d', $date);
+  $date = get_person_option( 'birthdate' );
+  $date = DateTime::createFromFormat( 'Y-m-d', $date );
+
   return $date;
 }
 
@@ -79,8 +82,9 @@ function get_person_birthdate () {
  */
 
 function get_person_deathdate () {
-  $date = get_person_option('deathdate');
-  $date = DateTime::createFromFormat('Y-m-d', $date);
+  $date = get_person_option( 'deathdate' );
+  $date = DateTime::createFromFormat( 'Y-m-d', $date );
+
   return $date;
 }
 
