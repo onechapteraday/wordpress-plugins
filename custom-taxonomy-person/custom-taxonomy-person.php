@@ -396,10 +396,10 @@ class popular_persons_in_category_widget extends WP_Widget {
             'popular_persons_in_category_widget',
 
             # Widget name will appear in UI
-            __('Popular Persons in Category Widget', 'popular_persons_in_category_widget_domain'),
+            __('Popular Persons in Category Widget', 'person-taxonomy'),
 
             # Widget description
-            array( 'description' => __( 'This widget will show all the persons in the specific category you choose', 'popular_persons_in_category_widget_domain' ), )
+            array( 'description' => __( 'This widget will show all the persons in the specific category you choose.', 'person-taxonomy' ), )
         );
     }
 
@@ -513,7 +513,7 @@ class popular_persons_in_category_widget extends WP_Widget {
             $title = $instance[ 'title' ];
             $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
         } else {
-            $title = __( 'Persons', 'popular_persons_in_category_widget_domain' );
+            $title = __( 'Persons', 'person-taxonomy' );
             $p_count = 75;
         }
 
@@ -525,7 +525,7 @@ class popular_persons_in_category_widget extends WP_Widget {
         </p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of persons to show:', 'twentysixteen-child' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of persons to show:', 'person-taxonomy' ); ?></label>
 	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
 	</p>
         <?php

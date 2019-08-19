@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 12:08-0400\n"
-"PO-Revision-Date: 2019-08-17 12:08-0400\n"
+"POT-Creation-Date: 2019-08-19 13:38-0400\n"
+"PO-Revision-Date: 2019-08-19 13:38-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -248,10 +248,10 @@ msgstr "Nuage de personnes populaires dans la catégorie"
 
 #: custom-taxonomy-person.php:402
 msgid ""
-"This widget will show all the persons in the specific category you choose"
+"This widget will show all the persons in the specific category you choose."
 msgstr ""
 "Ce widget vous affichera les personnes les plus populaires de la catégorie "
-"que vous choisissez"
+"que vous choisissez."
 
 #: custom-taxonomy-person.php:523
 msgid "Title:"
