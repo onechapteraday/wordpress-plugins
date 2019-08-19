@@ -58,6 +58,7 @@ function add_location_taxonomy() {
     'add_or_remove_items'        => __( 'Add or remove locations', $LOCATION_TEXTDOMAIN ),
     'choose_from_most_used'      => __( 'Choose from the most used locations', $LOCATION_TEXTDOMAIN ),
     'not_found'                  => __( 'No locations found.', $LOCATION_TEXTDOMAIN ),
+    'back_to_items'              => __( '← Back to locations', $LOCATION_TEXTDOMAIN ),
     'menu_name'                  => __( 'Locations', $LOCATION_TEXTDOMAIN ),
   );
 
@@ -530,10 +531,10 @@ class popular_locations_in_category_widget extends WP_Widget {
             'popular_locations_in_category_widget',
 
             # Widget name will appear in UI
-            __('Popular Locations in Category Widget', 'popular_locations_in_category_widget_domain'),
+            __('Popular Locations in Category Widget', 'location-taxonomy'),
 
             # Widget description
-            array( 'description' => __( 'This widget will show all the locations in the specific category you choose', 'popular_locations_in_category_widget_domain' ), )
+            array( 'description' => __( 'This widget will show all the locations in the specific category you choose', 'location-taxonomy' ), )
         );
     }
 
@@ -638,7 +639,7 @@ class popular_locations_in_category_widget extends WP_Widget {
             $title = $instance[ 'title' ];
             $l_count = isset( $instance['l_count'] ) ? esc_attr( $instance['l_count'] ) : '';
         } else {
-            $title = __( 'Locations', 'popular_locations_in_category_widget_domain' );
+            $title = __( 'Locations', 'location-taxonomy' );
             $l_count = 75;
         }
 
@@ -650,7 +651,7 @@ class popular_locations_in_category_widget extends WP_Widget {
         </p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'l_count' ); ?>"><?php _e( 'Number of locations to show:', 'twentysixteen-child' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'l_count' ); ?>"><?php _e( 'Number of locations to show:', 'location-taxonomy' ); ?></label>
 	    <input type="text" name="<?php echo $this->get_field_name( 'l_count' ); ?>" value="<?php echo esc_attr( $l_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'l_count' ); ?>" />
 	</p>
         <?php
