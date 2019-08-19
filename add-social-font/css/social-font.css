@@ -16,6 +16,11 @@
   box-shadow: none !important;
 }
 
+[class^="icon-"]:focus,
+[class*=" icon-"]:focus {
+  outline: none;
+}
+
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "social-font";
