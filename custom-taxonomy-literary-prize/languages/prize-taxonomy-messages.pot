@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-19 16:00-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-taxonomy-literary-prize.php:46
+msgctxt "taxonomy general name"
+msgid "Literary Prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:47
+msgctxt "taxonomy singular name"
+msgid "Literary Prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:48
+msgid "Search Literary Prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:49
+msgid "Popular Literary Prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:50
+msgid "All Literary Prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:53
+msgid "See Literary Prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:54
+msgid "Edit Literary Prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:55
+msgid "Update Literary Prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:56
+msgid "Add New Literary Prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:57
+msgid "New Literary Prize Name"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:58
+msgid "Separate prizes with commas"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:59
+msgid "Add or remove prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:60
+msgid "Choose from the most used prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:61
+msgid "No prizes found."
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:62
+msgid "← Back to prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:63
+msgid "Literary Prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:93
+#: custom-taxonomy-literary-prize.php:122
+msgid "Website link"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:95
+msgid "Enter the website link of the prize."
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:125
+msgid "Enter the website link of the prize"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:174
+msgid "Popular Literary Prizes in Category Widget"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:177
+msgid ""
+"This widget will show all the prizes in the specific category you choose"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:300
+msgid "Literary prizes"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:307
+msgid "Title:"
+msgstr ""
+
+#: custom-taxonomy-literary-prize.php:312
+msgid "Number of literary prizes to show:"
+msgstr ""

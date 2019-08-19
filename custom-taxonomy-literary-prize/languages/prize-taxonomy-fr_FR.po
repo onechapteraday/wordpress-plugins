@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-19 16:00-0400\n"
+"PO-Revision-Date: 2019-08-19 16:07-0400\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: custom-taxonomy-literary-prize.php:46
+msgctxt "taxonomy general name"
+msgid "Literary Prizes"
+msgstr "Prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:47
+msgctxt "taxonomy singular name"
+msgid "Literary Prize"
+msgstr "Prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:48
+msgid "Search Literary Prizes"
+msgstr "Rechercher dans les prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:49
+msgid "Popular Literary Prizes"
+msgstr "Prix littéraires populaires"
+
+#: custom-taxonomy-literary-prize.php:50
+msgid "All Literary Prizes"
+msgstr "Tous les prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:53
+msgid "See Literary Prize"
+msgstr "Voir le prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:54
+msgid "Edit Literary Prize"
+msgstr "Modifier le prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:55
+msgid "Update Literary Prize"
+msgstr "Mettre à jour le prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:56
+msgid "Add New Literary Prize"
+msgstr "Ajouter un nouveau prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:57
+msgid "New Literary Prize Name"
+msgstr "Nouveau nom de prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:58
+msgid "Separate prizes with commas"
+msgstr "Séparer les prix avec des virgules"
+
+#: custom-taxonomy-literary-prize.php:59
+msgid "Add or remove prizes"
+msgstr "Ajouter ou supprimer des prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:60
+msgid "Choose from the most used prizes"
+msgstr "Choisir parmi les prix littéraires les plus utilisés"
+
+#: custom-taxonomy-literary-prize.php:61
+msgid "No prizes found."
+msgstr "Aucun prix littéraire trouvé."
+
+#: custom-taxonomy-literary-prize.php:62
+msgid "← Back to prizes"
+msgstr "← Retour aux prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:63
+msgid "Literary Prizes"
+msgstr "Prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:93 custom-taxonomy-literary-prize.php:122
+msgid "Website link"
+msgstr "Site web"
+
+#: custom-taxonomy-literary-prize.php:95
+msgid "Enter the website link of the prize."
+msgstr "Entrer le site web du prix littéraire."
+
+#: custom-taxonomy-literary-prize.php:125
+msgid "Enter the website link of the prize"
+msgstr "Entrer le site web du prix littéraire"
+
+#: custom-taxonomy-literary-prize.php:174
+msgid "Popular Literary Prizes in Category Widget"
+msgstr "Nuage de prix littéraires populaires dans la catégorie"
+
+#: custom-taxonomy-literary-prize.php:177
+msgid "This widget will show all the prizes in the specific category you choose"
+msgstr "Ce widget vous affichera les prix littéraires les plus populaires de la catégorie que vous choisissez"
+
+#: custom-taxonomy-literary-prize.php:300
+msgid "Literary prizes"
+msgstr "Prix littéraires"
+
+#: custom-taxonomy-literary-prize.php:307
+msgid "Title:"
+msgstr "Titre&nbsp;:"
+
+#: custom-taxonomy-literary-prize.php:312
+msgid "Number of literary prizes to show:"
+msgstr "Nombre de prix littéraires à afficher&nbsp;:"

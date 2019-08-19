@@ -11,9 +11,27 @@
  *
  */
 
-global $BOOK_TEXTDOMAIN;
+global $PRIZE_TEXTDOMAIN;
 
-$BOOK_TEXTDOMAIN = 'book-taxonomy';
+$PRIZE_TEXTDOMAIN = 'prize-taxonomy';
+
+
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function literary_prize_taxonomy_load_textdomain() {
+  global $PRIZE_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $PRIZE_TEXTDOMAIN );
+
+  # Load i18n
+  $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $loaded = load_plugin_textdomain( $PRIZE_TEXTDOMAIN, false, $path );
+}
+
+add_action( 'init', 'literary_prize_taxonomy_load_textdomain', 0 );
 
 
 /**
@@ -22,26 +40,27 @@ $BOOK_TEXTDOMAIN = 'book-taxonomy';
  **/
 
 function add_prize_taxonomy() {
-  global $BOOK_TEXTDOMAIN;
+  global $PRIZE_TEXTDOMAIN;
 
   $labels = array (
-    'name'                       => _x( 'Literary Prizes', 'taxonomy general name', $BOOK_TEXTDOMAIN ),
-    'singular_name'              => _x( 'Literary Prize', 'taxonomy singular name', $BOOK_TEXTDOMAIN ),
-    'search_items'               => __( 'Search Literary Prizes', $BOOK_TEXTDOMAIN ),
-    'popular_items'              => __( 'Popular Literary Prizes', $BOOK_TEXTDOMAIN ),
-    'all_items'                  => __( 'All Literary Prizes', $BOOK_TEXTDOMAIN ),
+    'name'                       => _x( 'Literary Prizes', 'taxonomy general name', $PRIZE_TEXTDOMAIN ),
+    'singular_name'              => _x( 'Literary Prize', 'taxonomy singular name', $PRIZE_TEXTDOMAIN ),
+    'search_items'               => __( 'Search Literary Prizes', $PRIZE_TEXTDOMAIN ),
+    'popular_items'              => __( 'Popular Literary Prizes', $PRIZE_TEXTDOMAIN ),
+    'all_items'                  => __( 'All Literary Prizes', $PRIZE_TEXTDOMAIN ),
     'parent_item'                => null,
     'parent_item_colon'          => null,
-    'view_item'                  => __( 'See Literary Prize', $BOOK_TEXTDOMAIN ),
-    'edit_item'                  => __( 'Edit Literary Prize', $BOOK_TEXTDOMAIN ),
-    'update_item'                => __( 'Update Literary Prize', $BOOK_TEXTDOMAIN ),
-    'add_new_item'               => __( 'Add New Literary Prize', $BOOK_TEXTDOMAIN ),
-    'new_item_name'              => __( 'New Literary Prize Name', $BOOK_TEXTDOMAIN ),
-    'separate_items_with_commas' => __( 'Separate prizes with commas', $BOOK_TEXTDOMAIN ),
-    'add_or_remove_items'        => __( 'Add or remove prizes', $BOOK_TEXTDOMAIN ),
-    'choose_from_most_used'      => __( 'Choose from the most used prizes', $BOOK_TEXTDOMAIN ),
-    'not_found'                  => __( 'No prizes found.', $BOOK_TEXTDOMAIN ),
-    'menu_name'                  => __( 'Literary Prizes', $BOOK_TEXTDOMAIN ),
+    'view_item'                  => __( 'See Literary Prize', $PRIZE_TEXTDOMAIN ),
+    'edit_item'                  => __( 'Edit Literary Prize', $PRIZE_TEXTDOMAIN ),
+    'update_item'                => __( 'Update Literary Prize', $PRIZE_TEXTDOMAIN ),
+    'add_new_item'               => __( 'Add New Literary Prize', $PRIZE_TEXTDOMAIN ),
+    'new_item_name'              => __( 'New Literary Prize Name', $PRIZE_TEXTDOMAIN ),
+    'separate_items_with_commas' => __( 'Separate prizes with commas', $PRIZE_TEXTDOMAIN ),
+    'add_or_remove_items'        => __( 'Add or remove prizes', $PRIZE_TEXTDOMAIN ),
+    'choose_from_most_used'      => __( 'Choose from the most used prizes', $PRIZE_TEXTDOMAIN ),
+    'not_found'                  => __( 'No prizes found.', $PRIZE_TEXTDOMAIN ),
+    'back_to_items'              => __( '← Back to prizes', $PRIZE_TEXTDOMAIN ),
+    'menu_name'                  => __( 'Literary Prizes', $PRIZE_TEXTDOMAIN ),
   );
 
   $args = array (
@@ -66,14 +85,14 @@ add_action ('init', 'add_prize_taxonomy', 1);
  **/
 
 function add_new_prize_meta_field() {
-  global $BOOK_TEXTDOMAIN;
+  global $PRIZE_TEXTDOMAIN;
 
   # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
-    <label for="term_meta[prize_link]"><?php _e( 'Website link', $BOOK_TEXTDOMAIN ); ?></label>
+    <label for="term_meta[prize_link]"><?php _e( 'Website link', $PRIZE_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[prize_link]" id="term_meta[prize_link]" value="">
-    <p class="description"><?php _e( 'Enter the website link of the prize.', $BOOK_TEXTDOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the website link of the prize.', $PRIZE_TEXTDOMAIN ); ?></p>
   </div>
   <?php
 }
@@ -89,7 +108,7 @@ add_action( 'prize_add_form_fields', 'add_new_prize_meta_field', 10, 2 );
  */
 
 function edit_prize_meta_field ($term) {
-  global $BOOK_TEXTDOMAIN;
+  global $PRIZE_TEXTDOMAIN;
 
   # Put the term ID into a variable
   $t_id = $term->term_id;
@@ -100,10 +119,10 @@ function edit_prize_meta_field ($term) {
 
   ?>
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[prize_link]"><?php _e( 'Website link', $BOOK_TEXTDOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[prize_link]"><?php _e( 'Website link', $PRIZE_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[prize_link]" id="term_meta[prize_link]" value="<?php echo esc_attr( $term_meta['prize_link'] ) ? esc_attr( $term_meta['prize_link'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the website link of the prize', $BOOK_TEXTDOMAIN); ?></p>
+        <p class="description"><?php _e( 'Enter the website link of the prize.', $PRIZE_TEXTDOMAIN); ?></p>
     </td>
   </tr>
   <?php
@@ -147,21 +166,24 @@ add_action( 'create_prize', 'save_prize_taxonomy_custom_meta', 10, 2 );
 
 class popular_prizes_in_category_widget extends WP_Widget {
     function __construct() {
+        global $PRIZE_TEXTDOMAIN;
+
         parent::__construct(
             # Base ID of your widget
             'popular_prizes_in_category_widget',
 
             # Widget name will appear in UI
-            __('Popular Literary Prizes in Category Widget', 'popular_prizes_in_category_widget_domain'),
+            __('Popular Literary Prizes in Category Widget', $PRIZE_TEXTDOMAIN),
 
             # Widget description
-            array( 'description' => __( 'This widget will show all the prizes in the specific category you choose', 'popular_prizes_in_category_widget_domain' ), )
+            array( 'description' => __( 'This widget will show all the prizes in the specific category you choose', $PRIZE_TEXTDOMAIN ), )
         );
     }
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        global $BOOK_TEXTDOMAIN;
+        global $PRIZE_TEXTDOMAIN;
+
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
         $lp_count = isset( $instance['lp_count'] ) ? $instance['lp_count'] : '';
 
@@ -274,11 +296,13 @@ class popular_prizes_in_category_widget extends WP_Widget {
 
     # Widget Backend
     public function form( $instance ) {
+        global $PRIZE_TEXTDOMAIN;
+
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
             $lp_count = isset( $instance['lp_count'] ) ? esc_attr( $instance['lp_count'] ) : '';
         } else {
-            $title = __( 'Literary prizes', 'popular_prizes_in_category_widget_domain' );
+            $title = __( 'Literary prizes', $PRIZE_TEXTDOMAIN );
             $lp_count = 75;
         }
 
@@ -290,7 +314,7 @@ class popular_prizes_in_category_widget extends WP_Widget {
         </p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'lp_count' ); ?>"><?php _e( 'Number of literary prizes to show:', 'twentysixteen-child' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'lp_count' ); ?>"><?php _e( 'Number of literary prizes to show:', $PRIZE_TEXTDOMAIN ); ?></label>
 	    <input type="text" name="<?php echo $this->get_field_name( 'lp_count' ); ?>" value="<?php echo esc_attr( $lp_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'lp_count' ); ?>" />
 	</p>
         <?php
