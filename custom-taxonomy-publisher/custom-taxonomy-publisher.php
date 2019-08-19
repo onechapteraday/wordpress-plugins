@@ -11,9 +11,28 @@
  *
  */
 
-global $BOOK_TEXTDOMAIN;
 
-$BOOK_TEXTDOMAIN = 'book-taxonomy';
+global $PUBLISHER_TEXTDOMAIN;
+
+$PUBLISHER_TEXTDOMAIN = 'publisher-taxonomy';
+
+
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function publisher_taxonomy_load_textdomain() {
+  global $PUBLISHER_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $PUBLISHER_TEXTDOMAIN );
+
+  # Load i18n
+  $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $loaded = load_plugin_textdomain( $PUBLISHER_TEXTDOMAIN, false, $path );
+}
+
+add_action( 'init', 'publisher_taxonomy_load_textdomain', 0 );
 
 
 /**
@@ -22,26 +41,27 @@ $BOOK_TEXTDOMAIN = 'book-taxonomy';
  **/
 
 function add_publisher_taxonomy() {
-  global $BOOK_TEXTDOMAIN;
+  global $PUBLISHER_TEXTDOMAIN;
 
   $labels = array (
-    'name'                       => _x( 'Publishers', 'taxonomy general name', $BOOK_TEXTDOMAIN ),
-    'singular_name'              => _x( 'Publisher', 'taxonomy singular name', $BOOK_TEXTDOMAIN ),
-    'search_items'               => __( 'Search Publishers', $BOOK_TEXTDOMAIN ),
-    'popular_items'              => __( 'Popular Publishers', $BOOK_TEXTDOMAIN ),
-    'all_items'                  => __( 'All Publishers', $BOOK_TEXTDOMAIN ),
+    'name'                       => _x( 'Publishers', 'taxonomy general name', $PUBLISHER_TEXTDOMAIN ),
+    'singular_name'              => _x( 'Publisher', 'taxonomy singular name', $PUBLISHER_TEXTDOMAIN ),
+    'search_items'               => __( 'Search Publishers', $PUBLISHER_TEXTDOMAIN ),
+    'popular_items'              => __( 'Popular Publishers', $PUBLISHER_TEXTDOMAIN ),
+    'all_items'                  => __( 'All Publishers', $PUBLISHER_TEXTDOMAIN ),
     'parent_item'                => null,
     'parent_item_colon'          => null,
-    'view_item'                  => __( 'See Publisher', $BOOK_TEXTDOMAIN ),
-    'edit_item'                  => __( 'Edit Publisher', $BOOK_TEXTDOMAIN ),
-    'update_item'                => __( 'Update Publisher', $BOOK_TEXTDOMAIN ),
-    'add_new_item'               => __( 'Add New Publisher', $BOOK_TEXTDOMAIN ),
-    'new_item_name'              => __( 'New Publisher Name', $BOOK_TEXTDOMAIN ),
-    'separate_items_with_commas' => __( 'Separate publishers with commas', $BOOK_TEXTDOMAIN ),
-    'add_or_remove_items'        => __( 'Add or remove publishers', $BOOK_TEXTDOMAIN ),
-    'choose_from_most_used'      => __( 'Choose from the most used publishers', $BOOK_TEXTDOMAIN ),
-    'not_found'                  => __( 'No publishers found.', $BOOK_TEXTDOMAIN ),
-    'menu_name'                  => __( 'Publishers', $BOOK_TEXTDOMAIN ),
+    'view_item'                  => __( 'See Publisher', $PUBLISHER_TEXTDOMAIN ),
+    'edit_item'                  => __( 'Edit Publisher', $PUBLISHER_TEXTDOMAIN ),
+    'update_item'                => __( 'Update Publisher', $PUBLISHER_TEXTDOMAIN ),
+    'add_new_item'               => __( 'Add New Publisher', $PUBLISHER_TEXTDOMAIN ),
+    'new_item_name'              => __( 'New Publisher Name', $PUBLISHER_TEXTDOMAIN ),
+    'separate_items_with_commas' => __( 'Separate publishers with commas', $PUBLISHER_TEXTDOMAIN ),
+    'add_or_remove_items'        => __( 'Add or remove publishers', $PUBLISHER_TEXTDOMAIN ),
+    'choose_from_most_used'      => __( 'Choose from the most used publishers', $PUBLISHER_TEXTDOMAIN ),
+    'not_found'                  => __( 'No publishers found.', $PUBLISHER_TEXTDOMAIN ),
+    'back_to_items'              => __( '← Back to publishers', $PUBLISHER_TEXTDOMAIN ),
+    'menu_name'                  => __( 'Publishers', $PUBLISHER_TEXTDOMAIN ),
   );
 
   $args = array (
@@ -66,14 +86,14 @@ add_action ('init', 'add_publisher_taxonomy', 1);
  **/
 
 function add_new_publisher_meta_field() {
-  global $BOOK_TEXTDOMAIN;
+  global $PUBLISHER_TEXTDOMAIN;
 
   # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
-    <label for="term_meta[publisher_link]"><?php _e( 'Website link', $BOOK_TEXTDOMAIN ); ?></label>
+    <label for="term_meta[publisher_link]"><?php _e( 'Website link', $PUBLISHER_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="">
-    <p class="description"><?php _e( 'Enter the website link of the publisher.', $BOOK_TEXTDOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the website link of the publisher.', $PUBLISHER_TEXTDOMAIN ); ?></p>
   </div>
   <?php
 }
@@ -89,7 +109,7 @@ add_action( 'publisher_add_form_fields', 'add_new_publisher_meta_field', 10, 2 )
  */
 
 function edit_publisher_meta_field ($term) {
-  global $BOOK_TEXTDOMAIN;
+  global $PUBLISHER_TEXTDOMAIN;
 
   # Put the term ID into a variable
   $t_id = $term->term_id;
@@ -100,10 +120,10 @@ function edit_publisher_meta_field ($term) {
 
   ?>
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[publisher_link]"><?php _e( 'Website link', $BOOK_TEXTDOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[publisher_link]"><?php _e( 'Website link', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="<?php echo esc_attr( $term_meta['publisher_link'] ) ? esc_attr( $term_meta['publisher_link'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the website link of the publisher', $BOOK_TEXTDOMAIN); ?></p>
+        <p class="description"><?php _e( 'Enter the website link of the publisher.', $PUBLISHER_TEXTDOMAIN); ?></p>
     </td>
   </tr>
   <?php
@@ -147,21 +167,24 @@ add_action( 'create_publisher', 'save_publisher_taxonomy_custom_meta', 10, 2 );
 
 class popular_publishers_in_category_widget extends WP_Widget {
     function __construct() {
+        global $PUBLISHER_TEXTDOMAIN;
+
         parent::__construct(
             # Base ID of your widget
             'popular_publishers_in_category_widget',
 
             # Widget name will appear in UI
-            __('Popular Publishers in Category Widget', 'popular_publishers_in_category_widget_domain'),
+            __('Popular Publishers in Category Widget', $PUBLISHER_TEXTDOMAIN),
 
             # Widget description
-            array( 'description' => __( 'This widget will show all the publishers in the specific category you choose', 'popular_publishers_in_category_widget_domain' ), )
+            array( 'description' => __( 'This widget will show all the publishers in the specific category you choose.', $PUBLISHER_TEXTDOMAIN ), )
         );
     }
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        global $BOOK_TEXTDOMAIN;
+        global $PUBLISHER_TEXTDOMAIN;
+
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
         $p_count = isset( $instance['p_count'] ) ? $instance['p_count'] : '';
 
@@ -265,11 +288,13 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
     # Widget Backend
     public function form( $instance ) {
+        global $PUBLISHER_TEXTDOMAIN;
+
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
             $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
         } else {
-            $title = __( 'Publishers', 'popular_publishers_in_category_widget_domain' );
+            $title = __( 'Publishers', $PUBLISHER_TEXTDOMAIN );
             $p_count = 75;
         }
 
@@ -281,7 +306,7 @@ class popular_publishers_in_category_widget extends WP_Widget {
         </p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of publishers to show:', 'twentysixteen-child' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of publishers to show:', $PUBLISHER_TEXTDOMAIN ); ?></label>
 	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
 	</p>
         <?php
@@ -313,21 +338,24 @@ add_action( 'widgets_init', 'popular_publisher_wpb_load_widget' );
 
 class popular_collections_in_category_widget extends WP_Widget {
     function __construct() {
+        global $PUBLISHER_TEXTDOMAIN;
+
         parent::__construct(
             # Base ID of your widget
             'popular_collections_in_category_widget',
 
             # Widget name will appear in UI
-            __('Popular Collections in Category Widget', 'popular_collections_in_category_widget_domain'),
+            __('Popular Collections in Category Widget', $PUBLISHER_TEXTDOMAIN),
 
             # Widget description
-            array( 'description' => __( 'This widget will show all the collections in the specific category you choose', 'popular_collections_in_category_widget_domain' ), )
+            array( 'description' => __( 'This widget will show all the collections in the specific category you choose.', $PUBLISHER_TEXTDOMAIN ), )
         );
     }
 
     # Creating widget front-end
     public function widget( $args, $instance ) {
-        global $BOOK_TEXTDOMAIN;
+        global $PUBLISHER_TEXTDOMAIN;
+
         $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
         $c_count = isset( $instance['c_count'] ) ? $instance['c_count'] : '';
 
@@ -450,11 +478,13 @@ class popular_collections_in_category_widget extends WP_Widget {
 
     # Widget Backend
     public function form( $instance ) {
+        global $PUBLISHER_TEXTDOMAIN;
+
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
             $c_count = isset( $instance['c_count'] ) ? esc_attr( $instance['c_count'] ) : '';
         } else {
-            $title = __( 'Collections', 'popular_collections_in_category_widget_domain' );
+            $title = __( 'Collections', $PUBLISHER_TEXTDOMAIN );
             $c_count = 75;
         }
 
@@ -466,7 +496,7 @@ class popular_collections_in_category_widget extends WP_Widget {
         </p>
 
 	<p>
-	    <label for="<?php echo $this->get_field_id( 'c_count' ); ?>"><?php _e( 'Number of collections to show:', 'twentysixteen-child' ); ?></label>
+	    <label for="<?php echo $this->get_field_id( 'c_count' ); ?>"><?php _e( 'Number of collections to show:', $PUBLISHER_TEXTDOMAIN ); ?></label>
 	    <input type="text" name="<?php echo $this->get_field_name( 'c_count' ); ?>" value="<?php echo esc_attr( $c_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'c_count' ); ?>" />
 	</p>
         <?php
@@ -503,6 +533,7 @@ function publisher_taxonomy_flush_rewrites() {
 # Prevent 404 errors on publishers' archive
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 register_activation_hook( __FILE__, 'publisher_taxonomy_flush_rewrites' );
+
 add_action( 'init', 'publisher_taxonomy_flush_rewrites', 0 );
 
 
@@ -515,10 +546,11 @@ add_action( 'init', 'publisher_taxonomy_flush_rewrites', 0 );
  *
  */
 
-function get_publisher_option ($option) {
+function get_publisher_option( $option ) {
   $publisher = get_queried_object();
   $id = $publisher->term_id;
   $term_meta = get_option( 'taxonomy_' . $id );
+
   return $term_meta[$option];
 }
 

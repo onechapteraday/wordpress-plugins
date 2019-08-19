@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Package Name\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-19 14:30-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-taxonomy-publisher.php:46
+msgctxt "taxonomy general name"
+msgid "Publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:47
+msgctxt "taxonomy singular name"
+msgid "Publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:48
+msgid "Search Publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:49
+msgid "Popular Publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:50
+msgid "All Publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:53
+msgid "See Publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:54
+msgid "Edit Publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:55
+msgid "Update Publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:56
+msgid "Add New Publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:57
+msgid "New Publisher Name"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:58
+msgid "Separate publishers with commas"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:59
+msgid "Add or remove publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:60
+msgid "Choose from the most used publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:61
+msgid "No publishers found."
+msgstr ""
+
+#: custom-taxonomy-publisher.php:62
+msgid "← Back to publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:63 custom-taxonomy-publisher.php:296
+msgid "Publishers"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:93 custom-taxonomy-publisher.php:122
+msgid "Website link"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:95
+msgid "Enter the website link of the publisher."
+msgstr ""
+
+#: custom-taxonomy-publisher.php:125
+msgid "Enter the website link of the publisher"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:176
+msgid "Popular Publishers in Category Widget"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:179
+msgid ""
+"This widget will show all the publishers in the specific category you choose."
+msgstr ""
+
+#: custom-taxonomy-publisher.php:303 custom-taxonomy-publisher.php:493
+msgid "Title:"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:308
+msgid "Number of publishers to show:"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:347
+msgid "Popular Collections in Category Widget"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:350
+msgid ""
+"This widget will show all the collections in the specific category you "
+"choose."
+msgstr ""
+
+#: custom-taxonomy-publisher.php:486
+msgid "Collections"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:498
+msgid "Number of collections to show:"
+msgstr ""
