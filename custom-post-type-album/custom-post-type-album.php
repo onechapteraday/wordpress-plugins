@@ -13,7 +13,7 @@
 
 global $ALBUM_TEXTDOMAIN;
 
-$ALBUM_TEXTDOMAIN = 'album-taxonomy';
+$ALBUM_TEXTDOMAIN = 'album-post-type';
 
 
 /*
@@ -45,27 +45,45 @@ function create_post_type_album() {
   register_post_type( 'album',
     array(
       'labels' => array(
-        'name' => __( 'Albums', $ALBUM_TEXTDOMAIN ),
-        'singular_name' => __( 'Album', $ALBUM_TEXTDOMAIN )
+          'name'                     => __( 'Albums', $ALBUM_TEXTDOMAIN ),
+          'singular_name'            => __( 'Album', $ALBUM_TEXTDOMAIN ),
+          'add_new_item'             => __( 'Add New Album', $ALBUM_TEXTDOMAIN ),
+          'edit_item'                => __( 'Edit Album', $ALBUM_TEXTDOMAIN ),
+          'new_item'                 => __( 'New Album', $ALBUM_TEXTDOMAIN ),
+          'view_item'                => __( 'View Album', $ALBUM_TEXTDOMAIN ),
+          'view_items'               => __( 'View Albums', $ALBUM_TEXTDOMAIN ),
+          'search_items'              => __( 'Search Albums', $ALBUM_TEXTDOMAIN ),
+          'not_found'                => __( 'No albums found', $ALBUM_TEXTDOMAIN ),
+          'not_found_in_trash'       => __( 'No albums found in Trash', $ALBUM_TEXTDOMAIN ),
+          'all_items'                => __( 'All Albums', $ALBUM_TEXTDOMAIN ),
+          'archives'                 => __( 'Album Archives', $ALBUM_TEXTDOMAIN ),
+          'attributes'               => __( 'Album Attributes', $ALBUM_TEXTDOMAIN ),
+          'insert_into_item'         => __( 'Insert into album', $ALBUM_TEXTDOMAIN ),
+          'uploaded_to_this_item'    => __( 'Uploaded to this album', $ALBUM_TEXTDOMAIN ),
+          'item_published'           => __( 'Album published.', $ALBUM_TEXTDOMAIN ),
+          'item_published_privately' => __( 'Album published privately.', $ALBUM_TEXTDOMAIN ),
+          'item_reverted_to_draft'   => __( 'Album reverted to draft.', $ALBUM_TEXTDOMAIN ),
+          'item_scheduled'           => __( 'Album scheduled.', $ALBUM_TEXTDOMAIN ),
+          'item_updated'             => __( 'Album updated.', $ALBUM_TEXTDOMAIN ),
       ),
       'public' => true,
       'has_archive' => true,
       'menu_icon' => 'dashicons-album',
       'menu_position' => 5,
       'taxonomies' => array(
-        'category',
-        'person',
-        'location',
-        'post_tag',
+          'category',
+          'person',
+          'location',
+          'post_tag',
       ),
       'supports' => array(
-        'title',
-        'editor',
-        'excerpt',
-        'custom-fields',
-        'comments',
-        'thumbnail',
-        'publicize',
+          'title',
+          'editor',
+          'excerpt',
+          'custom-fields',
+          'comments',
+          'thumbnail',
+          'publicize',
       ),
     )
   );

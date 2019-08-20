@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-20 19:25-0400\n"
+"PO-Revision-Date: 2019-08-20 19:32-0400\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: custom-post-type-album.php:48
+msgid "Albums"
+msgstr "Albums"
+
+#: custom-post-type-album.php:49
+msgid "Album"
+msgstr "Album"
+
+#: custom-post-type-album.php:50
+msgid "Add New Album"
+msgstr "Ajouter un nouvel album"
+
+#: custom-post-type-album.php:51
+msgid "Edit Album"
+msgstr "Modifier l'album"
+
+#: custom-post-type-album.php:52
+msgid "New Album"
+msgstr "Nouvel album"
+
+#: custom-post-type-album.php:53
+msgid "View Album"
+msgstr "Voir l'album"
+
+#: custom-post-type-album.php:54
+msgid "View Albums"
+msgstr "Voir les albums"
+
+#: custom-post-type-album.php:55
+msgid "Search Albums"
+msgstr "Rechercher dans les albums"
+
+#: custom-post-type-album.php:56
+msgid "No albums found"
+msgstr "Aucun album trouvé"
+
+#: custom-post-type-album.php:57
+msgid "No albums found in Trash"
+msgstr "Aucun album trouvé dans la corbeille"
+
+#: custom-post-type-album.php:58
+msgid "All Albums"
+msgstr "Tous les albums"
+
+#: custom-post-type-album.php:59
+msgid "Album Archives"
+msgstr "Archives des albums"
+
+#: custom-post-type-album.php:60
+msgid "Album Attributes"
+msgstr "Attributs des albums"
+
+#: custom-post-type-album.php:61
+msgid "Insert into album"
+msgstr "Insérer dans l'album"
+
+#: custom-post-type-album.php:62
+msgid "Uploaded to this album"
+msgstr "Téléversé dans cet album"
+
+#: custom-post-type-album.php:63
+msgid "Album published."
+msgstr "Album publié."
+
+#: custom-post-type-album.php:64
+msgid "Album published privately."
+msgstr "Album publié de manière privée."
+
+#: custom-post-type-album.php:65
+msgid "Album reverted to draft."
+msgstr "Album retourné au brouillon."
+
+#: custom-post-type-album.php:66
+msgid "Album scheduled."
+msgstr "Album planifié."
+
+#: custom-post-type-album.php:67
+msgid "Album updated."
+msgstr "Album mis à jour."
