@@ -11,12 +11,36 @@
  *
  */
 
+global $SEO_TEXTDOMAIN;
+
+$SEO_TEXTDOMAIN = 'seo-plugin';
+
+
+/*
+ * Make plugin available for translation.
+ * Translations can be filed in the /languages directory.
+ *
+ */
+
+function seo_plugin_load_textdomain() {
+  global $SEO_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_TEXTDOMAIN );
+
+  # Load i18n
+  $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $loaded = load_plugin_textdomain( $SEO_TEXTDOMAIN, false, $path );
+}
+
+add_action( 'init', 'seo_plugin_load_textdomain', 0 );
+
 
 /*
  * Add SEO title meta box
  */
 
 function seo_title_add_custom_box(){
+    global $SEO_TEXTDOMAIN;
+
     $screens = array( 'post' );
 
     if( post_type_exists( 'book' ) ){
@@ -33,10 +57,17 @@ function seo_title_add_custom_box(){
 
     foreach( $screens as $screen ){
         add_meta_box(
-            'seo_title_box_id',           # Unique ID
-            'SEO Title',                  # Box title
-            'seo_title_custom_box_html',  # Content callback, must be of type callable
-            $screen                       # Post type
+            # Unique ID
+            'seo_title_box_id',
+
+            # Box title
+            __( 'SEO Title', $SEO_TEXTDOMAIN ),
+
+            # Content callback, must be of type callable
+            'seo_title_custom_box_html',
+
+            # Post type
+            $screen
         );
     }
 }
@@ -44,8 +75,10 @@ function seo_title_add_custom_box(){
 add_action( 'add_meta_boxes', 'seo_title_add_custom_box' );
 
 function seo_title_custom_box_html( $post ){
+    global $SEO_TEXTDOMAIN;
+
     ?>
-    <label for="seo_title_field"><em>Enter here title for SEO</em></label>
+    <label for="seo_title_field" style="margin-bottom: 5px; display: inline-block;"><em><?php echo __( 'Enter here title for SEO', $SEO_TEXTDOMAIN ); ?></em></label><br />
     <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="20" />
     <?php
 }
