@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-20 19:25-0400\n"
-"PO-Revision-Date: 2019-08-20 19:32-0400\n"
+"POT-Creation-Date: 2019-08-20 21:57-0400\n"
+"PO-Revision-Date: 2019-08-20 21:59-0400\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,11 +80,11 @@ msgstr "Téléversé dans cet album"
 
 #: custom-post-type-album.php:63
 msgid "Album published."
-msgstr "Album publié."
+msgstr "Album mis en ligne."
 
 #: custom-post-type-album.php:64
 msgid "Album published privately."
-msgstr "Album publié de manière privée."
+msgstr "Album mis en ligne de manière privée."
 
 #: custom-post-type-album.php:65
 msgid "Album reverted to draft."
