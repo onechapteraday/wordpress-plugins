@@ -79,7 +79,7 @@ function seo_title_custom_box_html( $post ){
 
     ?>
     <label for="seo_title_field" style="margin-bottom: 5px; display: inline-block;"><em><?php echo __( 'Enter here title for SEO', $SEO_TEXTDOMAIN ); ?></em></label><br />
-    <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="20" />
+    <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="35" style="max-width: 100%;" />
     <?php
 }
 
