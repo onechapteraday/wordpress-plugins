@@ -111,7 +111,7 @@ function seo_title_custom_title( $title ){
             $meta_title = get_post_meta( $id, '_seo_title_meta_key', true );
 
             if( $meta_title != '' ){
-                return $meta_title;
+                return strip_tags( $meta_title );
             }
         }
 
