@@ -55,6 +55,10 @@ function seo_title_add_custom_box(){
         array_push( $screens, 'interview' );
     }
 
+    if( post_type_exists( 'concert' ) ){
+        array_push( $screens, 'concert' );
+    }
+
     foreach( $screens as $screen ){
         add_meta_box(
             # Unique ID
