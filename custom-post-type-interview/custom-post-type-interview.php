@@ -13,7 +13,7 @@
 
 global $INTERVIEW_TEXTDOMAIN;
 
-$INTERVIEW_TEXTDOMAIN = 'interview-taxonomy';
+$INTERVIEW_TEXTDOMAIN = 'interview-post-type';
 
 
 /*
@@ -45,27 +45,45 @@ function create_post_type_interview() {
   register_post_type( 'interview',
     array(
       'labels' => array(
-        'name' => __( 'Interviews', $INTERVIEW_TEXTDOMAIN ),
-        'singular_name' => __( 'Interview', $INTERVIEW_TEXTDOMAIN )
+          'name'                     => __( 'Interviews', $INTERVIEW_TEXTDOMAIN ),
+          'singular_name'            => __( 'Interview', $INTERVIEW_TEXTDOMAIN ),
+          'add_new_item'             => __( 'Add New Interview', $INTERVIEW_TEXTDOMAIN ),
+          'edit_item'                => __( 'Edit Interview', $INTERVIEW_TEXTDOMAIN ),
+          'new_item'                 => __( 'New Interview', $INTERVIEW_TEXTDOMAIN ),
+          'view_item'                => __( 'View Interview', $INTERVIEW_TEXTDOMAIN ),
+          'view_items'               => __( 'View Interviews', $INTERVIEW_TEXTDOMAIN ),
+          'search_items'             => __( 'Search Interviews', $INTERVIEW_TEXTDOMAIN ),
+          'not_found'                => __( 'No interviews found', $INTERVIEW_TEXTDOMAIN ),
+          'not_found_in_trash'       => __( 'No interviews found in Trash', $INTERVIEW_TEXTDOMAIN ),
+          'all_items'                => __( 'All Interviews', $INTERVIEW_TEXTDOMAIN ),
+          'archives'                 => __( 'Interview Archives', $INTERVIEW_TEXTDOMAIN ),
+          'attributes'               => __( 'Interview Attributes', $INTERVIEW_TEXTDOMAIN ),
+          'insert_into_item'         => __( 'Insert into interview', $INTERVIEW_TEXTDOMAIN ),
+          'uploaded_to_this_item'    => __( 'Uploaded to this interview', $INTERVIEW_TEXTDOMAIN ),
+          'item_published'           => __( 'Interview published.', $INTERVIEW_TEXTDOMAIN ),
+          'item_published_privately' => __( 'Interview published privately.', $INTERVIEW_TEXTDOMAIN ),
+          'item_reverted_to_draft'   => __( 'Interview reverted to draft.', $INTERVIEW_TEXTDOMAIN ),
+          'item_scheduled'           => __( 'Interview scheduled.', $INTERVIEW_TEXTDOMAIN ),
+          'item_updated'             => __( 'Interview updated.', $INTERVIEW_TEXTDOMAIN ),
       ),
       'public' => true,
       'has_archive' => true,
       'menu_icon' => 'dashicons-microphone',
       'menu_position' => 5,
       'taxonomies' => array(
-        'category',
-        'person',
-        'location',
-        'post_tag',
+          'category',
+          'person',
+          'location',
+          'post_tag',
       ),
       'supports' => array(
-        'title',
-        'editor',
-        'excerpt',
-        'custom-fields',
-        'comments',
-        'thumbnail',
-        'publicize',
+          'title',
+          'editor',
+          'excerpt',
+          'custom-fields',
+          'comments',
+          'thumbnail',
+          'publicize',
       ),
     )
   );
