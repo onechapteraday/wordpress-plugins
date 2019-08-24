@@ -229,8 +229,18 @@ function get_book_author ( $post_id ) {
 
 function get_book_author_preface ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'author_preface', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $preface_authors = array();
+    $persons = get_post_meta( $post_id, 'author_preface', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $preface_authors, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $preface_authors;
+    }
   }
 }
 
