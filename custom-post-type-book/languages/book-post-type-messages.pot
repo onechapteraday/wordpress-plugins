@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-24 11:15-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-post-type-book/custom-post-type-book.php:48
+msgid "Books"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:49
+msgid "Book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:50
+msgid "Add New Book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:51
+msgid "Edit Book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:52
+msgid "New Book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:53
+msgid "View Book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:54
+msgid "View Books"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:55
+msgid "Search Books"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:56
+msgid "No books found"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:57
+msgid "No books found in Trash"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:58
+msgid "All Books"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:59
+msgid "Book Archives"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:60
+msgid "Book Attributes"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:61
+msgid "Insert into book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:62
+msgid "Uploaded to this book"
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:63
+msgid "Book published."
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:64
+msgid "Book published privately."
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:65
+msgid "Book reverted to draft."
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:66
+msgid "Book scheduled."
+msgstr ""
+
+#: custom-post-type-book/custom-post-type-book.php:67
+msgid "Book updated."
+msgstr ""

@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-24 11:15-0400\n"
+"PO-Revision-Date: 2019-08-24 11:19-0400\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: custom-post-type-book/custom-post-type-book.php:48
+msgid "Books"
+msgstr "Livres"
+
+#: custom-post-type-book/custom-post-type-book.php:49
+msgid "Book"
+msgstr "Livre"
+
+#: custom-post-type-book/custom-post-type-book.php:50
+msgid "Add New Book"
+msgstr "Ajouter un nouveau livre"
+
+#: custom-post-type-book/custom-post-type-book.php:51
+msgid "Edit Book"
+msgstr "Modifier le livre"
+
+#: custom-post-type-book/custom-post-type-book.php:52
+msgid "New Book"
+msgstr "Nouveau livre"
+
+#: custom-post-type-book/custom-post-type-book.php:53
+msgid "View Book"
+msgstr "Voir le livre"
+
+#: custom-post-type-book/custom-post-type-book.php:54
+msgid "View Books"
+msgstr "Voir les livres"
+
+#: custom-post-type-book/custom-post-type-book.php:55
+msgid "Search Books"
+msgstr "Rechercher dans les livres"
+
+#: custom-post-type-book/custom-post-type-book.php:56
+msgid "No books found"
+msgstr "Aucun livre trouvé"
+
+#: custom-post-type-book/custom-post-type-book.php:57
+msgid "No books found in Trash"
+msgstr "Aucun livre trouvé dans la corbeille"
+
+#: custom-post-type-book/custom-post-type-book.php:58
+msgid "All Books"
+msgstr "Tous les livres"
+
+#: custom-post-type-book/custom-post-type-book.php:59
+msgid "Book Archives"
+msgstr "Archives des livres"
+
+#: custom-post-type-book/custom-post-type-book.php:60
+msgid "Book Attributes"
+msgstr "Attributs des livres"
+
+#: custom-post-type-book/custom-post-type-book.php:61
+msgid "Insert into book"
+msgstr "Insérer dans le livre"
+
+#: custom-post-type-book/custom-post-type-book.php:62
+msgid "Uploaded to this book"
+msgstr "Téléversé dans ce livre"
+
+#: custom-post-type-book/custom-post-type-book.php:63
+msgid "Book published."
+msgstr "Livre mis en ligne."
+
+#: custom-post-type-book/custom-post-type-book.php:64
+msgid "Book published privately."
+msgstr "Livre mis en ligne de manière privée."
+
+#: custom-post-type-book/custom-post-type-book.php:65
+msgid "Book reverted to draft."
+msgstr "Livre retourné au brouillon."
+
+#: custom-post-type-book/custom-post-type-book.php:66
+msgid "Book scheduled."
+msgstr "Livre planifié."
+
+#: custom-post-type-book/custom-post-type-book.php:67
+msgid "Book updated."
+msgstr "Livre mis à jour."

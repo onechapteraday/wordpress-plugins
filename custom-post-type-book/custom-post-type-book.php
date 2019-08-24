@@ -13,7 +13,7 @@
 
 global $BOOK_TEXTDOMAIN;
 
-$BOOK_TEXTDOMAIN = 'book-taxonomy';
+$BOOK_TEXTDOMAIN = 'book-post-type';
 
 
 /*
@@ -45,29 +45,47 @@ function create_post_type_book() {
   register_post_type( 'book',
     array(
       'labels' => array(
-        'name' => __( 'Books', $BOOK_TEXTDOMAIN ),
-        'singular_name' => __( 'Book', $BOOK_TEXTDOMAIN )
+          'name'                     => __( 'Books', $BOOK_TEXTDOMAIN ),
+          'singular_name'            => __( 'Book', $BOOK_TEXTDOMAIN ),
+          'add_new_item'             => __( 'Add New Book', $BOOK_TEXTDOMAIN ),
+          'edit_item'                => __( 'Edit Book', $BOOK_TEXTDOMAIN ),
+          'new_item'                 => __( 'New Book', $BOOK_TEXTDOMAIN ),
+          'view_item'                => __( 'View Book', $BOOK_TEXTDOMAIN ),
+          'view_items'               => __( 'View Books', $BOOK_TEXTDOMAIN ),
+          'search_items'             => __( 'Search Books', $BOOK_TEXTDOMAIN ),
+          'not_found'                => __( 'No books found', $BOOK_TEXTDOMAIN ),
+          'not_found_in_trash'       => __( 'No books found in Trash', $BOOK_TEXTDOMAIN ),
+          'all_items'                => __( 'All Books', $BOOK_TEXTDOMAIN ),
+          'archives'                 => __( 'Book Archives', $BOOK_TEXTDOMAIN ),
+          'attributes'               => __( 'Book Attributes', $BOOK_TEXTDOMAIN ),
+          'insert_into_item'         => __( 'Insert into book', $BOOK_TEXTDOMAIN ),
+          'uploaded_to_this_item'    => __( 'Uploaded to this book', $BOOK_TEXTDOMAIN ),
+          'item_published'           => __( 'Book published.', $BOOK_TEXTDOMAIN ),
+          'item_published_privately' => __( 'Book published privately.', $BOOK_TEXTDOMAIN ),
+          'item_reverted_to_draft'   => __( 'Book reverted to draft.', $BOOK_TEXTDOMAIN ),
+          'item_scheduled'           => __( 'Book scheduled.', $BOOK_TEXTDOMAIN ),
+          'item_updated'             => __( 'Book updated.', $BOOK_TEXTDOMAIN ),
       ),
       'public' => true,
       'has_archive' => true,
       'menu_icon' => 'dashicons-book',
       'menu_position' => 5,
       'taxonomies' => array(
-        'category',
-        'person',
-        'publisher',
-        'collection',
-        'location',
-        'post_tag',
+          'category',
+          'person',
+          'publisher',
+          'collection',
+          'location',
+          'post_tag',
       ),
       'supports' => array(
-        'title',
-        'editor',
-        'excerpt',
-        'custom-fields',
-        'comments',
-        'thumbnail',
-        'publicize',
+          'title',
+          'editor',
+          'excerpt',
+          'custom-fields',
+          'comments',
+          'thumbnail',
+          'publicize',
       ),
     )
   );
