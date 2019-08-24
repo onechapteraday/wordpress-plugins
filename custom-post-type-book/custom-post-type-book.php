@@ -212,15 +212,18 @@ function get_book_fnac ( $post_id ) {
 
 function get_book_author ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'author', true );
-    return get_term_by( 'slug', $person, 'person' );
-  }
-}
+    $authors = array();
+    $persons = get_post_meta( $post_id, 'author', true );
 
-function get_book_author_second ( $post_id ) {
-  if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'author_second', true );
-    return get_term_by( 'slug', $person, 'person' );
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $authors, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $authors;
+    }
   }
 }
 
