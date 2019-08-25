@@ -176,7 +176,7 @@ function get_book_price ( $post_id ) {
 }
 
 function get_book_date_read ( $post_id ) {
-  return get_post_meta($post_id, 'date_release', true);
+  return get_post_meta($post_id, 'date_read', true);
 }
 
 function get_book_date_release ( $post_id ) {
