@@ -246,8 +246,18 @@ function get_book_author_preface ( $post_id ) {
 
 function get_book_translator ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'translator', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $translators = array();
+    $persons = get_post_meta( $post_id, 'translator', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $translators, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $translators;
+    }
   }
 }
 
