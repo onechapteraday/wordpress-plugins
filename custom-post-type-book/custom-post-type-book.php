@@ -197,22 +197,19 @@ function get_book_rating( $post_id ){
 }
 
 function get_book_amazon( $post_id ){
-  $arr = array(
-    'link'    => get_post_meta( $post_id, 'amazon', true ),
-    'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
-    'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
-  );
+  $amazon_link = get_post_meta( $post_id, 'amazon', true );
 
-  return $arr;
-}
+  if( $amazon_link ){
+    $arr = array(
+      'link'    => $amazon_link,
+      'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
+      'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
+    );
 
-function get_book_fnac( $post_id ){
-  $arr = array(
-    'link' => get_post_meta( $post_id, 'fnac', true ),
-    'img' => plugin_dir_url( __FILE__ ) . 'images/logo_fnac.png'
-  );
+    return $arr;
+  }
 
-  return $arr;
+  return false;
 }
 
 function get_book_author( $post_id ){
