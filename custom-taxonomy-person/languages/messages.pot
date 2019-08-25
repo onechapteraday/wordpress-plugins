@@ -1,166 +1,303 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Christelle Hilaricus
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PersonTaxonomy 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-20 11:52+0100\n"
+"POT-Creation-Date: 2019-08-25 15:07-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: person-taxonomy.php:64
+#: admin/dashboard_widgets.php:83 admin/dashboard_widgets.php:197
+msgid " years old"
+msgstr ""
+
+#: admin/dashboard_widgets.php:87
+msgctxt "year of birth date for female"
+msgid "born on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:89
+msgctxt "year of birth date for male"
+msgid "born on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:96
+msgctxt "year of death date for female"
+msgid ", deceased on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:98
+msgctxt "year of death date for male"
+msgid ", deceased on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:111
+msgid "There is nobody born this month among your persons."
+msgstr ""
+
+#: admin/dashboard_widgets.php:204
+msgctxt "year of date for female"
+msgid "deceased on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:216
+#, php-format
+msgid ", %s years ago"
+msgstr ""
+
+#: admin/dashboard_widgets.php:210 admin/dashboard_widgets.php:218
+#, php-format
+msgid ", %s year ago"
+msgstr ""
+
+#: admin/dashboard_widgets.php:213
+msgctxt "year of date for male"
+msgid "deceased on "
+msgstr ""
+
+#: admin/dashboard_widgets.php:231
+msgid "There is nobody who died this month among your persons."
+msgstr ""
+
+#: admin/dashboard_widgets.php:239
+msgid "Birthdays of the month"
+msgstr ""
+
+#: admin/dashboard_widgets.php:243
+msgid "Death anniversaries of the month"
+msgstr ""
+
+#: custom-taxonomy-person.php:59
 msgctxt "taxonomy general name"
 msgid "Persons"
 msgstr ""
 
-#: person-taxonomy.php:65
+#: custom-taxonomy-person.php:60
 msgctxt "taxonomy singular name"
 msgid "Person"
 msgstr ""
 
-#: person-taxonomy.php:66
+#: custom-taxonomy-person.php:61
 msgid "Search Persons"
 msgstr ""
 
-#: person-taxonomy.php:67
+#: custom-taxonomy-person.php:62
 msgid "Popular Persons"
 msgstr ""
 
-#: person-taxonomy.php:68
+#: custom-taxonomy-person.php:63
 msgid "All Persons"
 msgstr ""
 
-#: person-taxonomy.php:71
+#: custom-taxonomy-person.php:66
 msgid "See Person"
 msgstr ""
 
-#: person-taxonomy.php:72
+#: custom-taxonomy-person.php:67
 msgid "Edit Person"
 msgstr ""
 
-#: person-taxonomy.php:73
+#: custom-taxonomy-person.php:68
 msgid "Update Person"
 msgstr ""
 
-#: person-taxonomy.php:74
+#: custom-taxonomy-person.php:69
 msgid "Add New Person"
 msgstr ""
 
-#: person-taxonomy.php:75
+#: custom-taxonomy-person.php:70
 msgid "New Person Name"
 msgstr ""
 
-#: person-taxonomy.php:76
+#: custom-taxonomy-person.php:71
 msgid "Separate persons with commas"
 msgstr ""
 
-#: person-taxonomy.php:77
+#: custom-taxonomy-person.php:72
 msgid "Add or remove persons"
 msgstr ""
 
-#: person-taxonomy.php:78
+#: custom-taxonomy-person.php:73
 msgid "Choose from the most used persons"
 msgstr ""
 
-#: person-taxonomy.php:79
+#: custom-taxonomy-person.php:74
 msgid "No persons found."
 msgstr ""
 
-#: person-taxonomy.php:80
+#: custom-taxonomy-person.php:75
+msgid "← Back to persons"
+msgstr ""
+
+#: custom-taxonomy-person.php:76 custom-taxonomy-person.php:516
 msgid "Persons"
 msgstr ""
 
-#: person-taxonomy.php:110 person-taxonomy.php:188
+#: custom-taxonomy-person.php:106 custom-taxonomy-person.php:226
 msgid "Real name"
 msgstr ""
 
-#: person-taxonomy.php:112
+#: custom-taxonomy-person.php:108 custom-taxonomy-person.php:229
 msgid "Enter the real name of the person."
 msgstr ""
 
-#: person-taxonomy.php:116 person-taxonomy.php:196
+#: custom-taxonomy-person.php:112 custom-taxonomy-person.php:234
+msgid "Given name"
+msgstr ""
+
+#: custom-taxonomy-person.php:114 custom-taxonomy-person.php:237
+msgid "Enter the given name of the person."
+msgstr ""
+
+#: custom-taxonomy-person.php:118 custom-taxonomy-person.php:242
+msgid "Middle name"
+msgstr ""
+
+#: custom-taxonomy-person.php:120 custom-taxonomy-person.php:245
+msgid "Enter the middle name of the person."
+msgstr ""
+
+#: custom-taxonomy-person.php:124 custom-taxonomy-person.php:250
+msgid "Family name"
+msgstr ""
+
+#: custom-taxonomy-person.php:126 custom-taxonomy-person.php:253
+msgid "Enter the family name of the person."
+msgstr ""
+
+#: custom-taxonomy-person.php:130 custom-taxonomy-person.php:258
+msgid "Name order"
+msgstr ""
+
+#: custom-taxonomy-person.php:132 custom-taxonomy-person.php:261
+msgid ""
+"Enter name order: 0 for \"Given name; Last name\", 1 for \"Last name; Given "
+"name\"."
+msgstr ""
+
+#: custom-taxonomy-person.php:136 custom-taxonomy-person.php:266
+msgid "Gender"
+msgstr ""
+
+#: custom-taxonomy-person.php:138
+msgid "Enter the gender of the person, 0 for male and 1 for female."
+msgstr ""
+
+#: custom-taxonomy-person.php:142 custom-taxonomy-person.php:274
 msgid "Birthdate"
 msgstr ""
 
-#: person-taxonomy.php:118 person-taxonomy.php:124
+#: custom-taxonomy-person.php:144 custom-taxonomy-person.php:150
+#: custom-taxonomy-person.php:277 custom-taxonomy-person.php:285
 msgid "Enter a date with the format YYYY-mm-dd."
 msgstr ""
 
-#: person-taxonomy.php:122 person-taxonomy.php:204
+#: custom-taxonomy-person.php:148 custom-taxonomy-person.php:282
 msgid "Deathdate"
 msgstr ""
 
-#: person-taxonomy.php:128 person-taxonomy.php:212
+#: custom-taxonomy-person.php:154 custom-taxonomy-person.php:290
 msgid "Website"
 msgstr ""
 
-#: person-taxonomy.php:130 person-taxonomy.php:215
+#: custom-taxonomy-person.php:156 custom-taxonomy-person.php:293
 msgid "Enter the website of the person, if exists."
 msgstr ""
 
-#: person-taxonomy.php:134 person-taxonomy.php:220
+#: custom-taxonomy-person.php:160 custom-taxonomy-person.php:298
 msgid "Twitter"
 msgstr ""
 
-#: person-taxonomy.php:136 person-taxonomy.php:223
+#: custom-taxonomy-person.php:162 custom-taxonomy-person.php:301
 msgid ""
 "Enter the Twitter account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:140 person-taxonomy.php:228
+#: custom-taxonomy-person.php:166 custom-taxonomy-person.php:306
 msgid "Facebook"
 msgstr ""
 
-#: person-taxonomy.php:142 person-taxonomy.php:231 person-taxonomy.php:255
+#: custom-taxonomy-person.php:168 custom-taxonomy-person.php:309
 msgid ""
 "Enter the Facebook account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:146 person-taxonomy.php:236
+#: custom-taxonomy-person.php:172 custom-taxonomy-person.php:314
 msgid "Instagram"
 msgstr ""
 
-#: person-taxonomy.php:148 person-taxonomy.php:239
+#: custom-taxonomy-person.php:174 custom-taxonomy-person.php:317
 msgid ""
 "Enter the Instagram account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:152 person-taxonomy.php:244
-msgid "Youtube"
+#: custom-taxonomy-person.php:178 custom-taxonomy-person.php:322
+msgid "YouTube"
 msgstr ""
 
-#: person-taxonomy.php:154 person-taxonomy.php:247
+#: custom-taxonomy-person.php:180 custom-taxonomy-person.php:325
 msgid ""
-"Enter the Youtube account name of the person, only the part after the base "
+"Enter the YouTube account name of the person, only the part after the base "
 "url."
 msgstr ""
 
-#: person-taxonomy.php:158 person-taxonomy.php:252
+#: custom-taxonomy-person.php:184 custom-taxonomy-person.php:330
 msgid "Soundcloud"
 msgstr ""
 
-#: person-taxonomy.php:160
+#: custom-taxonomy-person.php:186 custom-taxonomy-person.php:333
 msgid ""
 "Enter the Soundcloud account name of the person, only the part after the "
 "base url."
 msgstr ""
 
-#: person-taxonomy.php:191
-msgid "Enter the real name of the person"
+#: custom-taxonomy-person.php:190 custom-taxonomy-person.php:338
+msgid "Goodreads"
 msgstr ""
 
-#: person-taxonomy.php:199 person-taxonomy.php:207
-msgid "Enter a date with the format YYYY-mm-dd"
+#: custom-taxonomy-person.php:192 custom-taxonomy-person.php:341
+msgid "Enter the Goodreads ID of the person, only the part after the base url."
+msgstr ""
+
+#: custom-taxonomy-person.php:196 custom-taxonomy-person.php:346
+msgid "Sidebar"
+msgstr ""
+
+#: custom-taxonomy-person.php:198 custom-taxonomy-person.php:349
+msgid ""
+"Enter the name of the sidebar you want to display, leave empty if default."
+msgstr ""
+
+#: custom-taxonomy-person.php:269
+msgid "Enter the gender of the person, 0 for male 1 for female."
+msgstr ""
+
+#: custom-taxonomy-person.php:399
+msgid "Popular Persons in Category Widget"
+msgstr ""
+
+#: custom-taxonomy-person.php:402
+msgid ""
+"This widget will show all the persons in the specific category you choose."
+msgstr ""
+
+#: custom-taxonomy-person.php:523
+msgid "Title:"
+msgstr ""
+
+#: custom-taxonomy-person.php:528
+msgid "Number of persons to show:"
 msgstr ""
