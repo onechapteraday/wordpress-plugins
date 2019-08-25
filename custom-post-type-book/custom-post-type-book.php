@@ -167,7 +167,7 @@ function get_book_pages_number ( $post_id ) {
   return get_post_meta($post_id, 'pages_number', true);
 }
 
-function get_book_isbn ( $post_id ) {
+function get_book_isbn13 ( $post_id ) {
   return get_post_meta($post_id, 'isbn13', true);
 }
 
