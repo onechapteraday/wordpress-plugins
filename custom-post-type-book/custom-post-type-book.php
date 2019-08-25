@@ -263,8 +263,18 @@ function get_book_translator ( $post_id ) {
 
 function get_book_illustrator ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'illustrator', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $illustrators = array();
+    $persons = get_post_meta( $post_id, 'illustrator', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $illustrators, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $illustrators;
+    }
   }
 }
 
