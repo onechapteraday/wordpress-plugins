@@ -171,7 +171,20 @@ function deathdays_dashboard_widget () {
           </td>
           <td><small><?php echo $age . ' years old'; ?></small></td>
           <td>
-	      <small><em><?php echo 'died on ' . $deathdate->format('Y'); if ($deathdate != '') { echo ', deceased ' . $now->diff($deathdate)->y . ' years ago'; } ?></em></small>
+	      <small><em><?php
+                  echo 'died on ' . $deathdate->format( 'Y' );
+
+                  if( $deathdate != '' ){
+                      $since_date = $now->diff( $deathdate )->y;
+                      echo ', deceased ' . $since_date;
+
+                      if( $since_date > 1 ){
+                          echo ' years ago';
+                      } else {
+                          echo ' year ago';
+                      }
+                  }
+              ?></em></small>
 	  </td>
         </tr>
         <?php
