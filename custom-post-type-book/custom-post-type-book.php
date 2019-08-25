@@ -280,8 +280,18 @@ function get_book_illustrator ( $post_id ) {
 
 function get_book_colourist ( $post_id ) {
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'colourist', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $colourists = array();
+    $persons = get_post_meta( $post_id, 'colourist', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $colourists, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $colourists;
+    }
   }
 }
 
