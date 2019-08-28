@@ -221,7 +221,11 @@ function get_book_author( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $authors, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $authors, $person_obj );
+        }
       }
 
       return $authors;
@@ -238,7 +242,11 @@ function get_book_author_preface( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $preface_authors, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $preface_authors, $person_obj );
+        }
       }
 
       return $preface_authors;
@@ -255,7 +263,11 @@ function get_book_translator( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $translators, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $translators, $person_obj );
+        }
       }
 
       return $translators;
@@ -272,7 +284,11 @@ function get_book_illustrator( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $illustrators, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $illustrators, $person_obj );
+        }
       }
 
       return $illustrators;
@@ -289,7 +305,11 @@ function get_book_colourist( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $colourists, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $colourists, $person_obj );
+        }
       }
 
       return $colourists;

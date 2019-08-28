@@ -180,7 +180,11 @@ function get_album_author( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $authors, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $authors, $person_obj );
+        }
       }
 
       return $authors;
@@ -197,7 +201,11 @@ function get_album_author_featured( $post_id ){
       $persons = explode( ',', $persons );
 
       foreach( $persons as $person ){
-        array_push( $authors_featured, get_term_by( 'slug', $person, 'person' ) );
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $authors_featured, $person_obj );
+        }
       }
 
       return $authors_featured;
