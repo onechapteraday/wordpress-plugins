@@ -171,19 +171,38 @@ function get_album_amazon ( $post_id ) {
   return $arr;
 }
 
-function get_album_author ( $post_id ) {
+function get_album_author( $post_id ){
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'author', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $authors = array();
+    $persons = get_post_meta( $post_id, 'author', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $authors, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $authors;
+    }
   }
 }
 
-function get_album_author_second ( $post_id ) {
+function get_album_author_featured( $post_id ){
   if( taxonomy_exists( 'person' ) ){
-    $person = get_post_meta( $post_id, 'author_second', true );
-    return get_term_by( 'slug', $person, 'person' );
+    $authors_featured = array();
+    $persons = get_post_meta( $post_id, 'author_featured', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        array_push( $authors_featured, get_term_by( 'slug', $person, 'person' ) );
+      }
+
+      return $authors_featured;
+    }
   }
 }
-
 
 ?>
