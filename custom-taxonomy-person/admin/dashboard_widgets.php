@@ -234,6 +234,62 @@ function deathdays_dashboard_widget(){
 }
 
 
+/**
+ * Create a dashboard widget with persons without posts
+ *
+ */
+
+function persons_without_posts_dashboard_widget(){
+  # Get all persons created
+  $terms = get_terms( array(
+    'taxonomy'   => 'person',
+    'fields'     => 'all',
+    'orderby'    => 'name',
+    'order'      => 'asc',
+    'limit'      => -1,
+    'hide_empty' => false,
+  ) );
+
+  $results = array();
+
+  foreach( $terms as $term ){
+    if( $term->count < 1 ){
+      array_push( $results, $term );
+    }
+  }
+
+  # Display all persons with their deathday and age
+  if( !empty( $results ) ){
+  ?>
+  <table cellspacing="0" cellpadding="3" width="100%">
+    <?php
+    foreach( $results as $term ){
+      if( $term->count < 1 ){
+      ?>
+      <tr>
+          <td>
+            <a href="<?php echo get_edit_term_link( $term->term_id, 'person', 'post' ); ?>" target="blank">
+              <?php echo $term->name; ?>
+          </td>
+          <td><?php echo $term->count; ?></td>
+      </tr>
+      <?php
+      }
+    }
+    ?>
+  </table>
+  <?php
+  } else {
+    echo __( 'All your persons have a least one post.', 'person-taxonomy' );
+  }
+}
+
+
+/**
+ * Add dashboard widgets
+ *
+ */
+
 function add_dashboard_widgets(){
   $now = new DateTime();
 
@@ -245,6 +301,10 @@ function add_dashboard_widgets(){
   $deathdays_function    = 'deathdays_dashboard_widget';
   $deathdays_widget_slug = 'deathdays-dashboard-widget';
 
+  $persons_without_posts_title       = __( 'Persons without posts', 'person-taxonomy' );
+  $persons_without_posts_function    = 'persons_without_posts_dashboard_widget';
+  $persons_without_posts_widget_slug = 'persons-without-posts-dashboard-widget';
+
   wp_add_dashboard_widget(
     $birthdays_widget_slug,
     $birthdays_title,
@@ -255,6 +315,12 @@ function add_dashboard_widgets(){
     $deathdays_widget_slug,
     $deathdays_title,
     $deathdays_function
+  );
+
+  wp_add_dashboard_widget(
+    $persons_without_posts_widget_slug,
+    $persons_without_posts_title,
+    $persons_without_posts_function
   );
 }
 

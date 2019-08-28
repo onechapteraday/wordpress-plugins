@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-25 15:07-0400\n"
-"PO-Revision-Date: 2019-08-25 15:08-0400\n"
+"POT-Creation-Date: 2019-08-28 11:14-0400\n"
+"PO-Revision-Date: 2019-08-28 11:16-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -51,12 +51,12 @@ msgctxt "year of date for female"
 msgid "deceased on "
 msgstr "décédée en "
 
-#: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:216
+#: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:217
 #, php-format
 msgid ", %s years ago"
 msgstr ", il y a %s ans"
 
-#: admin/dashboard_widgets.php:210 admin/dashboard_widgets.php:218
+#: admin/dashboard_widgets.php:210 admin/dashboard_widgets.php:219
 #, php-format
 msgid ", %s year ago"
 msgstr ", il y a %s an"
@@ -66,17 +66,25 @@ msgctxt "year of date for male"
 msgid "deceased on "
 msgstr "décédé en "
 
-#: admin/dashboard_widgets.php:231
+#: admin/dashboard_widgets.php:232
 msgid "There is nobody who died this month among your persons."
 msgstr "Personne n'est mort ce mois-ci parmi vos personnes."
 
-#: admin/dashboard_widgets.php:239
+#: admin/dashboard_widgets.php:283
+msgid "All your persons have a least one post."
+msgstr "Toutes vos personnes ont au moins un article."
+
+#: admin/dashboard_widgets.php:296
 msgid "Birthdays of the month"
 msgstr "Anniversaires du mois"
 
-#: admin/dashboard_widgets.php:243
+#: admin/dashboard_widgets.php:300
 msgid "Death anniversaries of the month"
 msgstr "Commémorations du mois"
+
+#: admin/dashboard_widgets.php:304
+msgid "Persons without posts"
+msgstr "Personnes sans articles"
 
 #: custom-taxonomy-person.php:59
 msgctxt "taxonomy general name"

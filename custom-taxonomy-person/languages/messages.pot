@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-25 15:07-0400\n"
+"POT-Creation-Date: 2019-08-28 11:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,12 +50,12 @@ msgctxt "year of date for female"
 msgid "deceased on "
 msgstr ""
 
-#: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:216
+#: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:217
 #, php-format
 msgid ", %s years ago"
 msgstr ""
 
-#: admin/dashboard_widgets.php:210 admin/dashboard_widgets.php:218
+#: admin/dashboard_widgets.php:210 admin/dashboard_widgets.php:219
 #, php-format
 msgid ", %s year ago"
 msgstr ""
@@ -65,16 +65,24 @@ msgctxt "year of date for male"
 msgid "deceased on "
 msgstr ""
 
-#: admin/dashboard_widgets.php:231
+#: admin/dashboard_widgets.php:232
 msgid "There is nobody who died this month among your persons."
 msgstr ""
 
-#: admin/dashboard_widgets.php:239
+#: admin/dashboard_widgets.php:283
+msgid "All your persons have a least one post."
+msgstr ""
+
+#: admin/dashboard_widgets.php:296
 msgid "Birthdays of the month"
 msgstr ""
 
-#: admin/dashboard_widgets.php:243
+#: admin/dashboard_widgets.php:300
 msgid "Death anniversaries of the month"
+msgstr ""
+
+#: admin/dashboard_widgets.php:304
+msgid "Persons without posts"
 msgstr ""
 
 #: custom-taxonomy-person.php:59
