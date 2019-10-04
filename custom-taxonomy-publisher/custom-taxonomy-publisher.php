@@ -95,6 +95,30 @@ function add_new_publisher_meta_field() {
     <input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="">
     <p class="description"><?php _e( 'Enter the website link of the publisher.', $PUBLISHER_TEXTDOMAIN ); ?></p>
   </div>
+
+  <div class="form-field">
+    <label for="term_meta[publisher_twitter]"><?php _e( 'Twitter', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_twitter]" id="term_meta[publisher_twitter]" value="">
+    <p class="description"><?php _e( 'Enter the Twitter account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[publisher_facebook]"><?php _e( 'Facebook', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_facebook]" id="term_meta[publisher_facebook]" value="">
+    <p class="description"><?php _e( 'Enter the Facebook account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[publisher_instagram]"><?php _e( 'Instagram', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_instagram]" id="term_meta[publisher_instagram]" value="">
+    <p class="description"><?php _e( 'Enter the Instagram account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
+    <label for="term_meta[publisher_youtube]"><?php _e( 'YouTube', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_youtube]" id="term_meta[publisher_youtube]" value="">
+    <p class="description"><?php _e( 'Enter the YouTube account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
   <?php
 }
 
@@ -122,8 +146,40 @@ function edit_publisher_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[publisher_link]"><?php _e( 'Website link', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="<?php echo esc_attr( $term_meta['publisher_link'] ) ? esc_attr( $term_meta['publisher_link'] ) : ''; ?>">
+        <input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="<?php echo esc_attr( $term_meta['publisher_link'] ) ? esc_attr( $term_meta['publisher_link'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the website link of the publisher.', $PUBLISHER_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_twitter]"><?php _e( 'Twitter', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_twitter]" id="term_meta[publisher_twitter]" value="<?php echo isset( $term_meta['publisher_twitter'] ) ? esc_attr( $term_meta['publisher_twitter'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the Twitter account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_facebook]"><?php _e( 'Facebook', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_facebook]" id="term_meta[publisher_facebook]" value="<?php echo isset( $term_meta['publisher_facebook'] ) ? esc_attr( $term_meta['publisher_facebook'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the Facebook account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_instagram]"><?php _e( 'Instagram', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_instagram]" id="term_meta[publisher_instagram]" value="<?php echo isset( $term_meta['publisher_instagram'] ) ? esc_attr( $term_meta['publisher_instagram'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the Instagram account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_youtube]"><?php _e( 'YouTube', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_youtube]" id="term_meta[publisher_youtube]" value="<?php echo isset( $term_meta['publisher_youtube'] ) ? esc_attr( $term_meta['publisher_youtube'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the YouTube account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <?php
@@ -546,12 +602,12 @@ add_action( 'init', 'publisher_taxonomy_flush_rewrites', 0 );
  *
  */
 
-function get_publisher_option( $option ) {
+function get_publisher_option( $option ){
   $publisher = get_queried_object();
   $id = $publisher->term_id;
   $term_meta = get_option( 'taxonomy_' . $id );
 
-  return $term_meta[$option];
+  return isset( $term_meta[ $option ] ) ? $term_meta[ $option ] : false;
 }
 
 ?>
