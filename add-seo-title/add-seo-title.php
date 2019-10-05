@@ -189,7 +189,7 @@ function seo_title_custom_title( $title ){
         # If parent_id then it's a collection
         if( $parent_id > 0 ){
             $parent = get_term( $parent_id, 'publisher' );
-            return 'Livres de la collection ' . $publisher->name . ' de la maison d\'édition ' . $parent->name . ' - ' . get_bloginfo( 'name' );
+            return 'Livres de la collection « ' . $publisher->name . ' » de la maison d\'édition ' . $parent->name . ' - ' . get_bloginfo( 'name' );
         }
 
         return 'Livres de la maison d\'édition ' . $publisher->name . ' - ' . get_bloginfo( 'name' );
