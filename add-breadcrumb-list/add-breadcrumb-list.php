@@ -55,7 +55,7 @@ function create_breadcrumb_single( $atts, $content=null ) {
             </a>
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
+            <a itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
               <span itemprop="name"><?php echo $cat_id->cat_name; ?></span>
             </a>
             <meta itemprop="position" content="1" />
