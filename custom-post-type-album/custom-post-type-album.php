@@ -52,7 +52,7 @@ function create_post_type_album() {
           'new_item'                 => __( 'New Album', $ALBUM_TEXTDOMAIN ),
           'view_item'                => __( 'View Album', $ALBUM_TEXTDOMAIN ),
           'view_items'               => __( 'View Albums', $ALBUM_TEXTDOMAIN ),
-          'search_items'              => __( 'Search Albums', $ALBUM_TEXTDOMAIN ),
+          'search_items'             => __( 'Search Albums', $ALBUM_TEXTDOMAIN ),
           'not_found'                => __( 'No albums found', $ALBUM_TEXTDOMAIN ),
           'not_found_in_trash'       => __( 'No albums found in Trash', $ALBUM_TEXTDOMAIN ),
           'all_items'                => __( 'All Albums', $ALBUM_TEXTDOMAIN ),
