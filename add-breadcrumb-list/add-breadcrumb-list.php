@@ -120,16 +120,19 @@ function create_breadcrumb_image( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-          <span itemprop="name">Images</span>
-        </span>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/archives" itemprop="item">
+          <span itemprop="name">Archives</span>
+        </a>
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-          <span itemprop="name"><?php the_title(); ?></span>
+          <span itemprop="name">Images</span>
         </span>
         <meta itemprop="position" content="2" />
+      </li>
+      <li>
+          <span><?php the_title(); ?></span>
       </li>
     </ol>
     <?php
