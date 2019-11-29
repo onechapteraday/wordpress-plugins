@@ -324,9 +324,9 @@ function create_breadcrumb_person( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/persons" itemprop="item">
           <span itemprop="name">Personnes</span>
-        </span>
+        </a>
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
