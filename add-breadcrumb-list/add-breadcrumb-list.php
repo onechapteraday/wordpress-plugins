@@ -155,9 +155,9 @@ function create_breadcrumb_category( $atts, $content=null ) {
             </a>
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-              <span itemprop="name">Catégories</span>
-            </span>
+            <a itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>/archives">
+              <span itemprop="name">Archives</span>
+            </a>
             <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
