@@ -495,9 +495,9 @@ function create_breadcrumb_archive( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+        <a itemprop="item" href="<?php echo get_bloginfo( 'url' ); ?>/archives">
           <span itemprop="name">Archives</span>
-        </span>
+        </a>
         <meta itemprop="position" content="1" />
       </li>
       <?php
