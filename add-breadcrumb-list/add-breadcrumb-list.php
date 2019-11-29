@@ -189,9 +189,9 @@ function create_breadcrumb_tag( $atts, $content=null ) {
             </a>
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <a href="<?php echo get_bloginfo( 'url' ); ?>/tags" itemprop="item">
               <span itemprop="name">Étiquettes</span>
-            </span>
+            </a>
             <meta itemprop="position" content="1" />
           </li>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
