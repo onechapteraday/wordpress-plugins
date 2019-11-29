@@ -358,9 +358,9 @@ function create_breadcrumb_location( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/locations" itemprop="item">
           <span itemprop="name">Localisations</span>
-        </span>
+        </a>
         <meta itemprop="position" content="1" />
       </li>
       <?php
