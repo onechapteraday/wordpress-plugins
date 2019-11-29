@@ -545,4 +545,48 @@ function create_breadcrumb_archive( $atts, $content=null ) {
 
 add_shortcode( 'wp_breadcrumb_archive', 'create_breadcrumb_archive' );
 
+
+# Create breadcrumb for taxonomy pages
+
+function create_breadcrumb_taxonomy( $atts, $content=null ) {
+    $slug = $atts['page'];
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
+        </a>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php esc_url( the_permalink() ); ?>">
+            <?php
+            if( $slug == 'tag' ){
+                ?><span itemprop="name">Étiquettes</span><?php
+            }
+
+            if( $slug == 'person' ){
+                ?><span itemprop="name">Personnes</span><?php
+            }
+
+            if( $slug == 'prize' ){
+                ?><span itemprop="name">Prix littéraires</span><?php
+            }
+
+            if( $slug == 'location' ){
+                ?><span itemprop="name">Localisations</span><?php
+            }
+
+            if( $slug == 'publisher' ){
+                ?><span itemprop="name">Maisons d'édition</span><?php
+            }
+            ?>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_taxonomy', 'create_breadcrumb_taxonomy' );
+
 ?>
