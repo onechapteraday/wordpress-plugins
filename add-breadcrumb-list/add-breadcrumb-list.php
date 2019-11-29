@@ -446,14 +446,14 @@ function create_breadcrumb_search( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-          <span itemprop="name">Recherche</span>
-        </span>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/archives" itemprop="item">
+          <span itemprop="name">Archives</span>
+        </a>
         <meta itemprop="position" content="1" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item">
-          <span itemprop="name"><?php echo ucfirst( get_search_query() ); ?></span>
+          <span itemprop="name">Résultats de recherche pour&nbsp;: <?php echo get_search_query(); ?></span>
         </span>
         <meta itemprop="position" content="2" />
       </li>
