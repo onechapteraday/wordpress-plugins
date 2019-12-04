@@ -108,7 +108,7 @@ function seo_title_custom_title( $title ){
     $title = 'One chapter a day, un chapitre... presque tous les jours';
 
     # Single post and page
-    if( ( is_single() || is_page() ) && !is_page( 'Front page' ) ){
+    if( ( is_single() || is_page() ) && !is_page( 'front-page' ) ){
         # If new SEO title defined
         if( get_the_ID() ){
             $id = get_the_ID();
@@ -214,7 +214,7 @@ function seo_title_custom_title( $title ){
     }
 
     # Home
-    if( is_home() ){
+    if( is_home() || is_front_page() ){
         return $title;
     }
 
