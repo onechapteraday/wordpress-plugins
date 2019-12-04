@@ -434,6 +434,10 @@ class popular_persons_in_category_widget extends WP_Widget {
             array_push( $post_types, 'album' );
         }
 
+        if( post_type_exists( 'concert' ) ){
+            array_push( $post_types, 'concert' );
+        }
+
         if( post_type_exists( 'interview' ) ){
             array_push( $post_types, 'interview' );
         }
