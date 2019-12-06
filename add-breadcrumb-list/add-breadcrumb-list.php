@@ -237,7 +237,7 @@ function create_breadcrumb_publisher( $atts, $content=null ) {
           $parent_link = get_term_link( $parent, 'publisher' );
           ?>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
+            <a itemprop="item" href="<?php echo $parent_link; ?>">
               <span itemprop="name"><?php echo $parent->name; ?></span>
             </a>
             <meta itemprop="position" content="2" />
