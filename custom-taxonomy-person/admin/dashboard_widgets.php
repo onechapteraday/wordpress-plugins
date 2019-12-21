@@ -260,8 +260,10 @@ function persons_without_posts_dashboard_widget(){
 
   # Display all persons with their deathday and age
   if( !empty( $results ) ){
+    $sentence = count( $results )  . ' ' .  __( 'Persons without posts', 'person-taxonomy' ) . '.';
+    echo strtolower( $sentence );
   ?>
-  <table cellspacing="0" cellpadding="3" width="100%">
+  <table cellspacing="0" cellpadding="3" width="100%" style="margin-top:5px;">
     <?php
     foreach( $results as $term ){
       if( $term->count < 1 ){
