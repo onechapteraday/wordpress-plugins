@@ -382,7 +382,7 @@ function create_breadcrumb_location( $atts, $content=null ) {
           $parent_link = get_term_link( $parent, 'location' );
           ?>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $parent_link; ?>">
+            <a itemprop="item" href="<?php echo $parent_link; ?>">
               <span itemprop="name"><?php echo __( $parent->name, 'location-taxonomy' ); ?></span>
             </a>
             <meta itemprop="position" content="<?php echo $i; ?>" />
