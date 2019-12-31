@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: BUG-EMAIL-ADDR <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2019-08-19 13:22-0400\n"
-"PO-Revision-Date: 2019-08-19 13:26-0400\n"
+"PO-Revision-Date: 2019-12-20 08:29-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1;  plural=EXPRESSION;\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:1
 msgid "Locations"
@@ -1149,7 +1149,7 @@ msgstr "Géorgie"
 
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:283
 msgid "Hawaii"
-msgstr "Hawaii"
+msgstr "Hawaï"
 
 #: C:\Users\Christelle\wordpress\wp-content\plugins\custom-taxonomy-location\languages\messages.txt:284
 msgid "Idaho"
