@@ -116,12 +116,13 @@ function edit_location_field ($term) {
   # Retrieve the existing values for this meta field
   # This will return an array
   $term_meta = get_option( "taxonomy_$t_id" );
+  $code_iso  = get_term_meta( $t_id, 'iso', true );
 
   ?>
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[iso]"><?php _e( 'Code ISO', $LOCATION_TEXTDOMAIN ); ?></label></th>
     <td>
-        <input type="text" name="term_meta[iso]" id="term_meta[iso]" value="<?php echo esc_attr( $term_meta['iso'] ) ? esc_attr( $term_meta['iso'] ) : ''; ?>">
+        <input type="text" name="term_meta[iso]" id="term_meta[iso]" value="<?php echo esc_attr( $code_iso ) ? esc_attr( $code_iso ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the code ISO of the location.', $LOCATION_TEXTDOMAIN); ?></p>
     </td>
   </tr>
