@@ -66,11 +66,11 @@ function create_post_type_book(){
           'item_scheduled'           => __( 'Book scheduled.', $BOOK_TEXTDOMAIN ),
           'item_updated'             => __( 'Book updated.', $BOOK_TEXTDOMAIN ),
       ),
-      'public' => true,
-      'has_archive' => true,
-      'menu_icon' => 'dashicons-book',
+      'public'        => true,
+      'has_archive'   => true,
+      'menu_icon'     => 'dashicons-book',
       'menu_position' => 5,
-      'taxonomies' => array(
+      'taxonomies'    => array(
           'category',
           'person',
           'publisher',
@@ -78,7 +78,7 @@ function create_post_type_book(){
           'location',
           'post_tag',
       ),
-      'supports' => array(
+      'supports'      => array(
           'title',
           'editor',
           'excerpt',
