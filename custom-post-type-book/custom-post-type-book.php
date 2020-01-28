@@ -319,16 +319,22 @@ function get_book_colourist( $post_id ){
 
 function get_book_publisher( $post_id ){
   if( taxonomy_exists( 'publisher' ) ){
-    $publisher = get_the_terms( $post_id, 'publisher' )[0];
+    $publishers     = get_the_terms( $post_id, 'publisher' );
+    $arr_publishers = array();
 
-    # If parent
-    if( isset ( $publisher->parent ) ){
-        if( $publisher->parent ){
-            return get_term_by( 'id', $publisher->parent, 'publisher' );
+    foreach( $publishers as $publisher ){
+        if( isset ( $publisher->parent ) ){
+            # If 'publisher' has parent = collection
+            if( $publisher->parent ){
+                array_push( $arr_publishers, get_term_by( 'id', $publisher->parent, 'publisher' ) );
+            }
+            else {
+                array_push( $arr_publishers, $publisher );
+            }
         }
     }
 
-    return $publisher;
+    return $arr_publishers;
   }
 }
 
