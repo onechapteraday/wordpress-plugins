@@ -4,7 +4,7 @@
  * Plugin Name: Remove jQuery migrate
  * Plugin URI: http://onechapteraday.fr
  * Description: This plugin removes jQuery migrate implementation
- * Version: 0.1
+ * Version: 1.1
  * Author: Christelle Hilaricus
  * Author URI: http://onechapteraday.fr
  * License GPL2
