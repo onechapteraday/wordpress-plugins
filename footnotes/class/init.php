@@ -58,7 +58,9 @@ class MCI_Footnotes {
 	 * @since 1.5.0
 	 */
 	private function initializeWidgets() {
-		add_action('widgets_init', create_function('', 'return register_widget("MCI_Footnotes_Widget_ReferenceContainer");'));
+                add_action( 'widgets_init', function(){
+                        register_widget( 'MCI_Footnotes_Widget_ReferenceContainer' );
+                });
 	}
 
 	/**
