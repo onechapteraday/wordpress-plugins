@@ -340,16 +340,18 @@ function get_book_publisher( $post_id ){
 
 function get_book_collection( $post_id ){
   if( taxonomy_exists( 'publisher' ) ){
-    $publisher = get_the_terms( $post_id, 'publisher' )[0];
+    $publishers      = get_the_terms( $post_id, 'publisher' );
+    $arr_collections = array();
 
-    # If parent
-    if( isset( $publisher->parent ) ){
-        if( $publisher->parent ){
-            return $publisher;
+    foreach( $publishers as $publisher ){
+        if( isset( $publisher->parent ) ){
+            if( $publisher->parent ){
+                array_push( $arr_collections, $publisher );
+            }
         }
     }
 
-    return null;
+    return $arr_collections;
   }
 }
 
