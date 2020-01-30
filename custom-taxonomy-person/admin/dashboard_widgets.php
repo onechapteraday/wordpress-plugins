@@ -74,7 +74,7 @@ function birthdays_dashboard_widget(){
 	# Display data
         ?>
         <tr<?php if( $day == $birthdate->format( 'd' ) ) { ?> class="highlight"<?php } ?>>
-	  <td><?php echo $birthdate->format( 'M. j' ); ?></td>
+	  <td><?php echo $birthdate->format( 'd.' ); ?></td>
           <td>
             <a href="<?php echo $link; ?>" target="blank">
 	      <?php echo $name; ?>
@@ -83,23 +83,14 @@ function birthdays_dashboard_widget(){
           <td><small><?php echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
           <td>
 	      <small><em><?php
-                  if( $gender == 1){
-                      echo _x( 'born on ', 'year of birth date for female', 'person-taxonomy' );
-                  } else {
-                      echo _x( 'born on ', 'year of birth date for male', 'person-taxonomy' );
-                  }
-
-                  echo $birthdate->format( 'Y' );
+                  echo '(' . $birthdate->format( 'Y' ) . '-';
 
                   if( $deathdate != '' ){
-                      if( $gender == 1){
-                          echo _x( ', deceased on ', 'year of death date for female', 'person-taxonomy' );
-                      } else {
-                          echo _x( ', deceased on ', 'year of death date for male', 'person-taxonomy' );
-                      }
-
                       echo $deathdate->format( 'Y' );
-                  } ?></em></small>
+                  }
+                  else {
+                      echo '.........';
+                  } echo ')'; ?></em></small>
 	  </td>
         </tr>
         <?php
@@ -159,8 +150,8 @@ function deathdays_dashboard_widget(){
       $b_meta = get_option( 'taxonomy_' . $b_id );
       $a_date = DateTime::createFromFormat( 'Y-m-d', $a_meta[ 'deathdate' ] );
       $b_date = DateTime::createFromFormat( 'Y-m-d', $b_meta[ 'deathdate' ] );
-      $a_str = $a_date->format( 'j ');
-      $b_str = $b_date->format( 'j ');
+      $a_str = $a_date->format( 'd ');
+      $b_str = $b_date->format( 'd ');
 
       return ( $a_str < $b_str ) ? -1 : 1;
     } );
@@ -188,7 +179,7 @@ function deathdays_dashboard_widget(){
 	# Display data
         ?>
         <tr<?php if( $day == $deathdate->format( 'd' ) ) { ?> class="highlight"<?php } ?>>
-	  <td><?php echo $deathdate->format( 'M. j' ); ?></td>
+	  <td><?php echo $deathdate->format( 'd.' ); ?></td>
           <td>
             <a href="<?php echo $link; ?>" target="blank">
 	      <?php echo $name; ?>
@@ -197,30 +188,14 @@ function deathdays_dashboard_widget(){
           <td><small><?php echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
           <td>
 	      <small><em><?php
+                  echo '(' . $birthdate->format( 'Y' ) . '-';
+
                   if( $deathdate != '' ){
-                      $since_date = $now->diff( $deathdate )->y;
-
-                      if( $gender == 1){
-                          echo _x( 'deceased on ', 'year of date for female', 'person-taxonomy' );
-                          echo $deathdate->format( 'Y' );
-
-                          if( $since_date > 1 ){
-                              printf( __( ', %s years ago', 'person-taxonomy' ), $since_date );
-                          } else {
-                              printf( __( ', %s year ago', 'person-taxonomy' ), $since_date );
-                          }
-                      } else {
-                          echo _x( 'deceased on ', 'year of date for male', 'person-taxonomy' );
-                          echo $deathdate->format( 'Y' );
-
-                          if( $since_date > 1 ){
-                              printf( __( ', %s years ago', 'person-taxonomy' ), $since_date );
-                          } else {
-                              printf( __( ', %s year ago', 'person-taxonomy' ), $since_date );
-                          }
-                      }
+                      echo $deathdate->format( 'Y' );
                   }
-              ?></em></small>
+                  else {
+                      echo '......';
+                  } echo ')'; ?></em></small>
 	  </td>
         </tr>
         <?php
