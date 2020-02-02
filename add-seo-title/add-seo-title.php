@@ -105,7 +105,7 @@ add_action( 'save_post', 'seo_title_save_postdata' );
  */
 
 function seo_title_custom_title( $title ){
-    $title = 'One chapter a day, un chapitre... presque tous les jours';
+    $title = get_bloginfo( 'name' ) . ' &sdot; ' . get_bloginfo( 'description' );
 
     # Single post and page
     if( ( is_single() || is_page() ) && !is_page( 'front-page' ) ){
