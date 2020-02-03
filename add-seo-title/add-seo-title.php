@@ -13,7 +13,7 @@
 
 global $SEO_TEXTDOMAIN;
 
-$SEO_TEXTDOMAIN = 'seo-plugin';
+$SEO_TEXTDOMAIN = 'seo-custom-title';
 
 
 /*
@@ -22,7 +22,7 @@ $SEO_TEXTDOMAIN = 'seo-plugin';
  *
  */
 
-function seo_plugin_load_textdomain() {
+function seo_custom_title_load_textdomain() {
   global $SEO_TEXTDOMAIN;
   $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_TEXTDOMAIN );
 
@@ -31,7 +31,7 @@ function seo_plugin_load_textdomain() {
   $loaded = load_plugin_textdomain( $SEO_TEXTDOMAIN, false, $path );
 }
 
-add_action( 'init', 'seo_plugin_load_textdomain', 0 );
+add_action( 'init', 'seo_custom_title_load_textdomain', 0 );
 
 
 /*
