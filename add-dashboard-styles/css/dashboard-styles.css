@@ -1,3 +1,13 @@
+#poststuff h3.hndle,
+#poststuff .stuffbox > h3,
+#poststuff h2 {
+    font-size: 13px;
+}
+
+.postbox .inside {
+    font-size: 12px;
+}
+
 @media screen and (max-width: 782px) {
     #dashboard-widgets-wrap #dashboard_right_now li.comment-count {
         font-size: 13px;
