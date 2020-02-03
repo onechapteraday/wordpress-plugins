@@ -223,4 +223,24 @@ function seo_title_custom_title( $title ){
 
 add_filter('pre_get_document_title', 'seo_title_custom_title');
 
+
+/*
+ * Update sharing title with SEO title and strip_tags
+ */
+
+function define_sharing_title() {
+    if( get_the_ID() ){
+        $id = get_the_ID();
+        $meta_title = get_post_meta( $id, '_seo_title_meta_key', true );
+
+        if( $meta_title != '' ){
+            return strip_tags( $meta_title );
+        }
+    }
+
+    return strip_tags( get_the_title() );
+}
+
+add_filter( 'sharing_title', 'define_sharing_title' );
+
 ?>
