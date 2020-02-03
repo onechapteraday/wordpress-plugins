@@ -11,9 +11,9 @@
  *
  */
 
-global $SEO_TEXTDOMAIN;
+global $SEO_DESCRIPTION_TEXTDOMAIN;
 
-$SEO_TEXTDOMAIN = 'seo-custom-description';
+$SEO_DESCRIPTION_TEXTDOMAIN = 'seo-custom-description';
 
 
 /*
@@ -23,12 +23,12 @@ $SEO_TEXTDOMAIN = 'seo-custom-description';
  */
 
 function seo_custom_description_load_textdomain() {
-  global $SEO_TEXTDOMAIN;
-  $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_TEXTDOMAIN );
+  global $SEO_DESCRIPTION_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_DESCRIPTION_TEXTDOMAIN );
 
   # Load i18n
   $path = basename( dirname( __FILE__ ) ) . '/languages/';
-  $loaded = load_plugin_textdomain( $SEO_TEXTDOMAIN, false, $path );
+  $loaded = load_plugin_textdomain( $SEO_DESCRIPTION_TEXTDOMAIN, false, $path );
 }
 
 add_action( 'init', 'seo_custom_description_load_textdomain', 0 );
@@ -39,7 +39,7 @@ add_action( 'init', 'seo_custom_description_load_textdomain', 0 );
  */
 
 function seo_description_add_custom_box(){
-    global $SEO_TEXTDOMAIN;
+    global $SEO_DESCRIPTION_TEXTDOMAIN;
 
     $screens = array( 'post' );
 
@@ -65,7 +65,7 @@ function seo_description_add_custom_box(){
             'seo_description_box_id',
 
             # Box description
-            __( 'SEO Description', $SEO_TEXTDOMAIN ),
+            __( 'SEO Description', $SEO_DESCRIPTION_TEXTDOMAIN ),
 
             # Content callback, must be of type callable
             'seo_description_custom_box_html',
@@ -79,10 +79,10 @@ function seo_description_add_custom_box(){
 add_action( 'add_meta_boxes', 'seo_description_add_custom_box' );
 
 function seo_description_custom_box_html( $post ){
-    global $SEO_TEXTDOMAIN;
+    global $SEO_DESCRIPTION_TEXTDOMAIN;
 
     ?>
-    <label for="seo_description_field" style="margin: 5px 0 8px; display: inline-block;"><em><?php echo __( 'Enter here description for SEO', $SEO_TEXTDOMAIN ); ?></em></label><br />
+    <label for="seo_description_field" style="margin: 5px 0 8px; display: inline-block;"><em><?php echo __( 'Enter here description for SEO', $SEO_DESCRIPTION_TEXTDOMAIN ); ?></em></label><br />
     <textarea name="seo_description_field" id="seo_description_field" rows="5" cols="50" maxlength="155" style="max-width: 100%;"><?php echo esc_attr( get_post_meta( $post->ID, '_seo_description_meta_key', true ) ); ?></textarea>
     <?php
 }

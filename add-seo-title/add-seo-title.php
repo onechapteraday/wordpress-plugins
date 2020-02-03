@@ -11,9 +11,9 @@
  *
  */
 
-global $SEO_TEXTDOMAIN;
+global $SEO_TITLE_TEXTDOMAIN;
 
-$SEO_TEXTDOMAIN = 'seo-custom-title';
+$SEO_TITLE_TEXTDOMAIN = 'seo-custom-title';
 
 
 /*
@@ -23,12 +23,12 @@ $SEO_TEXTDOMAIN = 'seo-custom-title';
  */
 
 function seo_custom_title_load_textdomain() {
-  global $SEO_TEXTDOMAIN;
-  $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_TEXTDOMAIN );
+  global $SEO_TITLE_TEXTDOMAIN;
+  $locale = apply_filters( 'plugin_locale', get_locale(), $SEO_TITLE_TEXTDOMAIN );
 
   # Load i18n
   $path = basename( dirname( __FILE__ ) ) . '/languages/';
-  $loaded = load_plugin_textdomain( $SEO_TEXTDOMAIN, false, $path );
+  $loaded = load_plugin_textdomain( $SEO_TITLE_TEXTDOMAIN, false, $path );
 }
 
 add_action( 'init', 'seo_custom_title_load_textdomain', 0 );
@@ -39,7 +39,7 @@ add_action( 'init', 'seo_custom_title_load_textdomain', 0 );
  */
 
 function seo_title_add_custom_box(){
-    global $SEO_TEXTDOMAIN;
+    global $SEO_TITLE_TEXTDOMAIN;
 
     $screens = array( 'post' );
 
@@ -65,7 +65,7 @@ function seo_title_add_custom_box(){
             'seo_title_box_id',
 
             # Box title
-            __( 'SEO Title', $SEO_TEXTDOMAIN ),
+            __( 'SEO Title', $SEO_TITLE_TEXTDOMAIN ),
 
             # Content callback, must be of type callable
             'seo_title_custom_box_html',
@@ -79,10 +79,10 @@ function seo_title_add_custom_box(){
 add_action( 'add_meta_boxes', 'seo_title_add_custom_box' );
 
 function seo_title_custom_box_html( $post ){
-    global $SEO_TEXTDOMAIN;
+    global $SEO_TITLE_TEXTDOMAIN;
 
     ?>
-    <label for="seo_title_field" style="margin: 5px 0 8px; display: inline-block;"><em><?php echo __( 'Enter here title for SEO', $SEO_TEXTDOMAIN ); ?></em></label><br />
+    <label for="seo_title_field" style="margin: 5px 0 8px; display: inline-block;"><em><?php echo __( 'Enter here title for SEO', $SEO_TITLE_TEXTDOMAIN ); ?></em></label><br />
     <input type="text" name="seo_title_field" id="seo_title_field" value="<?php echo esc_attr( get_post_meta( $post->ID, '_seo_title_meta_key', true ) ); ?>" size="35" style="max-width: 100%;" />
     <?php
 }
