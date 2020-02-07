@@ -93,7 +93,7 @@ function create_breadcrumb_single( $atts, $content=null ) {
             <meta itemprop="position" content="2" />
           </li>
           <li>
-              <span><?php the_title(); ?></span>
+              <span><?php echo strip_tags( get_the_title() ); ?></span>
           </li>
         </ol>
         <?php
