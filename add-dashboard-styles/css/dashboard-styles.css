@@ -10,6 +10,6 @@
 
 @media screen and (max-width: 782px) {
     #dashboard-widgets-wrap #dashboard_right_now li.comment-count {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
