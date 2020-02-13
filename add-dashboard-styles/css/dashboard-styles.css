@@ -12,4 +12,10 @@
     #dashboard-widgets-wrap #dashboard_right_now li.comment-count {
         font-size: 12px;
     }
+
+    #dashboard-widgets-wrap #dashboard_right_now li.comment-mod-count {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 }
