@@ -8,6 +8,11 @@
     font-size: 12px;
 }
 
+.jetpack_page_stats .gotonewdash .button-secondary {
+    line-height: 26px;
+    vertical-align: middle;
+}
+
 @media screen and (max-width: 782px) {
     #dashboard-widgets-wrap #dashboard_right_now li.comment-count {
         font-size: 12px;
