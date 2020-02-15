@@ -24,6 +24,15 @@
         white-space: nowrap;
     }
 
+    .jetpack_page_stats .gotonewdash p strong {
+        width: 100%;
+        display: block;
+    }
+
+    .jetpack_page_stats .gotonewdash .button-secondary {
+        margin: 10px 0 0 !important;
+    }
+
     #statchart-box #stats-nuggets ul {
         padding: 5px 0;
     }
