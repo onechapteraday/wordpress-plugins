@@ -8,6 +8,10 @@
     font-size: 12px;
 }
 
+.jetpack_page_stats .wrap .header h2 {
+    font-size: 20px;
+}
+
 .jetpack_page_stats .gotonewdash .button-secondary {
     line-height: 26px;
     vertical-align: middle;
