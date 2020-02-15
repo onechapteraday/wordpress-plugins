@@ -18,6 +18,10 @@
 }
 
 @media screen and (max-width: 782px) {
+    #wpbody-content {
+        padding-bottom: 50px;
+    }
+
     #dashboard-widgets-wrap #dashboard_right_now li.comment-count {
         font-size: 12px;
     }
