@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-28 11:14-0400\n"
-"PO-Revision-Date: 2019-08-28 11:16-0400\n"
+"PO-Revision-Date: 2020-02-15 12:13-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -35,12 +35,12 @@ msgstr "né en "
 #: admin/dashboard_widgets.php:96
 msgctxt "year of death date for female"
 msgid ", deceased on "
-msgstr ", décédée en "
+msgstr ", s'est éteinte en "
 
 #: admin/dashboard_widgets.php:98
 msgctxt "year of death date for male"
 msgid ", deceased on "
-msgstr ", décédé en "
+msgstr ", s'est éteint en "
 
 #: admin/dashboard_widgets.php:111
 msgid "There is nobody born this month among your persons."
@@ -49,7 +49,7 @@ msgstr "Personne n'est né ce mois-ci parmi vos personnes."
 #: admin/dashboard_widgets.php:204
 msgctxt "year of date for female"
 msgid "deceased on "
-msgstr "décédée en "
+msgstr "s'est éteinte en "
 
 #: admin/dashboard_widgets.php:208 admin/dashboard_widgets.php:217
 #, php-format
@@ -64,7 +64,7 @@ msgstr ", il y a %s an"
 #: admin/dashboard_widgets.php:213
 msgctxt "year of date for male"
 msgid "deceased on "
-msgstr "décédé en "
+msgstr "s'est éteint en "
 
 #: admin/dashboard_widgets.php:232
 msgid "There is nobody who died this month among your persons."
