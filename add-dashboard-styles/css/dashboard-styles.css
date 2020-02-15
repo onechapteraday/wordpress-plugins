@@ -32,6 +32,11 @@
         white-space: nowrap;
     }
 
+    .jetpack_page_stats .wrap > h2 {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
     .jetpack_page_stats .gotonewdash p strong {
         width: 100%;
         display: block;
