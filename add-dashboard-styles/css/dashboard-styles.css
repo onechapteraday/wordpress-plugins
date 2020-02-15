@@ -18,4 +18,13 @@
         overflow: hidden;
         white-space: nowrap;
     }
+
+    #wpcom-stats-meta-box-container .postbox-container {
+        width: 100% !important;
+    }
+
+    #wpcom-stats-meta-box-container #side-sortables,
+    #wpcom-stats-meta-box-container #normal-sortables {
+        margin: 0 !important;
+    }
 }
