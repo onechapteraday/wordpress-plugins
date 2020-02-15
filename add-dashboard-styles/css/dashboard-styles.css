@@ -19,6 +19,31 @@
         white-space: nowrap;
     }
 
+    #statchart-box #stats-nuggets ul {
+        padding: 5px 0;
+    }
+
+    #statchart-box #stats-nuggets ul li,
+    #statchart-box #stats-nuggets ul li#bestever {
+        width: 28%;
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    #statchart-box #stats-nuggets ul li h3 + a span,
+    #statchart-box #stats-nuggets ul li h3 + strong span,
+    #statchart-box #stats-nuggets ul li h3 + strong + strong span {
+        font-size: 16px;
+    }
+
+    #statchart-box #stats-nuggets ul li#bestever h3 {
+        padding: 6px 0 7px !important;
+    }
+
+    #statchart-box #stats-nuggets ul li#bestever + li {
+        width: 44%;
+    }
+
     #wpcom-stats-meta-box-container .postbox-container {
         width: 100% !important;
     }
