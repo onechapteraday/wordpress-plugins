@@ -497,7 +497,9 @@ class popular_collections_in_category_widget extends WP_Widget {
             echo '<ul class="wp-tag-cloud">';
 
 	    foreach ( $collections_array as $coll ) {
-                echo '<li><a href="' . get_term_link( $coll->term_id ) . '" class="tag-cloud-link tag-link-' . $coll->term_id . '">';
+                $publisher = get_term( $coll->parent, 'publisher' );
+
+                echo '<li><a href="' . get_term_link( $coll->term_id ) . '" class="tag-cloud-link tag-link-' . $coll->term_id . '" title="' . $publisher->name . '">';
                 echo $coll->name;
                 echo '</a></li>';
 	    }
