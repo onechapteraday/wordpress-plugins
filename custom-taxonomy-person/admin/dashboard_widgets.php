@@ -187,7 +187,29 @@ function deathdays_dashboard_widget(){
           </td>
           <td><small><?php echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
           <td>
-	      <small><em><?php
+	      <small><em title="<?php
+                      $since_date = $now->diff( $deathdate )->y;
+
+                      if( $gender == 1){
+                          echo _x( 'deceased on ', 'year of date for female', 'person-taxonomy' );
+                          echo $deathdate->format( 'Y' );
+
+                          if( $since_date > 1 ){
+                              printf( __( ', %s years ago', 'person-taxonomy' ), $since_date );
+                          } else {
+                              printf( __( ', %s year ago', 'person-taxonomy' ), $since_date );
+                          }
+                      } else {
+                          echo _x( 'deceased on ', 'year of date for male', 'person-taxonomy' );
+                          echo $deathdate->format( 'Y' );
+
+                          if( $since_date > 1 ){
+                              printf( __( ', %s years ago', 'person-taxonomy' ), $since_date );
+                          } else {
+                              printf( __( ', %s year ago', 'person-taxonomy' ), $since_date );
+                          }
+                      }
+                  ?>"><?php
                   echo '(' . $birthdate->format( 'Y' ) . '-';
 
                   if( $deathdate != '' ){
