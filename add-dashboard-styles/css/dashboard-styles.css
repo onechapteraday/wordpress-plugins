@@ -79,4 +79,20 @@
     #wpcom-stats-meta-box-container #normal-sortables {
         margin: 0 !important;
     }
+
+    #wp-content-editor-container textarea {
+        /* enlarge by 16/13 = 123.08% */
+        font-size: 16px;
+        line-height: 24.0006px;
+        padding: 12.308px;
+        width: 123.08%;
+
+        /* scale down by 13/16 = 81.25% */
+        transform: scale(0.8125);
+        transform-origin: left top;
+
+        /* remove extra white space */
+        margin-bottom: -10px;
+        margin-right: -33.333333333%;
+    }
 }
