@@ -164,6 +164,10 @@ function get_book_title_original( $post_id ){
   return get_post_meta( $post_id, 'title_original', true );
 }
 
+function get_book_title_sort( $post_id ){
+  return get_post_meta( $post_id, 'title_sort', true );
+}
+
 function get_book_pages_number( $post_id ){
   return get_post_meta( $post_id, 'pages_number', true );
 }
