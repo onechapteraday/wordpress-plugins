@@ -168,6 +168,10 @@ function get_book_pages_number( $post_id ){
   return get_post_meta( $post_id, 'pages_number', true );
 }
 
+function get_book_asin( $post_id ){
+  return get_post_meta( $post_id, 'asin', true );
+}
+
 function get_book_isbn10( $post_id ){
   return get_post_meta( $post_id, 'isbn10', true );
 }
