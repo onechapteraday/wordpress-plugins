@@ -262,6 +262,27 @@ function get_book_author_preface( $post_id ){
   }
 }
 
+function get_book_author_postface( $post_id ){
+  if( taxonomy_exists( 'person' ) ){
+    $postface_authors = array();
+    $persons = get_post_meta( $post_id, 'author_postface', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $postface_authors, $person_obj );
+        }
+      }
+
+      return $postface_authors;
+    }
+  }
+}
+
 function get_book_translator( $post_id ){
   if( taxonomy_exists( 'person' ) ){
     $translators = array();
