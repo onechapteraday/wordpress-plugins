@@ -257,19 +257,31 @@ class popular_prizes_in_category_widget extends WP_Widget {
         }
 
         $tag_args = array(
-                    'format'   => 'array',
-                    'number'   => $lp_count,
-                    'taxonomy' => 'prize',
-                    'orderby'  => 'count',
-                    'order'    => 'DESC',
-                    'include'  => $array_of_terms_in_category,
-                    'parent'   => 0,
-                    'echo'     => false,
+                    'format'     => 'array',
+                    'taxonomy'   => 'prize',
+                    'include'    => $array_of_terms_in_category,
+                    'pad_counts' => true,
+                    'echo'       => false,
                 );
 
         echo '<div class="tagcloud">';
 
-        $prizes_array = get_terms ( 'prize', $tag_args );
+        $prizes_array = array();
+        $terms_array = get_terms ( 'prize', $tag_args );
+
+        usort( $terms_array, function( $a, $b ){
+            return $b->count - $a->count;
+        });
+
+        foreach( $terms_array as $prize ){
+            if ( count( $prizes_array ) < $lp_count ){
+                if( !( $prize->parent > 0 ) ){
+                     array_push( $prizes_array, $prize );
+                }
+            } else {
+                break;
+            }
+        }
 
         if( sizeof( $prizes_array ) ){
             function widget_sort_prize_by_name( $a, $b ){
