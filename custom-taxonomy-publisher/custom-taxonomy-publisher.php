@@ -489,7 +489,14 @@ class popular_collections_in_category_widget extends WP_Widget {
                 $at = strtolower( strtr( $a->name, $translit ) );
                 $bt = strtolower( strtr( $b->name, $translit ) );
 
-                return strcasecmp( $at, $bt );
+                if( $at == $bt ){
+                    $a_parent_name = get_term( $a->parent, 'publisher' )->name;
+                    $b_parent_name = get_term( $b->parent, 'publisher' )->name;
+
+                    return strcoll( $a_parent_name, $b_parent_name );
+                }
+
+                return strcoll( $at, $bt );
             }
 
             usort( $collections_array, 'widget_sort_collection_by_name' );
