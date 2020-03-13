@@ -304,6 +304,27 @@ function get_book_translator( $post_id ){
   }
 }
 
+function get_book_scenarist( $post_id ){
+  if( taxonomy_exists( 'person' ) ){
+    $scenarists = array();
+    $persons = get_post_meta( $post_id, 'scenarist', true );
+
+    if( $persons ){
+      $persons = explode( ',', $persons );
+
+      foreach( $persons as $person ){
+        $person_obj = get_term_by( 'slug', $person, 'person' );
+
+        if( $person_obj ){
+          array_push( $scenarists, $person_obj );
+        }
+      }
+
+      return $scenarists;
+    }
+  }
+}
+
 function get_book_illustrator( $post_id ){
   if( taxonomy_exists( 'person' ) ){
     $illustrators = array();
