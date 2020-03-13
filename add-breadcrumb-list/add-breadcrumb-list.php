@@ -579,6 +579,14 @@ function create_breadcrumb_taxonomy( $atts, $content=null ) {
             if( $slug == 'publisher' ){
                 ?><span itemprop="name">Maisons d'édition</span><?php
             }
+
+            if( $slug == 'catalog_book' ){
+                ?><span itemprop="name">Livres</span><?php
+            }
+
+            if( $slug == 'catalog_album' ){
+                ?><span itemprop="name">Albums/Singles</span><?php
+            }
             ?>
         </a>
         <meta itemprop="position" content="1" />
