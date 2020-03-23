@@ -585,7 +585,7 @@ function create_breadcrumb_taxonomy( $atts, $content=null ) {
             }
 
             if( $slug == 'catalog_album' ){
-                ?><span itemprop="name">Albums/Singles</span><?php
+                ?><span itemprop="name">Albums / Singles</span><?php
             }
             ?>
         </a>
