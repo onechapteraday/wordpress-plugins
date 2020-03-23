@@ -220,6 +220,26 @@ function get_book_amazon( $post_id ){
   return false;
 }
 
+function get_book_leslibraires_ca( $post_id ){
+  $isbn13 = get_post_meta( $post_id, 'isbn13', true );
+  $link   = '';
+
+  if( $isbn13 ){
+      $link = 'http://www.leslibraires.ca/ISBN/' . $isbn13 . '/?u=176213';
+  }
+
+  if( $link ){
+    $arr = array(
+      'link'    => $link,
+      'img' => plugin_dir_url( __FILE__ ) . 'images/logo_leslibraires_tooltip.png'
+    );
+
+    return $arr;
+  }
+
+  return false;
+}
+
 function get_book_author( $post_id ){
   if( taxonomy_exists( 'person' ) ){
     $authors = array();
