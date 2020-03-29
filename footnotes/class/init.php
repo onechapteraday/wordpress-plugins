@@ -91,9 +91,11 @@ class MCI_Footnotes {
 	 * @since 1.5.0
 	 */
 	public function registerPublic() {
-		wp_enqueue_style('mci-footnotes-css-public', plugins_url('../css/public.css', __FILE__));
-		// add the jQuery plugin (already registered by WordPress)
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('mci-footnotes-js-jquery-tools', plugins_url('../js/jquery.tools.min.js', __FILE__));
+                if( is_single() ){
+		        wp_enqueue_style('mci-footnotes-css-public', plugins_url('../css/public.css', __FILE__));
+		        // add the jQuery plugin (already registered by WordPress)
+		        wp_enqueue_script('jquery');
+		        wp_enqueue_script('mci-footnotes-js-jquery-tools', plugins_url('../js/jquery.tools.min.js', __FILE__));
+                }
 	}
 }
