@@ -12,9 +12,11 @@
  */
 
 function hook_social_font_css () {
-  ?>
-  <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__);?>css/social-font.css" />
-  <?php
+  if( is_tax( 'person' ) || is_tax( 'publisher' ) ){
+      ?>
+      <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__);?>css/social-font.css" />
+      <?php
+  }
 }
 
 add_action('wp_head', 'hook_social_font_css');
