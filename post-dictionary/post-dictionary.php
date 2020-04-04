@@ -112,7 +112,7 @@ function post_dictionary_home_page(){
                 <table class="wp-list-table widefat fixed striped posts">
                     <thead>
                         <tr>
-                            <th class="column-primary">Articles</th>
+                            <th>Articles</th>
                             <th>Entrées dans le dictionnaire</th>
                         </tr>
                     </thead>
@@ -130,7 +130,6 @@ function post_dictionary_home_page(){
                                             Voir dictionnaire
                                         </a>
                                     </span>
-                                    |
                                     <span class="activate">
                                     <a href="<?php echo admin_url( $path . '&action=add' ); ?>" aria-label="Ajouter élément <?php echo $result->post_title; ?>">
                                         Ajouter un élément
@@ -229,10 +228,8 @@ function post_dictionary_list_page( $post_id ){
             $add_path   = 'admin.php?page=post-dictionaries&post_id=' . $post_id . '&action=add';
 
             ?>
-            <h1>
-                Dictionnaire de l'article «&nbsp;<?php echo $post_title; ?>&nbsp;»
-                <a href="<?php echo admin_url( $add_path ); ?>" class="page-title-action">Ajouter une nouvelle entrée</a>
-            </h1>
+            <h1>Dictionnaire de l'article «&nbsp;<?php echo $post_title; ?>&nbsp;»</h1>
+            <a href="<?php echo admin_url( $add_path ); ?>">Ajouter une nouvelle entrée</a>
             <?php
 
             # Display dictionary
@@ -250,10 +247,16 @@ function post_dictionary_list_page( $post_id ){
                 ?>
                 <p>Voici la liste ordonnée des éléments présents dans le dictionnaire de cet article.</p>
 
-                <table class="wp-list-table widefat fixed striped posts">
+                <table class="wp-list-table wp-list-post-dictionary widefat fixed striped posts">
+                    <colgroup>
+                       <col span="1" style="width: 26.67%;">
+                       <col span="1" style="width: 26.67%;">
+                       <col span="1" style="width: 26.67%;">
+                       <col span="1" style="width: 20%;">
+                    </colgroup>
                     <thead>
                         <tr>
-                            <th class="column-primary">Entrée</th>
+                            <th>Entrée</th>
                             <th>Information</th>
                             <th>Définition</th>
                             <th>Actions</th>
@@ -267,13 +270,13 @@ function post_dictionary_list_page( $post_id ){
 
                         ?>
                         <tr>
-                            <td><?php echo $element->entry; ?></td>
-                            <td><?php echo $element->information; ?></td>
-                            <td><?php echo $element->definition; ?></td>
-                            <td>
-                                <a href="<?php echo admin_url( $path . '&action=edit' ); ?>"><span class="dashicons dashicons-edit"></span> Éditer</a>
+                            <td class="entry"><?php echo $element->entry; ?></td>
+                            <td class="infos"><?php echo $element->information; ?></td>
+                            <td class="definition"><?php echo $element->definition; ?></td>
+                            <td class="actions">
+                                <a href="<?php echo admin_url( $path . '&action=edit' ); ?>"><span class="dashicons dashicons-edit"></span><span class="action">Éditer</span></a>
                                 |
-                                <a href="<?php echo  admin_url( $path . '&action=delete' ); ?>"><span class="dashicons dashicons-trash"></span> Supprimer</a>
+                                <a href="<?php echo  admin_url( $path . '&action=delete' ); ?>"><span class="dashicons dashicons-trash"></span><span class="action">Supprimer</span></a>
                             </td>
                         </tr>
                         <?php
@@ -600,8 +603,6 @@ function post_dictionary_add_content( $content ){
 
 	    # Display all terms in dictionary
 
-	    $content .= '<div class="post_dictionary_data">';
-
 	    foreach( $entries as $element ){
                 $entry = strtr( $element->entry, $translit );
                 $real_ = $element->entry;
@@ -613,6 +614,8 @@ function post_dictionary_add_content( $content ){
 	        # Display letter
 
 		if( $last != $current ){
+	            if( $last != '' ) $content .= '</div>';
+	            $content .= '<div class="post_dictionary_data">';
 		    $content .= '<div id="letter_' . $current . '" class="post_dictionary_letter">' . $current . '</div>';
 		    $last = $current;
 		}
@@ -641,5 +644,15 @@ function post_dictionary_add_content( $content ){
 }
 
 add_action('the_content', 'post_dictionary_add_content');
+
+
+# Add new styles
+
+function post_dictionary_custom_style(){
+    wp_enqueue_style( 'post-dictionary-styles', plugins_url( 'css/post-dictionary-styles.css', __FILE__ ) );
+}
+
+add_action( 'admin_enqueue_scripts', 'post_dictionary_custom_style' );
+add_action( 'login_enqueue_scripts', 'post_dictionary_custom_style' );
 
 ?>
