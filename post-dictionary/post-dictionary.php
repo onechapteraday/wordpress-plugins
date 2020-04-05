@@ -100,7 +100,7 @@ function post_dictionary_home_page(){
         $dictionaries = $wpdb->get_results( $sql );
 
         ?>
-        <div class="wrap">
+        <div class="wrap wrap-post-dictionary">
             <h1>Gestion des dictionnaires</h1>
             <p>Ci-dessous, vous trouverez la liste de tous les dictionnaires existants sur votre blog.</p>
 
@@ -187,7 +187,7 @@ function post_dictionary_create_page(){
 
         $posts = $wpdb->get_results( $sql );
         ?>
-        <div class="wrap">
+        <div class="wrap wrap-post-dictionary">
             <h1>Création d'un nouveau dictionnaire</h1>
             <p>Choississez l'article pour lequel vous souhaitez créer un dictionnaire.</p>
 
@@ -212,7 +212,7 @@ function post_dictionary_list_page( $post_id ){
     global $wpdb;
 
     ?>
-    <div class="wrap">
+    <div class="wrap wrap-post-dictionary">
         <?php
         if( $post_id ){
 
@@ -343,7 +343,7 @@ function post_dictionary_add_entry(){
 	$post_title = $post[0]->post_title;
 
         ?>
-        <div class="wrap">
+        <div class="wrap wrap-post-dictionary">
             <h1>Ajouter une entrée dans le dictionnaire de l'article «&nbsp;<?php echo $post_title; ?>&nbsp;»</h1>
 
             <form id="addform" action="#addform" name="edit_dictionary_entry" method="post">
@@ -400,7 +400,7 @@ function post_dictionary_edit_entry( $entry_id ){
     global $wpdb;
 
     ?>
-    <div class="wrap">
+    <div class="wrap wrap-post-dictionary">
         <?php
 
         if( !isset( $entry_id ) ){
@@ -519,7 +519,7 @@ function post_dictionary_delete_entry( $entry_id ){
 
 	else {
             ?>
-            <div class="wrap">
+            <div class="wrap wrap-post-dictionary">
                 <h1>Supprimer entrée du dictionnaire</h1>
 
                 <form id="deleteform" action="#deleteform" name="delete_dictionary_entry" method="post">

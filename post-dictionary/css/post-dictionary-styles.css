@@ -1,76 +1,76 @@
 /* Post Dictionary Custom Styles */
 
-.wrap h1 {
+.wrap-post-dictionary h1 {
     font-size: 22px;
 }
 
-.wrap h2 {
+.wrap-post-dictionary h2 {
     font-weight: normal;
 }
 
-.wrap .button {
+.wrap-post-dictionary .button {
     font-size: 11px;
     min-height: 30px;
 }
 
-.wp-list-table th,
-.wp-list-table td {
+.wrap-post-dictionary .wp-list-table th,
+.wrap-post-dictionary .wp-list-table td {
     font-size: 11px;
 }
 
-.row-actions {
+.wrap-post-dictionary .row-actions {
     font-size: 11px;
     margin: 3px 0 0;
 }
 
-.wp-list-post-dictionary tr td.actions .dashicons {
+.wrap-post-dictionary .wp-list-post-dictionary tr td.actions .dashicons {
     font-size: 16px;
 }
 
-.wrap div.row-actions span.activate + span.activate:before {
+.wrap-post-dictionary div.row-actions span.activate + span.activate:before {
     content: "|";
     color: grey;
 }
 
-.form-table th,
-.form-table input,
-.form-table label {
+.wrap-post-dictionary .form-table th,
+.wrap-post-dictionary .form-table input,
+.wrap-post-dictionary .form-table label {
     font-size: 11px;
 }
 
-.form-table th {
+.wrap-post-dictionary .form-table th {
     font-weight: normal;
 }
 
 @media screen and (max-width: 768px) {
-    .wrap h1 {
+    .wrap-post-dictionary h1 {
         font-size: 18px;
         margin: 0 0 10px;
     }
 
-    .wrap h2 {
+    .wrap-post-dictionary h2 {
         font-size: 15px;
     }
 
-    .wp-list-post-dictionary tr td.actions .action {
+    .wrap-post-dictionary .wp-list-post-dictionary tr td.actions .action {
         display: none;
     }
 
-    .form-table th {
+    .wrap-post-dictionary .form-table th {
         margin: 0 0 5px;
     }
 
-    .wrap div.row-actions,
-    .wrap div.row-actions span.activate {
+    .wrap-post-dictionary div.row-actions,
+    .wrap-post-dictionary div.row-actions span.activate {
         display: block;
     }
 
-    .wrap div.row-actions span.activate {
+    .wrap-post-dictionary div.row-actions span.activate {
         margin: 0;
         padding: 0;
     }
 
-    .wrap div.row-actions span.activate + span.activate:before {
+    .wrap-post-dictionary div.row-actions span.activate + span.activate:before {
         display: none;
     }
 }
