@@ -640,6 +640,24 @@ function post_dictionary_add_content( $content ){
         }
     }
 
+    $content .= '<script>
+                 window.onload = function() {
+                     if (window.jQuery) {
+                         var letter = jQuery(".post_dictionary_capitale");
+                         jQuery(letter).click( function(e){
+                             e.preventDefault();
+
+                             var href = jQuery(this).attr("href");
+                                 target = document.getElementById( href.substr(1) );
+
+                             jQuery("html, body").animate({
+                                 scrollTop: target.offsetTop
+                             }, 1000);
+                         });
+                     }
+                 }
+                 </script>';
+
     return $content;
 }
 
