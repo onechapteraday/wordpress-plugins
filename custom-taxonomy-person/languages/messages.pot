@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 10:52-0400\n"
+"POT-Creation-Date: 2020-05-12 11:06-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,11 +132,11 @@ msgid "Persons"
 msgstr ""
 
 #: custom-taxonomy-person.php:106 custom-taxonomy-person.php:232
-msgid "Real name"
+msgid "Full name"
 msgstr ""
 
 #: custom-taxonomy-person.php:108 custom-taxonomy-person.php:235
-msgid "Enter the real name of the person."
+msgid "Enter the full name of the person."
 msgstr ""
 
 #: custom-taxonomy-person.php:112 custom-taxonomy-person.php:240

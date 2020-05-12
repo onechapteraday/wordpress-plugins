@@ -103,9 +103,9 @@ function add_new_meta_field() {
   # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
-    <label for="term_meta[realname]"><?php _e( 'Real name', $PERSON_TEXTDOMAIN ); ?></label>
+    <label for="term_meta[realname]"><?php _e( 'Full name', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[realname]" id="term_meta[realname]" value="">
-    <p class="description"><?php _e( 'Enter the real name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the full name of the person.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
@@ -229,10 +229,10 @@ function edit_meta_field ($term) {
 
   ?>
   <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Real name', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Full name', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo esc_attr( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the real name of the person.', $PERSON_TEXTDOMAIN); ?></p>
+        <p class="description"><?php _e( 'Enter the full name of the person.', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
