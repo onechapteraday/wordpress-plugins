@@ -127,6 +127,12 @@ function add_new_meta_field() {
   </div>
 
   <div class="form-field">
+    <label for="term_meta[sortname]"><?php _e( 'Sort name', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[sortname]" id="term_meta[sortname]" value="">
+    <p class="description"><?php _e( 'Enter the name of the person as it should be sorted.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[nameorder]"><?php _e( 'Name order', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[nameorder]" id="term_meta[nameorder]" value="0">
     <p class="description"><?php _e( 'Enter name order: 0 for "Given name; Last name", 1 for "Last name; Given name".', $PERSON_TEXTDOMAIN ); ?></p>
@@ -251,6 +257,14 @@ function edit_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[familyname]" id="term_meta[familyname]" value="<?php echo isset( $term_meta['familyname'] ) ? esc_attr( $term_meta['familyname'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the family name of the person.', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[sortname]"><?php _e( 'Sort name', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[sortname]" id="term_meta[sortname]" value="<?php echo isset( $term_meta['sortname'] ) ? esc_attr( $term_meta['sortname'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the name of the person as it should be sorted.', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
