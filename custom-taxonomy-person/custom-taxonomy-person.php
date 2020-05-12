@@ -159,7 +159,7 @@ function add_new_meta_field() {
   <div class="form-field">
     <label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[website]" id="term_meta[website]" value="">
-    <p class="description"><?php _e( 'Enter the website of the person, if exists.', $PERSON_TEXTDOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the website of the person (without protocol), if exists.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
@@ -304,7 +304,7 @@ function edit_meta_field ($term) {
     <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
     	<input type="text" name="term_meta[website]" id="term_meta[website]" value="<?php echo esc_attr( $term_meta['website'] ) ? esc_attr( $term_meta['website'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the website of the person, if exists.', $PERSON_TEXTDOMAIN ); ?></p>
+        <p class="description"><?php _e( 'Enter the website of the person (without protocol), if exists.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
 

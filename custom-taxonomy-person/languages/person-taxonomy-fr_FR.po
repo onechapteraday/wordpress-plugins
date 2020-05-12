@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PersonTaxonomy 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 10:46-0400\n"
-"PO-Revision-Date: 2020-05-12 10:49-0400\n"
+"POT-Creation-Date: 2020-05-12 10:52-0400\n"
+"PO-Revision-Date: 2020-05-12 10:54-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -207,9 +207,9 @@ msgstr "Date de décès"
 
 #: custom-taxonomy-person.php:160 custom-taxonomy-person.php:304
 msgid "Website"
-msgstr "Site web"
+msgstr "Site Web"
 
-#: custom-taxonomy-person.php:162
+#: custom-taxonomy-person.php:162 custom-taxonomy-person.php:307
 msgid "Enter the website of the person (without protocol), if exists."
 msgstr ""
 "Entrer le site Web de la personne (sans son protocole), si celui-ci existe."
@@ -299,10 +299,6 @@ msgstr ""
 msgid "Enter the gender of the person, 0 for male 1 for female."
 msgstr "Entrer le genre de la personne, 0 pour masculin et 1 pour féminin."
 
-#: custom-taxonomy-person.php:307
-msgid "Enter the website of the person, if exists."
-msgstr "Entrer le site web de la personne, si celui-ci existe."
-
 #: custom-taxonomy-person.php:413
 msgid "Popular Persons in Category Widget"
 msgstr "Nuage de personnes populaires dans la catégorie"
@@ -321,6 +317,9 @@ msgstr "Titre :"
 #: custom-taxonomy-person.php:546
 msgid "Number of persons to show:"
 msgstr "Nombre de personnes à afficher :"
+
+#~ msgid "Enter the website of the person, if exists."
+#~ msgstr "Entrer le site web de la personne, si celui-ci existe."
 
 #~ msgctxt "year of birth date for female"
 #~ msgid "born on "
