@@ -445,6 +445,7 @@ function display_literary_season( $atts, $content=null ){
         $title_original = $item_options['release_item_title_original'];
         $isbn10         = $item_options['release_item_isbn10'];
         $isbn13         = $item_options['release_item_isbn13'];
+        $asin           = $item_options['release_item_asin'];
         $release_date   = $item_options['release_item_release_date'];
         $pagenumber     = $item_options['release_item_pagenumber'];
         $price          = $item_options['release_item_price'];
@@ -672,6 +673,43 @@ function display_literary_season( $atts, $content=null ){
                        <tr>
                            <td><?php echo _x( 'Number of pages', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $pagenumber; ?></td>
+                       </tr>
+                       <?php
+                    }
+
+                    if( !empty( $isbn10 ) || !empty( $isbn13 ) ){
+                       ?>
+                       <tr>
+                           <td>
+                               <?php
+                               if( $isbn13 && $asin ){
+			           echo _x( 'Affiliate links', 'book metadata affiliate links', $RELEASE_ITEM_TEXTDOMAIN );
+                               } else {
+			           echo _x( 'Affiliate link', 'book metadata affiliate link', $RELEASE_ITEM_TEXTDOMAIN );
+                               }
+                               ?>
+                           </td>
+                           <td>
+                               <?php
+                               if( !empty( $isbn13 ) ){
+                                   ?>
+			           <a href="https://www.leslibraires.ca/ISBN/<?php echo $isbn13; ?>/?u=176213" target="_blank" rel="nofollow" class="logo_partner logo_libraires_ca">
+			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_leslibraires_tooltip.png" alt="leslibraires.ca" />
+                                        <span><?php echo _x( 'Buy on Les Libraires', 'book metadata leslibraires.ca affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+			           </a>
+			           <?php
+                               }
+
+                               if( !empty( $asin ) ){
+                                   ?>
+			           <a href="https://www.amazon.fr/dp/<?php echo $asin; ?>/?tag=onchada-21" target="_blank" rel="nofollow" class="logo_partner logo_amazon">
+			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_amazon_buy.png" alt="Amazon" />
+                                        <span><?php echo _x( 'Buy on Amazon', 'book metadata Amazon affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+			           </a>
+                                   <?php
+                               }
+                               ?>
+                           </td>
                        </tr>
                        <?php
                     }
