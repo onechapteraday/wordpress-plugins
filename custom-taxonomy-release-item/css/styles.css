@@ -2,6 +2,11 @@
     font-size: 12px;
 }
 
+.literary-season a.logo_partner span {
+    font-size: 9px;
+    font-size: 9.5px;
+}
+
 .literary-season .literary-season-book-card figure img {
     width: 100%;
 }
@@ -16,6 +21,15 @@
 
 .literary-season .literary-season-book-card table td {
     height: 32px;
+}
+
+.literary-season .literary-season-book-card table td:first-child {
+    width: 45%;
+}
+
+.literary-season .literary-season-book-card table td:first-child + td {
+    padding-left: 0;
+    padding-left: 0;
 }
 
 .literary-season .literary-season-book-card table a.logo_libraires_ca {
@@ -67,7 +81,7 @@
     }
 
     .literary-season .literary-season-book-card table td {
-        height: 38px;
+        height: 37px;
     }
 
     .literary-season .publisher-description {
