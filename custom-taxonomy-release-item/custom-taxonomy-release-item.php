@@ -743,11 +743,12 @@ function display_literary_season( $atts, $content=null ){
 
             ?>
             <div class="publisher-description">
-                <span><?php echo _x( 'Publisher description: ', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+                <span><?php echo _x( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
                 <div>
                     <?php
                     $description = nl2br( $description );
                     $description = '<p>' . preg_replace( '#(<br />[\r\n]+){2}#', '</p><p>', $description ) . '</p>';
+                    echo $description;
                     ?>
                 </div>
             </div>
