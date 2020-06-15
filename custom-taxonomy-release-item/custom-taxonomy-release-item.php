@@ -699,38 +699,33 @@ function display_literary_season( $atts, $content=null ){
                        <?php
                     }
 
-                    if( !empty( $isbn10 ) || !empty( $isbn13 ) ){
+                    if( !empty( $isbn13 ) ){
                        ?>
                        <tr>
                            <td>
-                               <?php
-                               if( $isbn13 && $asin ){
-			           echo _x( 'Affiliate links', 'book metadata affiliate links', $RELEASE_ITEM_TEXTDOMAIN );
-                               } else {
-			           echo _x( 'Affiliate link', 'book metadata affiliate link', $RELEASE_ITEM_TEXTDOMAIN );
-                               }
-                               ?>
+                               <?php echo _x( 'Affiliate link', 'book metadata affiliate link', $RELEASE_ITEM_TEXTDOMAIN ); ?>
                            </td>
                            <td>
-                               <?php
-                               if( !empty( $isbn13 ) ){
-                                   ?>
-			           <a href="https://www.leslibraires.ca/ISBN/<?php echo $isbn13; ?>/?u=176213" target="_blank" rel="nofollow" class="logo_partner logo_libraires_ca">
-			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_leslibraires_tooltip.png" alt="leslibraires.ca" />
-                                        <span><?php echo _x( 'Buy on Les Libraires', 'book metadata leslibraires.ca affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
-			           </a>
-			           <?php
-                               }
+			       <a href="https://www.leslibraires.ca/ISBN/<?php echo $isbn13; ?>/?u=176213" target="_blank" rel="nofollow" class="logo_partner logo_libraires_ca">
+			            <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_leslibraires_tooltip.png" alt="leslibraires.ca" />
+                                    <span><?php echo _x( 'Buy on Les Libraires', 'book metadata leslibraires.ca affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+			       </a>
+                           </td>
+                       </tr>
+                       <?php
+                    }
 
-                               if( !empty( $asin ) ){
-                                   ?>
-			           <a href="https://www.amazon.fr/dp/<?php echo $asin; ?>/?tag=onchada-21" target="_blank" rel="nofollow" class="logo_partner logo_amazon">
-			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_amazon_buy.png" alt="Amazon" />
-                                        <span><?php echo _x( 'Buy on Amazon', 'book metadata Amazon affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
-			           </a>
-                                   <?php
-                               }
-                               ?>
+                    if( !empty( $asin ) ){
+                       ?>
+                       <tr>
+                           <td>
+                               <?php echo _x( 'Affiliate link', 'book metadata affiliate link', $RELEASE_ITEM_TEXTDOMAIN ); ?>
+                           </td>
+                           <td>
+			       <a href="https://www.amazon.fr/dp/<?php echo $asin; ?>/?tag=onchada-21" target="_blank" rel="nofollow" class="logo_partner logo_amazon">
+			            <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_amazon_buy.png" alt="Amazon" />
+                                    <span><?php echo _x( 'Buy on Amazon', 'book metadata Amazon affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+			       </a>
                            </td>
                        </tr>
                        <?php
