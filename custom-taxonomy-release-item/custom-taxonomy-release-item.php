@@ -477,7 +477,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $title ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Title', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Title', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $title; ?></td>
                        </tr>
                        <?php
@@ -486,7 +486,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $title_original ) && ( $title != $title_original ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Original title', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Original title', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $title_original; ?></td>
                        </tr>
                        <?php
@@ -635,7 +635,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $release_publisher_obj ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $release_publisher_obj->name; ?></td>
                        </tr>
                        <?php
@@ -646,7 +646,7 @@ function display_literary_season( $atts, $content=null ){
                     if( $real_pub->parent > 0 ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Collection', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Collection', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $real_pub->name; ?></td>
                        </tr>
                        <?php
@@ -657,7 +657,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $release_date ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Release date', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Release date', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo date_i18n( 'j F Y', strtotime( $release_date ) ); ?></td>
                        </tr>
                        <?php
@@ -666,7 +666,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $isbn13 ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'ISBN13', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'ISBN13', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $isbn13; ?></td>
                        </tr>
                        <?php
@@ -675,7 +675,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $isbn10 ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'ISBN10', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'ISBN10', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $isbn10; ?></td>
                        </tr>
                        <?php
@@ -684,7 +684,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $price ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Estimated price', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Estimated price', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $price . ' &euro;'; ?></td>
                        </tr>
                        <?php
@@ -693,7 +693,7 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $pagenumber ) ){
                        ?>
                        <tr>
-                           <td><?php echo _x( 'Number of pages', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo _e( 'Number of pages', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $pagenumber; ?></td>
                        </tr>
                        <?php
@@ -743,7 +743,7 @@ function display_literary_season( $atts, $content=null ){
 
             ?>
             <div class="publisher-description">
-                <span><?php echo _x( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+                <span><?php echo _e( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
                 <div>
                     <?php
                     $description = nl2br( $description );
