@@ -630,6 +630,28 @@ function display_literary_season( $atts, $content=null ){
                         <?php
                     }
 
+                    # Display pub, coll
+
+                    if( !empty( $release_publisher_obj ) ){
+                       ?>
+                       <tr>
+                           <td><?php echo _x( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo $release_publisher_obj->name; ?></td>
+                       </tr>
+                       <?php
+                    }
+
+                    $real_pub = get_term_by( 'slug', $publisher, 'publisher' );
+
+                    if( $real_pub->parent > 0 ){
+                       ?>
+                       <tr>
+                           <td><?php echo _x( 'Collection', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo $real_pub->name; ?></td>
+                       </tr>
+                       <?php
+                    }
+
                     # Display book data
 
                     if( !empty( $release_date ) ){
