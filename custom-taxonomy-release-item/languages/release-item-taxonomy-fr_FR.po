@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 21:16-0400\n"
-"PO-Revision-Date: 2020-06-14 21:16-0400\n"
+"POT-Creation-Date: 2020-06-15 19:04-0400\n"
+"PO-Revision-Date: 2020-06-15 19:04-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -93,7 +93,7 @@ msgid "Enter the name of the release."
 msgstr "Entrer le slug de la rentrée littéraire concernée."
 
 #: custom-taxonomy-release-item.php:112 custom-taxonomy-release-item.php:213
-#: custom-taxonomy-release-item.php:638
+#: custom-taxonomy-release-item.php:662
 msgid "Publisher"
 msgstr "Éditeur"
 
@@ -118,7 +118,7 @@ msgid "Enter the book translators."
 msgstr "Entrer les traducteurs du livre."
 
 #: custom-taxonomy-release-item.php:127 custom-taxonomy-release-item.php:234
-#: custom-taxonomy-release-item.php:480
+#: custom-taxonomy-release-item.php:517
 msgid "Title"
 msgstr "Titre"
 
@@ -127,7 +127,7 @@ msgid "Enter the book title."
 msgstr "Entrer le titre du livre."
 
 #: custom-taxonomy-release-item.php:132 custom-taxonomy-release-item.php:241
-#: custom-taxonomy-release-item.php:489
+#: custom-taxonomy-release-item.php:526
 msgid "Original title"
 msgstr "Titre original"
 
@@ -144,7 +144,7 @@ msgid "Enter the book sort title."
 msgstr "Entrer le nom du livre tel qu'il est trié."
 
 #: custom-taxonomy-release-item.php:142 custom-taxonomy-release-item.php:255
-#: custom-taxonomy-release-item.php:678
+#: custom-taxonomy-release-item.php:702
 msgid "ISBN10"
 msgstr "ISBN10"
 
@@ -153,7 +153,7 @@ msgid "Enter the book ISBN10 if exists."
 msgstr "Entrer l'ISBN10 du livre s'il existe."
 
 #: custom-taxonomy-release-item.php:147 custom-taxonomy-release-item.php:262
-#: custom-taxonomy-release-item.php:669
+#: custom-taxonomy-release-item.php:693
 msgid "ISBN13"
 msgstr "ISBN13"
 
@@ -170,7 +170,7 @@ msgid "Enter the book ASIN."
 msgstr "Entrer l'ASIN du livre."
 
 #: custom-taxonomy-release-item.php:157 custom-taxonomy-release-item.php:276
-#: custom-taxonomy-release-item.php:660
+#: custom-taxonomy-release-item.php:684
 msgid "Release date"
 msgstr "Date de parution"
 
@@ -179,7 +179,7 @@ msgid "Enter the book release date (YYYY-mm-dd)."
 msgstr "Entrer la date de parution du livre (AAAA-mm-jj)."
 
 #: custom-taxonomy-release-item.php:162 custom-taxonomy-release-item.php:283
-#: custom-taxonomy-release-item.php:696
+#: custom-taxonomy-release-item.php:720
 msgid "Number of pages"
 msgstr "Nombre de pages"
 
@@ -219,69 +219,74 @@ msgstr "Entrer le titre original du livre."
 msgid "Enter the book post linked if exists."
 msgstr "Entrer le lien de la chronique littéraire liée si elle existe."
 
-#: custom-taxonomy-release-item.php:530
+#: custom-taxonomy-release-item.php:554
 msgctxt "book metadata female authors"
 msgid "Authors"
 msgstr "Auteures"
 
-#: custom-taxonomy-release-item.php:532
+#: custom-taxonomy-release-item.php:556
 msgctxt "book metadata authors"
 msgid "Authors"
 msgstr "Auteurs"
 
-#: custom-taxonomy-release-item.php:539
+#: custom-taxonomy-release-item.php:563
 msgctxt "book metadata female author"
 msgid "Author"
 msgstr "Auteure"
 
-#: custom-taxonomy-release-item.php:541
+#: custom-taxonomy-release-item.php:565
 msgctxt "book metadata male author"
 msgid "Author"
 msgstr "Auteur"
 
-#: custom-taxonomy-release-item.php:599
+#: custom-taxonomy-release-item.php:623
 msgctxt "book metadata female translators"
 msgid "Translators"
 msgstr "Traductrices"
 
-#: custom-taxonomy-release-item.php:601
+#: custom-taxonomy-release-item.php:625
 msgctxt "book metadata translators"
 msgid "Translators"
 msgstr "Traducteurs"
 
-#: custom-taxonomy-release-item.php:608
+#: custom-taxonomy-release-item.php:632
 msgctxt "book metadata female translator"
 msgid "Translator"
 msgstr "Traductrice"
 
-#: custom-taxonomy-release-item.php:610
+#: custom-taxonomy-release-item.php:634
 msgctxt "book metadata male translator"
 msgid "Translator"
 msgstr "Traducteur"
 
-#: custom-taxonomy-release-item.php:649
+#: custom-taxonomy-release-item.php:673
 msgid "Collection"
 msgstr "Collection"
 
-#: custom-taxonomy-release-item.php:687
+#: custom-taxonomy-release-item.php:711
 msgid "Estimated price"
 msgstr "Prix prévisionnel"
 
-#: custom-taxonomy-release-item.php:706 custom-taxonomy-release-item.php:722
+#: custom-taxonomy-release-item.php:733
+msgctxt "book metadata affiliate links"
+msgid "Affiliate links"
+msgstr "Liens affiliés"
+
+#: custom-taxonomy-release-item.php:737
 msgctxt "book metadata affiliate link"
 msgid "Affiliate link"
 msgstr "Lien affilié"
 
-#: custom-taxonomy-release-item.php:711
+#: custom-taxonomy-release-item.php:748
 msgctxt "book metadata leslibraires.ca affiliate message"
 msgid "Buy on Les Libraires"
 msgstr "Acheter sur Les Libraires"
 
-#: custom-taxonomy-release-item.php:727
+#: custom-taxonomy-release-item.php:758
 msgctxt "book metadata Amazon affiliate message"
 msgid "Buy on Amazon"
 msgstr "Acheter sur Amazon"
 
-#: custom-taxonomy-release-item.php:746
+#: custom-taxonomy-release-item.php:780
 msgid "Publisher description"
 msgstr "Description de l'éditeur"
