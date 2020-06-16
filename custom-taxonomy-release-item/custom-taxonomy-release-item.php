@@ -452,7 +452,49 @@ function display_literary_season( $atts, $content=null ){
         $thumbnail      = $item_options['release_item_thumbnail'];
         $description    = $item->description;
 
-        echo '<h2><cite>' . $title . '</cite></h2>';
+        # Find authors
+
+        $author_displayed = '';
+
+        if( taxonomy_exists( 'person' ) ){
+            $auth    = array();
+            $authors = explode( ',', $authors );
+
+            foreach( $authors as $person ){
+              $person_obj = get_term_by( 'slug', $person, 'person' );
+
+              if( $person_obj ){
+                array_push( $auth, $person_obj );
+              }
+            }
+        }
+
+        # Display title and authors if exist
+        if( !empty( $auth ) ){
+            foreach( $auth as $author ){
+                if( $author_displayed != '' ){
+                    $author_displayed .= ' &sdot; ';
+                }
+
+                $author_displayed .= str_replace(' ', '&nbsp;', $author->name );
+            }
+        }
+
+        ?>
+        <h2>
+            <cite><?php echo $title; ?></cite>
+            <?php
+
+            if( !empty( $author_displayed ) ){
+                if( preg_match( '/^[aieéouyAIEÉOUY].*/', $author_displayed ) ){
+                    echo 'd’' . $author_displayed . '';
+                } else {
+                    echo 'de ' . $author_displayed . '';
+                }
+            }
+            ?>
+        </h2>
+        <?php
 
         # Display thumbnail
 
@@ -493,19 +535,6 @@ function display_literary_season( $atts, $content=null ){
                     }
 
                     # Display authors
-
-                    if( taxonomy_exists( 'person' ) ){
-                        $auth    = array();
-                        $authors = explode( ',', $authors );
-
-                        foreach( $authors as $person ){
-                          $person_obj = get_term_by( 'slug', $person, 'person' );
-
-                          if( $person_obj ){
-                            array_push( $auth, $person_obj );
-                          }
-                        }
-                    }
 
                     # If at least one author
 
