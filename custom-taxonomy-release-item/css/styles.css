@@ -1,48 +1,41 @@
-.literary-season {
+article .entry-content .literary-season {
     font-size: 12px;
 }
 
-.literary-season a.logo_partner span {
+article .entry-content .literary-season a.logo_partner span {
     font-size: 9px;
     font-size: 9.5px;
 }
 
-.literary-season .literary-season-book-card figure img {
+article .entry-content .literary-season .literary-season-book-card figure img {
     width: 100%;
 }
 
-.literary-season .literary-season-book-card table {
+article .entry-content .literary-season .literary-season-book-card table {
     width: 100%;
 }
 
-.literary-season .literary-season-book-card table tr {
+article .entry-content .literary-season .literary-season-book-card table tr {
     width: 100%;
 }
 
-.literary-season .literary-season-book-card table td {
-    height: 32px;
-}
-
-.literary-season .literary-season-book-card table td:first-child {
+article .entry-content .literary-season .literary-season-book-card table td:first-child {
     width: 45%;
+    font-weight: bold;
 }
 
-.literary-season .literary-season-book-card table td:first-child + td {
+article .entry-content .literary-season .literary-season-book-card table td:first-child + td {
     padding-left: 0;
     padding-left: 0;
 }
 
-.literary-season .literary-season-book-card table a.logo_libraires_ca {
-    margin-bottom: 0;
-}
-
-.literary-season .publisher-description span {
+article .entry-content .literary-season .publisher-description span {
     display: block;
-    margin: 0 0 10px;
+    margin: 10px 0 15px;
     text-decoration: underline;
 }
 
-.literary-season .publisher-description p {
+article .entry-content .literary-season .publisher-description p {
     margin-bottom: 10px;
 }
 
@@ -52,39 +45,35 @@
  */
 
 @media screen and (min-width: 769px) {
-    .entry-content .literary-season h2 {
+    article .entry-content .literary-season h2 {
         font-size: 24px;
         font-size: 1.5rem;
     }
 
-    .literary-season .literary-season-book-card figure,
-    .literary-season .literary-season-book-card div.book-card {
+    article .entry-content .literary-season .literary-season-book-card figure,
+    article .entry-content .literary-season .literary-season-book-card div.book-card {
         display: inline-block;
         *display: inline;
         zoom: 1;
         vertical-align: top;
     }
 
-    .literary-season .literary-season-book-card figure {
+    article .entry-content .literary-season .literary-season-book-card figure {
         width: 250px;
     }
 
-    .literary-season .literary-season-book-card div.book-card {
+    article .entry-content .literary-season .literary-season-book-card div.book-card {
         width: calc(100% - 250px);
         padding: 0 0 0 25px;
         border-top: none;
         font-size: 12px;
     }
 
-    .literary-season .literary-season-book-card table {
+    article .entry-content .literary-season .literary-season-book-card table {
         max-width: none;
     }
 
-    .literary-season .literary-season-book-card table td {
-        height: 37px;
-    }
-
-    .literary-season .publisher-description {
+    article .entry-content .literary-season .publisher-description {
         font-size: 14px;
     }
 }
