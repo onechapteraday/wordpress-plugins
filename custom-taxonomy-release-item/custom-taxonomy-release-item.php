@@ -393,8 +393,9 @@ function display_literary_season( $atts, $content=null ){
 
     # Check publisher and children
 
-    $release_publisher_obj      = get_term_by( 'slug', $release_publisher, 'publisher' );
-    $release_publisher_children = get_term_children( $release_publisher_obj->term_id, 'publisher' );
+    $release_publisher_obj          = get_term_by( 'slug', $release_publisher, 'publisher' );
+    $release_publisher_children     = get_term_children( $release_publisher_obj->term_id, 'publisher' );
+    $release_publisher_obj_count    = 0;
 
     $release_publisher_slugs = array();
     array_push( $release_publisher_slugs, $release_publisher );
@@ -402,6 +403,10 @@ function display_literary_season( $atts, $content=null ){
     foreach( $release_publisher_children as $child ){
         $term = get_term_by( 'id', $child, 'publisher' );
         array_push( $release_publisher_slugs, $term->slug );
+
+        if( $term->count > 0 ){
+            $release_publisher_obj_count = 1;
+        }
     }
 
     # Get all release items
@@ -664,19 +669,6 @@ function display_literary_season( $atts, $content=null ){
                     if( !empty( $release_publisher_obj ) ){
                        $release_publisher_obj_link     = get_term_link( $release_publisher_obj->term_id, 'publisher' );
 
-                       $release_publisher_obj_children = get_terms( 'publisher', array(
-                                                                 'hide_empty' => 0,
-                                                                 'parent'     => $release_publisher_obj->term_id
-                                                             )
-                                                         );
-
-                       $release_publisher_obj_count = 0;
-                       foreach( $release_publisher_obj_children as $child ){
-                           if( $child->count > 0 ){
-                               $release_publisher_obj_count = 1;
-                               break;
-                           }
-                       }
                        ?>
                        <tr>
                            <td><?php echo _e( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
