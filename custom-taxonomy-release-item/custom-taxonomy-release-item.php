@@ -481,7 +481,7 @@ function display_literary_season( $atts, $content=null ){
         }
 
         ?>
-        <h2>
+        <h3>
             <cite><?php echo $title; ?></cite>
             <?php
 
@@ -493,7 +493,7 @@ function display_literary_season( $atts, $content=null ){
                 }
             }
             ?>
-        </h2>
+        </h3>
         <?php
 
         # Display thumbnail
