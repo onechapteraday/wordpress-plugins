@@ -662,21 +662,57 @@ function display_literary_season( $atts, $content=null ){
                     # Display pub, coll
 
                     if( !empty( $release_publisher_obj ) ){
+                       $release_publisher_obj_link     = get_term_link( $release_publisher_obj->term_id, 'publisher' );
+
+                       $release_publisher_obj_children = get_terms( 'publisher', array(
+                                                                 'hide_empty' => 0,
+                                                                 'parent'     => $release_publisher_obj->term_id
+                                                             )
+                                                         );
+
+                       $release_publisher_obj_count = 0;
+                       foreach( $release_publisher_obj_children as $child ){
+                           if( $child->count > 0 ){
+                               $release_publisher_obj_count = 1;
+                               break;
+                           }
+                       }
                        ?>
                        <tr>
                            <td><?php echo _e( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
-                           <td><?php echo $release_publisher_obj->name; ?></td>
+                           <td>
+                               <?php
+                               if( $release_publisher_obj->count > 0 || $release_publisher_obj_count > 0 ){
+                                   ?>
+                                   <a href="<?php echo $release_publisher_obj_link; ?>"><?php echo $release_publisher_obj->name; ?></a>
+                                   <?php
+                               } else {
+                                   echo $release_publisher_obj->name;
+                               }
+                               ?>
+                           </td>
                        </tr>
                        <?php
                     }
 
                     $real_pub = get_term_by( 'slug', $publisher, 'publisher' );
+                    $real_pub_link = get_term_link( $real_pub->term_id, 'publisher' );
 
                     if( $real_pub->parent > 0 ){
                        ?>
                        <tr>
                            <td><?php echo _e( 'Collection', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
-                           <td><?php echo $real_pub->name; ?></td>
+                           <td>
+                               <?php
+                               if( $real_pub->count > 0 ){
+                                   ?>
+                                   <a href="<?php echo $real_pub_link; ?>"><?php echo $real_pub->name; ?></a>
+                                   <?php
+                               } else {
+                                   echo $real_pub->name;
+                               }
+                               ?>
+                           </td>
                        </tr>
                        <?php
                     }
