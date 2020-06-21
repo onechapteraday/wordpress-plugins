@@ -24,7 +24,7 @@ function birthdays_dashboard_widget(){
     $id = $person->term_id;
     $term_meta = get_option( 'taxonomy_' . $id );
 
-    if( $term_meta[ 'birthdate' ] != '' ){
+    if( $term_meta[ 'birthdate' ] != '' && preg_match( '/^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/', $term_meta[ 'birthdate' ] ) ){
       $birthdate = DateTime::createFromFormat( 'Y-m-d', $term_meta[ 'birthdate' ] );
 
       if( $month == $birthdate->format( 'm' ) ){
@@ -129,7 +129,7 @@ function deathdays_dashboard_widget(){
     $id = $person->term_id;
     $term_meta = get_option( 'taxonomy_' . $id );
 
-    if( $term_meta[ 'deathdate' ] != '' ){
+    if( $term_meta[ 'deathdate' ] != '' && preg_match( '/^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/', $term_meta[ 'deathdate' ] ) ){
       $deathdate = DateTime::createFromFormat( 'Y-m-d', $term_meta[ 'deathdate' ] );
 
       if( $month == $deathdate->format( 'm' ) ){
