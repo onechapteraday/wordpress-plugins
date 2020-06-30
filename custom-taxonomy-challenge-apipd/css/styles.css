@@ -1,0 +1,14 @@
+.apipd-challenge-videos .pagination {
+    text-align: center;
+}
+
+.apipd-challenge-videos .pagination ul {
+    margin: 0;
+}
+
+.apipd-challenge-videos .pagination li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0 5px;
+}

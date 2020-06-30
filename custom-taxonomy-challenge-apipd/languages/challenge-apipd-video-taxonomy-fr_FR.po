@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-30 00:16-0400\n"
+"PO-Revision-Date: 2020-06-30 00:18-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: custom-taxonomy-challenge-apipd.php:60
+msgctxt "taxonomy general name"
+msgid "APIPD Challenge Videos"
+msgstr "Toutes les vidéos du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:61
+msgctxt "taxonomy singular name"
+msgid "APIPD Challenge Video"
+msgstr "Toutes les vidéos du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:62
+msgid "Search APIPD Challenge Videos"
+msgstr "Rechercher parmi les vidéos du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:63
+msgid "Popular APIPD Challenge Videos"
+msgstr "Vidéos populaires du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:64
+msgid "All APIPD Challenge Videos"
+msgstr "Toutes les vidéos du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:67
+msgid "See APIPD Challenge Video"
+msgstr "Voir la vidéo du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:68
+msgid "Edit APIPD Challenge Video"
+msgstr "Modifier la vidéo du challenge  APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:69
+msgid "Update APIPD Challenge Video"
+msgstr "Mettre à jour la vidéo du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:70
+msgid "Add New APIPD Challenge Video"
+msgstr "Ajouter une nouvelle vidéo du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:71
+msgid "New APIPD Challenge Video Name"
+msgstr "Nom de la nouvelle vidéo du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:72
+msgid "Separate APIPD challenge videos with commas"
+msgstr "Séparer les vidéos du challenge APIPD avec des virgules"
+
+#: custom-taxonomy-challenge-apipd.php:73
+msgid "Add or remove APIPD challenge videos"
+msgstr "Ajouter ou supprimer des vidéos au challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:74
+msgid "Choose from the most used APIPD challenge videos"
+msgstr "Choisir parmi les vidéos du challenge APIPD les plus utilisées"
+
+#: custom-taxonomy-challenge-apipd.php:75
+msgid "No APIPD challenge videos found."
+msgstr "Aucune vidéo du challenge APIPD trouvée."
+
+#: custom-taxonomy-challenge-apipd.php:76
+msgid "← Back to APIPD challenge videos"
+msgstr "← Retour aux vidéos du challenge APIPD"
+
+#: custom-taxonomy-challenge-apipd.php:77
+msgid "APIPD Challenge Videos"
+msgstr "Vidéos du challenge APIPD"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Challenge APIPD Videos"
+#~ msgstr "Vidéos du challenge"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Challenge APIPD Video"
+#~ msgstr "Vidéo du challenge"
