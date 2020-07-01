@@ -554,6 +554,7 @@ function display_literary_season( $atts, $content=null ){
                             <?php
                             if( count( $auth ) > 1 ){
                                 $female_only = true;
+                                $transgenre_only = true;
 
                                 foreach( $auth as $author ){
                                     $gender = get_option( 'taxonomy_' . $author->term_id )['gender'];
@@ -575,6 +576,8 @@ function display_literary_season( $atts, $content=null ){
 
                                 if( $gender == 1 ){
                                     echo _x( 'Author', 'book metadata female author', $RELEASE_ITEM_TEXTDOMAIN );
+                                } elseif( $gender == 2 ) {
+                                    echo _x( 'Author', 'book metadata transgenre author', $RELEASE_ITEM_TEXTDOMAIN );
                                 } else {
                                     echo _x( 'Author', 'book metadata male author', $RELEASE_ITEM_TEXTDOMAIN );
                                 }
