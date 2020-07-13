@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 15:27-0400\n"
-"PO-Revision-Date: 2020-07-01 15:31-0400\n"
+"POT-Creation-Date: 2020-07-13 09:24-0400\n"
+"PO-Revision-Date: 2020-07-13 09:25-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -362,8 +362,7 @@ msgid "Affiliate link"
 msgstr "Lien affilié"
 
 #: custom-taxonomy-release-item.php:789
-#: custom-taxonomy-release-item-old.php:789
-msgctxt "book metadata leslibraires.ca affiliate message"
+msgctxt "book metadata leslibraires.fr affiliate message"
 msgid "Buy on Les Libraires"
 msgstr "Acheter sur Les Libraires"
 
@@ -378,6 +377,10 @@ msgstr "Acheter sur Amazon"
 msgid "Publisher description"
 msgstr "Description de l'éditeur"
 
-#: custom-taxonomy-release-item.php:838
-msgid "More information"
-msgstr "Plus d'informations"
+#: custom-taxonomy-release-item-old.php:789
+msgctxt "book metadata leslibraires.ca affiliate message"
+msgid "Buy on Les Libraires"
+msgstr "Acheter sur Les Libraires"
+
+#~ msgid "More information"
+#~ msgstr "Plus d'informations"

@@ -225,7 +225,7 @@ function get_book_leslibraires_ca( $post_id ){
   $link   = '';
 
   if( $isbn13 ){
-      $link = 'http://www.leslibraires.ca/ISBN/' . $isbn13 . '/?u=176213';
+      $link = 'http://www.leslibraires.fr/livre/' . $isbn13 . '?affiliate=';
   }
 
   if( $link ){
