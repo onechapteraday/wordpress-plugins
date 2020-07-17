@@ -206,13 +206,22 @@ function get_book_rating( $post_id ){
 
 function get_book_amazon( $post_id ){
   $amazon_link = get_post_meta( $post_id, 'amazon', true );
+  $amazon_asin = get_post_meta( $post_id, 'asin', true );
 
-  if( $amazon_link ){
-    $arr = array(
-      'link'    => $amazon_link,
-      'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
-      'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
-    );
+  if( $amazon_link || $amazon_asin ){
+    if( $amazon_asin ){
+      $arr = array(
+        'link'    => 'https://www.amazon.fr/dp/' . $amazon_asin . '/?tag=onchada-21',
+        'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
+        'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
+      );
+    } else {
+      $arr = array(
+        'link'    => $amazon_link,
+        'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
+        'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
+      );
+    }
 
     return $arr;
   }
@@ -225,7 +234,7 @@ function get_book_leslibraires_ca( $post_id ){
   $link   = '';
 
   if( $isbn13 ){
-      $link = 'http://www.leslibraires.fr/livre/' . $isbn13 . '?affiliate=onechapteraday';
+      $link = 'https://www.leslibraires.fr/livre/' . $isbn13 . '?affiliate=onechapteraday';
   }
 
   if( $link ){

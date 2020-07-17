@@ -783,7 +783,7 @@ function display_literary_season( $atts, $content=null ){
                                <?php
                                if( !empty( $isbn13 ) ){
                                    ?>
-			           <a href="http://www.leslibraires.fr/livre/<?php echo $isbn13; ?>?affiliate=onechapteraday" target="_blank" rel="nofollow" class="logo_partner logo_libraires_fr">
+			           <a href="https://www.leslibraires.fr/livre/<?php echo $isbn13; ?>?affiliate=onechapteraday" target="_blank" rel="nofollow" class="logo_partner logo_libraires_fr">
 			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_leslibraires_tooltip.png" alt="leslibraires.fr" />
                                         <span><?php echo _x( 'Buy on Les Libraires', 'book metadata leslibraires.fr affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
 			           </a>
