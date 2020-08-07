@@ -206,10 +206,17 @@ function get_book_rating( $post_id ){
 
 function get_book_amazon( $post_id ){
   $amazon_link = get_post_meta( $post_id, 'amazon', true );
+  $amazon_isbn = get_post_meta( $post_id, 'isbn10', true );
   $amazon_asin = get_post_meta( $post_id, 'asin', true );
 
-  if( $amazon_link || $amazon_asin ){
-    if( $amazon_asin ){
+  if( $amazon_link || $amazon_isbn || $amazon_asin ){
+    if( $amazon_isbn ){
+      $arr = array(
+        'link'    => 'https://www.amazon.fr/dp/' . $amazon_isbn . '/?tag=onchada-21',
+        'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
+        'img_buy' => plugin_dir_url( __FILE__ ) . 'images/logo_amazon_buy.png'
+      );
+    } elseif( $amazon_asin ) {
       $arr = array(
         'link'    => 'https://www.amazon.fr/dp/' . $amazon_asin . '/?tag=onchada-21',
         'img'     => plugin_dir_url( __FILE__ ) . 'images/logo_amazon.png',
