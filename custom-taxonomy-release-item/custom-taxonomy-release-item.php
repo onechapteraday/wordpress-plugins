@@ -820,7 +820,9 @@ function display_literary_season( $atts, $content=null ){
                 <span><?php echo _e( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
                 <div>
                     <?php
-                    $description = str_replace("\n", "</p>\n<p>", '<p>'.$description.'</p>');
+                    $description = str_replace("\n\r", "</p>\n<p>", '<p>'.$description.'</p>');
+                    $description = str_replace("\r", "<br />", '<p>'.$description.'</p>');
+
                     echo $description;
                     ?>
                 </div>
