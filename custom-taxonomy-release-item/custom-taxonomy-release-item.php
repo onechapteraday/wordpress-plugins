@@ -454,6 +454,7 @@ function display_literary_season( $atts, $content=null ){
         $release_date   = $item_options['release_item_release_date'];
         $pagenumber     = $item_options['release_item_pagenumber'];
         $price          = $item_options['release_item_price'];
+        $post_link      = $item_options['release_item_post_link'];
         $thumbnail      = $item_options['release_item_thumbnail'];
         $description    = $item->description;
 
@@ -491,8 +492,10 @@ function display_literary_season( $atts, $content=null ){
 
         ?>
         <h3>
-            <cite><?php echo $title; ?></cite>
             <?php
+            echo ( !empty( $post_link ) ? '<a href="'. $post_link .'">' : '' );
+            echo '<cite>' . $title . '</cite>';
+            echo ( !empty( $post_link ) ? '</a> ' : ' ' );
 
             if( !empty( $author_displayed ) ){
                 if( preg_match( '/^[aieéouyAIEÉOUY].*/', $author_displayed ) ){
@@ -512,9 +515,13 @@ function display_literary_season( $atts, $content=null ){
             <figure>
             <?php
                 if( !empty( $thumbnail ) ){
+                    echo ( !empty( $post_link ) ? '<a href="'. $post_link .'">' : '' );
                     echo '<img src="' . $thumbnail . '" alt="' . $title . '" />';
+                    echo ( !empty( $post_link ) ? '</a>' : '' );
                 } else {
+                    echo ( !empty( $post_link ) ? '<a href="'. $post_link .'">' : '' );
                     echo '<img src="https://onechapteraday.fr/wp-content/uploads/2020/06/onechapt_cover_artwork.jpg" alt="" title="La première de couverture de ' . $title . ' n\'est pas encore connue." width="250" height="375" />';
+                    echo ( !empty( $post_link ) ? '</a>' : '' );
                 }
             ?>
             </figure><!--
@@ -829,6 +836,7 @@ function display_literary_season( $atts, $content=null ){
             </div>
             <?php
         }
+
     }
 
     ?>
