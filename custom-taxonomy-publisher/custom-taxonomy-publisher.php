@@ -305,21 +305,54 @@ class popular_publishers_in_category_widget extends WP_Widget {
             }
         }
 
+        # All publishers (w/ collections)
+        # In order to publishers to be well ordered by count
+
         $tag_args = array(
-                    'format'   => 'array',
-                    'number'   => $p_count,
-                    'taxonomy' => 'publisher',
-                    'orderby'  => 'count',
-                    'order'    => 'DESC',
-                    'include'  => $array_of_terms_in_category,
-                    'echo'     => false,
+                    'format'     => 'array',
+                    'taxonomy'   => 'publisher',
+                    'orderby'    => 'count',
+                    'order'      => 'DESC',
+                    'echo'       => false,
                 );
+
 
         echo '<div class="tagcloud">';
 
-        $publishers_array = get_terms ( 'publisher', $tag_args );
+        $all_publishers_array = get_terms ( 'publisher', $tag_args );
 
-        if( sizeof( $publishers_array ) ){
+        if( sizeof( $all_publishers_array ) ){
+
+            # Get collections’ parents
+
+            $publishers_id = array();
+
+            foreach( $all_publishers_array as $pub ){
+                if( $pub->parent != 0 ){
+                    if( !in_array( $pub->parent, $publishers_id, true ) ){
+                        array_push( $publishers_id, $pub->parent );
+                    }
+                } else {
+                    if( !in_array( $pub->term_id, $publishers_id, true ) ){
+                        array_push( $publishers_id, $pub->term_id );
+                    }
+                }
+
+                if( count( $publishers_id ) >= $p_count ){
+                    break;
+                }
+            }
+
+            # Get all real publishers
+
+            $new_args = array(
+                            'include'  => $publishers_id,
+                        );
+
+            $publishers_array = get_terms ( 'publisher', $new_args );
+
+            # Alphabetize
+
             function widget_sort_publisher_by_name( $a, $b ){
                 $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
                 $at = strtolower( strtr( $a->name, $translit ) );
