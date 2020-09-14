@@ -323,27 +323,67 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
         if( sizeof( $all_publishers_array ) ){
 
-            # Get collections’ parents
+            # Get all publishers w/ correct count (by adding collections' count)
+
+            $publishers_test = array();
+
+            foreach( $all_publishers_array as $pub ){
+                $term_id = $pub->term_id;
+                $parent  = $pub->parent;
+                $count   = $pub->count;
+
+                # If publisher (and not a collection)
+
+                if( $parent == 0 ){
+
+                    if( !isset( $publishers_test[ $term_id ] ) ){
+
+                        # If not already in array, add key and count
+                        $publishers_test[ $term_id ] = $count;
+
+                    } else {
+
+                        # If already in array, find key and add count
+                        $publishers_test[ $term_id ] += $count;
+
+                    }
+                }
+
+                # If collection
+
+                else {
+                    if( !isset( $publishers_test[ $parent ] ) ){
+
+                        # If parent is not already in array, add key and count
+                        $publishers_test[ $parent ] = $count;
+
+                    } else {
+
+                        # If parent is already in array, find key and add count
+                        $publishers_test[ $parent ] += $count;
+
+                    }
+                }
+            }
+
+            # Reverse sort and keep index
+            # Order by the publishers w/ the most collections
+
+            arsort( $publishers_test );
+
+            # Create array w/ only the needed term_ids
 
             $publishers_id = array();
 
-            foreach( $all_publishers_array as $pub ){
-                if( $pub->parent != 0 ){
-                    if( !in_array( $pub->parent, $publishers_id, true ) ){
-                        array_push( $publishers_id, $pub->parent );
-                    }
-                } else {
-                    if( !in_array( $pub->term_id, $publishers_id, true ) ){
-                        array_push( $publishers_id, $pub->term_id );
-                    }
-                }
+            foreach( $publishers_test as $key => $value ){
+                array_push( $publishers_id, $key );
 
                 if( count( $publishers_id ) >= $p_count ){
                     break;
                 }
             }
 
-            # Get all real publishers
+            # Get publishers cloud order by count
 
             $new_args = array(
                             'include'  => $publishers_id,
@@ -351,7 +391,7 @@ class popular_publishers_in_category_widget extends WP_Widget {
 
             $publishers_array = get_terms ( 'publisher', $new_args );
 
-            # Alphabetize
+            # Alphabetize publishers
 
             function widget_sort_publisher_by_name( $a, $b ){
                 $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
