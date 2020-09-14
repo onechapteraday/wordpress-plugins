@@ -482,11 +482,7 @@ function display_literary_season( $atts, $content=null ){
                     $author_displayed .= ' &sdot; ';
                 }
 
-                if( strlen( $author->name ) < 20 ){
-                    $author_displayed .= str_replace(' ', '&nbsp;', $author->name );
-                } else {
-                    $author_displayed .= $author->name;
-                }
+                $author_displayed .= $author->name;
             }
         }
 
