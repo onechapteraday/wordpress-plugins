@@ -181,6 +181,12 @@ function create_breadcrumb_tag( $atts, $content=null ) {
 
     if( isset( $tag_id ) ){
         $tag_name = get_tag( $tag_id )->name;
+
+        # Literary prizes selection
+        $arr_needle  = array( '1re', '2e', '3e' );
+        $arr_replace = array( 'Première', 'Deuxième', 'Troisième' );
+        $tag_name = str_replace( $arr_needle, $arr_replace, $tag_name );
+
         ?>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
           <li>
