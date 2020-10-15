@@ -130,8 +130,15 @@ function seo_title_custom_title( $title ){
 
     # Tag
     if( is_tag() ){
-        $tag = get_queried_object();
-        return 'Articles concernant l\'étiquette ' . mb_strtoupper( mb_substr( $tag->name, 0, 1 )) . mb_substr( $tag->name, 1 ) . ' - ' . get_bloginfo( 'name' );
+        $tag      = get_queried_object();
+        $tag_name = $tag->name;
+
+        # Literary prizes selection
+        $arr_needle  = array( '1re', '2e', '3e' );
+        $arr_replace = array( 'Première', 'Deuxième', 'Troisième' );
+        $tag_name = str_replace( $arr_needle, $arr_replace, $tag_name );
+
+        return 'Articles concernant l\'étiquette ' . mb_strtoupper( mb_substr( $tag_name, 0, 1 )) . mb_substr( $tag_name, 1 ) . ' - ' . get_bloginfo( 'name' );
     }
 
     # Archive year
