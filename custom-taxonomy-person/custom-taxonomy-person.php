@@ -37,11 +37,16 @@ $PERSON_TEXTDOMAIN = 'person-taxonomy';
 
 function person_taxonomy_load_textdomain() {
   global $PERSON_TEXTDOMAIN;
+  global $LOCATION_TEXTDOMAIN;
+
   $locale = apply_filters( 'plugin_locale', get_locale(), $PERSON_TEXTDOMAIN );
 
   # Load i18n
   $path = basename( dirname( __FILE__ ) ) . '/languages/';
+  $path_location = str_replace( 'person', 'location', $path );
+
   $loaded = load_plugin_textdomain( $PERSON_TEXTDOMAIN, false, $path );
+  $loaded = load_plugin_textdomain( $LOCATION_TEXTDOMAIN, false, $path_location );
 }
 
 add_action( 'init', 'person_taxonomy_load_textdomain', 0 );
@@ -574,9 +579,213 @@ class popular_persons_in_category_widget extends WP_Widget {
     }
 }
 
+/**
+ * Retrieve popular nationalities in specific category
+ *
+ */
+
+class popular_nationalities_in_category_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            # Base ID of your widget
+            'popular_nationalities_in_category_widget',
+
+            # Widget name will appear in UI
+            __('Popular Nationalities in Category Widget', 'person-taxonomy'),
+
+            # Widget description
+            array( 'description' => __( 'This widget will show the popular nationalities in the specific category you choose.', 'person-taxonomy' ), )
+        );
+    }
+
+    # Creating widget front-end
+    public function widget( $args, $instance ) {
+        global $LOCATION_TEXTDOMAIN;
+
+        $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+        $p_count = isset( $instance['p_count'] ) ? $instance['p_count'] : '';
+
+        # Before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        # This is where you run the code and display the output
+
+        # Find the category where is displayed the widget
+        $categories = get_the_category();
+
+	$catID = null;
+	if ( isset ( $categories[0] ) ) {
+            $catID = $categories[0]->cat_ID;
+	}
+
+        $post_types = array( 'post' );
+
+        if( post_type_exists( 'book' ) ){
+            array_push( $post_types, 'book' );
+        }
+
+        if( post_type_exists( 'album' ) ){
+            array_push( $post_types, 'album' );
+        }
+
+        if( post_type_exists( 'concert' ) ){
+            array_push( $post_types, 'concert' );
+        }
+
+        if( post_type_exists( 'interview' ) ){
+            array_push( $post_types, 'interview' );
+        }
+
+        if ( $catID ) {
+            $posts_with_category = get_posts( array(
+                         'category'       => $catID,
+                         'post_type'      => $post_types,
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+        else {
+            $posts_with_category = get_posts( array(
+                         'post_type'      => $post_types,
+                         'number_posts'   => -1,
+                         'posts_per_page' => -1,
+                     ));
+        }
+
+        $array_of_terms_in_category = array();
+
+        foreach( $posts_with_category as $post ) {
+            $terms = wp_get_post_terms( $post->ID, 'person' );
+
+            foreach( $terms as $value ){
+                if( !in_array( $value, $array_of_terms_in_category, true ) ){
+                    array_push( $array_of_terms_in_category, $value->term_id );
+                }
+            }
+        }
+
+        $tag_args = array(
+                    'format'   => 'array',
+                    'taxonomy' => 'person',
+                    'orderby'  => 'count',
+                    'order'    => 'DESC',
+                    'include'  => $array_of_terms_in_category,
+                    'echo'     => false,
+                );
+
+        echo '<div class="tagcloud">';
+
+        $persons_array   = get_terms ( 'person', $tag_args );
+        $popular_nations = array();
+
+        # Construct associate array with ISO codes
+
+        foreach( $persons_array as $person ){
+            $person_id    = $person->term_id;
+            $person_count = $person->count;
+
+            $term_meta = get_option( 'taxonomy_' . $person_id );
+
+            if( isset( $term_meta['nationality'] ) ){
+                $countries = explode( ';', $term_meta['nationality'] );
+
+                foreach( $countries as $country ){
+                    if( !isset( $popular_nations[$country] ) ){
+                        $popular_nations[$country] = $person_count;
+                    } else {
+                        $popular_nations[$country] += $person_count;
+                    }
+                }
+            }
+        }
+
+        # Sort pop_nat by count DESC
+
+        arsort( $popular_nations );
+
+        # Retrieve all terms
+
+        $locations_array = array();
+
+        foreach( $popular_nations as $nation => $count ){
+            if( count( $locations_array ) < $p_count ){
+                array_push( $locations_array, get_term_by( 'slug', $nation, 'location' ) );
+            } else break;
+        }
+
+        foreach( $locations_array as $mylocation ) {
+            $mylocation->translation = __( $mylocation->name, $LOCATION_TEXTDOMAIN );
+        }
+
+        if( sizeof( $locations_array ) ){
+            function widget_sort_nationality_by_name( $a, $b ){
+                $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
+                $at = strtolower( strtr( $a->translation, $translit ) );
+                $bt = strtolower( strtr( $b->translation, $translit ) );
+
+                return strcoll( $at, $bt );
+            }
+
+            usort( $locations_array, 'widget_sort_nationality_by_name' );
+
+            echo '<ul class="wp-tag-cloud">';
+
+	    foreach ( $locations_array as $location ) {
+                echo '<li><a href="' . get_term_link( $location->term_id ) . '" class="tag-cloud-link tag-link-' . $location->term_id . '">';
+                echo $location->translation;
+                echo '</a></li>';
+	    }
+
+            echo '</ul>';
+	}
+
+        echo '</div>';
+
+        echo $args['after_widget'];
+    }
+
+    # Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+            $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
+        } else {
+            $title = __( 'Nationalities', 'person-taxonomy' );
+            $p_count = 75;
+        }
+
+        # Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of nationalities to show:', 'person-taxonomy' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
+	</p>
+        <?php
+    }
+
+    # Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['p_count'] = $new_instance['p_count'];
+
+        return $instance;
+    }
+}
+
 # Register and load the widget
 function wpb_load_widget() {
     register_widget( 'popular_persons_in_category_widget' );
+    register_widget( 'popular_nationalities_in_category_widget' );
 }
 
 add_action( 'widgets_init', 'wpb_load_widget' );
