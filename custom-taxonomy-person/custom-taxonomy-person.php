@@ -145,6 +145,12 @@ function add_new_meta_field() {
   </div>
 
   <div class="form-field">
+    <label for="term_meta[nationality]"><?php _e( 'Nationality', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[nationality]" id="term_meta[nationaly]" value="">
+    <p class="description"><?php _e( 'Enter the nationality of the person (only the ISO codes).', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[birthdate]"><?php _e( 'Birthdate', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="">
     <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
@@ -281,6 +287,14 @@ function edit_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[gender]" id="term_meta[gender]" value="<?php echo isset( $term_meta['gender'] ) ? esc_attr( $term_meta['gender'] ) : '0'; ?>">
         <p class="description"><?php _e( 'Enter the gender of the person, 0 for male 1 for female.', $PERSON_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[nationality]"><?php _e( 'Nationality', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[nationality]" id="term_meta[nationality]" value="<?php echo isset( $term_meta['nationality'] ) ? esc_attr( $term_meta['nationality'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the nationality of the person (only the ISO codes).', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
