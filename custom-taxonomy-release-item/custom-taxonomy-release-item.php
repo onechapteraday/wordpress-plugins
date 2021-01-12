@@ -494,7 +494,7 @@ function display_literary_season( $atts, $content=null ){
             echo ( !empty( $post_link ) ? '</a> ' : ' ' );
 
             if( !empty( $author_displayed ) ){
-                if( preg_match( '/^[aieéouyAIEÉOUY].*/', $author_displayed ) ){
+                if( preg_match( '/^[aieéouAIEÉOU].*/', $author_displayed ) || preg_match( '/^Y[bcdfghjklmnpqrstvwxz].*/', $author_displayed ) ){
                     echo 'd’' . $author_displayed . '';
                 } else {
                     echo 'de ' . $author_displayed . '';
