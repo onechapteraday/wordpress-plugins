@@ -172,18 +172,19 @@ function display_all_challenge_videos( $atts, $content=null ){
         <?php
         if( $page == 1 ){
             ?>
-            <h2 class="first">Un appel à la sensibiliation de tous à la drépanocytose</h2>
-            <p>Jenny HIPPOCRATE FIXY, présidente de l’APIPD, explique ce qu’est le challenge #brisonslesilence.</p>
+            <p class="red upper highlight center">Un appel à la sensibilisation de tous</p>
+            <p>Jenny HIPPOCRATE FIXY, présidente de l'<b>A</b>ssociation <b>P</b>our l'<b>I</b>nformation et la <b>P</b>révention de la <b>D</b>répanocytose, l’<strong>APIPD</strong>, explique ce qu’est le challenge <span class="black">#brisonslesilence</span>.</p>
             <br />
             <div class="fb-video" data-href="https://www.facebook.com/video.php?v=269573344187401"  data-width="600" data-allowfullscreen="true"></div>
+            <br />
             <br />
             <?php
         }
         ?>
-        <h2>Un soutien massif</h2>
-        <p>#CHALLENGE | Aidez l’APIPD à sortir la drépanocytose du silence en participant au 📣 𝐂𝐇𝐀𝐋𝐋𝐄𝐍𝐆𝐄 𝐁𝐑𝐈𝐒𝐎𝐍𝐒 𝐋𝐄 𝐒𝐈𝐋𝐄𝐍𝐂𝐄 📣</p>
-        <p>🎥 Envoyez vos vidéos (d’une durée maximale de 60 secondes) par mail à <a href="mailto:apipd@free.fr">apipd@free.fr</a></p>
-        <p>N'oubliez pas le hashtag #brisonslesilence.</p>
+        <p class="highlight upper red center">Un soutien massif</p>
+        <p>#CHALLENGE | Aidez l’<strong>APIPD</strong> à sortir la drépanocytose du silence en participant au CHALLENGE «&nbsp;BRISONS LE SILENCE&nbsp;».</p>
+        <p>🎥 Envoyez vos vidéos (d’une durée maximale de 60 secondes) par e-mail à <a href="mailto:apipd@free.fr">apipd@free.fr</a></p>
+        <p>N’oubliez pas le hashtag <span class="black">#brisonslesilence</span>.</p>
         <p class="center">* * *</p>
         <p>Découvrez ci-après les vidéos du challenge.</p>
         <br />
@@ -195,7 +196,6 @@ function display_all_challenge_videos( $atts, $content=null ){
             <div class="fb-video" data-href="https://www.facebook.com/video.php?v=<?php echo $video_id; ?>"  data-width="600" data-allowfullscreen="true"></div>
             <br />
             &nbsp;
-            <br />
             <?php
         }
 
