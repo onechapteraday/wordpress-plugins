@@ -174,6 +174,11 @@ function add_new_release_item_meta_field(){
     <p class="description"><?php _e( 'Enter the book thumbnail if exists.', $RELEASE_ITEM_TEXTDOMAIN ); ?></p>
   </div>
   <div class="form-field">
+    <label for="term_meta[release_item_excerpt]"><?php _e( 'Excerpt', $RELEASE_ITEM_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[release_item_excerpt]" id="term_meta[release_item_excerpt]" value="">
+    <p class="description"><?php _e( 'Enter the book excerpt if exists.', $RELEASE_ITEM_TEXTDOMAIN ); ?></p>
+  </div>
+  <div class="form-field">
     <label for="term_meta[release_item_post_link]"><?php _e( 'Post linked', $RELEASE_ITEM_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[release_item_post_link]" id="term_meta[release_item_post_link]" value="">
     <p class="description"><?php _e( 'Enter the book post link if exists.', $RELEASE_ITEM_TEXTDOMAIN ); ?></p>
@@ -298,6 +303,13 @@ function edit_release_item_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[release_item_thumbnail]" id="term_meta[release_item_thumbnail]" value="<?php echo esc_attr( $term_meta['release_item_thumbnail'] ) ? esc_attr( $term_meta['release_item_thumbnail'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the book thumbnail if exists.', $RELEASE_ITEM_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[release_item_excerpt]"><?php _e( 'Excerpt', $RELEASE_ITEM_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[release_item_excerpt]" id="term_meta[release_item_excerpt]" value="<?php echo isset( $term_meta['release_item_excerpt'] ) ? esc_attr( $term_meta['release_item_excerpt'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the book excerpt if exists.', $RELEASE_ITEM_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <tr class="form-field">
@@ -456,6 +468,7 @@ function display_literary_season( $atts, $content=null ){
         $price          = $item_options['release_item_price'];
         $post_link      = $item_options['release_item_post_link'];
         $thumbnail      = $item_options['release_item_thumbnail'];
+        $book_excerpt   = ( isset( $item_options['release_item_excerpt'] ) ) ? $item_options['release_item_excerpt'] : '';
         $description    = $item->description;
 
         # Find authors
@@ -482,23 +495,39 @@ function display_literary_season( $atts, $content=null ){
                     $author_displayed .= ' &sdot; ';
                 }
 
-                $author_displayed .= $author->name;
+                $author_displayed .= str_replace( ' ', '&nbsp;', str_replace( '-', '-&#8288;', $author->name ) );
             }
         }
 
         ?>
-        <h3>
+        <div class="book-release-item">
+
+        <h3 class="book-release-item-title">
+            <span class="book-infos">
             <?php
-            echo ( !empty( $post_link ) ? '<a href="'. $post_link .'">' : '' );
             echo '<cite>' . $title . '</cite>';
-            echo ( !empty( $post_link ) ? '</a> ' : ' ' );
 
             if( !empty( $author_displayed ) ){
                 if( preg_match( '/^[aieéouAIEÉOU].*/', $author_displayed ) || preg_match( '/^Y[bcdfghjklmnpqrstvwxz].*/', $author_displayed ) ){
-                    echo 'd’' . $author_displayed . '';
+                    echo ' d’' . $author_displayed . '';
                 } else {
-                    echo 'de ' . $author_displayed . '';
+                    echo ' de ' . $author_displayed . '';
                 }
+            }
+            ?>
+            </span>
+            <?php
+            if( !empty( $book_excerpt )){
+                ?>
+                <span class="book-excerpt">[<a href="<?php echo $book_excerpt; ?>" target="_blank" rel="noopener nofollow">extrait</a>]</span>
+                <?php
+            }
+            ?>
+            <?php
+            if( !empty( $post_link )){
+                ?>
+                <span class="book-review">[<a href="<?php echo $post_link; ?>">chronique</a>]</span>
+                <?php
             }
             ?>
         </h3>
@@ -507,7 +536,7 @@ function display_literary_season( $atts, $content=null ){
         # Display thumbnail
 
         ?>
-        <div class="literary-season-book-card">
+        <div class="book-release-item-card">
             <figure>
             <?php
                 if( !empty( $thumbnail ) ){
@@ -833,10 +862,14 @@ function display_literary_season( $atts, $content=null ){
             <?php
         }
 
+        ?>
+        </div> <!-- .book-release-item -->
+        <?php
+
     }
 
     ?>
-    </div>
+    </div> <!-- .literary-season -->
     <?php
 
     return ob_get_clean();

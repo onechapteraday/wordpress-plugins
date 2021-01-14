@@ -7,24 +7,51 @@ article .entry-content .literary-season a.logo_partner span {
     font-size: 9.5px;
 }
 
-article .entry-content .literary-season .literary-season-book-card figure img {
+article .entry-content h3.book-release-item-title {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 1.35;
+    margin-top: 2.4347826087em;
+    margin-bottom: 1.2173913043em;
+}
+
+article .entry-content h3.book-release-item-title span.book-infos {
+    margin-right: 3px;
+}
+
+article .entry-content h3.book-release-item-title span.book-infos a {
+    color: #1a1a1a;
+    box-shadow: none;
+}
+
+article .entry-content h3.book-release-item-title span.book-review,
+article .entry-content h3.book-release-item-title span.book-excerpt {
+    font-size: 80%;
+}
+
+article .entry-content h3.book-release-item-title span.book-review a,
+article .entry-content h3.book-release-item-title span.book-excerpt a {
+    box-shadow: none;
+}
+
+article .entry-content .literary-season .book-release-item-card figure img {
     width: 100%;
 }
 
-article .entry-content .literary-season .literary-season-book-card table {
+article .entry-content .literary-season .book-release-item-card table {
     width: 100%;
 }
 
-article .entry-content .literary-season .literary-season-book-card table tr {
+article .entry-content .literary-season .book-release-item-card table tr {
     width: 100%;
 }
 
-article .entry-content .literary-season .literary-season-book-card table td:first-child {
+article .entry-content .literary-season .book-release-item-card table td:first-child {
     width: 45%;
     font-weight: bold;
 }
 
-article .entry-content .literary-season .literary-season-book-card table td:first-child + td {
+article .entry-content .literary-season .book-release-item-card table td:first-child + td {
     padding-left: 0;
     padding-left: 0;
 }
@@ -50,26 +77,26 @@ article .entry-content .literary-season .publisher-description p {
         font-size: 1.5rem;
     }
 
-    article .entry-content .literary-season .literary-season-book-card figure,
-    article .entry-content .literary-season .literary-season-book-card div.book-card {
+    article .entry-content .literary-season .book-release-item-card figure,
+    article .entry-content .literary-season .book-release-item-card div.book-card {
         display: inline-block;
         *display: inline;
         zoom: 1;
         vertical-align: top;
     }
 
-    article .entry-content .literary-season .literary-season-book-card figure {
+    article .entry-content .literary-season .book-release-item-card figure {
         width: 250px;
     }
 
-    article .entry-content .literary-season .literary-season-book-card div.book-card {
+    article .entry-content .literary-season .book-release-item-card div.book-card {
         width: calc(100% - 250px);
         padding: 0 0 0 25px;
         border-top: none;
         font-size: 12px;
     }
 
-    article .entry-content .literary-season .literary-season-book-card table {
+    article .entry-content .literary-season .book-release-item-card table {
         max-width: none;
     }
 
