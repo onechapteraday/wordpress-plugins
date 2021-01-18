@@ -797,7 +797,7 @@ function display_literary_season( $atts, $content=null ){
 
                     if( !empty( $isbn13 ) || !empty( $asin ) ){
                        ?>
-                       <tr>
+                       <tr class="affiliate-links">
                            <td>
                                <?php
                                if( $asin && $isbn13 ){

@@ -102,3 +102,56 @@ article .entry-content .literary-season .publisher-description p {
         font-size: 14px;
     }
 }
+
+
+/**
+ * Print
+ */
+
+@media print {
+    .entry-content h2.footnote_container_prepare,
+    article .entry-content .literary-season .book-release-item {
+        page-break-before: always;
+    }
+
+    article .entry-content h3.book-release-item-title span.book-review,
+    article .entry-content h3.book-release-item-title span.book-excerpt {
+        display: block;
+        margin-top: 5px;
+    }
+
+    article .entry-content h3.book-release-item-title span.book-review  a:link:after,
+    article .entry-content h3.book-release-item-title span.book-excerpt a:link:after,
+    article .entry-content h3.book-release-item-title span.book-review  a:visited:after,
+    article .entry-content h3.book-release-item-title span.book-excerpt a:visited:after {
+        content: "\00a0: " attr(href);
+    }
+
+    article .entry-content .literary-season .book-release-item-card figure,
+    article .entry-content .literary-season .book-release-item-card div.book-card {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+    }
+
+    article .entry-content .literary-season .book-release-item-card figure a:after {
+        display: none;
+    }
+
+    article .entry-content .literary-season .book-release-item-card figure img {
+        width: 225px;
+    }
+
+    article .entry-content .literary-season .book-release-item-card div.book-card {
+        width: calc(100% - 225px);
+        padding: 0 0 0 25px;
+        border-top: none;
+        margin-top: -20px;
+        font-size: 12px;
+    }
+
+    article .entry-content .literary-season .book-release-item-card table tr.affiliate-links {
+        display: none;
+    }
+}
