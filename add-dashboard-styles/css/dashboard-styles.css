@@ -8,6 +8,18 @@
     font-size: 12px;
 }
 
+.jetpack_page_stats .wrap > h2 {
+    text-transform: lowercase;
+}
+
+.jetpack_page_stats .wrap > h2:first-letter {
+    text-transform: uppercase;
+}
+
+.jetpack_page_stats .wrap > h2 a {
+    text-transform: capitalize;
+}
+
 .jetpack_page_stats .wrap .header h2 {
     font-size: 20px;
 }
@@ -15,6 +27,16 @@
 .jetpack_page_stats .gotonewdash .button-secondary {
     line-height: 26px;
     vertical-align: middle;
+}
+
+#statchart-box #stats-nuggets ul li h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+}
+
+#statchart-box #stats-nuggets ul li h3:first-letter {
+   text-transform: uppercase;
 }
 
 @media screen and (max-width: 782px) {
@@ -63,8 +85,13 @@
         font-size: 16px;
     }
 
-    #statchart-box #stats-nuggets ul li#bestever h3 {
+    #statchart-box #stats-nuggets ul li h3 {
+        font-size: 12px;
         padding: 6px 0 7px !important;
+    }
+
+    #statchart-box #stats-nuggets li em {
+        font-size: 10px;
     }
 
     #statchart-box #stats-nuggets ul li#bestever + li {
@@ -94,5 +121,12 @@
         /* remove extra white space */
         margin-bottom: -180px;
         margin-right: -33.333333333%;
+    }
+
+    /* Jetpack Stats by day */
+    .jetpack_page_stats #jp-stats-wrap .stats-daily .statsdiv {
+        width: 100%;
+        float: none;
+        margin-right: 0;
     }
 }
