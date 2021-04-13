@@ -499,6 +499,21 @@ function display_literary_season( $atts, $content=null ){
             }
         }
 
+        # Display translators
+
+        if( taxonomy_exists( 'person' ) ){
+            $transl      = array();
+            $translators = explode( ',', $translators );
+
+            foreach( $translators as $person ){
+              $person_obj = get_term_by( 'slug', $person, 'person' );
+
+              if( $person_obj ){
+                array_push( $transl, $person_obj );
+              }
+            }
+        }
+
         ?>
         <div class="book-release-item">
 
@@ -566,7 +581,7 @@ function display_literary_season( $atts, $content=null ){
                        <?php
                     }
 
-                    if( !empty( $title_original ) && ( $title != $title_original ) ){
+                    if( !empty( $title_original ) && ( ( $title != $title_original ) || ( count( $transl ) > 0 ) ) ){
                        ?>
                        <tr>
                            <td><?php echo _e( 'Original title', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
@@ -632,21 +647,6 @@ function display_literary_season( $atts, $content=null ){
                             </td>
                         </tr>
                         <?php
-                    }
-
-                    # Display translators
-
-                    if( taxonomy_exists( 'person' ) ){
-                        $transl      = array();
-                        $translators = explode( ',', $translators );
-
-                        foreach( $translators as $person ){
-                          $person_obj = get_term_by( 'slug', $person, 'person' );
-
-                          if( $person_obj ){
-                            array_push( $transl, $person_obj );
-                          }
-                        }
                     }
 
                     # If at least one translator
