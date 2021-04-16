@@ -799,12 +799,12 @@ function display_literary_season( $atts, $content=null ){
                        <?php
                     }
 
-                    if( !empty( $isbn13 ) || !empty( $asin ) ){
+                    if( !empty( $isbn13 ) || !empty( $asin ) || !empty( $isbn10 ) ){
                        ?>
                        <tr class="affiliate-links">
                            <td>
                                <?php
-                               if( $asin && $isbn13 ){
+                               if( ( $asin || $isbn10 ) && $isbn13 ){
                                    ?>
 			           <b><?php echo _x( 'Affiliate links', 'book metadata affiliate links', $RELEASE_ITEM_TEXTDOMAIN ); ?></b>
                                    <?php
@@ -827,9 +827,10 @@ function display_literary_season( $atts, $content=null ){
                                }
                                ?>
                                <?php
-                               if( !empty( $asin ) ){
+                               if( !empty( $asin ) || !empty( $isbn10 ) ){
+                                   $amz = ( $isbn10 ? $isbn10 : $asin );
                                    ?>
-			           <a href="https://www.amazon.fr/dp/<?php echo $asin; ?>/?tag=onchada-21" target="_blank" rel="nofollow" class="logo_partner logo_amazon">
+			           <a href="https://www.amazon.fr/dp/<?php echo $amz; ?>/?tag=onchada-21" target="_blank" rel="nofollow" class="logo_partner logo_amazon">
 			                <img src="https://onechapteraday.fr/wp-content/plugins/custom-post-type-book/images/logo_amazon_buy.png" alt="Amazon" />
                                         <span><?php echo _x( 'Buy on Amazon', 'book metadata Amazon affiliate message', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
 			           </a>
