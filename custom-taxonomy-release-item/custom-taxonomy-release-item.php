@@ -520,17 +520,21 @@ function display_literary_season( $atts, $content=null ){
         <h3 class="book-release-item-title">
             <span class="book-infos">
             <?php
-            echo '<cite>' . $title . '</cite>';
+            echo '<cite class="book-release-item-title-read">' . $title . '</cite>';
 
             if( !empty( $author_displayed ) ){
                 if( preg_match( '/^[aieéouAIEÉOU].*/', $author_displayed ) || preg_match( '/^Y[bcdfghjklmnpqrstvwxz].*/', $author_displayed ) ){
-                    echo ' d’' . $author_displayed . '';
+                    echo '<span class="book-release-item-pronoun"> d’</span>';
                 } else {
-                    echo ' de ' . $author_displayed . '';
+                    echo '<span class="book-release-item-pronoun"> de </span>';
                 }
             }
+
+            echo '<span class="book-release-item-author">' . $author_displayed . '</span>';
             ?>
             </span>
+        </h3>
+        <div class="book-release-item-excerpts">
             <?php
             if( !empty( $book_excerpt )){
                 ?>
@@ -545,7 +549,7 @@ function display_literary_season( $atts, $content=null ){
                 <?php
             }
             ?>
-        </h3>
+        </div>
         <?php
 
         # Display thumbnail
@@ -750,15 +754,6 @@ function display_literary_season( $atts, $content=null ){
 
                     # Display book data
 
-                    if( !empty( $release_date ) ){
-                       ?>
-                       <tr>
-                           <td><?php echo _e( 'Release date', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
-                           <td><?php echo date_i18n( 'j F Y', strtotime( $release_date ) ); ?></td>
-                       </tr>
-                       <?php
-                    }
-
                     if( !empty( $isbn13 ) ){
                        ?>
                        <tr>
@@ -773,6 +768,15 @@ function display_literary_season( $atts, $content=null ){
                        <tr>
                            <td><?php echo _e( 'ISBN10', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td><?php echo $isbn10; ?></td>
+                       </tr>
+                       <?php
+                    }
+
+                    if( !empty( $release_date ) ){
+                       ?>
+                       <tr>
+                           <td><?php echo _e( 'Release date', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
+                           <td><?php echo date_i18n( 'j F Y', strtotime( $release_date ) ); ?></td>
                        </tr>
                        <?php
                     }
@@ -849,7 +853,7 @@ function display_literary_season( $atts, $content=null ){
 
             ?>
             <div class="publisher-description">
-                <span><?php echo _e( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?></span>
+                <span><?php echo _e( 'Publisher description', $RELEASE_ITEM_TEXTDOMAIN ); ?>&nbsp;:</span>
                 <div>
                     <?php
                     $description = str_replace("\n\r", "</p>\n<p>", '<p>'.$description.'</p>');

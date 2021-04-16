@@ -8,12 +8,13 @@ article .entry-content .literary-season a.logo_partner span {
 }
 
 article .entry-content h3.book-release-item-title {
-    line-height: 1.35;
+    line-height: 1.55;
     margin-top: 2.4347826087em;
-    margin-bottom: 1.2173913043em;
+    margin-bottom: 0;
 }
 
 article .entry-content h3.book-release-item-title span.book-infos {
+    display: block;
     margin-right: 3px;
 }
 
@@ -22,13 +23,28 @@ article .entry-content h3.book-release-item-title span.book-infos a {
     box-shadow: none;
 }
 
-article .entry-content h3.book-release-item-title span.book-review,
-article .entry-content h3.book-release-item-title span.book-excerpt {
-    font-size: 70%;
+article .entry-content h3.book-release-item-title span.book-release-item-pronoun {
+    display: none;
 }
 
-article .entry-content h3.book-release-item-title span.book-review a,
-article .entry-content h3.book-release-item-title span.book-excerpt a {
+article .entry-content h3.book-release-item-title span.book-release-item-title-read,
+article .entry-content h3.book-release-item-title span.book-release-item-author {
+    display: block;
+}
+
+article .entry-content h3.book-release-item-title span.book-release-item-author {
+    font-size: 18px;
+    font-size: 81.818%;
+    color: #5a5a5a;
+}
+
+article .entry-content div.book-release-item-excerpts {
+    margin: 2px 0 20px;
+    font-weight: bold;
+}
+
+article .entry-content div.book-release-item-excerpts span.book-review a,
+article .entry-content div.book-release-item-excerpts span.book-excerpt a {
     box-shadow: none;
 }
 
@@ -99,6 +115,9 @@ article .entry-content .literary-season .publisher-description p {
     }
 
     article .entry-content .literary-season .publisher-description {
+        font-size: 14px;
+    }
+    article .entry-content div.book-release-item-excerpts {
         font-size: 14px;
     }
 }
