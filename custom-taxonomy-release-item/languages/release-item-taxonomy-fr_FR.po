@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-13 23:20-0500\n"
-"PO-Revision-Date: 2021-01-13 23:22-0500\n"
+"PO-Revision-Date: 2021-04-21 18:27-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -385,7 +385,7 @@ msgstr "Acheter sur Amazon"
 #: custom-taxonomy-release-item.php:852
 #: custom-taxonomy-release-item-old.php:823
 msgid "Publisher description"
-msgstr "Description de l'éditeur"
+msgstr "Description de l’éditeur"
 
 #~ msgctxt "book metadata leslibraires.ca affiliate message"
 #~ msgid "Buy on Les Libraires"
