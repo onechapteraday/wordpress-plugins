@@ -129,7 +129,8 @@ article .entry-content .literary-season .publisher-description p {
 
 @media print {
     article.category-book-releases .entry-content h2.footnote_container_prepare,
-    article .entry-content .literary-season .book-release-item {
+    article .entry-content .literary-season .book-release-item,
+    article .entry-content .literary-season + h2 {
         page-break-before: always;
     }
 

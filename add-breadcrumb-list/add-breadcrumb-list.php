@@ -93,7 +93,16 @@ function create_breadcrumb_single( $atts, $content=null ) {
             <meta itemprop="position" content="2" />
           </li>
           <li>
-              <span><?php echo strip_tags( get_the_title() ); ?></span>
+              <?php
+              $title = strip_tags( get_the_title() );
+
+              if( substr( $cat_id->slug, 0, 7 ) === 'rentree'  ){
+                  $pos = strpos( $title, '&#8211;' ) + 7;
+                  $title = substr( $title, $pos );
+              }
+
+              ?>
+              <span><?php echo $title; ?></span>
           </li>
         </ol>
         <?php
@@ -144,7 +153,8 @@ add_shortcode( 'wp_breadcrumb_image', 'create_breadcrumb_image' );
 # Create breadcrumb for category
 
 function create_breadcrumb_category( $atts, $content=null ) {
-    $cat_id = $atts['id'];
+    $cat_id     = $atts['id'];
+    $cat_parent = get_category( $cat_id )->parent;
 
     if( isset( $cat_id ) ){
         ?>
@@ -160,11 +170,25 @@ function create_breadcrumb_category( $atts, $content=null ) {
             </a>
             <meta itemprop="position" content="1" />
           </li>
+          <?php
+            if( $cat_parent > 0 ){
+              $parent      = get_category( $cat_parent, 'category' );
+              $parent_link = get_category_link( $cat_parent );
+              ?>
+              <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="<?php echo $parent_link; ?>">
+                  <span itemprop="name"><?php echo $parent->name; ?></span>
+                </a>
+                <meta itemprop="position" content="2" />
+              </li>
+              <?php
+            }
+          ?>
           <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo get_category_link( $cat_id ); ?>">
               <span itemprop="name"><?php echo get_category( $cat_id )->name; ?></span>
             </a>
-            <meta itemprop="position" content="2" />
+            <meta itemprop="position" content="<?php if( $cat_parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
           </li>
         </ol>
         <?php
