@@ -495,7 +495,7 @@ function display_literary_season( $atts, $content=null ){
                     $author_displayed .= ' &sdot; ';
                 }
 
-                $author_displayed .= str_replace( ' ', '&nbsp;', str_replace( '-', '-&#8288;', $author->name ) );
+                $author_displayed .= str_replace('\'', '’', str_replace( ' ', '&nbsp;', str_replace( '-', '-&#8288;', $author->name ) ) );
             }
         }
 
@@ -643,7 +643,7 @@ function display_literary_season( $atts, $content=null ){
                             foreach( $auth as $author ){
                                 if( $count > 0 ) echo ' &sdot; ';
 
-                                echo '<a href="' . get_term_link( $author->term_id ) . '">' . $author->name . '</a>';
+                                echo '<a href="' . get_term_link( $author->term_id ) . '">' . str_replace( '\'', '’', $author->name ) . '</a>';
                                 $count++;
                             }
 
