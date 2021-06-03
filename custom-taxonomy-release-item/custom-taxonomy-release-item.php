@@ -402,22 +402,45 @@ function display_literary_season( $atts, $content=null ){
 
     $release_name      = $atts['release_name'];
     $release_publisher = $atts['publisher'];
+    $is_collection     = false;
 
     # Check publisher and children
 
     $release_publisher_obj          = get_term_by( 'slug', $release_publisher, 'publisher' );
+
     $release_publisher_children     = get_term_children( $release_publisher_obj->term_id, 'publisher' );
     $release_publisher_obj_count    = 0;
 
     $release_publisher_slugs = array();
-    array_push( $release_publisher_slugs, $release_publisher );
 
-    foreach( $release_publisher_children as $child ){
-        $term = get_term_by( 'id', $child, 'publisher' );
-        array_push( $release_publisher_slugs, $term->slug );
+    ## Check if collection
 
-        if( $term->count > 0 ){
-            $release_publisher_obj_count = 1;
+    if( $release_publisher_obj->parent > 0 ){
+        $release_collection_obj = $release_publisher_obj;
+        $release_publisher_obj  = get_term_by( 'id', $release_collection_obj->parent, 'publisher' );
+
+        $is_collection = true;
+    }
+
+    ## If collection, just add collection slug
+
+    if( $is_collection ){
+
+        array_push( $release_publisher_slugs, $release_collection_obj->slug );
+
+    ## If not, add publisher and all collections
+
+    } else {
+
+        array_push( $release_publisher_slugs, $release_publisher );
+
+        foreach( $release_publisher_children as $child ){
+            $term = get_term_by( 'id', $child, 'publisher' );
+            array_push( $release_publisher_slugs, $term->slug );
+
+            if( $term->count > 0 ){
+                $release_publisher_obj_count = 1;
+            }
         }
     }
 
@@ -717,7 +740,7 @@ function display_literary_season( $atts, $content=null ){
                            <td><?php echo _e( 'Publisher', $RELEASE_ITEM_TEXTDOMAIN ); ?></td>
                            <td>
                                <?php
-                               if( $release_publisher_obj->count > 0 || $release_publisher_obj_count > 0 ){
+                               if( $release_publisher_obj->count > 0 || $release_publisher_obj_count > 0 || $is_collection ){
                                    ?>
                                    <a href="<?php echo $release_publisher_obj_link; ?>"><?php echo $release_publisher_obj->name; ?></a>
                                    <?php
