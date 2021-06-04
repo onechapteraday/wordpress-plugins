@@ -134,16 +134,19 @@ article .entry-content .literary-season .publisher-description p {
         page-break-before: always;
     }
 
-    article .entry-content h3.book-release-item-title span.book-review,
-    article .entry-content h3.book-release-item-title span.book-excerpt {
+    article .entry-content .book-release-item-excerpts span.book-review,
+    article .entry-content .book-release-item-excerpts span.book-excerpt {
         display: block;
+    }
+
+    article .entry-content .book-release-item-excerpts span.book-excerpt {
         margin-top: 5px;
     }
 
-    article .entry-content h3.book-release-item-title span.book-review  a:link:after,
-    article .entry-content h3.book-release-item-title span.book-excerpt a:link:after,
-    article .entry-content h3.book-release-item-title span.book-review  a:visited:after,
-    article .entry-content h3.book-release-item-title span.book-excerpt a:visited:after {
+    article .entry-content .book-release-item-excerpts span.book-review  a:link:after,
+    article .entry-content .book-release-item-excerpts span.book-excerpt a:link:after,
+    article .entry-content .book-release-item-excerpts span.book-review  a:visited:after,
+    article .entry-content .book-release-item-excerpts span.book-excerpt a:visited:after {
         content: "\00a0: " attr(href);
     }
 
