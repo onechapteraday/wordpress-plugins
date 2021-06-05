@@ -163,6 +163,12 @@ function add_new_meta_field() {
   </div>
 
   <div class="form-field">
+    <label for="term_meta[role]"><?php _e( 'Role', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[role]" id="term_meta[role]" value="">
+    <p class="description"><?php _e( 'Enter the roles of the person (only codes).', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[website]" id="term_meta[website]" value="">
     <p class="description"><?php _e( 'Enter the website of the person (without protocol), if exists.', $PERSON_TEXTDOMAIN ); ?></p>
@@ -311,6 +317,14 @@ function edit_meta_field ($term) {
     <td>
     	<input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="<?php echo esc_attr( $term_meta['deathdate'] ) ? esc_attr( $term_meta['deathdate'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[role]"><?php _e( 'Role', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[role]" id="term_meta[role]" value="<?php echo isset( $term_meta['role'] ) ? esc_attr( $term_meta['role'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the roles of the person (only codes).', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
