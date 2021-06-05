@@ -427,6 +427,27 @@ add_action( 'create_person', 'save_taxonomy_custom_meta', 10, 2 );
 
 
 /**
+ * Sort function for persons
+ *
+ */
+
+function widget_sort_person_by_name( $a, $b ){
+    $a_op = get_option( "taxonomy_$a->term_id" );
+    $b_op = get_option( "taxonomy_$b->term_id" );
+
+    $asort = ( $a_op['sortname'] ) ? $a_op['sortname'] : $a->name;
+    $bsort = ( $b_op['sortname'] ) ? $b_op['sortname'] : $b->name;
+
+    $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
+
+    $at = strtolower( strtr( $asort, $translit ) );
+    $bt = strtolower( strtr( $bsort, $translit ) );
+
+    return strcoll( $at, $bt );
+}
+
+
+/**
  * Create widget to retrieve popular persons in specific category
  *
  */
@@ -527,21 +548,6 @@ class popular_persons_in_category_widget extends WP_Widget {
         $persons_array = get_terms ( 'person', $tag_args );
 
         if( sizeof( $persons_array ) ){
-            function widget_sort_person_by_name( $a, $b ){
-                $a_op = get_option( "taxonomy_$a->term_id" );
-                $b_op = get_option( "taxonomy_$b->term_id" );
-
-                $asort = ( $a_op['sortname'] ) ? $a_op['sortname'] : $a->name;
-                $bsort = ( $b_op['sortname'] ) ? $b_op['sortname'] : $b->name;
-
-                $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
-
-                $at = strtolower( strtr( $asort, $translit ) );
-                $bt = strtolower( strtr( $bsort, $translit ) );
-
-                return strcoll( $at, $bt );
-            }
-
             usort( $persons_array, 'widget_sort_person_by_name' );
 
             echo '<ul class="wp-tag-cloud">';
@@ -595,9 +601,139 @@ class popular_persons_in_category_widget extends WP_Widget {
     }
 }
 
+
+/**
+ * Create widget to retrieve popular persons with specific role
+ *
+ */
+
+class popular_persons_with_role_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct(
+            # Base ID of your widget
+            'popular_persons_with_role_widget',
+
+            # Widget name will appear in UI
+            __('Popular Persons with Role Widget', 'person-taxonomy'),
+
+            # Widget description
+            array( 'description' => __( 'This widget will show all the popular persons with one specific role.', 'person-taxonomy' ), )
+        );
+    }
+
+    # Creating widget front-end
+    public function widget( $args, $instance ) {
+        $title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : __( 'Persons', 'person-taxonomy' );
+        $p_role = isset( $instance['p_role'] ) ? $instance['p_role'] : 'WRT';
+        $p_count = isset( $instance['p_count'] ) ? $instance['p_count'] : '';
+
+        # Before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+
+        # Here you can modify code
+
+        # Display only writers
+
+        $tag_args = array(
+                    'format'   => 'array',
+                    'taxonomy' => 'person',
+                    'orderby'  => 'count',
+                    'order'    => 'DESC',
+                    'echo'     => false,
+                );
+
+        echo '<div class="tagcloud">';
+
+        $persons_array = get_terms ( 'person', $tag_args );
+
+        if( sizeof( $persons_array ) ){
+            $writers_array = array();
+
+	    foreach ( $persons_array as $myperson ) {
+                $person_opt = get_option( "taxonomy_$myperson->term_id" );
+
+                if( isset( $person_opt['role'] ) ){
+                    $roles = explode( ';', $person_opt['role'] );
+
+                    if( in_array( $p_role, $roles ) ){
+                        array_push( $writers_array, $myperson );
+                    }
+
+                    if( sizeof( $writers_array ) == $p_count ){
+                        break;
+                    }
+                }
+	    }
+
+            usort( $writers_array, 'widget_sort_person_by_name' );
+
+            echo '<ul class="wp-tag-cloud">';
+
+	    foreach ( $writers_array as $myperson ) {
+                echo '<li><a href="' . get_term_link( $myperson->term_id ) . '" class="tag-cloud-link tag-link-' . $myperson->term_id . '">';
+                echo $myperson->name;
+                echo '</a></li>';
+	    }
+
+            echo '</ul>';
+	}
+
+        echo '</div>';
+
+        echo $args['after_widget'];
+    }
+
+    # Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+            $p_role = isset( $instance['p_role'] ) ? esc_attr( $instance['p_role'] ) : '';
+            $p_count = isset( $instance['p_count'] ) ? esc_attr( $instance['p_count'] ) : '';
+        } else {
+            $title = __( 'Persons', 'person-taxonomy' );
+            $p_role = 'WRT';
+            $p_count = 75;
+        }
+
+        # Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'p_role' ); ?>"><?php _e( 'Role of persons to show:', 'person-taxonomy' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'p_role' ); ?>" value="<?php echo esc_attr( $p_role ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_role' ); ?>" />
+	</p>
+
+	<p>
+	    <label for="<?php echo $this->get_field_id( 'p_count' ); ?>"><?php _e( 'Number of persons to show:', 'person-taxonomy' ); ?></label>
+	    <input type="text" name="<?php echo $this->get_field_name( 'p_count' ); ?>" value="<?php echo esc_attr( $p_count ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'p_count' ); ?>" />
+	</p>
+        <?php
+    }
+
+    # Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['p_role'] = $new_instance['p_role'];
+        $instance['p_count'] = $new_instance['p_count'];
+
+        return $instance;
+    }
+}
+
+
 # Register and load the widget
 function wpb_load_widget() {
     register_widget( 'popular_persons_in_category_widget' );
+    register_widget( 'popular_persons_with_role_widget' );
 }
 
 add_action( 'widgets_init', 'wpb_load_widget' );
