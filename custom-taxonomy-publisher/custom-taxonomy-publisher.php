@@ -580,8 +580,18 @@ class popular_collections_in_category_widget extends WP_Widget {
         if( sizeof( $collections_array ) ){
             function widget_sort_collection_by_name( $a, $b ){
                 $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
-                $at = strtolower( strtr( $a->name, $translit ) );
-                $bt = strtolower( strtr( $b->name, $translit ) );
+
+                $asort = $a->name;
+                $bsort = $b->name;
+
+                $a_op = get_option( "taxonomy_$a->term_id" );
+                $b_op = get_option( "taxonomy_$b->term_id" );
+
+                $asort = isset( $a_op['publisher_sortname'] ) ? $a_op['publisher_sortname'] : $asort;
+                $bsort = isset( $b_op['publisher_sortname'] ) ? $b_op['publisher_sortname'] : $bsort;
+
+                $at = strtolower( strtr( $asort, $translit ) );
+                $bt = strtolower( strtr( $bsort, $translit ) );
 
                 if( $at == $bt ){
                     $a_parent_name = get_term( $a->parent, 'publisher' )->name;
