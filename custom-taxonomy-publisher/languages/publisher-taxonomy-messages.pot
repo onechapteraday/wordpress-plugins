@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-04 16:34-0400\n"
+"POT-Creation-Date: 2021-06-22 17:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,151 +17,171 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: custom-taxonomy-publisher.php:47
+#: custom-taxonomy-publisher.php:47 custom-taxonomy-publisher-old.php:47
 msgctxt "taxonomy general name"
 msgid "Publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:48
+#: custom-taxonomy-publisher.php:48 custom-taxonomy-publisher-old.php:48
 msgctxt "taxonomy singular name"
 msgid "Publisher"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:49
+#: custom-taxonomy-publisher.php:49 custom-taxonomy-publisher-old.php:49
 msgid "Search Publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:50
+#: custom-taxonomy-publisher.php:50 custom-taxonomy-publisher-old.php:50
 msgid "Popular Publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:51
+#: custom-taxonomy-publisher.php:51 custom-taxonomy-publisher-old.php:51
 msgid "All Publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:54
+#: custom-taxonomy-publisher.php:54 custom-taxonomy-publisher-old.php:54
 msgid "See Publisher"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:55
+#: custom-taxonomy-publisher.php:55 custom-taxonomy-publisher-old.php:55
 msgid "Edit Publisher"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:56
+#: custom-taxonomy-publisher.php:56 custom-taxonomy-publisher-old.php:56
 msgid "Update Publisher"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:57
+#: custom-taxonomy-publisher.php:57 custom-taxonomy-publisher-old.php:57
 msgid "Add New Publisher"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:58
+#: custom-taxonomy-publisher.php:58 custom-taxonomy-publisher-old.php:58
 msgid "New Publisher Name"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:59
+#: custom-taxonomy-publisher.php:59 custom-taxonomy-publisher-old.php:59
 msgid "Separate publishers with commas"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:60
+#: custom-taxonomy-publisher.php:60 custom-taxonomy-publisher-old.php:60
 msgid "Add or remove publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:61
+#: custom-taxonomy-publisher.php:61 custom-taxonomy-publisher-old.php:61
 msgid "Choose from the most used publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:62
+#: custom-taxonomy-publisher.php:62 custom-taxonomy-publisher-old.php:62
 msgid "No publishers found."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:63
+#: custom-taxonomy-publisher.php:63 custom-taxonomy-publisher-old.php:63
 msgid "← Back to publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:64 custom-taxonomy-publisher.php:353
+#: custom-taxonomy-publisher.php:64 custom-taxonomy-publisher.php:451
+#: custom-taxonomy-publisher-old.php:64 custom-taxonomy-publisher-old.php:357
 msgid "Publishers"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:94 custom-taxonomy-publisher.php:147
+#: custom-taxonomy-publisher.php:94 custom-taxonomy-publisher.php:153
+msgid "Sort name"
+msgstr ""
+
+#: custom-taxonomy-publisher.php:96 custom-taxonomy-publisher.php:156
+msgid "Enter the name of the publisher as it should be sorted."
+msgstr ""
+
+#: custom-taxonomy-publisher.php:100 custom-taxonomy-publisher.php:161
+#: custom-taxonomy-publisher-old.php:94 custom-taxonomy-publisher-old.php:147
 msgid "Website link"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:96 custom-taxonomy-publisher.php:150
+#: custom-taxonomy-publisher.php:102 custom-taxonomy-publisher.php:164
+#: custom-taxonomy-publisher-old.php:96 custom-taxonomy-publisher-old.php:150
 msgid "Enter the website link of the publisher."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:100 custom-taxonomy-publisher.php:155
+#: custom-taxonomy-publisher.php:106 custom-taxonomy-publisher.php:169
+#: custom-taxonomy-publisher-old.php:100 custom-taxonomy-publisher-old.php:155
 msgid "Twitter"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:102 custom-taxonomy-publisher.php:158
+#: custom-taxonomy-publisher.php:108 custom-taxonomy-publisher.php:172
+#: custom-taxonomy-publisher-old.php:102 custom-taxonomy-publisher-old.php:158
 msgid ""
 "Enter the Twitter account name of the publisher, only the part after the "
 "base url."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:106 custom-taxonomy-publisher.php:163
+#: custom-taxonomy-publisher.php:112 custom-taxonomy-publisher.php:177
+#: custom-taxonomy-publisher-old.php:106 custom-taxonomy-publisher-old.php:163
 msgid "Facebook"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:108 custom-taxonomy-publisher.php:166
+#: custom-taxonomy-publisher.php:114 custom-taxonomy-publisher.php:180
+#: custom-taxonomy-publisher-old.php:108 custom-taxonomy-publisher-old.php:166
 msgid ""
 "Enter the Facebook account name of the publisher, only the part after the "
 "base url."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:112 custom-taxonomy-publisher.php:171
+#: custom-taxonomy-publisher.php:118 custom-taxonomy-publisher.php:185
+#: custom-taxonomy-publisher-old.php:112 custom-taxonomy-publisher-old.php:171
 msgid "Instagram"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:114 custom-taxonomy-publisher.php:174
+#: custom-taxonomy-publisher.php:120 custom-taxonomy-publisher.php:188
+#: custom-taxonomy-publisher-old.php:114 custom-taxonomy-publisher-old.php:174
 msgid ""
 "Enter the Instagram account name of the publisher, only the part after the "
 "base url."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:118 custom-taxonomy-publisher.php:179
+#: custom-taxonomy-publisher.php:124 custom-taxonomy-publisher.php:193
+#: custom-taxonomy-publisher-old.php:118 custom-taxonomy-publisher-old.php:179
 msgid "YouTube"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:120 custom-taxonomy-publisher.php:182
+#: custom-taxonomy-publisher.php:126 custom-taxonomy-publisher.php:196
+#: custom-taxonomy-publisher-old.php:120 custom-taxonomy-publisher-old.php:182
 msgid ""
 "Enter the YouTube account name of the publisher, only the part after the "
 "base url."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:233
+#: custom-taxonomy-publisher.php:262 custom-taxonomy-publisher-old.php:233
 msgid "Popular Publishers in Category Widget"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:236
+#: custom-taxonomy-publisher.php:265 custom-taxonomy-publisher-old.php:236
 msgid ""
 "This widget will show all the publishers in the specific category you choose."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:360 custom-taxonomy-publisher.php:550
+#: custom-taxonomy-publisher.php:458 custom-taxonomy-publisher.php:631
+#: custom-taxonomy-publisher-old.php:364 custom-taxonomy-publisher-old.php:537
 msgid "Title:"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:365
+#: custom-taxonomy-publisher.php:463 custom-taxonomy-publisher-old.php:369
 msgid "Number of publishers to show:"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:404
+#: custom-taxonomy-publisher.php:502 custom-taxonomy-publisher-old.php:408
 msgid "Popular Collections in Category Widget"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:407
+#: custom-taxonomy-publisher.php:505 custom-taxonomy-publisher-old.php:411
 msgid ""
 "This widget will show all the collections in the specific category you "
 "choose."
 msgstr ""
 
-#: custom-taxonomy-publisher.php:543
+#: custom-taxonomy-publisher.php:624 custom-taxonomy-publisher-old.php:530
 msgid "Collections"
 msgstr ""
 
-#: custom-taxonomy-publisher.php:555
+#: custom-taxonomy-publisher.php:636 custom-taxonomy-publisher-old.php:542
 msgid "Number of collections to show:"
 msgstr ""

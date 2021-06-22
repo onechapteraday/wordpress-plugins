@@ -91,6 +91,12 @@ function add_new_publisher_meta_field() {
   # This will add the custom meta fields to the 'Add new term' page
   ?>
   <div class="form-field">
+    <label for="term_meta[publisher_sortname]"><?php _e( 'Sort name', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_sortname]" id="term_meta[publisher_sortname]" value="">
+    <p class="description"><?php _e( 'Enter the name of the publisher as it should be sorted.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
+
+  <div class="form-field">
     <label for="term_meta[publisher_link]"><?php _e( 'Website link', $PUBLISHER_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[publisher_link]" id="term_meta[publisher_link]" value="">
     <p class="description"><?php _e( 'Enter the website link of the publisher.', $PUBLISHER_TEXTDOMAIN ); ?></p>
@@ -143,6 +149,14 @@ function edit_publisher_meta_field ($term) {
   $term_meta = get_option( "taxonomy_$t_id" );
 
   ?>
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_sortname]"><?php _e( 'Sort name', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_sortname]" id="term_meta[publisher_sortname]" value="<?php echo isset( $term_meta['publisher_sortname'] ) ? esc_attr( $term_meta['publisher_sortname'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the name of the publisher as it should be sorted.', $PUBLISHER_TEXTDOMAIN); ?></p>
+    </td>
+  </tr>
+
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[publisher_link]"><?php _e( 'Website link', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
     <td>
@@ -220,6 +234,21 @@ add_action( 'create_publisher', 'save_publisher_taxonomy_custom_meta', 10, 2 );
  * Create widget to retrieve popular publishers
  *
  */
+
+function widget_sort_publisher_by_name( $a, $b ){
+    $a_op = get_option( "taxonomy_$a->term_id" );
+    $b_op = get_option( "taxonomy_$b->term_id" );
+
+    $asort = isset( $a_op['publisher_sortname'] ) ? $a_op['publisher_sortname'] : $a->name;
+    $bsort = isset( $b_op['publisher_sortname'] ) ? $b_op['publisher_sortname'] : $b->name;
+
+    $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
+
+    $at = strtolower( strtr( $asort, $translit ) );
+    $bt = strtolower( strtr( $bsort, $translit ) );
+
+    return strcasecmp( $at, $bt );
+}
 
 class popular_publishers_in_category_widget extends WP_Widget {
     function __construct() {
@@ -392,14 +421,6 @@ class popular_publishers_in_category_widget extends WP_Widget {
             $publishers_array = get_terms ( 'publisher', $new_args );
 
             # Alphabetize publishers
-
-            function widget_sort_publisher_by_name( $a, $b ){
-                $translit = array('Á'=>'A','À'=>'A','Â'=>'A','Ä'=>'A','Ã'=>'A','Å'=>'A','Ç'=>'C','É'=>'E','È'=>'E','Ê'=>'E','Ë'=>'E','Í'=>'I','Ï'=>'I','Î'=>'I','Ì'=>'I','Ñ'=>'N','Ó'=>'O','Ò'=>'O','Ô'=>'O','Ö'=>'O','Õ'=>'O','Ú'=>'U','Ù'=>'U','Û'=>'U','Ü'=>'U','Ý'=>'Y','á'=>'a','à'=>'a','â'=>'a','ä'=>'a','ã'=>'a','å'=>'a','ç'=>'c','é'=>'e','è'=>'e','ê'=>'e','ë'=>'e','í'=>'i','ì'=>'i','î'=>'i','ï'=>'i','ñ'=>'n','ó'=>'o','ò'=>'o','ô'=>'o','ö'=>'o','õ'=>'o','ú'=>'u','ù'=>'u','û'=>'u','ü'=>'u','ý'=>'y','ÿ'=>'y');
-                $at = strtolower( strtr( $a->name, $translit ) );
-                $bt = strtolower( strtr( $b->name, $translit ) );
-
-                return strcasecmp( $at, $bt );
-            }
 
             usort( $publishers_array, 'widget_sort_publisher_by_name' );
 
