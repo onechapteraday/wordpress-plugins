@@ -70,7 +70,7 @@ article .entry-content .literary-season .book-release-item-card table td:first-c
     padding-left: 0;
 }
 
-article .entry-content .literary-season .publisher-description span {
+article .entry-content .literary-season .publisher-description > span {
     display: block;
     margin: 10px 0 15px;
     text-decoration: underline;
