@@ -71,7 +71,7 @@ function add_publisher_taxonomy() {
     'show_admin_column'     => true,
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'book/publisher', 'with_front' => 'true', 'hierarchical' => true ),
+    'rewrite'               => array( 'slug' => 'publisher', 'with_front' => 'true', 'hierarchical' => true ),
   );
 
   register_taxonomy ('publisher', 'book', $args);
