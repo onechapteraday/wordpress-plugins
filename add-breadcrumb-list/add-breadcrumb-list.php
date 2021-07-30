@@ -304,7 +304,7 @@ function create_breadcrumb_prize( $atts, $content=null ) {
         </a>
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a href="<?php echo get_bloginfo( 'url' ); ?>/literary-prizes" itemprop="item">
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/prizes" itemprop="item">
           <span itemprop="name">Prix littéraires</span>
         </a>
         <meta itemprop="position" content="1" />

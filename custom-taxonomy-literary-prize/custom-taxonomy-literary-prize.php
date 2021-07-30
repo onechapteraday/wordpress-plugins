@@ -70,7 +70,7 @@ function add_prize_taxonomy() {
     'show_admin_column'     => true,
     'update_count_callback' => '_update_post_term_count',
     'query_var'             => true,
-    'rewrite'               => array( 'slug' => 'book/literary-prize', 'with_front' => 'true', 'hierarchical' => true ),
+    'rewrite'               => array( 'slug' => 'prize', 'with_front' => 'true', 'hierarchical' => true ),
   );
 
   register_taxonomy ('prize', 'book', $args);
