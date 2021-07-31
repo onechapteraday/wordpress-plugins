@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-31 14:36-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-taxonomy-literary-prize-selection.php:46
+msgctxt "taxonomy general name"
+msgid "Selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:47
+msgctxt "taxonomy singular name"
+msgid "Selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:48
+msgid "Search Selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:49
+msgid "Popular Selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:50
+msgid "All Selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:53
+msgid "See Selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:54
+msgid "Edit Selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:55
+msgid "Update Selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:56
+msgid "Add New Selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:57
+msgid "New Selection Name"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:58
+msgid "Separate selections with commas"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:59
+msgid "Add or remove selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:60
+msgid "Choose from the most used selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:61
+msgid "No selections found."
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:62
+msgid "← Back to selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:63
+msgid "Selections"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:93
+#: custom-taxonomy-literary-prize-selection.php:134
+msgid "Prize related to selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:95
+#: custom-taxonomy-literary-prize-selection.php:137
+msgid "Enter the prize to which the selection is about."
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:99
+#: custom-taxonomy-literary-prize-selection.php:142
+msgid "Selection ordinal number"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:101
+#: custom-taxonomy-literary-prize-selection.php:145
+msgid "Enter the ordinal number of the selection."
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:105
+#: custom-taxonomy-literary-prize-selection.php:150
+msgid "Date of selection"
+msgstr ""
+
+#: custom-taxonomy-literary-prize-selection.php:107
+#: custom-taxonomy-literary-prize-selection.php:153
+msgid "Enter the date of selection."
+msgstr ""
