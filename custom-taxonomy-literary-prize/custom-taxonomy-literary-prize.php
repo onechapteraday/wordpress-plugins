@@ -94,24 +94,6 @@ function add_new_prize_meta_field() {
     <input type="text" name="term_meta[prize_link]" id="term_meta[prize_link]" value="">
     <p class="description"><?php _e( 'Enter the website link of the prize.', $PRIZE_TEXTDOMAIN ); ?></p>
   </div>
-
-  <div class="form-field">
-    <label for="term_meta[prize_1st_selection]"><?php _e( 'First selection', $PRIZE_TEXTDOMAIN ); ?></label>
-    <input type="text" name="term_meta[prize_1st_selection]" id="term_meta[prize_1st_selection]" value="">
-    <p class="description"><?php _e( 'Enter the slug of the prize\'s first selection.', $PRIZE_TEXTDOMAIN ); ?></p>
-  </div>
-
-  <div class="form-field">
-    <label for="term_meta[prize_2nd_selection]"><?php _e( 'Second selection', $PRIZE_TEXTDOMAIN ); ?></label>
-    <input type="text" name="term_meta[prize_2nd_selection]" id="term_meta[prize_2nd_selection]" value="">
-    <p class="description"><?php _e( 'Enter the slug of the prize\'s second selection.', $PRIZE_TEXTDOMAIN ); ?></p>
-  </div>
-
-  <div class="form-field">
-    <label for="term_meta[prize_3rd_selection]"><?php _e( 'Third selection', $PRIZE_TEXTDOMAIN ); ?></label>
-    <input type="text" name="term_meta[prize_3rd_selection]" id="term_meta[prize_3rd_selection]" value="">
-    <p class="description"><?php _e( 'Enter the slug of the prize\'s third selection.', $PRIZE_TEXTDOMAIN ); ?></p>
-  </div>
   <?php
 }
 
@@ -141,30 +123,6 @@ function edit_prize_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[prize_link]" id="term_meta[prize_link]" value="<?php echo esc_attr( $term_meta['prize_link'] ) ? esc_attr( $term_meta['prize_link'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the website link of the prize.', $PRIZE_TEXTDOMAIN); ?></p>
-    </td>
-  </tr>
-
-  <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[prize_1st_selection]"><?php _e( 'First selection', $PRIZE_TEXTDOMAIN ); ?></label></th>
-    <td>
-        <input type="text" name="term_meta[prize_1st_selection]" id="term_meta[prize_1st_selection]" value="<?php echo isset( $term_meta['prize_1st_selection'] ) ? esc_attr( $term_meta['prize_1st_selection'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the slug of the prize\'s first selection.', $PRIZE_TEXTDOMAIN); ?></p>
-    </td>
-  </tr>
-
-  <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[prize_2nd_selection]"><?php _e( 'Second selection', $PRIZE_TEXTDOMAIN ); ?></label></th>
-    <td>
-        <input type="text" name="term_meta[prize_2nd_selection]" id="term_meta[prize_2nd_selection]" value="<?php echo isset( $term_meta['prize_1st_selection'] ) ? esc_attr( $term_meta['prize_2nd_selection'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the slug of the prize\'s second selection.', $PRIZE_TEXTDOMAIN); ?></p>
-    </td>
-  </tr>
-
-  <tr class="form-field">
-    <th scope="row" valign="top"><label for="term_meta[prize_3rd_selection]"><?php _e( 'Third selection', $PRIZE_TEXTDOMAIN ); ?></label></th>
-    <td>
-        <input type="text" name="term_meta[prize_3rd_selection]" id="term_meta[prize_3rd_selection]" value="<?php echo isset( $term_meta['prize_1st_selection'] ) ? esc_attr( $term_meta['prize_3rd_selection'] ) : ''; ?>">
-        <p class="description"><?php _e( 'Enter the slug of the prize\'s third selection.', $PRIZE_TEXTDOMAIN); ?></p>
     </td>
   </tr>
   <?php
