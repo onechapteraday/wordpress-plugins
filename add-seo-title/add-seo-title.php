@@ -209,6 +209,13 @@ function seo_title_custom_title( $title ){
         return 'Livres ayant reçu le ' . $prize->name . ' - ' . get_bloginfo( 'name' );
     }
 
+    # Custom taxonomy literary prize selection
+    if( is_tax( 'selection' ) ){
+        $selection = get_queried_object();
+
+        return 'Livres de la ' . lcfirst( $selection->name ) . ' - ' . get_bloginfo( 'name' );
+    }
+
     # Search
     if( is_search() ){
         $keyword = get_search_query();
