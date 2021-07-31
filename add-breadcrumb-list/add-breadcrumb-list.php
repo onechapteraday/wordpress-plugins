@@ -338,6 +338,67 @@ function create_breadcrumb_prize( $atts, $content=null ) {
 add_shortcode( 'wp_breadcrumb_prize', 'create_breadcrumb_prize' );
 
 
+# Create breadcrumb for selections
+
+function create_breadcrumb_selection( $atts, $content=null ) {
+    $selection_id   = $atts['id'];
+
+    $selection      = get_term( $selection_id, 'selection' );
+    $selection_link = get_term_link( $selection, 'selection' );
+    $selection_opt  = get_option("taxonomy_$selection_id");
+
+    $prize_slug     = $selection_opt['selection_prize'];
+    $prize          = get_term_by( 'slug', $prize_slug, 'prize' );
+    $prize_link     = get_term_link( $prize, 'prize' );
+
+    ?>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li>
+        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+            <span>Accueil</span>
+        </a>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="<?php echo get_bloginfo( 'url' ); ?>/prizes" itemprop="item">
+          <span itemprop="name">Prix littéraires</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <?php
+	if( $prize->parent > 0 ){
+	  $parent_id = $prize->parent;
+
+          $parent      = get_term( $parent_id, 'prize' );
+          $parent_link = get_term_link( $parent, 'prize' );
+          ?>
+          <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="<?php echo $parent_link; ?>">
+              <span itemprop="name"><?php echo $parent->name; ?></span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <?php
+	}
+      ?>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="<?php echo $prize_link; ?>">
+          <span itemprop="name"><?php echo $prize->name; ?></span>
+        </a>
+        <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $selection_link; ?>">
+          <span itemprop="name"><?php echo $selection->name; ?></span>
+        </a>
+        <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '4'; }else{ echo '3'; } ?>" />
+      </li>
+    </ol>
+    <?php
+}
+
+add_shortcode( 'wp_breadcrumb_selection', 'create_breadcrumb_selection' );
+
+
 # Create breadcrumb for persons
 
 function create_breadcrumb_person( $atts, $content=null ) {
