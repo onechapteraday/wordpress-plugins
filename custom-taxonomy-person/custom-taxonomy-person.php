@@ -243,7 +243,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[realname]"><?php _e( 'Full name', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo esc_attr( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
+        <input type="text" name="term_meta[realname]" id="term_meta[realname]" value="<?php echo isset( $term_meta['realname'] ) ? esc_attr( $term_meta['realname'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the full name of the person.', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
@@ -307,7 +307,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[birthdate]"><?php _e( 'Birthdate', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="<?php echo esc_attr( $term_meta['birthdate'] ) ? esc_attr( $term_meta['birthdate'] ) : ''; ?>">
+        <input type="text" name="term_meta[birthdate]" id="term_meta[birthdate]" value="<?php echo isset( $term_meta['birthdate'] ) ? esc_attr( $term_meta['birthdate'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -315,7 +315,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[deathdate]"><?php _e( 'Deathdate', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="<?php echo esc_attr( $term_meta['deathdate'] ) ? esc_attr( $term_meta['deathdate'] ) : ''; ?>">
+        <input type="text" name="term_meta[deathdate]" id="term_meta[deathdate]" value="<?php echo isset( $term_meta['deathdate'] ) ? esc_attr( $term_meta['deathdate'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter a date with the format YYYY-mm-dd.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -331,7 +331,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[website]"><?php _e( 'Website', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[website]" id="term_meta[website]" value="<?php echo esc_attr( $term_meta['website'] ) ? esc_attr( $term_meta['website'] ) : ''; ?>">
+        <input type="text" name="term_meta[website]" id="term_meta[website]" value="<?php echo isset( $term_meta['website'] ) ? esc_attr( $term_meta['website'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the website of the person (without protocol), if exists.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -339,7 +339,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[twitter]"><?php _e( 'Twitter', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="<?php echo esc_attr( $term_meta['twitter'] ) ? esc_attr( $term_meta['twitter'] ) : ''; ?>">
+        <input type="text" name="term_meta[twitter]" id="term_meta[twitter]" value="<?php echo isset( $term_meta['twitter'] ) ? esc_attr( $term_meta['twitter'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Twitter account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -347,7 +347,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[facebook]"><?php _e( 'Facebook', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="<?php echo esc_attr( $term_meta['facebook'] ) ? esc_attr( $term_meta['facebook'] ) : ''; ?>">
+        <input type="text" name="term_meta[facebook]" id="term_meta[facebook]" value="<?php echo isset( $term_meta['facebook'] ) ? esc_attr( $term_meta['facebook'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Facebook account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -355,7 +355,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[instagram]"><?php _e( 'Instagram', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="<?php echo esc_attr( $term_meta['instagram'] ) ? esc_attr( $term_meta['instagram'] ) : ''; ?>">
+        <input type="text" name="term_meta[instagram]" id="term_meta[instagram]" value="<?php echo isset( $term_meta['instagram'] ) ? esc_attr( $term_meta['instagram'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Instagram account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -363,7 +363,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[youtube]"><?php _e( 'YouTube', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="<?php echo esc_attr( $term_meta['youtube'] ) ? esc_attr( $term_meta['youtube'] ) : ''; ?>">
+        <input type="text" name="term_meta[youtube]" id="term_meta[youtube]" value="<?php echo isset( $term_meta['youtube'] ) ? esc_attr( $term_meta['youtube'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the YouTube account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -371,7 +371,7 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[soundcloud]"><?php _e( 'Soundcloud', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-    	<input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo esc_attr( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
+        <input type="text" name="term_meta[soundcloud]" id="term_meta[soundcloud]" value="<?php echo isset( $term_meta['soundcloud'] ) ? esc_attr( $term_meta['soundcloud'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the Soundcloud account name of the person, only the part after the base url.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
@@ -387,8 +387,8 @@ function edit_meta_field ($term) {
   <tr class="form-field">
     <th scope="row" valign="top"><label for="term_meta[sidebar]"><?php _e( 'Sidebar', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
-      <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="<?php echo esc_attr( $term_meta['sidebar'] ) ? esc_attr( $term_meta['sidebar'] ) : ''; ?>">
-      <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
+        <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="<?php echo isset( $term_meta['sidebar'] ) ? esc_attr( $term_meta['sidebar'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <?php
