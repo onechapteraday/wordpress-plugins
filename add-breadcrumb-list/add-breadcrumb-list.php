@@ -365,6 +365,7 @@ function create_breadcrumb_selection( $atts, $content=null ) {
         <meta itemprop="position" content="1" />
       </li>
       <?php
+      if( $prize && $prize->count > 0 ){
 	if( $prize->parent > 0 ){
 	  $parent_id = $prize->parent;
 
@@ -379,18 +380,30 @@ function create_breadcrumb_selection( $atts, $content=null ) {
           </li>
           <?php
 	}
+        ?>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="<?php echo $prize_link; ?>">
+            <span itemprop="name"><?php echo $prize->name; ?></span>
+          </a>
+          <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
+        </li>
+        <?php
+      }
+
+      $content_number = 2;
+
+      if( $prize && $prize->count > 0 ){
+          $content_number = 3;
+
+          if( $prize->parent > 0 )
+            $content_number = 4;
+      }
       ?>
-      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        <a itemprop="item" href="<?php echo $prize_link; ?>">
-          <span itemprop="name"><?php echo $prize->name; ?></span>
-        </a>
-        <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '3'; }else{ echo '2'; } ?>" />
-      </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="<?php echo $selection_link; ?>">
           <span itemprop="name"><?php echo $selection->name; ?></span>
         </a>
-        <meta itemprop="position" content="<?php if( $prize->parent > 0 ){ echo '4'; }else{ echo '3'; } ?>" />
+        <meta itemprop="position" content="<?php echo $content_number; ?>" />
       </li>
     </ol>
     <?php
