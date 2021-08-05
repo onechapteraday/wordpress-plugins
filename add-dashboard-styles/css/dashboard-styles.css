@@ -39,6 +39,10 @@
    text-transform: uppercase;
 }
 
+#jp-stats-report-bottom {
+    display: none;
+}
+
 @media screen and (max-width: 782px) {
     #wpbody-content {
         padding-bottom: 100px;
