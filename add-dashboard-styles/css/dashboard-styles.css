@@ -43,6 +43,21 @@
     display: none;
 }
 
+#birthdays-dashboard-widget .inside table td:last-child,
+#deathdays-dashboard-widget .inside table td:last-child {
+    width: 125px;
+    box-sizing: border-box;
+}
+
+.days-birthdate,
+.days-deathdate {
+    display: inline-block;
+    *display: inline;
+    width: 25px;
+    text-align: center;
+    margin: 0 1px 0 0;
+}
+
 @media screen and (max-width: 782px) {
     #wpbody-content {
         padding-bottom: 100px;
@@ -125,6 +140,12 @@
         /* remove extra white space */
         margin-bottom: -180px;
         margin-right: -33.333333333%;
+    }
+
+    #birthdays-dashboard-widget .inside table td:last-child,
+    #deathdays-dashboard-widget .inside table td:last-child {
+        width: 75px;
+        box-sizing: border-box;
     }
 
     /* Jetpack Stats by day */
