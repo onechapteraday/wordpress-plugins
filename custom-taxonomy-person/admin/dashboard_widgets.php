@@ -83,13 +83,13 @@ function birthdays_dashboard_widget(){
           <td><small><?php echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
           <td>
 	      <small><em><?php
-                  echo '(' . $birthdate->format( 'Y' ) . '-';
+                  echo '(<span class="days-birthdate">' . $birthdate->format( 'Y' ) . '</span>-';
 
                   if( $deathdate != '' ){
-                      echo $deathdate->format( 'Y' );
+                      echo '<span class="days-deathdate">' . $deathdate->format( 'Y' ) . '</span>';
                   }
                   else {
-                      echo '.........';
+                      echo '<span class="days-deathdate">........</span>';
                   } echo ')'; ?></em></small>
 	  </td>
         </tr>
@@ -170,11 +170,11 @@ function deathdays_dashboard_widget(){
         # Retrieve all custom data
         $term_meta = get_option( 'taxonomy_' . $id );
         $gender    = $term_meta[ 'gender' ];
-        $birthdate = DateTime::createFromFormat( 'Y-m-d', $term_meta[ 'birthdate' ] );
+        $birthdate = ( $term_meta[ 'birthdate' ] ) ? DateTime::createFromFormat( 'Y-m-d', $term_meta[ 'birthdate' ] ) : '';
         $deathdate = DateTime::createFromFormat( 'Y-m-d', $term_meta[ 'deathdate' ] );
 
         $now = new DateTime();
-	$age = $deathdate->diff( $birthdate )->y;
+	$age = ( $birthdate ) ? $deathdate->diff( $birthdate )->y : '';
 
 	# Display data
         ?>
@@ -185,7 +185,7 @@ function deathdays_dashboard_widget(){
 	      <?php echo $name; ?>
             </a>
           </td>
-          <td><small><?php echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
+          <td><small><?php if( $age ) echo $age . __( ' years old', 'person-taxonomy' ); ?></small></td>
           <td>
 	      <small><em title="<?php
                       $since_date = $now->diff( $deathdate )->y;
@@ -210,13 +210,17 @@ function deathdays_dashboard_widget(){
                           }
                       }
                   ?>"><?php
-                  echo '(' . $birthdate->format( 'Y' ) . '-';
+                  if( $birthdate ){
+                      echo '(<span class="days-birthdate">' . $birthdate->format( 'Y' ) . '</span>-';
+                  } else {
+                      echo '(<span class="days-birthdate">........</span>-';
+                  }
 
                   if( $deathdate != '' ){
-                      echo $deathdate->format( 'Y' );
+                      echo '<span class="days-deathdate">' . $deathdate->format( 'Y' ) . '</span>';
                   }
                   else {
-                      echo '......';
+                      echo '<span class="days-deathdate">........</span>';
                   } echo ')'; ?></em></small>
 	  </td>
         </tr>
