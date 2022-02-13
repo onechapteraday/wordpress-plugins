@@ -50,33 +50,27 @@ class MCI_Footnotes_Task {
 	 * @since 1.5.0
 	 */
 	public function registerHooks() {
-		// append custom css to the header
-		add_filter('wp_head', array($this, "wp_head"), PHP_INT_MAX);
-
-		// append the love and share me slug to the footer
-		add_filter('wp_footer', array($this, "wp_footer"), PHP_INT_MAX);
-
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_TITLE))) {
-            add_filter('the_title', array($this, "the_title"), PHP_INT_MAX);
-        }
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_CONTENT))) {
-            add_filter('the_content', array($this, "the_content"), PHP_INT_MAX);
-        }
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_EXCERPT))) {
-             add_filter('the_excerpt', array($this, "the_excerpt"), PHP_INT_MAX);
-        }
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_WIDGET_TITLE))) {
-            add_filter('widget_title', array($this, "widget_title"), PHP_INT_MAX);
-        }
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_WIDGET_TEXT))) {
-            add_filter('widget_text', array($this, "widget_text"), PHP_INT_MAX);
-        }
-        if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_POST))) {
-            add_filter('the_post', array($this, "the_post"), PHP_INT_MAX);
-        }
-        // reset stored footnotes when displaying the header
-        self::$a_arr_Footnotes = array();
-        self::$a_bool_AllowLoveMe = true;
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_TITLE))) {
+                add_filter('the_title', array($this, "the_title"), PHP_INT_MAX);
+            }
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_CONTENT))) {
+                add_filter('the_content', array($this, "the_content"), PHP_INT_MAX);
+            }
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_EXCERPT))) {
+                 add_filter('the_excerpt', array($this, "the_excerpt"), PHP_INT_MAX);
+            }
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_WIDGET_TITLE))) {
+                add_filter('widget_title', array($this, "widget_title"), PHP_INT_MAX);
+            }
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_WIDGET_TEXT))) {
+                add_filter('widget_text', array($this, "widget_text"), PHP_INT_MAX);
+            }
+            if (MCI_Footnotes_Convert::toBool(MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_BOOL_EXPERT_LOOKUP_THE_POST))) {
+                add_filter('the_post', array($this, "the_post"), PHP_INT_MAX);
+            }
+            // reset stored footnotes when displaying the header
+            self::$a_arr_Footnotes = array();
+            self::$a_bool_AllowLoveMe = true;
 	}
 
 	/**
@@ -86,45 +80,6 @@ class MCI_Footnotes_Task {
 	 * @since 1.5.0
 	 */
 	public function wp_head() {
-        $l_str_Color = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_STR_FOOTNOTES_MOUSE_OVER_BOX_COLOR);
-        $l_str_Background = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_STR_FOOTNOTES_MOUSE_OVER_BOX_BACKGROUND);
-        $l_int_BorderWidth = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_INT_FOOTNOTES_MOUSE_OVER_BOX_BORDER_WIDTH);
-        $l_str_BorderColor = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_STR_FOOTNOTES_MOUSE_OVER_BOX_BORDER_COLOR);
-        $l_int_BorderRadius = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_INT_FOOTNOTES_MOUSE_OVER_BOX_BORDER_RADIUS);
-        $l_int_MaxWidth = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_INT_FOOTNOTES_MOUSE_OVER_BOX_MAX_WIDTH);
-		$l_str_BoxShadowColor = MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_STR_FOOTNOTES_MOUSE_OVER_BOX_SHADOW_COLOR);
-		?>
-		<style type="text/css" media="screen">
-            <?php
-            echo MCI_Footnotes_Settings::instance()->get(MCI_Footnotes_Settings::C_STR_CUSTOM_CSS);
-            echo '.footnote_tooltip { display: none; padding: 12px; font-size: 13px;';
-            if (!empty($l_str_Color)) {
-                printf(" color: %s;", $l_str_Color);
-            }
-            if (!empty($l_str_Background)) {
-                printf(" background-color: %s;", $l_str_Background);
-            }
-            if (!empty($l_int_BorderWidth) && intval($l_int_BorderWidth) > 0) {
-                printf(" border-width: %dpx; border-style: solid;", $l_int_BorderWidth);
-            }
-            if (!empty($l_str_BorderColor)) {
-                printf(" border-color: %s;", $l_str_BorderColor);
-            }
-            if (!empty($l_int_BorderRadius) && intval($l_int_BorderRadius) > 0) {
-                printf(" border-radius: %dpx;", $l_int_BorderRadius);
-            }
-            if (!empty($l_int_MaxWidth) && intval($l_int_MaxWidth) > 0) {
-                printf(" max-width: %dpx;", $l_int_MaxWidth);
-            }
-            if (!empty($l_str_BoxShadowColor)) {
-                printf(" -webkit-box-shadow: 2px 2px 11px %s;", $l_str_BoxShadowColor);
-                printf(" -moz-box-shadow: 2px 2px 11px %s;", $l_str_BoxShadowColor);
-                printf(" box-shadow: 2px 2px 11px %s;", $l_str_BoxShadowColor);
-            }
-            echo '}';
-            ?>
-        </style>
-		<?php
 	}
 
 	/**

@@ -49,6 +49,6 @@
 .footnote_plugin_text {
     display: inline-block;
     *display: inline;
-    max-width: calc(100% - 40px);
+    max-width: calc(100% - 45px);
     vertical-align: top;
 }
