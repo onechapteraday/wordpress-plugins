@@ -40,7 +40,6 @@ article .entry-content h3.book-release-item-title span.book-release-item-author 
 
 article .entry-content div.book-release-item-excerpts {
     margin: 2px 0 20px;
-    font-weight: bold;
 }
 
 article .entry-content div.book-release-item-excerpts span.book-review a,
@@ -62,7 +61,6 @@ article .entry-content .literary-season .book-release-item-card table tr {
 
 article .entry-content .literary-season .book-release-item-card table td:first-child {
     width: 45%;
-    font-weight: bold;
 }
 
 article .entry-content .literary-season .book-release-item-card table td:first-child + td {
