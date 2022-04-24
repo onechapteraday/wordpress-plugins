@@ -141,7 +141,7 @@ function add_new_meta_field() {
   <div class="form-field">
     <label for="term_meta[gender]"><?php _e( 'Gender', $PERSON_TEXTDOMAIN ); ?></label>
     <input type="text" name="term_meta[gender]" id="term_meta[gender]" value="0">
-    <p class="description"><?php _e( 'Enter the gender of the person, 0 for male and 1 for female.', $PERSON_TEXTDOMAIN ); ?></p>
+    <p class="description"><?php _e( 'Enter the gender of the person, 0 for male, 1 for female, 2 for non-binary.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
 
   <div class="form-field">
@@ -292,7 +292,7 @@ function edit_meta_field ($term) {
     <th scope="row" valign="top"><label for="term_meta[gender]"><?php _e( 'Gender', $PERSON_TEXTDOMAIN ); ?></label></th>
     <td>
         <input type="text" name="term_meta[gender]" id="term_meta[gender]" value="<?php echo isset( $term_meta['gender'] ) ? esc_attr( $term_meta['gender'] ) : '0'; ?>">
-        <p class="description"><?php _e( 'Enter the gender of the person, 0 for male 1 for female.', $PERSON_TEXTDOMAIN); ?></p>
+        <p class="description"><?php _e( 'Enter the gender of the person, 0 for male, 1 for female, 2 for non-binary.', $PERSON_TEXTDOMAIN); ?></p>
     </td>
   </tr>
 
