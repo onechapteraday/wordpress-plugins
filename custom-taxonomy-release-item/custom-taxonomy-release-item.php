@@ -627,20 +627,25 @@ function display_literary_season( $atts, $content=null ){
                             <td>
                             <?php
                             if( count( $auth ) > 1 ){
-                                $female_only = true;
-                                $transgenre_only = true;
+                                $female    = 0;
+                                $nonbinary = 0;
 
                                 foreach( $auth as $author ){
                                     $gender = get_option( 'taxonomy_' . $author->term_id )['gender'];
 
-                                    if( $gender == 0 ){
-                                        $female_only = false;
-                                        break;
+                                    if( $gender == 1 ){
+                                        $female += 1;
+                                    }
+
+                                    if( $gender == 2 ){
+                                        $nonbinary += 1;
                                     }
                                 }
 
-                                if( $female_only ){
+                                if( $female > 0 && count( $auth ) == $female ){
                                     echo _x( 'Authors', 'book metadata female authors', $RELEASE_ITEM_TEXTDOMAIN );
+                                } elseif( ( $nonbinary > 0 || $female > 0 ) && count( $auth ) > 1 ) {
+                                    echo _x( 'Authors', 'book metadata non-binary authors', $RELEASE_ITEM_TEXTDOMAIN );
                                 } else {
                                     echo _x( 'Authors', 'book metadata authors', $RELEASE_ITEM_TEXTDOMAIN );
                                 }
@@ -651,7 +656,7 @@ function display_literary_season( $atts, $content=null ){
                                 if( $gender == 1 ){
                                     echo _x( 'Author', 'book metadata female author', $RELEASE_ITEM_TEXTDOMAIN );
                                 } elseif( $gender == 2 ) {
-                                    echo _x( 'Author', 'book metadata transgenre author', $RELEASE_ITEM_TEXTDOMAIN );
+                                    echo _x( 'Author', 'book metadata non-binary author', $RELEASE_ITEM_TEXTDOMAIN );
                                 } else {
                                     echo _x( 'Author', 'book metadata male author', $RELEASE_ITEM_TEXTDOMAIN );
                                 }
