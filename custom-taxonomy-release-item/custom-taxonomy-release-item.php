@@ -561,14 +561,14 @@ function display_literary_season( $atts, $content=null ){
             <?php
             if( !empty( $book_excerpt )){
                 ?>
-                <span class="book-excerpt">[<a href="<?php echo $book_excerpt; ?>" target="_blank" rel="noopener nofollow">extrait</a>]</span>
+                <span class="book-excerpt"><a href="<?php echo $book_excerpt; ?>" target="_blank" rel="noopener nofollow">[extrait]</a></span>
                 <?php
             }
             ?>
             <?php
             if( !empty( $post_link )){
                 ?>
-                <span class="book-review">[<a href="<?php echo $post_link; ?>">chronique</a>]</span>
+                <span class="book-review"><a href="<?php echo $post_link; ?>">[chronique]</a></span>
                 <?php
             }
             ?>
