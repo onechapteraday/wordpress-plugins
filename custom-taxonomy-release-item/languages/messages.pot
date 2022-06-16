@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 19:19-0400\n"
+"POT-Creation-Date: 2022-06-15 20:39-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,293 +17,391 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: custom-taxonomy-release-item.php:60
+#: custom-taxonomy-release-item.php:60 custom-taxonomy-release-item-prod.php:60
 msgctxt "taxonomy general name"
 msgid "Release Items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:61
+#: custom-taxonomy-release-item.php:61 custom-taxonomy-release-item-prod.php:61
 msgctxt "taxonomy singular name"
 msgid "Release Item"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:62
+#: custom-taxonomy-release-item.php:62 custom-taxonomy-release-item-prod.php:62
 msgid "Search Release Items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:63
+#: custom-taxonomy-release-item.php:63 custom-taxonomy-release-item-prod.php:63
 msgid "Popular Release Items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:64
+#: custom-taxonomy-release-item.php:64 custom-taxonomy-release-item-prod.php:64
 msgid "All Release Items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:67
+#: custom-taxonomy-release-item.php:67 custom-taxonomy-release-item-prod.php:67
 msgid "See Release Item"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:68
+#: custom-taxonomy-release-item.php:68 custom-taxonomy-release-item-prod.php:68
 msgid "Edit Release Item"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:69
+#: custom-taxonomy-release-item.php:69 custom-taxonomy-release-item-prod.php:69
 msgid "Update Release Item"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:70
+#: custom-taxonomy-release-item.php:70 custom-taxonomy-release-item-prod.php:70
 msgid "Add New Release Item"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:71
+#: custom-taxonomy-release-item.php:71 custom-taxonomy-release-item-prod.php:71
 msgid "New Release Item Name"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:72
+#: custom-taxonomy-release-item.php:72 custom-taxonomy-release-item-prod.php:72
 msgid "Separate release items with commas"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:73
+#: custom-taxonomy-release-item.php:73 custom-taxonomy-release-item-prod.php:73
 msgid "Add or remove release items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:74
+#: custom-taxonomy-release-item.php:74 custom-taxonomy-release-item-prod.php:74
 msgid "Choose from the most used release items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:75
+#: custom-taxonomy-release-item.php:75 custom-taxonomy-release-item-prod.php:75
 msgid "No release items found."
 msgstr ""
 
-#: custom-taxonomy-release-item.php:76
+#: custom-taxonomy-release-item.php:76 custom-taxonomy-release-item-prod.php:76
 msgid "← Back to release items"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:77
+#: custom-taxonomy-release-item.php:77 custom-taxonomy-release-item-prod.php:77
 msgid "Release Items"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:107 custom-taxonomy-release-item.php:211
+#: custom-taxonomy-release-item-prod.php:107
+#: custom-taxonomy-release-item-prod.php:211
 msgid "Release name"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:109 custom-taxonomy-release-item.php:214
+#: custom-taxonomy-release-item-prod.php:109
+#: custom-taxonomy-release-item-prod.php:214
 msgid "Enter the name of the release."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:112 custom-taxonomy-release-item.php:218
-#: custom-taxonomy-release-item.php:745
+#: custom-taxonomy-release-item.php:782
+#: custom-taxonomy-release-item-prod.php:112
+#: custom-taxonomy-release-item-prod.php:218
+#: custom-taxonomy-release-item-prod.php:745
 msgid "Publisher"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:114 custom-taxonomy-release-item.php:221
+#: custom-taxonomy-release-item-prod.php:114
+#: custom-taxonomy-release-item-prod.php:221
 msgid "Enter the book publisher."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:117 custom-taxonomy-release-item.php:225
+#: custom-taxonomy-release-item-prod.php:117
+#: custom-taxonomy-release-item-prod.php:225
 msgid "Authors"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:119 custom-taxonomy-release-item.php:228
+#: custom-taxonomy-release-item-prod.php:119
+#: custom-taxonomy-release-item-prod.php:228
 msgid "Enter the book authors."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:122 custom-taxonomy-release-item.php:232
+#: custom-taxonomy-release-item-prod.php:122
+#: custom-taxonomy-release-item-prod.php:232
 msgid "Translators"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:124 custom-taxonomy-release-item.php:235
+#: custom-taxonomy-release-item-prod.php:124
+#: custom-taxonomy-release-item-prod.php:235
 msgid "Enter the book translators."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:127 custom-taxonomy-release-item.php:239
 #: custom-taxonomy-release-item.php:605
+#: custom-taxonomy-release-item-prod.php:127
+#: custom-taxonomy-release-item-prod.php:239
+#: custom-taxonomy-release-item-prod.php:605
 msgid "Title"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:129 custom-taxonomy-release-item.php:242
+#: custom-taxonomy-release-item-prod.php:129
+#: custom-taxonomy-release-item-prod.php:242
 msgid "Enter the book title."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:132 custom-taxonomy-release-item.php:246
 #: custom-taxonomy-release-item.php:614
+#: custom-taxonomy-release-item-prod.php:132
+#: custom-taxonomy-release-item-prod.php:246
+#: custom-taxonomy-release-item-prod.php:614
 msgid "Original title"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:134
+#: custom-taxonomy-release-item-prod.php:134
 msgid "Enter the book original title if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:137 custom-taxonomy-release-item.php:253
+#: custom-taxonomy-release-item-prod.php:137
+#: custom-taxonomy-release-item-prod.php:253
 msgid "Sort title"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:139 custom-taxonomy-release-item.php:256
+#: custom-taxonomy-release-item-prod.php:139
+#: custom-taxonomy-release-item-prod.php:256
 msgid "Enter the book sort title."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:142 custom-taxonomy-release-item.php:260
-#: custom-taxonomy-release-item.php:797
+#: custom-taxonomy-release-item.php:834
+#: custom-taxonomy-release-item-prod.php:142
+#: custom-taxonomy-release-item-prod.php:260
+#: custom-taxonomy-release-item-prod.php:797
 msgid "ISBN10"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:144 custom-taxonomy-release-item.php:263
+#: custom-taxonomy-release-item-prod.php:144
+#: custom-taxonomy-release-item-prod.php:263
 msgid "Enter the book ISBN10 if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:147 custom-taxonomy-release-item.php:267
-#: custom-taxonomy-release-item.php:788
+#: custom-taxonomy-release-item.php:825
+#: custom-taxonomy-release-item-prod.php:147
+#: custom-taxonomy-release-item-prod.php:267
+#: custom-taxonomy-release-item-prod.php:788
 msgid "ISBN13"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:149 custom-taxonomy-release-item.php:270
+#: custom-taxonomy-release-item-prod.php:149
+#: custom-taxonomy-release-item-prod.php:270
 msgid "Enter the book ISBN13."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:152 custom-taxonomy-release-item.php:274
+#: custom-taxonomy-release-item-prod.php:152
+#: custom-taxonomy-release-item-prod.php:274
 msgid "ASIN"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:154 custom-taxonomy-release-item.php:277
+#: custom-taxonomy-release-item-prod.php:154
+#: custom-taxonomy-release-item-prod.php:277
 msgid "Enter the book ASIN."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:157 custom-taxonomy-release-item.php:281
-#: custom-taxonomy-release-item.php:806
+#: custom-taxonomy-release-item.php:843
+#: custom-taxonomy-release-item-prod.php:157
+#: custom-taxonomy-release-item-prod.php:281
+#: custom-taxonomy-release-item-prod.php:806
 msgid "Release date"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:159 custom-taxonomy-release-item.php:284
+#: custom-taxonomy-release-item-prod.php:159
+#: custom-taxonomy-release-item-prod.php:284
 msgid "Enter the book release date (YYYY-mm-dd)."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:162 custom-taxonomy-release-item.php:288
-#: custom-taxonomy-release-item.php:824
+#: custom-taxonomy-release-item.php:861
+#: custom-taxonomy-release-item-prod.php:162
+#: custom-taxonomy-release-item-prod.php:288
+#: custom-taxonomy-release-item-prod.php:824
 msgid "Number of pages"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:164 custom-taxonomy-release-item.php:291
+#: custom-taxonomy-release-item-prod.php:164
+#: custom-taxonomy-release-item-prod.php:291
 msgid "Enter the book number of pages."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:167 custom-taxonomy-release-item.php:295
+#: custom-taxonomy-release-item-prod.php:167
+#: custom-taxonomy-release-item-prod.php:295
 msgid "Price"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:169 custom-taxonomy-release-item.php:298
+#: custom-taxonomy-release-item-prod.php:169
+#: custom-taxonomy-release-item-prod.php:298
 msgid "Enter the book price."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:172 custom-taxonomy-release-item.php:302
+#: custom-taxonomy-release-item-prod.php:172
+#: custom-taxonomy-release-item-prod.php:302
 msgid "Thumbnail"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:174 custom-taxonomy-release-item.php:305
+#: custom-taxonomy-release-item-prod.php:174
+#: custom-taxonomy-release-item-prod.php:305
 msgid "Enter the book thumbnail if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:177 custom-taxonomy-release-item.php:309
+#: custom-taxonomy-release-item-prod.php:177
+#: custom-taxonomy-release-item-prod.php:309
 msgid "Excerpt"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:179 custom-taxonomy-release-item.php:312
+#: custom-taxonomy-release-item-prod.php:179
+#: custom-taxonomy-release-item-prod.php:312
 msgid "Enter the book excerpt if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:182 custom-taxonomy-release-item.php:316
+#: custom-taxonomy-release-item-prod.php:182
+#: custom-taxonomy-release-item-prod.php:316
 msgid "Post linked"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:184
+#: custom-taxonomy-release-item-prod.php:184
 msgid "Enter the book post link if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:249
+#: custom-taxonomy-release-item-prod.php:249
 msgid "Enter the book original title."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:319
+#: custom-taxonomy-release-item-prod.php:319
 msgid "Enter the book post linked if exists."
 msgstr ""
 
 #: custom-taxonomy-release-item.php:646
+#: custom-taxonomy-release-item-prod.php:646
 msgctxt "book metadata female authors"
 msgid "Authors"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:648
+#: custom-taxonomy-release-item-prod.php:648
 msgctxt "book metadata non-binary authors"
 msgid "Authors"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:650
+#: custom-taxonomy-release-item-prod.php:650
 msgctxt "book metadata authors"
 msgid "Authors"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:657
+#: custom-taxonomy-release-item-prod.php:657
 msgctxt "book metadata female author"
 msgid "Author"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:659
+#: custom-taxonomy-release-item-prod.php:659
 msgctxt "book metadata non-binary author"
 msgid "Author"
 msgstr ""
 
 #: custom-taxonomy-release-item.php:661
+#: custom-taxonomy-release-item-prod.php:661
 msgctxt "book metadata male author"
 msgid "Author"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:704
+#: custom-taxonomy-release-item.php:737
+#: custom-taxonomy-release-item-prod.php:704
 msgctxt "book metadata female translators"
 msgid "Translators"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:706
+#: custom-taxonomy-release-item.php:739
+msgctxt "book metadata non-binary translators"
+msgid "Translators"
+msgstr ""
+
+#: custom-taxonomy-release-item.php:741
+#: custom-taxonomy-release-item-prod.php:706
 msgctxt "book metadata translators"
 msgid "Translators"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:713
+#: custom-taxonomy-release-item.php:748
+#: custom-taxonomy-release-item-prod.php:713
 msgctxt "book metadata female translator"
 msgid "Translator"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:715
+#: custom-taxonomy-release-item.php:750
+msgctxt "book metadata non-binary translator"
+msgid "Translator"
+msgstr ""
+
+#: custom-taxonomy-release-item.php:752
+#: custom-taxonomy-release-item-prod.php:715
 msgctxt "book metadata male translator"
 msgid "Translator"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:767
+#: custom-taxonomy-release-item.php:804
+#: custom-taxonomy-release-item-prod.php:767
 msgid "Collection"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:815
+#: custom-taxonomy-release-item.php:852
+#: custom-taxonomy-release-item-prod.php:815
 msgid "Estimated price"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:837
+#: custom-taxonomy-release-item.php:874
+#: custom-taxonomy-release-item-prod.php:837
 msgctxt "book metadata affiliate links"
 msgid "Affiliate links"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:841
+#: custom-taxonomy-release-item.php:878
+#: custom-taxonomy-release-item-prod.php:841
 msgctxt "book metadata affiliate link"
 msgid "Affiliate link"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:852
+#: custom-taxonomy-release-item.php:889
+#: custom-taxonomy-release-item-prod.php:852
 msgctxt "book metadata leslibraires.fr affiliate message"
 msgid "Buy on Les Libraires"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:863
+#: custom-taxonomy-release-item.php:900
+#: custom-taxonomy-release-item-prod.php:863
 msgctxt "book metadata Amazon affiliate message"
 msgid "Buy on Amazon"
 msgstr ""
 
-#: custom-taxonomy-release-item.php:885
+#: custom-taxonomy-release-item.php:922
+#: custom-taxonomy-release-item-prod.php:885
 msgid "Publisher description"
 msgstr ""

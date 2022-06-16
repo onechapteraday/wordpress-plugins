@@ -689,19 +689,25 @@ function display_literary_season( $atts, $content=null ){
                             <td>
                             <?php
                             if( count( $transl ) > 1 ){
-                                $female_only = true;
+                                $female    = 0;
+                                $nonbinary = 0;
 
                                 foreach( $transl as $translator ){
                                     $gender = get_option( 'taxonomy_' . $translator->term_id )['gender'];
 
-                                    if( $gender == 0 ){
-                                        $female_only = false;
-                                        break;
+                                    if( $gender == 1 ){
+                                        $female += 1;
+                                    }
+
+                                    if( $gender == 2 ){
+                                        $nonbinary += 1;
                                     }
                                 }
 
-                                if( $female_only ){
+                                if( $female > 0 && count( $transl ) == $female ){
                                     echo _x( 'Translators', 'book metadata female translators', $RELEASE_ITEM_TEXTDOMAIN );
+                                } elseif( ( $nonbinary > 0 || $female > 0 ) && count( $transl ) > 1 ) {
+                                    echo _x( 'Translators', 'book metadata non-binary translators', $RELEASE_ITEM_TEXTDOMAIN );
                                 } else {
                                     echo _x( 'Translators', 'book metadata translators', $RELEASE_ITEM_TEXTDOMAIN );
                                 }
@@ -711,6 +717,8 @@ function display_literary_season( $atts, $content=null ){
 
                                 if( $gender == 1 ){
                                     echo _x( 'Translator', 'book metadata female translator', $RELEASE_ITEM_TEXTDOMAIN );
+                                } elseif( $gender == 2 ) {
+                                    echo _x( 'Translator', 'book metadata non-binary translator', $RELEASE_ITEM_TEXTDOMAIN );
                                 } else {
                                     echo _x( 'Translator', 'book metadata male translator', $RELEASE_ITEM_TEXTDOMAIN );
                                 }
