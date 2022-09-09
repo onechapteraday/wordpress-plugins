@@ -215,6 +215,12 @@ function add_new_meta_field() {
     <input type="text" name="term_meta[sidebar]" id="term_meta[sidebar]" value="">
     <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
   </div>
+
+  <div class="form-field">
+    <label for="term_meta[person_tagcloud_display]"><?php _e( 'Tag cloud display', $PERSON_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[person_tagcloud_display]" id="term_meta[person_tagcloud_display]" value="">
+    <p class="description"><?php _e( 'Enable or disable person in tag cloud.', $PERSON_TEXTDOMAIN ); ?></p>
+  </div>
   <?php
 
 }
@@ -391,6 +397,14 @@ function edit_meta_field ($term) {
         <p class="description"><?php _e( 'Enter the name of the sidebar you want to display, leave empty if default.', $PERSON_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[person_tagcloud_display]"><?php _e( 'Tag cloud display', $PERSON_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[person_tagcloud_display]" id="term_meta[person_tagcloud_display]" value="<?php echo isset( $term_meta['person_tagcloud_display'] ) ? esc_attr( $term_meta['person_tagcloud_display'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enable or disable person in tag cloud.', $PERSON_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
   <?php
 
 }
@@ -535,17 +549,16 @@ class popular_persons_in_category_widget extends WP_Widget {
 
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => $p_count,
                     'taxonomy' => 'person',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
-                    'include'  => $array_of_terms_in_category,
                     'echo'     => false,
                 );
 
         echo '<div class="tagcloud">';
 
         $persons_array = get_terms ( 'person', $tag_args );
+        $tag_count = 0;
 
         if( sizeof( $persons_array ) ){
             usort( $persons_array, 'widget_sort_person_by_name' );
@@ -553,9 +566,24 @@ class popular_persons_in_category_widget extends WP_Widget {
             echo '<ul class="wp-tag-cloud">';
 
 	    foreach ( $persons_array as $myperson ) {
-                echo '<li><a href="' . get_term_link( $myperson->term_id ) . '" class="tag-cloud-link tag-link-' . $myperson->term_id . '">';
-                echo $myperson->name;
-                echo '</a></li>';
+                if( $tag_count < $p_count ){
+                    $term_id       = $myperson->term_id;
+                    $cloud_display = true;
+
+                    if( isset( get_option( 'taxonomy_' . $term_id )['person_tagcloud_display'] ) ){
+                        $cloud_display = filter_var( get_option( 'taxonomy_' . $term_id )['person_tagcloud_display'], FILTER_VALIDATE_BOOLEAN );
+                    }
+
+                    if( $cloud_display ){
+                        echo '<li><a href="' . get_term_link( $myperson->term_id ) . '" class="tag-cloud-link tag-link-' . $myperson->term_id . '">';
+                        echo $myperson->name;
+                        echo '</a></li>';
+
+                        $tag_count += 1;
+                    }
+                } else {
+                    break;
+                }
 	    }
 
             echo '</ul>';
@@ -653,17 +681,24 @@ class popular_persons_with_role_widget extends WP_Widget {
             $writers_array = array();
 
 	    foreach ( $persons_array as $myperson ) {
-                $person_opt = get_option( "taxonomy_$myperson->term_id" );
+                $person_opt    = get_option( "taxonomy_$myperson->term_id" );
+                $cloud_display = true;
 
-                if( isset( $person_opt['role'] ) ){
-                    $roles = explode( ';', $person_opt['role'] );
+                if( isset( $person_opt['person_tagcloud_display'] ) ){
+                    $cloud_display = filter_var( $person_opt['person_tagcloud_display'], FILTER_VALIDATE_BOOLEAN );
+                }
 
-                    if( in_array( $p_role, $roles ) ){
-                        array_push( $writers_array, $myperson );
-                    }
+                if( $cloud_display ){
+                    if( isset( $person_opt['role'] ) ){
+                        $roles = explode( ';', $person_opt['role'] );
 
-                    if( sizeof( $writers_array ) == $p_count ){
-                        break;
+                        if( in_array( $p_role, $roles ) ){
+                            array_push( $writers_array, $myperson );
+                        }
+
+                        if( sizeof( $writers_array ) == $p_count ){
+                            break;
+                        }
                     }
                 }
 	    }
