@@ -125,6 +125,12 @@ function add_new_publisher_meta_field() {
     <input type="text" name="term_meta[publisher_youtube]" id="term_meta[publisher_youtube]" value="">
     <p class="description"><?php _e( 'Enter the YouTube account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
   </div>
+
+  <div class="form-field">
+    <label for="term_meta[publisher_tagcloud_display]"><?php _e( 'Tag cloud display', $PUBLISHER_TEXTDOMAIN ); ?></label>
+    <input type="text" name="term_meta[publisher_tagcloud_display]" id="term_meta[publisher_tagcloud_display]" value="">
+    <p class="description"><?php _e( 'Enable or disable publisher in tag cloud.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+  </div>
   <?php
 }
 
@@ -194,6 +200,14 @@ function edit_publisher_meta_field ($term) {
     <td>
         <input type="text" name="term_meta[publisher_youtube]" id="term_meta[publisher_youtube]" value="<?php echo isset( $term_meta['publisher_youtube'] ) ? esc_attr( $term_meta['publisher_youtube'] ) : ''; ?>">
         <p class="description"><?php _e( 'Enter the YouTube account name of the publisher, only the part after the base url.', $PUBLISHER_TEXTDOMAIN ); ?></p>
+    </td>
+  </tr>
+
+  <tr class="form-field">
+    <th scope="row" valign="top"><label for="term_meta[publisher_tagcloud_display]"><?php _e( 'Tag cloud display', $PUBLISHER_TEXTDOMAIN ); ?></label></th>
+    <td>
+        <input type="text" name="term_meta[publisher_tagcloud_display]" id="term_meta[publisher_tagcloud_display]" value="<?php echo isset( $term_meta['publisher_tagcloud_display'] ) ? esc_attr( $term_meta['publisher_tagcloud_display'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enable or disable publisher in tag cloud.', $PUBLISHER_TEXTDOMAIN ); ?></p>
     </td>
   </tr>
   <?php
@@ -357,40 +371,58 @@ class popular_publishers_in_category_widget extends WP_Widget {
             $publishers_test = array();
 
             foreach( $all_publishers_array as $pub ){
-                $term_id = $pub->term_id;
-                $parent  = $pub->parent;
-                $count   = $pub->count;
+                $term_id       = $pub->term_id;
+                $parent        = $pub->parent;
+                $count         = $pub->count;
+                $cloud_display = true;
 
-                # If publisher (and not a collection)
-
-                if( $parent == 0 ){
-
-                    if( !isset( $publishers_test[ $term_id ] ) ){
-
-                        # If not already in array, add key and count
-                        $publishers_test[ $term_id ] = $count;
-
-                    } else {
-
-                        # If already in array, find key and add count
-                        $publishers_test[ $term_id ] += $count;
-
-                    }
+                if( isset( get_option( 'taxonomy_' . $term_id )['publisher_tagcloud_display'] ) ){
+                    $cloud_display = filter_var( get_option( 'taxonomy_' . $term_id )['publisher_tagcloud_display'], FILTER_VALIDATE_BOOLEAN );
                 }
 
-                # If collection
+                # Display only if cloud_display is true
 
-                else {
-                    if( !isset( $publishers_test[ $parent ] ) ){
+                if( $cloud_display ){
 
-                        # If parent is not already in array, add key and count
-                        $publishers_test[ $parent ] = $count;
+                    # If publisher (and not a collection)
 
-                    } else {
+                    if( $parent == 0 ){
 
-                        # If parent is already in array, find key and add count
-                        $publishers_test[ $parent ] += $count;
+                        if( !isset( $publishers_test[ $term_id ] ) ){
 
+                            # If not already in array, add key and count
+                            $publishers_test[ $term_id ] = $count;
+
+                        } else {
+
+                            # If already in array, find key and add count
+                            $publishers_test[ $term_id ] += $count;
+
+                        }
+                    }
+
+                    # If collection
+
+                    else {
+                        if( !isset( $publishers_test[ $parent ] ) ){
+
+                            # If parent is not already in array, add key and count
+                            # Only if cloud_display is true
+
+                            if( isset( get_option( 'taxonomy_' . $parent )['publisher_tagcloud_display'] ) ){
+                                $cloud_display = filter_var( get_option( 'taxonomy_' . $parent )['publisher_tagcloud_display'], FILTER_VALIDATE_BOOLEAN );
+                            }
+
+                            if( $cloud_display ){
+                                $publishers_test[ $parent ] = $count;
+                            }
+
+                        } else {
+
+                            # If parent is already in array, find key and add count
+                            $publishers_test[ $parent ] += $count;
+
+                        }
                     }
                 }
             }
