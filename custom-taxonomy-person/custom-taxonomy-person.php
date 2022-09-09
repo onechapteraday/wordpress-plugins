@@ -491,62 +491,6 @@ class popular_persons_in_category_widget extends WP_Widget {
         if ( ! empty( $title ) )
             echo $args['before_title'] . $title . $args['after_title'];
 
-        # This is where you run the code and display the output
-
-        # Find the category where is displayed the widget
-        $categories = get_the_category();
-
-	$catID = null;
-	if ( isset ( $categories[0] ) ) {
-            $catID = $categories[0]->cat_ID;
-	}
-
-        $post_types = array( 'post' );
-
-        if( post_type_exists( 'book' ) ){
-            array_push( $post_types, 'book' );
-        }
-
-        if( post_type_exists( 'album' ) ){
-            array_push( $post_types, 'album' );
-        }
-
-        if( post_type_exists( 'concert' ) ){
-            array_push( $post_types, 'concert' );
-        }
-
-        if( post_type_exists( 'interview' ) ){
-            array_push( $post_types, 'interview' );
-        }
-
-        if ( $catID ) {
-            $posts_with_category = get_posts( array(
-                         'category'       => $catID,
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
-        else {
-            $posts_with_category = get_posts( array(
-                         'post_type'      => $post_types,
-                         'number_posts'   => -1,
-                         'posts_per_page' => -1,
-                     ));
-        }
-
-        $array_of_terms_in_category = array();
-
-        foreach( $posts_with_category as $post ) {
-            $terms = wp_get_post_terms( $post->ID, 'person' );
-
-            foreach( $terms as $value ){
-                if( !in_array( $value, $array_of_terms_in_category, true ) ){
-                    array_push( $array_of_terms_in_category, $value->term_id );
-                }
-            }
-        }
-
         $tag_args = array(
                     'format'   => 'array',
                     'taxonomy' => 'person',
