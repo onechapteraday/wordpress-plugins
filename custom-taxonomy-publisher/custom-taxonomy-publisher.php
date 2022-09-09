@@ -293,61 +293,6 @@ class popular_publishers_in_category_widget extends WP_Widget {
         if ( ! empty( $title ) )
             echo $args['before_title'] . $title . $args['after_title'];
 
-        # This is where you run the code and display the output
-
-        # Find the category where is displayed the widget
-        $category = 'reads';
-	$catID = get_cat_ID( $category );
-
-        $post_types = array( 'post' );
-
-        if( post_type_exists( 'book' ) ){
-            array_push( $post_types, 'book' );
-        }
-
-        if( post_type_exists( 'album' ) ){
-            array_push( $post_types, 'album' );
-        }
-
-        if( post_type_exists( 'concert' ) ){
-            array_push( $post_types, 'concert' );
-        }
-
-        if( post_type_exists( 'interview' ) ){
-            array_push( $post_types, 'interview' );
-        }
-
-        $posts_with_category = get_posts( array(
-                     'category'       => $catID,
-                     'post_type'      => $post_types,
-                     'number_posts'   => -1,
-                     'posts_per_page' => -1,
-                 ));
-
-        $array_of_terms_in_category = array();
-
-        foreach( $posts_with_category as $post ) {
-            $terms = wp_get_post_terms( $post->ID, 'publisher' );
-
-            foreach( $terms as $value ){
-		$parent = $value->parent;
-
-                if( !in_array( $value, $array_of_terms_in_category, true ) ){
-                    # Add publisher only if parent
-                    if( $parent == 0 ){
-                        array_push( $array_of_terms_in_category, $value->term_id );
-                    }
-                }
-
-                # Add parent publisher if not in array
-                if( $parent > 0 ){
-                    if( !in_array( $parent, $array_of_terms_in_category, true ) ){
-                        array_push( $array_of_terms_in_category, $parent );
-                    }
-                }
-            }
-        }
-
         # All publishers (w/ collections)
         # In order to publishers to be well ordered by count
 
@@ -551,63 +496,30 @@ class popular_collections_in_category_widget extends WP_Widget {
         if ( ! empty( $title ) )
             echo $args['before_title'] . $title . $args['after_title'];
 
-        # This is where you run the code and display the output
-
-        # Find the category where is displayed the widget
-        $category = 'reads';
-	$catID = get_cat_ID( $category );
-
-        $post_types = array( 'post' );
-
-        if( post_type_exists( 'book' ) ){
-            array_push( $post_types, 'book' );
-        }
-
-        if( post_type_exists( 'album' ) ){
-            array_push( $post_types, 'album' );
-        }
-
-        if( post_type_exists( 'interview' ) ){
-            array_push( $post_types, 'interview' );
-        }
-
-        $posts_with_category = get_posts( array(
-                     'category'       => $catID,
-                     'post_type'      => $post_types,
-                     'number_posts'   => -1,
-                     'posts_per_page' => -1,
-                 ));
-
-        $array_of_terms_in_category = array();
-
-        foreach( $posts_with_category as $post ) {
-            $terms = wp_get_post_terms( $post->ID, 'publisher' );
-
-            foreach( $terms as $value ){
-		$parent = $value->parent;
-
-                if( !in_array( $value, $array_of_terms_in_category, true ) ){
-                    # Add "publisher" only if collection
-                    if( $parent > 0 ){
-                        array_push( $array_of_terms_in_category, $value->term_id );
-                    }
-                }
-            }
-        }
-
         $tag_args = array(
                     'format'   => 'array',
-                    'number'   => $c_count,
                     'taxonomy' => 'publisher',
                     'orderby'  => 'count',
                     'order'    => 'DESC',
-                    'include'  => $array_of_terms_in_category,
                     'echo'     => false,
                 );
 
         echo '<div class="tagcloud">';
 
-        $collections_array = get_terms ( 'publisher', $tag_args );
+        $all_pubs_array = get_terms ( 'publisher', $tag_args );
+        $collections_array = array();
+        $col_count = 0;
+
+        foreach( $all_pubs_array as $pub ){
+            $parent  = $pub->parent;
+            if( $parent > 0 ){
+                array_push( $collections_array, $pub );
+                $col_count += 1;
+            }
+            if( $col_count > $c_count ){
+                break;
+            }
+        }
 
         if( sizeof( $collections_array ) ){
             function widget_sort_collection_by_name( $a, $b ){
