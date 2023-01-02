@@ -259,7 +259,6 @@ class popular_prizes_in_category_widget extends WP_Widget {
         $tag_args = array(
                     'format'     => 'array',
                     'taxonomy'   => 'prize',
-                    'include'    => $array_of_terms_in_category,
                     'pad_counts' => true,
                     'echo'       => false,
                 );
