@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-02 17:33-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: custom-taxonomy-creative-work.php:46
+msgctxt "taxonomy general name"
+msgid "Creative Works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:47
+msgctxt "taxonomy singular name"
+msgid "Creative Work"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:48
+msgid "Search Creative Works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:49
+msgid "Popular Creative Works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:50
+msgid "All Creative Works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:53
+msgid "See Creative Work"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:54
+msgid "Edit Creative Work"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:55
+msgid "Update Creative Work"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:56
+msgid "Add New Creative Work"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:57
+msgid "New Creative Work Name"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:58
+msgid "Separate creative works with commas"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:59
+msgid "Add or remove creative works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:60
+msgid "Choose from the most used creative works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:61
+msgid "No creative works found."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:62
+msgid "← Back to creative works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:63
+msgid "Creative Works"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:93 custom-taxonomy-creative-work.php:197
+msgid "Title"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:95 custom-taxonomy-creative-work.php:200
+msgid "Enter the work title."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:98 custom-taxonomy-creative-work.php:204
+msgid "Sort title"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:100 custom-taxonomy-creative-work.php:207
+msgid "Enter the work sort title."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:103 custom-taxonomy-creative-work.php:211
+msgid "Translations"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:105 custom-taxonomy-creative-work.php:214
+msgid "Enter the work translations if exist."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:108 custom-taxonomy-creative-work.php:218
+msgid "Translation of"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:110 custom-taxonomy-creative-work.php:221
+msgid "Enter the work from which this work has been translated if exists."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:113 custom-taxonomy-creative-work.php:225
+msgid "Authors"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:115 custom-taxonomy-creative-work.php:228
+msgid "Enter the work authors."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:118 custom-taxonomy-creative-work.php:232
+msgid "Translators"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:120 custom-taxonomy-creative-work.php:235
+msgid "Enter the work translators if exist."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:123 custom-taxonomy-creative-work.php:239
+msgid "Publisher"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:125 custom-taxonomy-creative-work.php:242
+msgid "Enter the work publisher."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:128 custom-taxonomy-creative-work.php:246
+msgid "ISBN10"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:130 custom-taxonomy-creative-work.php:249
+msgid "Enter the work ISBN10 if exists."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:133 custom-taxonomy-creative-work.php:253
+msgid "ISBN13"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:135 custom-taxonomy-creative-work.php:256
+msgid "Enter the work ISBN13."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:138 custom-taxonomy-creative-work.php:260
+msgid "ASIN"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:140 custom-taxonomy-creative-work.php:263
+msgid "Enter the work ASIN."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:143 custom-taxonomy-creative-work.php:267
+msgid "Release date"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:145 custom-taxonomy-creative-work.php:270
+msgid "Enter the work release date (YYYY-mm-dd)."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:148 custom-taxonomy-creative-work.php:274
+msgid "Language"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:150 custom-taxonomy-creative-work.php:277
+msgid "Enter the language in which the work is written."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:153 custom-taxonomy-creative-work.php:281
+msgid "Number of pages"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:155 custom-taxonomy-creative-work.php:284
+msgid "Enter the work number of pages."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:158 custom-taxonomy-creative-work.php:288
+msgid "Cover"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:160 custom-taxonomy-creative-work.php:291
+msgid "Enter the work cover if exists."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:163 custom-taxonomy-creative-work.php:295
+msgid "Location"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:165 custom-taxonomy-creative-work.php:298
+msgid "Enter the locations depicted or described in the work if exist."
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:168 custom-taxonomy-creative-work.php:302
+msgid "Work review"
+msgstr ""
+
+#: custom-taxonomy-creative-work.php:170 custom-taxonomy-creative-work.php:305
+msgid "Enter the work review if exists."
+msgstr ""
