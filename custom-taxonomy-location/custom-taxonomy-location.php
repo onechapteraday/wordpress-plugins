@@ -710,13 +710,14 @@ add_action( 'widgets_init', 'popular_location_wpb_load_widget' );
 
 function location_flush_rewrites() {
   flush_rewrite_rules();
-  add_action('init', 'add_locations', 100);
 }
 
 # Prevent 404 errors on locations' archive
 
 register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
 register_activation_hook( __FILE__, 'location_flush_rewrites' );
+
+register_activation_hook( __FILE__, 'add_locations' );
 
 add_action( 'init', 'location_flush_rewrites' );
 
